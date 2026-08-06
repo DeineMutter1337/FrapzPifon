@@ -1,0 +1,70 @@
+name: FRANZFON Asterisk ARM64 Release Bundle
+run-name: "Asterisk 22.7 ARM64 Bundle • ${{ github.sha }}"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'installer/franzfon-arm64-install-asterisk.sh'
+      - '.github/workflows/franzfon-asterisk-arm64-release.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: franzfon-asterisk-arm64-release
+  cancel-in-progress: true
+
+jobs:
+  build-release:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 90
+    env:
+      RELEASE_TAG: asterisk-22.7.0-arm64-v1
+      ASSET_NAME: franzfon-asterisk-22.7.0-linux-arm64.tar.zst
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install bundle tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends zstd binutils
+
+      - name: Build with the production ARM64 installer
+        run: |
+          sudo bash installer/franzfon-arm64-install-asterisk.sh --keep-work
+
+      - name: Validate and package installed runtime
+        run: |
+          set -euxo pipefail
+          test "$(readelf -h /opt/franzfon-arm64/asterisk/sbin/asterisk | awk '$1 == "Machine:" {print $2}')" = AArch64
+          test -s /var/lib/asterisk/documentation/core-en_US.xml
+          mkdir -p dist
+          sudo tar --zstd -C / -cf "dist/$ASSET_NAME" \
+            opt/franzfon-arm64/asterisk \
+            var/lib/asterisk
+          sudo chown "$USER:$USER" "dist/$ASSET_NAME"
+          (cd dist && sha256sum "$ASSET_NAME" > "$ASSET_NAME.sha256")
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: franzfon-asterisk-22.7.0-arm64
+          path: dist/
+          retention-days: 30
+          compression-level: 0
+
+      - name: Publish immutable release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euxo pipefail
+          if ! gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release create "$RELEASE_TAG" \
+              --target "$GITHUB_SHA" \
+              --title 'FRANZFON Asterisk 22.7.0 ARM64 bundle v1' \
+              --notes 'Native AArch64 build produced by the verified repository installer. The installer verifies the accompanying SHA-256 file before extraction.'
+          fi
+          gh release upload "$RELEASE_TAG" dist/* --clobber
