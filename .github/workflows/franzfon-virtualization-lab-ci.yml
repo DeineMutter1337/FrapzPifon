@@ -91,7 +91,7 @@ jobs:
             >/dev/null
 
       - name: Publish virtualization lab verdict
-        if: always()
+        if: ${{ always() && !cancelled() }}
         run: |
           set -euxo pipefail
           result_dir='analysis-results/virtualization-lab/latest'
