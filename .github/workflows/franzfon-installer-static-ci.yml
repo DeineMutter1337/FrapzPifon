@@ -30,6 +30,7 @@ jobs:
         id: bash_syntax
         run: |
           set -euxo pipefail
+          bash -n installer/franzfon-arm64-install.sh
           bash -n installer/franzfon-arm64-prepare.sh
           bash -n installer/franzfon-arm64-install-app.sh
           bash -n installer/franzfon-arm64-normalize-native-addons.sh
@@ -42,6 +43,7 @@ jobs:
         run: |
           set -euxo pipefail
           shellcheck --severity=warning \
+            installer/franzfon-arm64-install.sh \
             installer/franzfon-arm64-prepare.sh \
             installer/franzfon-arm64-install-app.sh \
             installer/franzfon-arm64-normalize-native-addons.sh \
@@ -60,6 +62,8 @@ jobs:
         run: |
           set -euxo pipefail
 
+          grep -F -- 'ACTIVATE=0' installer/franzfon-arm64-install.sh
+          grep -F -- '[ "$ACTIVATE" -eq 0 ] || BOOTSTRAP_ARGS+=(--activate)' installer/franzfon-arm64-install.sh
           grep -F -- 'systemctl disable franzfon-wizard.service' installer/franzfon-arm64-install-app.sh
           grep -F -- 'systemctl disable asterisk.service' installer/franzfon-arm64-install-asterisk.sh
           grep -F -- 'if [ "$ACTIVATE" -eq 1 ]' installer/franzfon-arm64-bootstrap.sh
@@ -71,6 +75,8 @@ jobs:
           grep -F -- "--exclude='node_modules/'" installer/franzfon-arm64-prepare.sh
           grep -F -- "--exclude='*.db'" installer/franzfon-arm64-prepare.sh
           grep -F -- "--exclude='*.env'" installer/franzfon-arm64-prepare.sh
+          grep -F -- "--exclude='/data/'" installer/franzfon-arm64-prepare.sh
+          grep -F -- "-name 'german-holidays*'" installer/franzfon-arm64-prepare.sh
 
           grep -F -- 'better_sqlite3.node' installer/franzfon-arm64-normalize-native-addons.sh
           grep -F -- 'assert_aarch64_elf' installer/franzfon-arm64-normalize-native-addons.sh
@@ -83,6 +89,9 @@ jobs:
           grep -F -- 'ARM\ aarch64' installer/franzfon-arm64-install-asterisk.sh
           grep -F -- '/etc/ld.so.conf.d/franzfon-asterisk.conf' installer/franzfon-arm64-install-asterisk.sh
           grep -F -- 'ldconfig -p' installer/franzfon-arm64-install-asterisk.sh
+          grep -F -- "CREATE USER IF NOT EXISTS 'franzfon'@'localhost'" installer/franzfon-arm64-bootstrap.sh
+          grep -F -- '#include pjsip_custom.conf' installer/franzfon-arm64-bootstrap.sh
+          grep -F -- 'ASTERISK_STABLE=0' installer/franzfon-arm64-bootstrap.sh
 
           ! grep -REi -- \
             'SKIP_LICENSE|DISABLE_LICENSE|LICENSE_BYPASS|BYPASS_ACTIVATION|FORCE_ACTIVATED|licenseCheck[[:space:]]*=[[:space:]]*false' \
@@ -92,6 +101,7 @@ jobs:
         id: help_smoke
         run: |
           set -euxo pipefail
+          bash installer/franzfon-arm64-install.sh --help
           bash installer/franzfon-arm64-prepare.sh --help
           bash installer/franzfon-arm64-install-app.sh --help
           bash installer/franzfon-arm64-normalize-native-addons.sh --help
