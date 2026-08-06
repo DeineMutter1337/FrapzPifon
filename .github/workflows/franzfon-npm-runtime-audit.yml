@@ -1,0 +1,129 @@
+name: FRANZFON npm Runtime Security Audit
+run-name: "npm Runtime Audit • ${{ github.sha }}"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/franzfon-npm-runtime-audit.yml'
+      - 'scripts/prepare_arm64_node_smoke.sh'
+      - 'scripts/stream_vma_extract.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: franzfon-npm-runtime-audit
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Reclaim runner disk space
+        run: |
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc 2>/dev/null || true
+          df -hT
+
+      - name: Install host tools
+        run: |
+          set -euxo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            python3-pip file util-linux e2fsprogs rsync jq
+          python3 -m pip install --user zstandard
+
+      - name: Prepare sanitized ephemeral backend payload
+        id: prepare
+        run: |
+          set +e
+          mkdir -p npm-audit-report
+          bash scripts/prepare_arm64_node_smoke.sh \
+            2>&1 | tee npm-audit-report/preparation.log
+          rc=${PIPESTATUS[0]}
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+          echo "$rc" > npm-audit-report/preparation-exit-code.txt
+          exit 0
+
+      - name: Run production dependency audit
+        id: audit
+        if: steps.prepare.outputs.rc == '0'
+        working-directory: arm64-smoke/payload/backend
+        run: |
+          set +e
+          npm audit --omit=dev --json > ../../../npm-audit-report/npm-audit-runtime.json
+          rc=$?
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+          echo "$rc" > ../../../npm-audit-report/audit-exit-code.txt
+          exit 0
+
+      - name: Build sanitized audit summary
+        if: always()
+        run: |
+          set -euo pipefail
+          report='npm-audit-report/npm-audit-runtime.json'
+          summary='npm-audit-report/summary.txt'
+
+          if [ ! -s "$report" ]; then
+            {
+              echo 'RUN_MARKER=FRANZFON_NPM_RUNTIME_AUDIT_V1'
+              echo 'VERDICT=ERROR'
+              echo 'The npm runtime audit did not produce JSON.'
+            } > "$summary"
+            exit 0
+          fi
+
+          jq -r '
+            "RUN_MARKER=FRANZFON_NPM_RUNTIME_AUDIT_V1",
+            "AUDIT_VERSION=" + (.auditReportVersion|tostring),
+            "INFO=" + (.metadata.vulnerabilities.info|tostring),
+            "LOW=" + (.metadata.vulnerabilities.low|tostring),
+            "MODERATE=" + (.metadata.vulnerabilities.moderate|tostring),
+            "HIGH=" + (.metadata.vulnerabilities.high|tostring),
+            "CRITICAL=" + (.metadata.vulnerabilities.critical|tostring),
+            "TOTAL=" + (.metadata.vulnerabilities.total|tostring),
+            "PRODUCTION_DEPENDENCIES=" + (.metadata.dependencies.prod|tostring),
+            "",
+            "AFFECTED_PACKAGES:",
+            (.vulnerabilities | to_entries[] |
+              "- " + .key +
+              " | severity=" + .value.severity +
+              " | direct=" + (.value.isDirect|tostring) +
+              " | range=" + .value.range +
+              " | fixAvailable=" + (.value.fixAvailable|tostring) +
+              " | via=" + ([.value.via[] | if type == "object" then ((.source|tostring) + ":" + .title) else . end] | join("; "))),
+            "",
+            (if .metadata.vulnerabilities.total == 0
+              then "VERDICT=PASS"
+              else "VERDICT=REMEDIATION_REQUIRED"
+             end)
+          ' "$report" > "$summary"
+
+          rm -rf arm64-smoke extracted-arm64-node franzfon-arm64-node-root
+
+      - name: Publish audit metadata only
+        if: always() && !cancelled()
+        run: |
+          set -euxo pipefail
+          target='analysis-results/npm-runtime-audit/latest'
+          rm -rf "$target"
+          mkdir -p "$target"
+          cp npm-audit-report/summary.txt "$target/summary.txt"
+          cp npm-audit-report/npm-audit-runtime.json "$target/npm-audit-runtime.json"
+          cp npm-audit-report/preparation-exit-code.txt "$target/preparation-exit-code.txt"
+          [ ! -f npm-audit-report/audit-exit-code.txt ] || \
+            cp npm-audit-report/audit-exit-code.txt "$target/audit-exit-code.txt"
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$target"
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update FRANZFON npm runtime security audit'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
