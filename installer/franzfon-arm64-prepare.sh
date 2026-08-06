@@ -56,10 +56,13 @@ esac
 if [ -r /etc/os-release ]; then
   # shellcheck disable=SC1091
   . /etc/os-release
-  if [ "${ID:-}" != debian ] && [ "${ID_LIKE:-}" != *debian* ]; then
-    echo "Unsupported OS family: ${ID:-unknown}. Debian-compatible ARM64 is required." >&2
-    exit 1
-  fi
+  case "${ID:-}:${ID_LIKE:-}" in
+    debian:*|raspbian:*|ubuntu:*|*:debian*) ;;
+    *)
+      echo "Unsupported OS family: ${ID:-unknown}. Debian-compatible ARM64 is required." >&2
+      exit 1
+      ;;
+  esac
 fi
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
