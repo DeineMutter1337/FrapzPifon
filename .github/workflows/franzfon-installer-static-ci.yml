@@ -36,6 +36,7 @@ jobs:
           bash -n installer/franzfon-arm64-normalize-native-addons.sh
           bash -n installer/franzfon-arm64-install-asterisk.sh
           bash -n installer/franzfon-arm64-bootstrap.sh
+          bash -n installer/franzfon-arm64-selftest.sh
           bash -n scripts/configuration_contract_audit.sh
 
       - name: ShellCheck
@@ -49,6 +50,7 @@ jobs:
             installer/franzfon-arm64-normalize-native-addons.sh \
             installer/franzfon-arm64-install-asterisk.sh \
             installer/franzfon-arm64-bootstrap.sh \
+            installer/franzfon-arm64-selftest.sh \
             scripts/configuration_contract_audit.sh
 
       - name: Python syntax
@@ -64,6 +66,7 @@ jobs:
 
           grep -F -- 'ACTIVATE=0' installer/franzfon-arm64-install.sh
           grep -F -- '[ "$ACTIVATE" -eq 0 ] || BOOTSTRAP_ARGS+=(--activate)' installer/franzfon-arm64-install.sh
+          grep -F -- 'bash "$SELFTEST"' installer/franzfon-arm64-install.sh
           grep -F -- 'systemctl disable franzfon-wizard.service' installer/franzfon-arm64-install-app.sh
           grep -F -- 'systemctl disable asterisk.service' installer/franzfon-arm64-install-asterisk.sh
           grep -F -- 'if [ "$ACTIVATE" -eq 1 ]' installer/franzfon-arm64-bootstrap.sh
@@ -93,6 +96,13 @@ jobs:
           grep -F -- '#include pjsip_custom.conf' installer/franzfon-arm64-bootstrap.sh
           grep -F -- 'ASTERISK_STABLE=0' installer/franzfon-arm64-bootstrap.sh
 
+          grep -F -- "HTTP_URL='http://127.0.0.1:3000/'" installer/franzfon-arm64-selftest.sh
+          grep -F -- 'No passwords, database contents or license data are printed or modified.' \
+            installer/franzfon-arm64-selftest.sh
+          grep -F -- 'Unexpected x86 executable' installer/franzfon-arm64-selftest.sh
+          ! grep -E -- '(cat|grep|sed|awk).*(database\.env|SESSION_SECRET|CDR_DB_PASSWORD)' \
+            installer/franzfon-arm64-selftest.sh
+
           ! grep -REi -- \
             'SKIP_LICENSE|DISABLE_LICENSE|LICENSE_BYPASS|BYPASS_ACTIVATION|FORCE_ACTIVATED|licenseCheck[[:space:]]*=[[:space:]]*false' \
             installer scripts
@@ -107,6 +117,7 @@ jobs:
           bash installer/franzfon-arm64-normalize-native-addons.sh --help
           bash installer/franzfon-arm64-install-asterisk.sh --help
           bash installer/franzfon-arm64-bootstrap.sh --help
+          bash installer/franzfon-arm64-selftest.sh --help
 
       - name: Publish static CI verdict
         if: always()
