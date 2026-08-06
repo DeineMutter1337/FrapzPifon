@@ -1,0 +1,3 @@
+ASTERISK_ARM64_BUILD_RC=1
+VERDICT=FAIL
+See build.log for the missing dependency or compile error.

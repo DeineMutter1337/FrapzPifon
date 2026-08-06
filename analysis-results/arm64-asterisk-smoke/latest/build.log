@@ -1,0 +1,1819 @@
+Unable to find image 'debian:12-slim' locally
+12-slim: Pulling from library/debian
+0f5d7465a5bb: Pulling fs layer
+0f5d7465a5bb: Verifying Checksum
+0f5d7465a5bb: Download complete
+0f5d7465a5bb: Pull complete
+Digest: sha256:abd67ffcfa541b485a3dff59865ab629aa048a6c613e639d36e7456b0b229241
+Status: Downloaded newer image for debian:12-slim
++ export DEBIAN_FRONTEND=noninteractive
++ DEBIAN_FRONTEND=noninteractive
++ apt-get update
+Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+Get:4 http://deb.debian.org/debian bookworm/main arm64 Packages [8689 kB]
+Get:5 http://deb.debian.org/debian bookworm-updates/main arm64 Packages [6936 B]
+Get:6 http://deb.debian.org/debian-security bookworm-security/main arm64 Packages [323 kB]
+Fetched 9261 kB in 6s (1661 kB/s)
+Reading package lists...
++ apt-get install -y --no-install-recommends build-essential ca-certificates wget file pkg-config patch perl bzip2 xz-utils libedit-dev libxml2-dev libsqlite3-dev uuid-dev libssl-dev libcurl4-openssl-dev libspeex-dev libspeexdsp-dev libogg-dev libvorbis-dev libopus-dev libnewt-dev libncurses-dev libspandsp-dev
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  binutils binutils-aarch64-linux-gnu binutils-common cpp cpp-12 dpkg-dev g++
+  g++-12 gcc gcc-12 icu-devtools libasan8 libatomic1 libbinutils libbrotli1
+  libbsd-dev libbsd0 libc-dev-bin libc6-dev libcc1-0 libcrypt-dev
+  libctf-nobfd0 libctf0 libcurl4 libdeflate-dev libdeflate0 libdpkg-perl
+  libedit2 libgcc-12-dev libgdbm-compat4 libgdbm6 libgomp1 libgprofng0
+  libgssapi-krb5-2 libhwasan0 libicu-dev libicu72 libisl23 libitm1 libjansson4
+  libjbig-dev libjbig0 libjpeg-dev libjpeg62-turbo libjpeg62-turbo-dev
+  libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap-2.5-0
+  liblerc-dev liblerc4 liblsan0 liblzma-dev libmagic-mgc libmagic1 libmd-dev
+  libmpc3 libmpfr6 libncurses6 libncursesw6 libnewt0.52 libnghttp2-14
+  libnsl-dev libnsl2 libogg0 libopus0 libperl5.36 libpkgconf3 libpng-dev
+  libpng16-16 libpsl5 librtmp1 libsasl2-2 libsasl2-modules-db libslang2
+  libslang2-dev libspandsp2 libspeex1 libspeexdsp1 libsqlite3-0 libssh2-1
+  libssl3 libstdc++-12-dev libtiff-dev libtiff6 libtiffxx6 libtirpc-common
+  libtirpc-dev libtirpc3 libtsan2 libubsan1 libvorbis0a libvorbisenc2
+  libvorbisfile3 libwebp-dev libwebp7 libwebpdemux2 libwebpmux3 libxml2
+  libzstd-dev linux-libc-dev make openssl perl-modules-5.36 pkgconf
+  pkgconf-bin rpcsvc-proto zlib1g-dev
+Suggested packages:
+  binutils-doc bzip2-doc cpp-doc gcc-12-locales cpp-12-doc debian-keyring
+  gcc-12-doc gcc-multilib manpages-dev autoconf automake libtool flex bison
+  gdb gcc-doc glibc-doc libcurl4-doc libidn-dev libkrb5-dev libldap2-dev
+  librtmp-dev libssh2-1-dev gnupg | sq | sqop | pgpainless-cli sensible-utils
+  git bzr gdbm-l10n krb5-doc krb5-user icu-doc liblzma-doc ncurses-doc
+  opus-tools speex speex-doc sqlite3-doc libssl-doc libstdc++-12-doc make-doc
+  ed diffutils-doc perl-doc libterm-readline-gnu-perl
+  | libterm-readline-perl-perl libtap-harness-archive-perl
+Recommended packages:
+  fakeroot gnupg | sq | sqop | pgpainless-cli libalgorithm-merge-perl manpages
+  manpages-dev libc-devtools libfile-fcntllock-perl liblocale-gettext-perl
+  krb5-locales libldap-common libgpm2 libfribidi0 libpng-tools publicsuffix
+  libsasl2-modules netbase
+The following NEW packages will be installed:
+  binutils binutils-aarch64-linux-gnu binutils-common build-essential bzip2
+  ca-certificates cpp cpp-12 dpkg-dev file g++ g++-12 gcc gcc-12 icu-devtools
+  libasan8 libatomic1 libbinutils libbrotli1 libbsd-dev libbsd0 libc-dev-bin
+  libc6-dev libcc1-0 libcrypt-dev libctf-nobfd0 libctf0 libcurl4
+  libcurl4-openssl-dev libdeflate-dev libdeflate0 libdpkg-perl libedit-dev
+  libedit2 libgcc-12-dev libgdbm-compat4 libgdbm6 libgomp1 libgprofng0
+  libgssapi-krb5-2 libhwasan0 libicu-dev libicu72 libisl23 libitm1 libjansson4
+  libjbig-dev libjbig0 libjpeg-dev libjpeg62-turbo libjpeg62-turbo-dev
+  libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap-2.5-0
+  liblerc-dev liblerc4 liblsan0 liblzma-dev libmagic-mgc libmagic1 libmd-dev
+  libmpc3 libmpfr6 libncurses-dev libncurses6 libncursesw6 libnewt-dev
+  libnewt0.52 libnghttp2-14 libnsl-dev libnsl2 libogg-dev libogg0 libopus-dev
+  libopus0 libperl5.36 libpkgconf3 libpng-dev libpng16-16 libpsl5 librtmp1
+  libsasl2-2 libsasl2-modules-db libslang2 libslang2-dev libspandsp-dev
+  libspandsp2 libspeex-dev libspeex1 libspeexdsp-dev libspeexdsp1 libsqlite3-0
+  libsqlite3-dev libssh2-1 libssl-dev libssl3 libstdc++-12-dev libtiff-dev
+  libtiff6 libtiffxx6 libtirpc-common libtirpc-dev libtirpc3 libtsan2
+  libubsan1 libvorbis-dev libvorbis0a libvorbisenc2 libvorbisfile3 libwebp-dev
+  libwebp7 libwebpdemux2 libwebpmux3 libxml2 libxml2-dev libzstd-dev
+  linux-libc-dev make openssl patch perl perl-modules-5.36 pkg-config pkgconf
+  pkgconf-bin rpcsvc-proto uuid-dev wget xz-utils zlib1g-dev
+0 upgraded, 132 newly installed, 0 to remove and 0 not upgraded.
+Need to get 108 MB of archives.
+After this operation, 470 MB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian bookworm/main arm64 perl-modules-5.36 all 5.36.0-7+deb12u3 [2815 kB]
+Get:2 http://deb.debian.org/debian bookworm/main arm64 libgdbm6 arm64 1.23-3 [70.9 kB]
+Get:3 http://deb.debian.org/debian bookworm/main arm64 libgdbm-compat4 arm64 1.23-3 [48.0 kB]
+Get:4 http://deb.debian.org/debian bookworm/main arm64 libperl5.36 arm64 5.36.0-7+deb12u3 [4009 kB]
+Get:5 http://deb.debian.org/debian bookworm/main arm64 perl arm64 5.36.0-7+deb12u3 [239 kB]
+Get:6 http://deb.debian.org/debian bookworm/main arm64 bzip2 arm64 1.0.8-5+b1 [48.9 kB]
+Get:7 http://deb.debian.org/debian bookworm/main arm64 libssl3 arm64 3.0.20-1~deb12u2 [1824 kB]
+Get:8 http://deb.debian.org/debian bookworm/main arm64 openssl arm64 3.0.20-1~deb12u2 [1405 kB]
+Get:9 http://deb.debian.org/debian bookworm/main arm64 ca-certificates all 20230311+deb12u1 [155 kB]
+Get:10 http://deb.debian.org/debian bookworm/main arm64 libmagic-mgc arm64 1:5.44-3 [305 kB]
+Get:11 http://deb.debian.org/debian bookworm/main arm64 libmagic1 arm64 1:5.44-3 [98.5 kB]
+Get:12 http://deb.debian.org/debian bookworm/main arm64 file arm64 1:5.44-3 [42.5 kB]
+Get:13 http://deb.debian.org/debian bookworm/main arm64 libpsl5 arm64 0.21.2-1 [58.6 kB]
+Get:14 http://deb.debian.org/debian bookworm/main arm64 wget arm64 1.21.3-1+deb12u1 [922 kB]
+Get:15 http://deb.debian.org/debian bookworm/main arm64 xz-utils arm64 5.4.1-1+deb12u1 [471 kB]
+Get:16 http://deb.debian.org/debian bookworm/main arm64 binutils-common arm64 2.40-2 [2487 kB]
+Get:17 http://deb.debian.org/debian bookworm/main arm64 libbinutils arm64 2.40-2 [645 kB]
+Get:18 http://deb.debian.org/debian bookworm/main arm64 libctf-nobfd0 arm64 2.40-2 [144 kB]
+Get:19 http://deb.debian.org/debian bookworm/main arm64 libctf0 arm64 2.40-2 [79.2 kB]
+Get:20 http://deb.debian.org/debian bookworm/main arm64 libgprofng0 arm64 2.40-2 [680 kB]
+Get:21 http://deb.debian.org/debian bookworm/main arm64 libjansson4 arm64 2.14-2 [40.2 kB]
+Get:22 http://deb.debian.org/debian bookworm/main arm64 binutils-aarch64-linux-gnu arm64 2.40-2 [2637 kB]
+Get:23 http://deb.debian.org/debian bookworm/main arm64 binutils arm64 2.40-2 [64.9 kB]
+Get:24 http://deb.debian.org/debian bookworm/main arm64 libc-dev-bin arm64 2.36-9+deb12u14 [47.2 kB]
+Get:25 http://deb.debian.org/debian-security bookworm-security/main arm64 linux-libc-dev arm64 6.1.180-1 [2307 kB]
+Get:26 http://deb.debian.org/debian bookworm/main arm64 libcrypt-dev arm64 1:4.4.33-2 [121 kB]
+Get:27 http://deb.debian.org/debian bookworm/main arm64 libkrb5support0 arm64 1.20.1-2+deb12u5 [32.6 kB]
+Get:28 http://deb.debian.org/debian bookworm/main arm64 libk5crypto3 arm64 1.20.1-2+deb12u5 [79.9 kB]
+Get:29 http://deb.debian.org/debian bookworm/main arm64 libkeyutils1 arm64 1.6.3-2 [8844 B]
+Get:30 http://deb.debian.org/debian bookworm/main arm64 libkrb5-3 arm64 1.20.1-2+deb12u5 [316 kB]
+Get:31 http://deb.debian.org/debian bookworm/main arm64 libgssapi-krb5-2 arm64 1.20.1-2+deb12u5 [124 kB]
+Get:32 http://deb.debian.org/debian bookworm/main arm64 libtirpc-common all 1.3.3+ds-1 [14.0 kB]
+Get:33 http://deb.debian.org/debian bookworm/main arm64 libtirpc3 arm64 1.3.3+ds-1 [80.9 kB]
+Get:34 http://deb.debian.org/debian bookworm/main arm64 libnsl2 arm64 1.3.0-2 [36.9 kB]
+Get:35 http://deb.debian.org/debian bookworm/main arm64 libtirpc-dev arm64 1.3.3+ds-1 [194 kB]
+Get:36 http://deb.debian.org/debian bookworm/main arm64 libnsl-dev arm64 1.3.0-2 [66.1 kB]
+Get:37 http://deb.debian.org/debian bookworm/main arm64 rpcsvc-proto arm64 1.4.3-1 [59.7 kB]
+Get:38 http://deb.debian.org/debian bookworm/main arm64 libc6-dev arm64 2.36-9+deb12u14 [1436 kB]
+Get:39 http://deb.debian.org/debian bookworm/main arm64 libisl23 arm64 0.25-1.1 [610 kB]
+Get:40 http://deb.debian.org/debian bookworm/main arm64 libmpfr6 arm64 4.2.0-1 [600 kB]
+Get:41 http://deb.debian.org/debian bookworm/main arm64 libmpc3 arm64 1.3.1-1 [49.2 kB]
+Get:42 http://deb.debian.org/debian bookworm/main arm64 cpp-12 arm64 12.2.0-14+deb12u1 [8228 kB]
+Get:43 http://deb.debian.org/debian bookworm/main arm64 cpp arm64 4:12.2.0-3 [6832 B]
+Get:44 http://deb.debian.org/debian bookworm/main arm64 libcc1-0 arm64 12.2.0-14+deb12u1 [37.7 kB]
+Get:45 http://deb.debian.org/debian bookworm/main arm64 libgomp1 arm64 12.2.0-14+deb12u1 [104 kB]
+Get:46 http://deb.debian.org/debian bookworm/main arm64 libitm1 arm64 12.2.0-14+deb12u1 [24.0 kB]
+Get:47 http://deb.debian.org/debian bookworm/main arm64 libatomic1 arm64 12.2.0-14+deb12u1 [9568 B]
+Get:48 http://deb.debian.org/debian bookworm/main arm64 libasan8 arm64 12.2.0-14+deb12u1 [2096 kB]
+Get:49 http://deb.debian.org/debian bookworm/main arm64 liblsan0 arm64 12.2.0-14+deb12u1 [926 kB]
+Get:50 http://deb.debian.org/debian bookworm/main arm64 libtsan2 arm64 12.2.0-14+deb12u1 [2178 kB]
+Get:51 http://deb.debian.org/debian bookworm/main arm64 libubsan1 arm64 12.2.0-14+deb12u1 [862 kB]
+Get:52 http://deb.debian.org/debian bookworm/main arm64 libhwasan0 arm64 12.2.0-14+deb12u1 [999 kB]
+Get:53 http://deb.debian.org/debian bookworm/main arm64 libgcc-12-dev arm64 12.2.0-14+deb12u1 [956 kB]
+Get:54 http://deb.debian.org/debian bookworm/main arm64 gcc-12 arm64 12.2.0-14+deb12u1 [16.3 MB]
+Get:55 http://deb.debian.org/debian bookworm/main arm64 gcc arm64 4:12.2.0-3 [5244 B]
+Get:56 http://deb.debian.org/debian bookworm/main arm64 libstdc++-12-dev arm64 12.2.0-14+deb12u1 [2007 kB]
+Get:57 http://deb.debian.org/debian bookworm/main arm64 g++-12 arm64 12.2.0-14+deb12u1 [9072 kB]
+Get:58 http://deb.debian.org/debian bookworm/main arm64 g++ arm64 4:12.2.0-3 [1336 B]
+Get:59 http://deb.debian.org/debian bookworm/main arm64 make arm64 4.3-4.1 [391 kB]
+Get:60 http://deb.debian.org/debian bookworm/main arm64 libdpkg-perl all 1.21.23 [604 kB]
+Get:61 http://deb.debian.org/debian bookworm/main arm64 patch arm64 2.7.6-7 [121 kB]
+Get:62 http://deb.debian.org/debian bookworm/main arm64 dpkg-dev all 1.21.23 [1354 kB]
+Get:63 http://deb.debian.org/debian bookworm/main arm64 build-essential arm64 12.9 [7704 B]
+Get:64 http://deb.debian.org/debian bookworm/main arm64 libicu72 arm64 72.1-3+deb12u1 [9202 kB]
+Get:65 http://deb.debian.org/debian bookworm/main arm64 icu-devtools arm64 72.1-3+deb12u1 [192 kB]
+Get:66 http://deb.debian.org/debian bookworm/main arm64 libbrotli1 arm64 1.0.9-2+b6 [269 kB]
+Get:67 http://deb.debian.org/debian bookworm/main arm64 libbsd0 arm64 0.11.7-2 [115 kB]
+Get:68 http://deb.debian.org/debian bookworm/main arm64 libmd-dev arm64 1.0.4-2 [47.4 kB]
+Get:69 http://deb.debian.org/debian bookworm/main arm64 libbsd-dev arm64 0.11.7-2 [242 kB]
+Get:70 http://deb.debian.org/debian bookworm/main arm64 libsasl2-modules-db arm64 2.1.28+dfsg-10 [20.8 kB]
+Get:71 http://deb.debian.org/debian bookworm/main arm64 libsasl2-2 arm64 2.1.28+dfsg-10 [58.0 kB]
+Get:72 http://deb.debian.org/debian bookworm/main arm64 libldap-2.5-0 arm64 2.5.13+dfsg-5 [171 kB]
+Get:73 http://deb.debian.org/debian bookworm/main arm64 libnghttp2-14 arm64 1.52.0-1+deb12u3 [69.0 kB]
+Get:74 http://deb.debian.org/debian bookworm/main arm64 librtmp1 arm64 2.4+20151223.gitfa8646d.1-2+b2 [59.4 kB]
+Get:75 http://deb.debian.org/debian bookworm/main arm64 libssh2-1 arm64 1.10.0-3+b1 [172 kB]
+Get:76 http://deb.debian.org/debian bookworm/main arm64 libcurl4 arm64 7.88.1-10+deb12u15 [367 kB]
+Get:77 http://deb.debian.org/debian bookworm/main arm64 libcurl4-openssl-dev arm64 7.88.1-10+deb12u15 [477 kB]
+Get:78 http://deb.debian.org/debian bookworm/main arm64 libdeflate0 arm64 1.14-1 [54.3 kB]
+Get:79 http://deb.debian.org/debian bookworm/main arm64 libdeflate-dev arm64 1.14-1 [50.0 kB]
+Get:80 http://deb.debian.org/debian bookworm/main arm64 libedit2 arm64 3.1-20221030-2 [88.1 kB]
+Get:81 http://deb.debian.org/debian bookworm/main arm64 libncurses6 arm64 6.4-4 [93.9 kB]
+Get:82 http://deb.debian.org/debian bookworm/main arm64 libncursesw6 arm64 6.4-4 [122 kB]
+Get:83 http://deb.debian.org/debian bookworm/main arm64 libncurses-dev arm64 6.4-4 [336 kB]
+Get:84 http://deb.debian.org/debian bookworm/main arm64 libedit-dev arm64 3.1-20221030-2 [112 kB]
+Get:85 http://deb.debian.org/debian bookworm/main arm64 libicu-dev arm64 72.1-3+deb12u1 [10.2 MB]
+Get:86 http://deb.debian.org/debian bookworm/main arm64 libjbig0 arm64 2.1-6.1 [30.0 kB]
+Get:87 http://deb.debian.org/debian bookworm/main arm64 libjbig-dev arm64 2.1-6.1 [29.9 kB]
+Get:88 http://deb.debian.org/debian bookworm/main arm64 libjpeg62-turbo arm64 1:2.1.5-2 [171 kB]
+Get:89 http://deb.debian.org/debian bookworm/main arm64 libjpeg62-turbo-dev arm64 1:2.1.5-2 [292 kB]
+Get:90 http://deb.debian.org/debian bookworm/main arm64 libjpeg-dev arm64 1:2.1.5-2 [71.8 kB]
+Get:91 http://deb.debian.org/debian bookworm/main arm64 liblerc4 arm64 4.0.0+ds-2 [138 kB]
+Get:92 http://deb.debian.org/debian bookworm/main arm64 liblerc-dev arm64 4.0.0+ds-2 [146 kB]
+Get:93 http://deb.debian.org/debian bookworm/main arm64 liblzma-dev arm64 5.4.1-1+deb12u1 [256 kB]
+Get:94 http://deb.debian.org/debian bookworm/main arm64 libslang2 arm64 2.3.3-3 [502 kB]
+Get:95 http://deb.debian.org/debian bookworm/main arm64 libpng16-16 arm64 1.6.39-2+deb12u5 [270 kB]
+Get:96 http://deb.debian.org/debian bookworm/main arm64 zlib1g-dev arm64 1:1.2.13.dfsg-1 [913 kB]
+Get:97 http://deb.debian.org/debian bookworm/main arm64 libpng-dev arm64 1.6.39-2+deb12u5 [356 kB]
+Get:98 http://deb.debian.org/debian bookworm/main arm64 libslang2-dev arm64 2.3.3-3 [656 kB]
+Get:99 http://deb.debian.org/debian bookworm/main arm64 libnewt0.52 arm64 0.52.23-1+b1 [56.1 kB]
+Get:100 http://deb.debian.org/debian bookworm/main arm64 libnewt-dev arm64 0.52.23-1+b1 [71.9 kB]
+Get:101 http://deb.debian.org/debian bookworm/main arm64 libogg0 arm64 1.3.5-3 [23.0 kB]
+Get:102 http://deb.debian.org/debian bookworm/main arm64 libogg-dev arm64 1.3.5-3 [200 kB]
+Get:103 http://deb.debian.org/debian bookworm/main arm64 libopus0 arm64 1.3.1-3 [176 kB]
+Get:104 http://deb.debian.org/debian bookworm/main arm64 libopus-dev arm64 1.3.1-3 [227 kB]
+Get:105 http://deb.debian.org/debian bookworm/main arm64 libpkgconf3 arm64 1.8.1-1 [35.3 kB]
+Get:106 http://deb.debian.org/debian bookworm/main arm64 libwebp7 arm64 1.2.4-0.2+deb12u1 [260 kB]
+Get:107 http://deb.debian.org/debian bookworm/main arm64 libtiff6 arm64 4.5.0-6+deb12u4 [301 kB]
+Get:108 http://deb.debian.org/debian bookworm/main arm64 libspandsp2 arm64 0.0.6+dfsg-2+b1 [268 kB]
+Get:109 http://deb.debian.org/debian bookworm/main arm64 libzstd-dev arm64 1.5.4+dfsg2-5 [317 kB]
+Get:110 http://deb.debian.org/debian bookworm/main arm64 libwebpmux3 arm64 1.2.4-0.2+deb12u1 [109 kB]
+Get:111 http://deb.debian.org/debian bookworm/main arm64 libwebpdemux2 arm64 1.2.4-0.2+deb12u1 [99.3 kB]
+Get:112 http://deb.debian.org/debian bookworm/main arm64 libwebp-dev arm64 1.2.4-0.2+deb12u1 [377 kB]
+Get:113 http://deb.debian.org/debian bookworm/main arm64 libtiffxx6 arm64 4.5.0-6+deb12u4 [144 kB]
+Get:114 http://deb.debian.org/debian bookworm/main arm64 libtiff-dev arm64 4.5.0-6+deb12u4 [442 kB]
+Get:115 http://deb.debian.org/debian bookworm/main arm64 libspandsp-dev arm64 0.0.6+dfsg-2+b1 [412 kB]
+Get:116 http://deb.debian.org/debian bookworm/main arm64 libspeex1 arm64 1.2.1-2 [48.3 kB]
+Get:117 http://deb.debian.org/debian bookworm/main arm64 libspeex-dev arm64 1.2.1-2 [64.0 kB]
+Get:118 http://deb.debian.org/debian bookworm/main arm64 libspeexdsp1 arm64 1.2.1-1 [35.8 kB]
+Get:119 http://deb.debian.org/debian bookworm/main arm64 libspeexdsp-dev arm64 1.2.1-1 [45.1 kB]
+Get:120 http://deb.debian.org/debian bookworm/main arm64 libsqlite3-0 arm64 3.40.1-2+deb12u2 [786 kB]
+Get:121 http://deb.debian.org/debian bookworm/main arm64 libsqlite3-dev arm64 3.40.1-2+deb12u2 [979 kB]
+Get:122 http://deb.debian.org/debian bookworm/main arm64 libssl-dev arm64 3.0.20-1~deb12u2 [2312 kB]
+Get:123 http://deb.debian.org/debian bookworm/main arm64 libvorbis0a arm64 1.3.7-1 [86.2 kB]
+Get:124 http://deb.debian.org/debian bookworm/main arm64 libvorbisenc2 arm64 1.3.7-1 [80.4 kB]
+Get:125 http://deb.debian.org/debian bookworm/main arm64 libvorbisfile3 arm64 1.3.7-1 [25.4 kB]
+Get:126 http://deb.debian.org/debian bookworm/main arm64 libvorbis-dev arm64 1.3.7-1 [321 kB]
+Get:127 http://deb.debian.org/debian bookworm/main arm64 libxml2 arm64 2.9.14+dfsg-1.3~deb12u6 [620 kB]
+Get:128 http://deb.debian.org/debian bookworm/main arm64 libxml2-dev arm64 2.9.14+dfsg-1.3~deb12u6 [741 kB]
+Get:129 http://deb.debian.org/debian bookworm/main arm64 pkgconf-bin arm64 1.8.1-1 [28.9 kB]
+Get:130 http://deb.debian.org/debian bookworm/main arm64 pkgconf arm64 1.8.1-1 [25.9 kB]
+Get:131 http://deb.debian.org/debian bookworm/main arm64 pkg-config arm64 1.8.1-1 [13.7 kB]
+Get:132 http://deb.debian.org/debian bookworm/main arm64 uuid-dev arm64 2.38.1-5+deb12u3 [40.5 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 108 MB in 2s (55.6 MB/s)
+Selecting previously unselected package perl-modules-5.36.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6090 files and directories currently installed.)
+Preparing to unpack .../000-perl-modules-5.36_5.36.0-7+deb12u3_all.deb ...
+Unpacking perl-modules-5.36 (5.36.0-7+deb12u3) ...
+Selecting previously unselected package libgdbm6:arm64.
+Preparing to unpack .../001-libgdbm6_1.23-3_arm64.deb ...
+Unpacking libgdbm6:arm64 (1.23-3) ...
+Selecting previously unselected package libgdbm-compat4:arm64.
+Preparing to unpack .../002-libgdbm-compat4_1.23-3_arm64.deb ...
+Unpacking libgdbm-compat4:arm64 (1.23-3) ...
+Selecting previously unselected package libperl5.36:arm64.
+Preparing to unpack .../003-libperl5.36_5.36.0-7+deb12u3_arm64.deb ...
+Unpacking libperl5.36:arm64 (5.36.0-7+deb12u3) ...
+Selecting previously unselected package perl.
+Preparing to unpack .../004-perl_5.36.0-7+deb12u3_arm64.deb ...
+Unpacking perl (5.36.0-7+deb12u3) ...
+Selecting previously unselected package bzip2.
+Preparing to unpack .../005-bzip2_1.0.8-5+b1_arm64.deb ...
+Unpacking bzip2 (1.0.8-5+b1) ...
+Selecting previously unselected package libssl3:arm64.
+Preparing to unpack .../006-libssl3_3.0.20-1~deb12u2_arm64.deb ...
+Unpacking libssl3:arm64 (3.0.20-1~deb12u2) ...
+Selecting previously unselected package openssl.
+Preparing to unpack .../007-openssl_3.0.20-1~deb12u2_arm64.deb ...
+Unpacking openssl (3.0.20-1~deb12u2) ...
+Selecting previously unselected package ca-certificates.
+Preparing to unpack .../008-ca-certificates_20230311+deb12u1_all.deb ...
+Unpacking ca-certificates (20230311+deb12u1) ...
+Selecting previously unselected package libmagic-mgc.
+Preparing to unpack .../009-libmagic-mgc_1%3a5.44-3_arm64.deb ...
+Unpacking libmagic-mgc (1:5.44-3) ...
+Selecting previously unselected package libmagic1:arm64.
+Preparing to unpack .../010-libmagic1_1%3a5.44-3_arm64.deb ...
+Unpacking libmagic1:arm64 (1:5.44-3) ...
+Selecting previously unselected package file.
+Preparing to unpack .../011-file_1%3a5.44-3_arm64.deb ...
+Unpacking file (1:5.44-3) ...
+Selecting previously unselected package libpsl5:arm64.
+Preparing to unpack .../012-libpsl5_0.21.2-1_arm64.deb ...
+Unpacking libpsl5:arm64 (0.21.2-1) ...
+Selecting previously unselected package wget.
+Preparing to unpack .../013-wget_1.21.3-1+deb12u1_arm64.deb ...
+Unpacking wget (1.21.3-1+deb12u1) ...
+Selecting previously unselected package xz-utils.
+Preparing to unpack .../014-xz-utils_5.4.1-1+deb12u1_arm64.deb ...
+Unpacking xz-utils (5.4.1-1+deb12u1) ...
+Selecting previously unselected package binutils-common:arm64.
+Preparing to unpack .../015-binutils-common_2.40-2_arm64.deb ...
+Unpacking binutils-common:arm64 (2.40-2) ...
+Selecting previously unselected package libbinutils:arm64.
+Preparing to unpack .../016-libbinutils_2.40-2_arm64.deb ...
+Unpacking libbinutils:arm64 (2.40-2) ...
+Selecting previously unselected package libctf-nobfd0:arm64.
+Preparing to unpack .../017-libctf-nobfd0_2.40-2_arm64.deb ...
+Unpacking libctf-nobfd0:arm64 (2.40-2) ...
+Selecting previously unselected package libctf0:arm64.
+Preparing to unpack .../018-libctf0_2.40-2_arm64.deb ...
+Unpacking libctf0:arm64 (2.40-2) ...
+Selecting previously unselected package libgprofng0:arm64.
+Preparing to unpack .../019-libgprofng0_2.40-2_arm64.deb ...
+Unpacking libgprofng0:arm64 (2.40-2) ...
+Selecting previously unselected package libjansson4:arm64.
+Preparing to unpack .../020-libjansson4_2.14-2_arm64.deb ...
+Unpacking libjansson4:arm64 (2.14-2) ...
+Selecting previously unselected package binutils-aarch64-linux-gnu.
+Preparing to unpack .../021-binutils-aarch64-linux-gnu_2.40-2_arm64.deb ...
+Unpacking binutils-aarch64-linux-gnu (2.40-2) ...
+Selecting previously unselected package binutils.
+Preparing to unpack .../022-binutils_2.40-2_arm64.deb ...
+Unpacking binutils (2.40-2) ...
+Selecting previously unselected package libc-dev-bin.
+Preparing to unpack .../023-libc-dev-bin_2.36-9+deb12u14_arm64.deb ...
+Unpacking libc-dev-bin (2.36-9+deb12u14) ...
+Selecting previously unselected package linux-libc-dev:arm64.
+Preparing to unpack .../024-linux-libc-dev_6.1.180-1_arm64.deb ...
+Unpacking linux-libc-dev:arm64 (6.1.180-1) ...
+Selecting previously unselected package libcrypt-dev:arm64.
+Preparing to unpack .../025-libcrypt-dev_1%3a4.4.33-2_arm64.deb ...
+Unpacking libcrypt-dev:arm64 (1:4.4.33-2) ...
+Selecting previously unselected package libkrb5support0:arm64.
+Preparing to unpack .../026-libkrb5support0_1.20.1-2+deb12u5_arm64.deb ...
+Unpacking libkrb5support0:arm64 (1.20.1-2+deb12u5) ...
+Selecting previously unselected package libk5crypto3:arm64.
+Preparing to unpack .../027-libk5crypto3_1.20.1-2+deb12u5_arm64.deb ...
+Unpacking libk5crypto3:arm64 (1.20.1-2+deb12u5) ...
+Selecting previously unselected package libkeyutils1:arm64.
+Preparing to unpack .../028-libkeyutils1_1.6.3-2_arm64.deb ...
+Unpacking libkeyutils1:arm64 (1.6.3-2) ...
+Selecting previously unselected package libkrb5-3:arm64.
+Preparing to unpack .../029-libkrb5-3_1.20.1-2+deb12u5_arm64.deb ...
+Unpacking libkrb5-3:arm64 (1.20.1-2+deb12u5) ...
+Selecting previously unselected package libgssapi-krb5-2:arm64.
+Preparing to unpack .../030-libgssapi-krb5-2_1.20.1-2+deb12u5_arm64.deb ...
+Unpacking libgssapi-krb5-2:arm64 (1.20.1-2+deb12u5) ...
+Selecting previously unselected package libtirpc-common.
+Preparing to unpack .../031-libtirpc-common_1.3.3+ds-1_all.deb ...
+Unpacking libtirpc-common (1.3.3+ds-1) ...
+Selecting previously unselected package libtirpc3:arm64.
+Preparing to unpack .../032-libtirpc3_1.3.3+ds-1_arm64.deb ...
+Unpacking libtirpc3:arm64 (1.3.3+ds-1) ...
+Selecting previously unselected package libnsl2:arm64.
+Preparing to unpack .../033-libnsl2_1.3.0-2_arm64.deb ...
+Unpacking libnsl2:arm64 (1.3.0-2) ...
+Selecting previously unselected package libtirpc-dev:arm64.
+Preparing to unpack .../034-libtirpc-dev_1.3.3+ds-1_arm64.deb ...
+Unpacking libtirpc-dev:arm64 (1.3.3+ds-1) ...
+Selecting previously unselected package libnsl-dev:arm64.
+Preparing to unpack .../035-libnsl-dev_1.3.0-2_arm64.deb ...
+Unpacking libnsl-dev:arm64 (1.3.0-2) ...
+Selecting previously unselected package rpcsvc-proto.
+Preparing to unpack .../036-rpcsvc-proto_1.4.3-1_arm64.deb ...
+Unpacking rpcsvc-proto (1.4.3-1) ...
+Selecting previously unselected package libc6-dev:arm64.
+Preparing to unpack .../037-libc6-dev_2.36-9+deb12u14_arm64.deb ...
+Unpacking libc6-dev:arm64 (2.36-9+deb12u14) ...
+Selecting previously unselected package libisl23:arm64.
+Preparing to unpack .../038-libisl23_0.25-1.1_arm64.deb ...
+Unpacking libisl23:arm64 (0.25-1.1) ...
+Selecting previously unselected package libmpfr6:arm64.
+Preparing to unpack .../039-libmpfr6_4.2.0-1_arm64.deb ...
+Unpacking libmpfr6:arm64 (4.2.0-1) ...
+Selecting previously unselected package libmpc3:arm64.
+Preparing to unpack .../040-libmpc3_1.3.1-1_arm64.deb ...
+Unpacking libmpc3:arm64 (1.3.1-1) ...
+Selecting previously unselected package cpp-12.
+Preparing to unpack .../041-cpp-12_12.2.0-14+deb12u1_arm64.deb ...
+Unpacking cpp-12 (12.2.0-14+deb12u1) ...
+Selecting previously unselected package cpp.
+Preparing to unpack .../042-cpp_4%3a12.2.0-3_arm64.deb ...
+Unpacking cpp (4:12.2.0-3) ...
+Selecting previously unselected package libcc1-0:arm64.
+Preparing to unpack .../043-libcc1-0_12.2.0-14+deb12u1_arm64.deb ...
+Unpacking libcc1-0:arm64 (12.2.0-14+deb12u1) ...
+Selecting previously unselected package libgomp1:arm64.
+Preparing to unpack .../044-libgomp1_12.2.0-14+deb12u1_arm64.deb ...
+Unpacking libgomp1:arm64 (12.2.0-14+deb12u1) ...
+Selecting previously unselected package libitm1:arm64.
+Preparing to unpack .../045-libitm1_12.2.0-14+deb12u1_arm64.deb ...
+Unpacking libitm1:arm64 (12.2.0-14+deb12u1) ...
+Selecting previously unselected package libatomic1:arm64.
+Preparing to unpack .../046-libatomic1_12.2.0-14+deb12u1_arm64.deb ...
+Unpacking libatomic1:arm64 (12.2.0-14+deb12u1) ...
+Selecting previously unselected package libasan8:arm64.
+Preparing to unpack .../047-libasan8_12.2.0-14+deb12u1_arm64.deb ...
+Unpacking libasan8:arm64 (12.2.0-14+deb12u1) ...
+Selecting previously unselected package liblsan0:arm64.
+Preparing to unpack .../048-liblsan0_12.2.0-14+deb12u1_arm64.deb ...
+Unpacking liblsan0:arm64 (12.2.0-14+deb12u1) ...
+Selecting previously unselected package libtsan2:arm64.
+Preparing to unpack .../049-libtsan2_12.2.0-14+deb12u1_arm64.deb ...
+Unpacking libtsan2:arm64 (12.2.0-14+deb12u1) ...
+Selecting previously unselected package libubsan1:arm64.
+Preparing to unpack .../050-libubsan1_12.2.0-14+deb12u1_arm64.deb ...
+Unpacking libubsan1:arm64 (12.2.0-14+deb12u1) ...
+Selecting previously unselected package libhwasan0:arm64.
+Preparing to unpack .../051-libhwasan0_12.2.0-14+deb12u1_arm64.deb ...
+Unpacking libhwasan0:arm64 (12.2.0-14+deb12u1) ...
+Selecting previously unselected package libgcc-12-dev:arm64.
+Preparing to unpack .../052-libgcc-12-dev_12.2.0-14+deb12u1_arm64.deb ...
+Unpacking libgcc-12-dev:arm64 (12.2.0-14+deb12u1) ...
+Selecting previously unselected package gcc-12.
+Preparing to unpack .../053-gcc-12_12.2.0-14+deb12u1_arm64.deb ...
+Unpacking gcc-12 (12.2.0-14+deb12u1) ...
+Selecting previously unselected package gcc.
+Preparing to unpack .../054-gcc_4%3a12.2.0-3_arm64.deb ...
+Unpacking gcc (4:12.2.0-3) ...
+Selecting previously unselected package libstdc++-12-dev:arm64.
+Preparing to unpack .../055-libstdc++-12-dev_12.2.0-14+deb12u1_arm64.deb ...
+Unpacking libstdc++-12-dev:arm64 (12.2.0-14+deb12u1) ...
+Selecting previously unselected package g++-12.
+Preparing to unpack .../056-g++-12_12.2.0-14+deb12u1_arm64.deb ...
+Unpacking g++-12 (12.2.0-14+deb12u1) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../057-g++_4%3a12.2.0-3_arm64.deb ...
+Unpacking g++ (4:12.2.0-3) ...
+Selecting previously unselected package make.
+Preparing to unpack .../058-make_4.3-4.1_arm64.deb ...
+Unpacking make (4.3-4.1) ...
+Selecting previously unselected package libdpkg-perl.
+Preparing to unpack .../059-libdpkg-perl_1.21.23_all.deb ...
+Unpacking libdpkg-perl (1.21.23) ...
+Selecting previously unselected package patch.
+Preparing to unpack .../060-patch_2.7.6-7_arm64.deb ...
+Unpacking patch (2.7.6-7) ...
+Selecting previously unselected package dpkg-dev.
+Preparing to unpack .../061-dpkg-dev_1.21.23_all.deb ...
+Unpacking dpkg-dev (1.21.23) ...
+Selecting previously unselected package build-essential.
+Preparing to unpack .../062-build-essential_12.9_arm64.deb ...
+Unpacking build-essential (12.9) ...
+Selecting previously unselected package libicu72:arm64.
+Preparing to unpack .../063-libicu72_72.1-3+deb12u1_arm64.deb ...
+Unpacking libicu72:arm64 (72.1-3+deb12u1) ...
+Selecting previously unselected package icu-devtools.
+Preparing to unpack .../064-icu-devtools_72.1-3+deb12u1_arm64.deb ...
+Unpacking icu-devtools (72.1-3+deb12u1) ...
+Selecting previously unselected package libbrotli1:arm64.
+Preparing to unpack .../065-libbrotli1_1.0.9-2+b6_arm64.deb ...
+Unpacking libbrotli1:arm64 (1.0.9-2+b6) ...
+Selecting previously unselected package libbsd0:arm64.
+Preparing to unpack .../066-libbsd0_0.11.7-2_arm64.deb ...
+Unpacking libbsd0:arm64 (0.11.7-2) ...
+Selecting previously unselected package libmd-dev:arm64.
+Preparing to unpack .../067-libmd-dev_1.0.4-2_arm64.deb ...
+Unpacking libmd-dev:arm64 (1.0.4-2) ...
+Selecting previously unselected package libbsd-dev:arm64.
+Preparing to unpack .../068-libbsd-dev_0.11.7-2_arm64.deb ...
+Unpacking libbsd-dev:arm64 (0.11.7-2) ...
+Selecting previously unselected package libsasl2-modules-db:arm64.
+Preparing to unpack .../069-libsasl2-modules-db_2.1.28+dfsg-10_arm64.deb ...
+Unpacking libsasl2-modules-db:arm64 (2.1.28+dfsg-10) ...
+Selecting previously unselected package libsasl2-2:arm64.
+Preparing to unpack .../070-libsasl2-2_2.1.28+dfsg-10_arm64.deb ...
+Unpacking libsasl2-2:arm64 (2.1.28+dfsg-10) ...
+Selecting previously unselected package libldap-2.5-0:arm64.
+Preparing to unpack .../071-libldap-2.5-0_2.5.13+dfsg-5_arm64.deb ...
+Unpacking libldap-2.5-0:arm64 (2.5.13+dfsg-5) ...
+Selecting previously unselected package libnghttp2-14:arm64.
+Preparing to unpack .../072-libnghttp2-14_1.52.0-1+deb12u3_arm64.deb ...
+Unpacking libnghttp2-14:arm64 (1.52.0-1+deb12u3) ...
+Selecting previously unselected package librtmp1:arm64.
+Preparing to unpack .../073-librtmp1_2.4+20151223.gitfa8646d.1-2+b2_arm64.deb ...
+Unpacking librtmp1:arm64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+Selecting previously unselected package libssh2-1:arm64.
+Preparing to unpack .../074-libssh2-1_1.10.0-3+b1_arm64.deb ...
+Unpacking libssh2-1:arm64 (1.10.0-3+b1) ...
+Selecting previously unselected package libcurl4:arm64.
+Preparing to unpack .../075-libcurl4_7.88.1-10+deb12u15_arm64.deb ...
+Unpacking libcurl4:arm64 (7.88.1-10+deb12u15) ...
+Selecting previously unselected package libcurl4-openssl-dev:arm64.
+Preparing to unpack .../076-libcurl4-openssl-dev_7.88.1-10+deb12u15_arm64.deb ...
+Unpacking libcurl4-openssl-dev:arm64 (7.88.1-10+deb12u15) ...
+Selecting previously unselected package libdeflate0:arm64.
+Preparing to unpack .../077-libdeflate0_1.14-1_arm64.deb ...
+Unpacking libdeflate0:arm64 (1.14-1) ...
+Selecting previously unselected package libdeflate-dev:arm64.
+Preparing to unpack .../078-libdeflate-dev_1.14-1_arm64.deb ...
+Unpacking libdeflate-dev:arm64 (1.14-1) ...
+Selecting previously unselected package libedit2:arm64.
+Preparing to unpack .../079-libedit2_3.1-20221030-2_arm64.deb ...
+Unpacking libedit2:arm64 (3.1-20221030-2) ...
+Selecting previously unselected package libncurses6:arm64.
+Preparing to unpack .../080-libncurses6_6.4-4_arm64.deb ...
+Unpacking libncurses6:arm64 (6.4-4) ...
+Selecting previously unselected package libncursesw6:arm64.
+Preparing to unpack .../081-libncursesw6_6.4-4_arm64.deb ...
+Unpacking libncursesw6:arm64 (6.4-4) ...
+Selecting previously unselected package libncurses-dev:arm64.
+Preparing to unpack .../082-libncurses-dev_6.4-4_arm64.deb ...
+Unpacking libncurses-dev:arm64 (6.4-4) ...
+Selecting previously unselected package libedit-dev:arm64.
+Preparing to unpack .../083-libedit-dev_3.1-20221030-2_arm64.deb ...
+Unpacking libedit-dev:arm64 (3.1-20221030-2) ...
+Selecting previously unselected package libicu-dev:arm64.
+Preparing to unpack .../084-libicu-dev_72.1-3+deb12u1_arm64.deb ...
+Unpacking libicu-dev:arm64 (72.1-3+deb12u1) ...
+Selecting previously unselected package libjbig0:arm64.
+Preparing to unpack .../085-libjbig0_2.1-6.1_arm64.deb ...
+Unpacking libjbig0:arm64 (2.1-6.1) ...
+Selecting previously unselected package libjbig-dev:arm64.
+Preparing to unpack .../086-libjbig-dev_2.1-6.1_arm64.deb ...
+Unpacking libjbig-dev:arm64 (2.1-6.1) ...
+Selecting previously unselected package libjpeg62-turbo:arm64.
+Preparing to unpack .../087-libjpeg62-turbo_1%3a2.1.5-2_arm64.deb ...
+Unpacking libjpeg62-turbo:arm64 (1:2.1.5-2) ...
+Selecting previously unselected package libjpeg62-turbo-dev:arm64.
+Preparing to unpack .../088-libjpeg62-turbo-dev_1%3a2.1.5-2_arm64.deb ...
+Unpacking libjpeg62-turbo-dev:arm64 (1:2.1.5-2) ...
+Selecting previously unselected package libjpeg-dev:arm64.
+Preparing to unpack .../089-libjpeg-dev_1%3a2.1.5-2_arm64.deb ...
+Unpacking libjpeg-dev:arm64 (1:2.1.5-2) ...
+Selecting previously unselected package liblerc4:arm64.
+Preparing to unpack .../090-liblerc4_4.0.0+ds-2_arm64.deb ...
+Unpacking liblerc4:arm64 (4.0.0+ds-2) ...
+Selecting previously unselected package liblerc-dev:arm64.
+Preparing to unpack .../091-liblerc-dev_4.0.0+ds-2_arm64.deb ...
+Unpacking liblerc-dev:arm64 (4.0.0+ds-2) ...
+Selecting previously unselected package liblzma-dev:arm64.
+Preparing to unpack .../092-liblzma-dev_5.4.1-1+deb12u1_arm64.deb ...
+Unpacking liblzma-dev:arm64 (5.4.1-1+deb12u1) ...
+Selecting previously unselected package libslang2:arm64.
+Preparing to unpack .../093-libslang2_2.3.3-3_arm64.deb ...
+Unpacking libslang2:arm64 (2.3.3-3) ...
+Selecting previously unselected package libpng16-16:arm64.
+Preparing to unpack .../094-libpng16-16_1.6.39-2+deb12u5_arm64.deb ...
+Unpacking libpng16-16:arm64 (1.6.39-2+deb12u5) ...
+Selecting previously unselected package zlib1g-dev:arm64.
+Preparing to unpack .../095-zlib1g-dev_1%3a1.2.13.dfsg-1_arm64.deb ...
+Unpacking zlib1g-dev:arm64 (1:1.2.13.dfsg-1) ...
+Selecting previously unselected package libpng-dev:arm64.
+Preparing to unpack .../096-libpng-dev_1.6.39-2+deb12u5_arm64.deb ...
+Unpacking libpng-dev:arm64 (1.6.39-2+deb12u5) ...
+Selecting previously unselected package libslang2-dev:arm64.
+Preparing to unpack .../097-libslang2-dev_2.3.3-3_arm64.deb ...
+Unpacking libslang2-dev:arm64 (2.3.3-3) ...
+Selecting previously unselected package libnewt0.52:arm64.
+Preparing to unpack .../098-libnewt0.52_0.52.23-1+b1_arm64.deb ...
+Unpacking libnewt0.52:arm64 (0.52.23-1+b1) ...
+Selecting previously unselected package libnewt-dev:arm64.
+Preparing to unpack .../099-libnewt-dev_0.52.23-1+b1_arm64.deb ...
+Unpacking libnewt-dev:arm64 (0.52.23-1+b1) ...
+Selecting previously unselected package libogg0:arm64.
+Preparing to unpack .../100-libogg0_1.3.5-3_arm64.deb ...
+Unpacking libogg0:arm64 (1.3.5-3) ...
+Selecting previously unselected package libogg-dev:arm64.
+Preparing to unpack .../101-libogg-dev_1.3.5-3_arm64.deb ...
+Unpacking libogg-dev:arm64 (1.3.5-3) ...
+Selecting previously unselected package libopus0:arm64.
+Preparing to unpack .../102-libopus0_1.3.1-3_arm64.deb ...
+Unpacking libopus0:arm64 (1.3.1-3) ...
+Selecting previously unselected package libopus-dev:arm64.
+Preparing to unpack .../103-libopus-dev_1.3.1-3_arm64.deb ...
+Unpacking libopus-dev:arm64 (1.3.1-3) ...
+Selecting previously unselected package libpkgconf3:arm64.
+Preparing to unpack .../104-libpkgconf3_1.8.1-1_arm64.deb ...
+Unpacking libpkgconf3:arm64 (1.8.1-1) ...
+Selecting previously unselected package libwebp7:arm64.
+Preparing to unpack .../105-libwebp7_1.2.4-0.2+deb12u1_arm64.deb ...
+Unpacking libwebp7:arm64 (1.2.4-0.2+deb12u1) ...
+Selecting previously unselected package libtiff6:arm64.
+Preparing to unpack .../106-libtiff6_4.5.0-6+deb12u4_arm64.deb ...
+Unpacking libtiff6:arm64 (4.5.0-6+deb12u4) ...
+Selecting previously unselected package libspandsp2:arm64.
+Preparing to unpack .../107-libspandsp2_0.0.6+dfsg-2+b1_arm64.deb ...
+Unpacking libspandsp2:arm64 (0.0.6+dfsg-2+b1) ...
+Selecting previously unselected package libzstd-dev:arm64.
+Preparing to unpack .../108-libzstd-dev_1.5.4+dfsg2-5_arm64.deb ...
+Unpacking libzstd-dev:arm64 (1.5.4+dfsg2-5) ...
+Selecting previously unselected package libwebpmux3:arm64.
+Preparing to unpack .../109-libwebpmux3_1.2.4-0.2+deb12u1_arm64.deb ...
+Unpacking libwebpmux3:arm64 (1.2.4-0.2+deb12u1) ...
+Selecting previously unselected package libwebpdemux2:arm64.
+Preparing to unpack .../110-libwebpdemux2_1.2.4-0.2+deb12u1_arm64.deb ...
+Unpacking libwebpdemux2:arm64 (1.2.4-0.2+deb12u1) ...
+Selecting previously unselected package libwebp-dev:arm64.
+Preparing to unpack .../111-libwebp-dev_1.2.4-0.2+deb12u1_arm64.deb ...
+Unpacking libwebp-dev:arm64 (1.2.4-0.2+deb12u1) ...
+Selecting previously unselected package libtiffxx6:arm64.
+Preparing to unpack .../112-libtiffxx6_4.5.0-6+deb12u4_arm64.deb ...
+Unpacking libtiffxx6:arm64 (4.5.0-6+deb12u4) ...
+Selecting previously unselected package libtiff-dev:arm64.
+Preparing to unpack .../113-libtiff-dev_4.5.0-6+deb12u4_arm64.deb ...
+Unpacking libtiff-dev:arm64 (4.5.0-6+deb12u4) ...
+Selecting previously unselected package libspandsp-dev:arm64.
+Preparing to unpack .../114-libspandsp-dev_0.0.6+dfsg-2+b1_arm64.deb ...
+Unpacking libspandsp-dev:arm64 (0.0.6+dfsg-2+b1) ...
+Selecting previously unselected package libspeex1:arm64.
+Preparing to unpack .../115-libspeex1_1.2.1-2_arm64.deb ...
+Unpacking libspeex1:arm64 (1.2.1-2) ...
+Selecting previously unselected package libspeex-dev:arm64.
+Preparing to unpack .../116-libspeex-dev_1.2.1-2_arm64.deb ...
+Unpacking libspeex-dev:arm64 (1.2.1-2) ...
+Selecting previously unselected package libspeexdsp1:arm64.
+Preparing to unpack .../117-libspeexdsp1_1.2.1-1_arm64.deb ...
+Unpacking libspeexdsp1:arm64 (1.2.1-1) ...
+Selecting previously unselected package libspeexdsp-dev:arm64.
+Preparing to unpack .../118-libspeexdsp-dev_1.2.1-1_arm64.deb ...
+Unpacking libspeexdsp-dev:arm64 (1.2.1-1) ...
+Selecting previously unselected package libsqlite3-0:arm64.
+Preparing to unpack .../119-libsqlite3-0_3.40.1-2+deb12u2_arm64.deb ...
+Unpacking libsqlite3-0:arm64 (3.40.1-2+deb12u2) ...
+Selecting previously unselected package libsqlite3-dev:arm64.
+Preparing to unpack .../120-libsqlite3-dev_3.40.1-2+deb12u2_arm64.deb ...
+Unpacking libsqlite3-dev:arm64 (3.40.1-2+deb12u2) ...
+Selecting previously unselected package libssl-dev:arm64.
+Preparing to unpack .../121-libssl-dev_3.0.20-1~deb12u2_arm64.deb ...
+Unpacking libssl-dev:arm64 (3.0.20-1~deb12u2) ...
+Selecting previously unselected package libvorbis0a:arm64.
+Preparing to unpack .../122-libvorbis0a_1.3.7-1_arm64.deb ...
+Unpacking libvorbis0a:arm64 (1.3.7-1) ...
+Selecting previously unselected package libvorbisenc2:arm64.
+Preparing to unpack .../123-libvorbisenc2_1.3.7-1_arm64.deb ...
+Unpacking libvorbisenc2:arm64 (1.3.7-1) ...
+Selecting previously unselected package libvorbisfile3:arm64.
+Preparing to unpack .../124-libvorbisfile3_1.3.7-1_arm64.deb ...
+Unpacking libvorbisfile3:arm64 (1.3.7-1) ...
+Selecting previously unselected package libvorbis-dev:arm64.
+Preparing to unpack .../125-libvorbis-dev_1.3.7-1_arm64.deb ...
+Unpacking libvorbis-dev:arm64 (1.3.7-1) ...
+Selecting previously unselected package libxml2:arm64.
+Preparing to unpack .../126-libxml2_2.9.14+dfsg-1.3~deb12u6_arm64.deb ...
+Unpacking libxml2:arm64 (2.9.14+dfsg-1.3~deb12u6) ...
+Selecting previously unselected package libxml2-dev:arm64.
+Preparing to unpack .../127-libxml2-dev_2.9.14+dfsg-1.3~deb12u6_arm64.deb ...
+Unpacking libxml2-dev:arm64 (2.9.14+dfsg-1.3~deb12u6) ...
+Selecting previously unselected package pkgconf-bin.
+Preparing to unpack .../128-pkgconf-bin_1.8.1-1_arm64.deb ...
+Unpacking pkgconf-bin (1.8.1-1) ...
+Selecting previously unselected package pkgconf:arm64.
+Preparing to unpack .../129-pkgconf_1.8.1-1_arm64.deb ...
+Unpacking pkgconf:arm64 (1.8.1-1) ...
+Selecting previously unselected package pkg-config:arm64.
+Preparing to unpack .../130-pkg-config_1.8.1-1_arm64.deb ...
+Unpacking pkg-config:arm64 (1.8.1-1) ...
+Selecting previously unselected package uuid-dev:arm64.
+Preparing to unpack .../131-uuid-dev_2.38.1-5+deb12u3_arm64.deb ...
+Unpacking uuid-dev:arm64 (2.38.1-5+deb12u3) ...
+Setting up libkeyutils1:arm64 (1.6.3-2) ...
+Setting up libpsl5:arm64 (0.21.2-1) ...
+Setting up libicu72:arm64 (72.1-3+deb12u1) ...
+Setting up libogg0:arm64 (1.3.5-3) ...
+Setting up liblerc4:arm64 (4.0.0+ds-2) ...
+Setting up libzstd-dev:arm64 (1.5.4+dfsg2-5) ...
+Setting up libspeex1:arm64 (1.2.1-2) ...
+Setting up wget (1.21.3-1+deb12u1) ...
+Setting up libmagic-mgc (1:5.44-3) ...
+Setting up libtirpc-common (1.3.3+ds-1) ...
+Setting up libbrotli1:arm64 (1.0.9-2+b6) ...
+Setting up libsqlite3-0:arm64 (3.40.1-2+deb12u2) ...
+Setting up binutils-common:arm64 (2.40-2) ...
+Setting up libssl3:arm64 (3.0.20-1~deb12u2) ...
+Setting up libnghttp2-14:arm64 (1.52.0-1+deb12u3) ...
+Setting up libmagic1:arm64 (1:5.44-3) ...
+Setting up libdeflate0:arm64 (1.14-1) ...
+Setting up linux-libc-dev:arm64 (6.1.180-1) ...
+Setting up libctf-nobfd0:arm64 (2.40-2) ...
+Setting up file (1:5.44-3) ...
+Setting up libogg-dev:arm64 (1.3.5-3) ...
+Setting up libgomp1:arm64 (12.2.0-14+deb12u1) ...
+Setting up bzip2 (1.0.8-5+b1) ...
+Setting up libjbig0:arm64 (2.1-6.1) ...
+Setting up libjansson4:arm64 (2.14-2) ...
+Setting up libkrb5support0:arm64 (1.20.1-2+deb12u5) ...
+Setting up libsasl2-modules-db:arm64 (2.1.28+dfsg-10) ...
+Setting up perl-modules-5.36 (5.36.0-7+deb12u3) ...
+Setting up libpkgconf3:arm64 (1.8.1-1) ...
+Setting up rpcsvc-proto (1.4.3-1) ...
+Setting up libjpeg62-turbo:arm64 (1:2.1.5-2) ...
+Setting up libslang2:arm64 (2.3.3-3) ...
+Setting up make (4.3-4.1) ...
+Setting up libmpfr6:arm64 (4.2.0-1) ...
+Setting up librtmp1:arm64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+Setting up libncurses6:arm64 (6.4-4) ...
+Setting up xz-utils (5.4.1-1+deb12u1) ...
+update-alternatives: using /usr/bin/xz to provide /usr/bin/lzma (lzma) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzma.1.gz because associated file /usr/share/man/man1/xz.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/unlzma.1.gz because associated file /usr/share/man/man1/unxz.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzcat.1.gz because associated file /usr/share/man/man1/xzcat.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzmore.1.gz because associated file /usr/share/man/man1/xzmore.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzless.1.gz because associated file /usr/share/man/man1/xzless.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzdiff.1.gz because associated file /usr/share/man/man1/xzdiff.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzcmp.1.gz because associated file /usr/share/man/man1/xzcmp.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzgrep.1.gz because associated file /usr/share/man/man1/xzgrep.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzegrep.1.gz because associated file /usr/share/man/man1/xzegrep.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzfgrep.1.gz because associated file /usr/share/man/man1/xzfgrep.1.gz (of link group lzma) doesn't exist
+Setting up libopus0:arm64 (1.3.1-3) ...
+Setting up libssl-dev:arm64 (3.0.20-1~deb12u2) ...
+Setting up libpng16-16:arm64 (1.6.39-2+deb12u5) ...
+Setting up libmpc3:arm64 (1.3.1-1) ...
+Setting up libatomic1:arm64 (12.2.0-14+deb12u1) ...
+Setting up libvorbis0a:arm64 (1.3.7-1) ...
+Setting up patch (2.7.6-7) ...
+Setting up libspeex-dev:arm64 (1.2.1-2) ...
+Setting up icu-devtools (72.1-3+deb12u1) ...
+Setting up pkgconf-bin (1.8.1-1) ...
+Setting up liblerc-dev:arm64 (4.0.0+ds-2) ...
+Setting up libncursesw6:arm64 (6.4-4) ...
+Setting up libk5crypto3:arm64 (1.20.1-2+deb12u5) ...
+Setting up libsasl2-2:arm64 (2.1.28+dfsg-10) ...
+Setting up libwebp7:arm64 (1.2.4-0.2+deb12u1) ...
+Setting up liblzma-dev:arm64 (5.4.1-1+deb12u1) ...
+Setting up libubsan1:arm64 (12.2.0-14+deb12u1) ...
+Setting up libhwasan0:arm64 (12.2.0-14+deb12u1) ...
+Setting up libcrypt-dev:arm64 (1:4.4.33-2) ...
+Setting up libtiff6:arm64 (4.5.0-6+deb12u4) ...
+Setting up libasan8:arm64 (12.2.0-14+deb12u1) ...
+Setting up libspeexdsp1:arm64 (1.2.1-1) ...
+Setting up libmd-dev:arm64 (1.0.4-2) ...
+Setting up libssh2-1:arm64 (1.10.0-3+b1) ...
+Setting up libkrb5-3:arm64 (1.20.1-2+deb12u5) ...
+Setting up libtsan2:arm64 (12.2.0-14+deb12u1) ...
+Setting up libbinutils:arm64 (2.40-2) ...
+Setting up libisl23:arm64 (0.25-1.1) ...
+Setting up libc-dev-bin (2.36-9+deb12u14) ...
+Setting up openssl (3.0.20-1~deb12u2) ...
+Setting up libwebpmux3:arm64 (1.2.4-0.2+deb12u1) ...
+Setting up libbsd0:arm64 (0.11.7-2) ...
+Setting up libtiffxx6:arm64 (4.5.0-6+deb12u4) ...
+Setting up libdeflate-dev:arm64 (1.14-1) ...
+Setting up libxml2:arm64 (2.9.14+dfsg-1.3~deb12u6) ...
+Setting up libbsd-dev:arm64 (0.11.7-2) ...
+Setting up libcc1-0:arm64 (12.2.0-14+deb12u1) ...
+Setting up liblsan0:arm64 (12.2.0-14+deb12u1) ...
+Setting up libitm1:arm64 (12.2.0-14+deb12u1) ...
+Setting up libvorbisenc2:arm64 (1.3.7-1) ...
+Setting up libgdbm6:arm64 (1.23-3) ...
+Setting up libctf0:arm64 (2.40-2) ...
+Setting up cpp-12 (12.2.0-14+deb12u1) ...
+Setting up libnewt0.52:arm64 (0.52.23-1+b1) ...
+Setting up libwebpdemux2:arm64 (1.2.4-0.2+deb12u1) ...
+Setting up libedit2:arm64 (3.1-20221030-2) ...
+Setting up libspeexdsp-dev:arm64 (1.2.1-1) ...
+Setting up libjbig-dev:arm64 (2.1-6.1) ...
+Setting up libopus-dev:arm64 (1.3.1-3) ...
+Setting up libldap-2.5-0:arm64 (2.5.13+dfsg-5) ...
+Setting up libspandsp2:arm64 (0.0.6+dfsg-2+b1) ...
+Setting up pkgconf:arm64 (1.8.1-1) ...
+Setting up ca-certificates (20230311+deb12u1) ...
+Updating certificates in /etc/ssl/certs...
+142 added, 0 removed; done.
+Setting up libvorbisfile3:arm64 (1.3.7-1) ...
+Setting up libgprofng0:arm64 (2.40-2) ...
+Setting up libwebp-dev:arm64 (1.2.4-0.2+deb12u1) ...
+Setting up libgcc-12-dev:arm64 (12.2.0-14+deb12u1) ...
+Setting up libgssapi-krb5-2:arm64 (1.20.1-2+deb12u5) ...
+Setting up pkg-config:arm64 (1.8.1-1) ...
+Setting up libgdbm-compat4:arm64 (1.23-3) ...
+Setting up cpp (4:12.2.0-3) ...
+Setting up libcurl4:arm64 (7.88.1-10+deb12u15) ...
+Setting up libperl5.36:arm64 (5.36.0-7+deb12u3) ...
+Setting up libvorbis-dev:arm64 (1.3.7-1) ...
+Setting up libtirpc3:arm64 (1.3.3+ds-1) ...
+Setting up binutils-aarch64-linux-gnu (2.40-2) ...
+Setting up binutils (2.40-2) ...
+Setting up perl (5.36.0-7+deb12u3) ...
+Setting up libtirpc-dev:arm64 (1.3.3+ds-1) ...
+Setting up gcc-12 (12.2.0-14+deb12u1) ...
+Setting up libcurl4-openssl-dev:arm64 (7.88.1-10+deb12u15) ...
+Setting up libdpkg-perl (1.21.23) ...
+Setting up libnsl2:arm64 (1.3.0-2) ...
+Setting up gcc (4:12.2.0-3) ...
+Setting up dpkg-dev (1.21.23) ...
+Setting up libnsl-dev:arm64 (1.3.0-2) ...
+Setting up libc6-dev:arm64 (2.36-9+deb12u14) ...
+Setting up libicu-dev:arm64 (72.1-3+deb12u1) ...
+Setting up libncurses-dev:arm64 (6.4-4) ...
+Setting up libstdc++-12-dev:arm64 (12.2.0-14+deb12u1) ...
+Setting up libxml2-dev:arm64 (2.9.14+dfsg-1.3~deb12u6) ...
+Setting up libsqlite3-dev:arm64 (3.40.1-2+deb12u2) ...
+Setting up libjpeg62-turbo-dev:arm64 (1:2.1.5-2) ...
+Setting up uuid-dev:arm64 (2.38.1-5+deb12u3) ...
+Setting up libedit-dev:arm64 (3.1-20221030-2) ...
+Setting up zlib1g-dev:arm64 (1:1.2.13.dfsg-1) ...
+Setting up g++-12 (12.2.0-14+deb12u1) ...
+Setting up libpng-dev:arm64 (1.6.39-2+deb12u5) ...
+Setting up libjpeg-dev:arm64 (1:2.1.5-2) ...
+Setting up libtiff-dev:arm64 (4.5.0-6+deb12u4) ...
+Setting up g++ (4:12.2.0-3) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+Setting up build-essential (12.9) ...
+Setting up libslang2-dev:arm64 (2.3.3-3) ...
+Setting up libspandsp-dev:arm64 (0.0.6+dfsg-2+b1) ...
+Setting up libnewt-dev:arm64 (0.52.23-1+b1) ...
+Processing triggers for libc-bin (2.36-9+deb12u14) ...
+Processing triggers for ca-certificates (20230311+deb12u1) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
++ cd /tmp
++ wget -O asterisk.tar.gz https://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-22.7.0.tar.gz
+--2026-08-06 08:01:00--  https://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-22.7.0.tar.gz
+Resolving downloads.asterisk.org (downloads.asterisk.org)... 165.22.184.19, 2604:a880:400:d0::14:9001
+Connecting to downloads.asterisk.org (downloads.asterisk.org)|165.22.184.19|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 26465168 (25M) [application/octet-stream]
+Saving to: 'asterisk.tar.gz'
+
+     0K .......... .......... .......... .......... ..........  0% 15.4M 2s
+    50K .......... .......... .......... .......... ..........  0% 7.54M 2s
+   100K .......... .......... .......... .......... ..........  0% 9.96M 2s
+   150K .......... .......... .......... .......... ..........  0% 5.54M 3s
+   200K .......... .......... .......... .......... ..........  0% 24.7M 3s
+   250K .......... .......... .......... .......... ..........  1% 25.7M 2s
+   300K .......... .......... .......... .......... ..........  1% 20.3M 2s
+   350K .......... .......... .......... .......... ..........  1% 10.5M 2s
+   400K .......... .......... .......... .......... ..........  1% 13.8M 2s
+   450K .......... .......... .......... .......... ..........  1% 22.3M 2s
+   500K .......... .......... .......... .......... ..........  2% 25.0M 2s
+   550K .......... .......... .......... .......... ..........  2% 23.5M 2s
+   600K .......... .......... .......... .......... ..........  2% 23.0M 2s
+   650K .......... .......... .......... .......... ..........  2% 25.4M 2s
+   700K .......... .......... .......... .......... ..........  2% 21.9M 2s
+   750K .......... .......... .......... .......... ..........  3% 18.3M 2s
+   800K .......... .......... .......... .......... ..........  3% 22.8M 2s
+   850K .......... .......... .......... .......... ..........  3% 22.4M 2s
+   900K .......... .......... .......... .......... ..........  3% 24.9M 2s
+   950K .......... .......... .......... .......... ..........  3% 23.0M 2s
+  1000K .......... .......... .......... .......... ..........  4% 21.6M 2s
+  1050K .......... .......... .......... .......... ..........  4% 25.7M 1s
+  1100K .......... .......... .......... .......... ..........  4% 24.4M 1s
+  1150K .......... .......... .......... .......... ..........  4% 19.4M 1s
+  1200K .......... .......... .......... .......... ..........  4% 24.5M 1s
+  1250K .......... .......... .......... .......... ..........  5% 25.1M 1s
+  1300K .......... .......... .......... .......... ..........  5% 27.8M 1s
+  1350K .......... .......... .......... .......... ..........  5% 26.0M 1s
+  1400K .......... .......... .......... .......... ..........  5% 25.5M 1s
+  1450K .......... .......... .......... .......... ..........  5% 25.9M 1s
+  1500K .......... .......... .......... .......... ..........  5% 25.5M 1s
+  1550K .......... .......... .......... .......... ..........  6% 20.0M 1s
+  1600K .......... .......... .......... .......... ..........  6% 24.3M 1s
+  1650K .......... .......... .......... .......... ..........  6% 25.4M 1s
+  1700K .......... .......... .......... .......... ..........  6% 28.9M 1s
+  1750K .......... .......... .......... .......... ..........  6% 16.9M 1s
+  1800K .......... .......... .......... .......... ..........  7% 9.43M 1s
+  1850K .......... .......... .......... .......... ..........  7% 26.2M 1s
+  1900K .......... .......... .......... .......... ..........  7% 25.7M 1s
+  1950K .......... .......... .......... .......... ..........  7% 21.5M 1s
+  2000K .......... .......... .......... .......... ..........  7% 27.4M 1s
+  2050K .......... .......... .......... .......... ..........  8% 28.5M 1s
+  2100K .......... .......... .......... .......... ..........  8% 27.3M 1s
+  2150K .......... .......... .......... .......... ..........  8% 27.2M 1s
+  2200K .......... .......... .......... .......... ..........  8% 27.8M 1s
+  2250K .......... .......... .......... .......... ..........  8% 26.3M 1s
+  2300K .......... .......... .......... .......... ..........  9% 28.0M 1s
+  2350K .......... .......... .......... .......... ..........  9% 21.6M 1s
+  2400K .......... .......... .......... .......... ..........  9% 27.1M 1s
+  2450K .......... .......... .......... .......... ..........  9% 27.4M 1s
+  2500K .......... .......... .......... .......... ..........  9% 27.8M 1s
+  2550K .......... .......... .......... .......... .......... 10% 27.5M 1s
+  2600K .......... .......... .......... .......... .......... 10% 27.8M 1s
+  2650K .......... .......... .......... .......... .......... 10% 27.0M 1s
+  2700K .......... .......... .......... .......... .......... 10% 27.0M 1s
+  2750K .......... .......... .......... .......... .......... 10% 22.1M 1s
+  2800K .......... .......... .......... .......... .......... 11% 28.6M 1s
+  2850K .......... .......... .......... .......... .......... 11% 27.6M 1s
+  2900K .......... .......... .......... .......... .......... 11% 28.0M 1s
+  2950K .......... .......... .......... .......... .......... 11% 28.3M 1s
+  3000K .......... .......... .......... .......... .......... 11% 28.6M 1s
+  3050K .......... .......... .......... .......... .......... 11% 28.0M 1s
+  3100K .......... .......... .......... .......... .......... 12% 27.2M 1s
+  3150K .......... .......... .......... .......... .......... 12% 21.5M 1s
+  3200K .......... .......... .......... .......... .......... 12% 25.5M 1s
+  3250K .......... .......... .......... .......... .......... 12% 27.0M 1s
+  3300K .......... .......... .......... .......... .......... 12% 27.1M 1s
+  3350K .......... .......... .......... .......... .......... 13% 26.1M 1s
+  3400K .......... .......... .......... .......... .......... 13% 26.9M 1s
+  3450K .......... .......... .......... .......... .......... 13% 26.4M 1s
+  3500K .......... .......... .......... .......... .......... 13% 27.0M 1s
+  3550K .......... .......... .......... .......... .......... 13% 20.3M 1s
+  3600K .......... .......... .......... .......... .......... 14% 28.7M 1s
+  3650K .......... .......... .......... .......... .......... 14% 28.4M 1s
+  3700K .......... .......... .......... .......... .......... 14% 28.3M 1s
+  3750K .......... .......... .......... .......... .......... 14% 27.6M 1s
+  3800K .......... .......... .......... .......... .......... 14% 27.0M 1s
+  3850K .......... .......... .......... .......... .......... 15% 27.6M 1s
+  3900K .......... .......... .......... .......... .......... 15% 26.7M 1s
+  3950K .......... .......... .......... .......... .......... 15% 21.0M 1s
+  4000K .......... .......... .......... .......... .......... 15% 26.8M 1s
+  4050K .......... .......... .......... .......... .......... 15% 27.7M 1s
+  4100K .......... .......... .......... .......... .......... 16% 27.9M 1s
+  4150K .......... .......... .......... .......... .......... 16% 26.6M 1s
+  4200K .......... .......... .......... .......... .......... 16% 27.7M 1s
+  4250K .......... .......... .......... .......... .......... 16% 27.7M 1s
+  4300K .......... .......... .......... .......... .......... 16% 27.7M 1s
+  4350K .......... .......... .......... .......... .......... 17% 21.4M 1s
+  4400K .......... .......... .......... .......... .......... 17% 27.4M 1s
+  4450K .......... .......... .......... .......... .......... 17% 28.9M 1s
+  4500K .......... .......... .......... .......... .......... 17% 27.3M 1s
+  4550K .......... .......... .......... .......... .......... 17% 27.7M 1s
+  4600K .......... .......... .......... .......... .......... 17% 26.7M 1s
+  4650K .......... .......... .......... .......... .......... 18% 23.8M 1s
+  4700K .......... .......... .......... .......... .......... 18% 27.0M 1s
+  4750K .......... .......... .......... .......... .......... 18% 21.2M 1s
+  4800K .......... .......... .......... .......... .......... 18% 26.8M 1s
+  4850K .......... .......... .......... .......... .......... 18% 27.2M 1s
+  4900K .......... .......... .......... .......... .......... 19% 28.1M 1s
+  4950K .......... .......... .......... .......... .......... 19% 26.4M 1s
+  5000K .......... .......... .......... .......... .......... 19% 28.6M 1s
+  5050K .......... .......... .......... .......... .......... 19% 27.2M 1s
+  5100K .......... .......... .......... .......... .......... 19% 27.2M 1s
+  5150K .......... .......... .......... .......... .......... 20% 21.5M 1s
+  5200K .......... .......... .......... .......... .......... 20% 28.3M 1s
+  5250K .......... .......... .......... .......... .......... 20% 28.0M 1s
+  5300K .......... .......... .......... .......... .......... 20% 28.7M 1s
+  5350K .......... .......... .......... .......... .......... 20% 27.0M 1s
+  5400K .......... .......... .......... .......... .......... 21% 28.8M 1s
+  5450K .......... .......... .......... .......... .......... 21% 27.5M 1s
+  5500K .......... .......... .......... .......... .......... 21% 28.0M 1s
+  5550K .......... .......... .......... .......... .......... 21% 21.1M 1s
+  5600K .......... .......... .......... .......... .......... 21% 27.2M 1s
+  5650K .......... .......... .......... .......... .......... 22% 29.0M 1s
+  5700K .......... .......... .......... .......... .......... 22% 28.6M 1s
+  5750K .......... .......... .......... .......... .......... 22% 27.4M 1s
+  5800K .......... .......... .......... .......... .......... 22% 27.1M 1s
+  5850K .......... .......... .......... .......... .......... 22% 28.5M 1s
+  5900K .......... .......... .......... .......... .......... 23% 28.9M 1s
+  5950K .......... .......... .......... .......... .......... 23% 16.8M 1s
+  6000K .......... .......... .......... .......... .......... 23% 27.6M 1s
+  6050K .......... .......... .......... .......... .......... 23% 27.5M 1s
+  6100K .......... .......... .......... .......... .......... 23% 27.9M 1s
+  6150K .......... .......... .......... .......... .......... 23% 26.2M 1s
+  6200K .......... .......... .......... .......... .......... 24% 26.5M 1s
+  6250K .......... .......... .......... .......... .......... 24% 27.2M 1s
+  6300K .......... .......... .......... .......... .......... 24% 26.0M 1s
+  6350K .......... .......... .......... .......... .......... 24% 21.9M 1s
+  6400K .......... .......... .......... .......... .......... 24% 26.8M 1s
+  6450K .......... .......... .......... .......... .......... 25% 25.9M 1s
+  6500K .......... .......... .......... .......... .......... 25% 27.5M 1s
+  6550K .......... .......... .......... .......... .......... 25% 27.3M 1s
+  6600K .......... .......... .......... .......... .......... 25% 26.5M 1s
+  6650K .......... .......... .......... .......... .......... 25% 27.6M 1s
+  6700K .......... .......... .......... .......... .......... 26% 25.3M 1s
+  6750K .......... .......... .......... .......... .......... 26% 21.8M 1s
+  6800K .......... .......... .......... .......... .......... 26% 28.7M 1s
+  6850K .......... .......... .......... .......... .......... 26% 27.2M 1s
+  6900K .......... .......... .......... .......... .......... 26% 26.6M 1s
+  6950K .......... .......... .......... .......... .......... 27% 27.7M 1s
+  7000K .......... .......... .......... .......... .......... 27% 28.9M 1s
+  7050K .......... .......... .......... .......... .......... 27% 27.0M 1s
+  7100K .......... .......... .......... .......... .......... 27% 26.1M 1s
+  7150K .......... .......... .......... .......... .......... 27% 21.7M 1s
+  7200K .......... .......... .......... .......... .......... 28% 27.7M 1s
+  7250K .......... .......... .......... .......... .......... 28% 27.4M 1s
+  7300K .......... .......... .......... .......... .......... 28% 27.5M 1s
+  7350K .......... .......... .......... .......... .......... 28% 24.8M 1s
+  7400K .......... .......... .......... .......... .......... 28% 24.6M 1s
+  7450K .......... .......... .......... .......... .......... 29% 27.0M 1s
+  7500K .......... .......... .......... .......... .......... 29% 27.4M 1s
+  7550K .......... .......... .......... .......... .......... 29% 22.0M 1s
+  7600K .......... .......... .......... .......... .......... 29% 27.9M 1s
+  7650K .......... .......... .......... .......... .......... 29% 25.4M 1s
+  7700K .......... .......... .......... .......... .......... 29% 27.3M 1s
+  7750K .......... .......... .......... .......... .......... 30% 27.7M 1s
+  7800K .......... .......... .......... .......... .......... 30% 27.6M 1s
+  7850K .......... .......... .......... .......... .......... 30% 28.5M 1s
+  7900K .......... .......... .......... .......... .......... 30% 28.0M 1s
+  7950K .......... .......... .......... .......... .......... 30% 20.6M 1s
+  8000K .......... .......... .......... .......... .......... 31% 20.3M 1s
+  8050K .......... .......... .......... .......... .......... 31% 26.6M 1s
+  8100K .......... .......... .......... .......... .......... 31% 27.1M 1s
+  8150K .......... .......... .......... .......... .......... 31% 26.4M 1s
+  8200K .......... .......... .......... .......... .......... 31% 25.3M 1s
+  8250K .......... .......... .......... .......... .......... 32% 26.2M 1s
+  8300K .......... .......... .......... .......... .......... 32% 27.5M 1s
+  8350K .......... .......... .......... .......... .......... 32% 20.0M 1s
+  8400K .......... .......... .......... .......... .......... 32% 23.8M 1s
+  8450K .......... .......... .......... .......... .......... 32% 29.4M 1s
+  8500K .......... .......... .......... .......... .......... 33% 28.4M 1s
+  8550K .......... .......... .......... .......... .......... 33% 21.7M 1s
+  8600K .......... .......... .......... .......... .......... 33% 27.1M 1s
+  8650K .......... .......... .......... .......... .......... 33% 27.3M 1s
+  8700K .......... .......... .......... .......... .......... 33% 26.6M 1s
+  8750K .......... .......... .......... .......... .......... 34% 21.7M 1s
+  8800K .......... .......... .......... .......... .......... 34% 28.2M 1s
+  8850K .......... .......... .......... .......... .......... 34% 27.2M 1s
+  8900K .......... .......... .......... .......... .......... 34% 27.1M 1s
+  8950K .......... .......... .......... .......... .......... 34% 25.4M 1s
+  9000K .......... .......... .......... .......... .......... 35% 26.5M 1s
+  9050K .......... .......... .......... .......... .......... 35% 27.4M 1s
+  9100K .......... .......... .......... .......... .......... 35% 27.1M 1s
+  9150K .......... .......... .......... .......... .......... 35% 21.2M 1s
+  9200K .......... .......... .......... .......... .......... 35% 27.4M 1s
+  9250K .......... .......... .......... .......... .......... 35% 26.7M 1s
+  9300K .......... .......... .......... .......... .......... 36% 27.4M 1s
+  9350K .......... .......... .......... .......... .......... 36% 26.6M 1s
+  9400K .......... .......... .......... .......... .......... 36% 26.0M 1s
+  9450K .......... .......... .......... .......... .......... 36% 26.4M 1s
+  9500K .......... .......... .......... .......... .......... 36% 28.5M 1s
+  9550K .......... .......... .......... .......... .......... 37% 20.8M 1s
+  9600K .......... .......... .......... .......... .......... 37% 27.1M 1s
+  9650K .......... .......... .......... .......... .......... 37% 27.8M 1s
+  9700K .......... .......... .......... .......... .......... 37% 28.0M 1s
+  9750K .......... .......... .......... .......... .......... 37% 26.6M 1s
+  9800K .......... .......... .......... .......... .......... 38% 27.0M 1s
+  9850K .......... .......... .......... .......... .......... 38% 27.2M 1s
+  9900K .......... .......... .......... .......... .......... 38% 27.2M 1s
+  9950K .......... .......... .......... .......... .......... 38% 21.6M 1s
+ 10000K .......... .......... .......... .......... .......... 38% 24.7M 1s
+ 10050K .......... .......... .......... .......... .......... 39% 28.0M 1s
+ 10100K .......... .......... .......... .......... .......... 39% 27.9M 1s
+ 10150K .......... .......... .......... .......... .......... 39% 27.3M 1s
+ 10200K .......... .......... .......... .......... .......... 39% 27.9M 1s
+ 10250K .......... .......... .......... .......... .......... 39% 27.8M 1s
+ 10300K .......... .......... .......... .......... .......... 40% 28.7M 1s
+ 10350K .......... .......... .......... .......... .......... 40% 21.2M 1s
+ 10400K .......... .......... .......... .......... .......... 40% 28.1M 1s
+ 10450K .......... .......... .......... .......... .......... 40% 27.7M 1s
+ 10500K .......... .......... .......... .......... .......... 40% 28.3M 1s
+ 10550K .......... .......... .......... .......... .......... 41% 17.9M 1s
+ 10600K .......... .......... .......... .......... .......... 41% 27.5M 1s
+ 10650K .......... .......... .......... .......... .......... 41% 28.1M 1s
+ 10700K .......... .......... .......... .......... .......... 41% 27.9M 1s
+ 10750K .......... .......... .......... .......... .......... 41% 21.6M 1s
+ 10800K .......... .......... .......... .......... .......... 41% 26.8M 1s
+ 10850K .......... .......... .......... .......... .......... 42% 26.1M 1s
+ 10900K .......... .......... .......... .......... .......... 42% 27.1M 1s
+ 10950K .......... .......... .......... .......... .......... 42% 26.5M 1s
+ 11000K .......... .......... .......... .......... .......... 42% 27.0M 1s
+ 11050K .......... .......... .......... .......... .......... 42% 18.6M 1s
+ 11100K .......... .......... .......... .......... .......... 43% 24.6M 1s
+ 11150K .......... .......... .......... .......... .......... 43% 21.3M 1s
+ 11200K .......... .......... .......... .......... .......... 43% 27.2M 1s
+ 11250K .......... .......... .......... .......... .......... 43% 27.1M 1s
+ 11300K .......... .......... .......... .......... .......... 43% 27.4M 1s
+ 11350K .......... .......... .......... .......... .......... 44% 24.8M 1s
+ 11400K .......... .......... .......... .......... .......... 44% 27.8M 1s
+ 11450K .......... .......... .......... .......... .......... 44% 27.3M 1s
+ 11500K .......... .......... .......... .......... .......... 44% 21.6M 1s
+ 11550K .......... .......... .......... .......... .......... 44% 21.0M 1s
+ 11600K .......... .......... .......... .......... .......... 45% 27.7M 1s
+ 11650K .......... .......... .......... .......... .......... 45% 26.2M 1s
+ 11700K .......... .......... .......... .......... .......... 45% 26.7M 1s
+ 11750K .......... .......... .......... .......... .......... 45% 27.4M 1s
+ 11800K .......... .......... .......... .......... .......... 45% 27.7M 1s
+ 11850K .......... .......... .......... .......... .......... 46% 16.7M 1s
+ 11900K .......... .......... .......... .......... .......... 46% 27.1M 1s
+ 11950K .......... .......... .......... .......... .......... 46% 22.0M 1s
+ 12000K .......... .......... .......... .......... .......... 46% 29.1M 1s
+ 12050K .......... .......... .......... .......... .......... 46% 28.0M 1s
+ 12100K .......... .......... .......... .......... .......... 47% 28.7M 1s
+ 12150K .......... .......... .......... .......... .......... 47% 28.4M 1s
+ 12200K .......... .......... .......... .......... .......... 47% 29.3M 1s
+ 12250K .......... .......... .......... .......... .......... 47% 21.9M 1s
+ 12300K .......... .......... .......... .......... .......... 47% 27.9M 1s
+ 12350K .......... .......... .......... .......... .......... 47% 21.6M 1s
+ 12400K .......... .......... .......... .......... .......... 48% 29.1M 1s
+ 12450K .......... .......... .......... .......... .......... 48% 23.4M 1s
+ 12500K .......... .......... .......... .......... .......... 48% 25.5M 1s
+ 12550K .......... .......... .......... .......... .......... 48% 24.9M 1s
+ 12600K .......... .......... .......... .......... .......... 48% 25.8M 1s
+ 12650K .......... .......... .......... .......... .......... 49% 27.2M 1s
+ 12700K .......... .......... .......... .......... .......... 49% 28.4M 1s
+ 12750K .......... .......... .......... .......... .......... 49% 21.5M 1s
+ 12800K .......... .......... .......... .......... .......... 49% 20.8M 1s
+ 12850K .......... .......... .......... .......... .......... 49% 27.4M 1s
+ 12900K .......... .......... .......... .......... .......... 50% 28.8M 1s
+ 12950K .......... .......... .......... .......... .......... 50% 27.1M 1s
+ 13000K .......... .......... .......... .......... .......... 50% 20.4M 1s
+ 13050K .......... .......... .......... .......... .......... 50% 27.8M 1s
+ 13100K .......... .......... .......... .......... .......... 50% 27.8M 1s
+ 13150K .......... .......... .......... .......... .......... 51% 21.8M 1s
+ 13200K .......... .......... .......... .......... .......... 51% 12.3M 1s
+ 13250K .......... .......... .......... .......... .......... 51% 27.6M 1s
+ 13300K .......... .......... .......... .......... .......... 51% 28.8M 1s
+ 13350K .......... .......... .......... .......... .......... 51% 26.3M 0s
+ 13400K .......... .......... .......... .......... .......... 52% 26.7M 0s
+ 13450K .......... .......... .......... .......... .......... 52% 27.2M 0s
+ 13500K .......... .......... .......... .......... .......... 52% 28.0M 0s
+ 13550K .......... .......... .......... .......... .......... 52% 21.1M 0s
+ 13600K .......... .......... .......... .......... .......... 52% 28.1M 0s
+ 13650K .......... .......... .......... .......... .......... 53% 27.8M 0s
+ 13700K .......... .......... .......... .......... .......... 53% 28.2M 0s
+ 13750K .......... .......... .......... .......... .......... 53% 26.6M 0s
+ 13800K .......... .......... .......... .......... .......... 53% 25.2M 0s
+ 13850K .......... .......... .......... .......... .......... 53% 25.3M 0s
+ 13900K .......... .......... .......... .......... .......... 53% 27.8M 0s
+ 13950K .......... .......... .......... .......... .......... 54% 21.5M 0s
+ 14000K .......... .......... .......... .......... .......... 54% 26.8M 0s
+ 14050K .......... .......... .......... .......... .......... 54% 26.8M 0s
+ 14100K .......... .......... .......... .......... .......... 54% 28.3M 0s
+ 14150K .......... .......... .......... .......... .......... 54% 27.9M 0s
+ 14200K .......... .......... .......... .......... .......... 55% 25.7M 0s
+ 14250K .......... .......... .......... .......... .......... 55% 25.7M 0s
+ 14300K .......... .......... .......... .......... .......... 55% 27.5M 0s
+ 14350K .......... .......... .......... .......... .......... 55% 21.6M 0s
+ 14400K .......... .......... .......... .......... .......... 55% 28.0M 0s
+ 14450K .......... .......... .......... .......... .......... 56% 26.7M 0s
+ 14500K .......... .......... .......... .......... .......... 56% 28.0M 0s
+ 14550K .......... .......... .......... .......... .......... 56% 28.5M 0s
+ 14600K .......... .......... .......... .......... .......... 56% 27.9M 0s
+ 14650K .......... .......... .......... .......... .......... 56% 27.8M 0s
+ 14700K .......... .......... .......... .......... .......... 57% 27.3M 0s
+ 14750K .......... .......... .......... .......... .......... 57% 21.6M 0s
+ 14800K .......... .......... .......... .......... .......... 57% 28.9M 0s
+ 14850K .......... .......... .......... .......... .......... 57% 26.9M 0s
+ 14900K .......... .......... .......... .......... .......... 57% 27.3M 0s
+ 14950K .......... .......... .......... .......... .......... 58% 27.2M 0s
+ 15000K .......... .......... .......... .......... .......... 58% 27.6M 0s
+ 15050K .......... .......... .......... .......... .......... 58% 26.1M 0s
+ 15100K .......... .......... .......... .......... .......... 58% 27.2M 0s
+ 15150K .......... .......... .......... .......... .......... 58% 21.6M 0s
+ 15200K .......... .......... .......... .......... .......... 59% 26.3M 0s
+ 15250K .......... .......... .......... .......... .......... 59% 25.6M 0s
+ 15300K .......... .......... .......... .......... .......... 59% 26.6M 0s
+ 15350K .......... .......... .......... .......... .......... 59% 27.8M 0s
+ 15400K .......... .......... .......... .......... .......... 59% 28.2M 0s
+ 15450K .......... .......... .......... .......... .......... 59% 25.2M 0s
+ 15500K .......... .......... .......... .......... .......... 60% 27.0M 0s
+ 15550K .......... .......... .......... .......... .......... 60% 21.4M 0s
+ 15600K .......... .......... .......... .......... .......... 60% 28.0M 0s
+ 15650K .......... .......... .......... .......... .......... 60% 27.5M 0s
+ 15700K .......... .......... .......... .......... .......... 60% 27.7M 0s
+ 15750K .......... .......... .......... .......... .......... 61% 27.1M 0s
+ 15800K .......... .......... .......... .......... .......... 61% 27.3M 0s
+ 15850K .......... .......... .......... .......... .......... 61% 26.8M 0s
+ 15900K .......... .......... .......... .......... .......... 61% 27.2M 0s
+ 15950K .......... .......... .......... .......... .......... 61% 22.0M 0s
+ 16000K .......... .......... .......... .......... .......... 62% 27.1M 0s
+ 16050K .......... .......... .......... .......... .......... 62% 28.7M 0s
+ 16100K .......... .......... .......... .......... .......... 62% 28.8M 0s
+ 16150K .......... .......... .......... .......... .......... 62% 28.3M 0s
+ 16200K .......... .......... .......... .......... .......... 62% 26.8M 0s
+ 16250K .......... .......... .......... .......... .......... 63% 27.3M 0s
+ 16300K .......... .......... .......... .......... .......... 63% 26.8M 0s
+ 16350K .......... .......... .......... .......... .......... 63% 22.0M 0s
+ 16400K .......... .......... .......... .......... .......... 63% 28.0M 0s
+ 16450K .......... .......... .......... .......... .......... 63% 27.6M 0s
+ 16500K .......... .......... .......... .......... .......... 64% 27.3M 0s
+ 16550K .......... .......... .......... .......... .......... 64% 26.9M 0s
+ 16600K .......... .......... .......... .......... .......... 64% 28.8M 0s
+ 16650K .......... .......... .......... .......... .......... 64% 27.7M 0s
+ 16700K .......... .......... .......... .......... .......... 64% 27.9M 0s
+ 16750K .......... .......... .......... .......... .......... 65% 21.3M 0s
+ 16800K .......... .......... .......... .......... .......... 65% 26.7M 0s
+ 16850K .......... .......... .......... .......... .......... 65% 24.8M 0s
+ 16900K .......... .......... .......... .......... .......... 65% 28.1M 0s
+ 16950K .......... .......... .......... .......... .......... 65% 28.1M 0s
+ 17000K .......... .......... .......... .......... .......... 65% 28.7M 0s
+ 17050K .......... .......... .......... .......... .......... 66% 29.3M 0s
+ 17100K .......... .......... .......... .......... .......... 66% 28.1M 0s
+ 17150K .......... .......... .......... .......... .......... 66% 22.4M 0s
+ 17200K .......... .......... .......... .......... .......... 66% 28.9M 0s
+ 17250K .......... .......... .......... .......... .......... 66% 28.7M 0s
+ 17300K .......... .......... .......... .......... .......... 67% 28.3M 0s
+ 17350K .......... .......... .......... .......... .......... 67% 27.3M 0s
+ 17400K .......... .......... .......... .......... .......... 67% 27.2M 0s
+ 17450K .......... .......... .......... .......... .......... 67% 27.2M 0s
+ 17500K .......... .......... .......... .......... .......... 67% 26.8M 0s
+ 17550K .......... .......... .......... .......... .......... 68% 20.9M 0s
+ 17600K .......... .......... .......... .......... .......... 68% 27.7M 0s
+ 17650K .......... .......... .......... .......... .......... 68% 28.5M 0s
+ 17700K .......... .......... .......... .......... .......... 68% 28.3M 0s
+ 17750K .......... .......... .......... .......... .......... 68% 17.8M 0s
+ 17800K .......... .......... .......... .......... .......... 69% 27.8M 0s
+ 17850K .......... .......... .......... .......... .......... 69% 27.4M 0s
+ 17900K .......... .......... .......... .......... .......... 69% 26.6M 0s
+ 17950K .......... .......... .......... .......... .......... 69% 19.9M 0s
+ 18000K .......... .......... .......... .......... .......... 69% 28.2M 0s
+ 18050K .......... .......... .......... .......... .......... 70% 28.0M 0s
+ 18100K .......... .......... .......... .......... .......... 70% 27.0M 0s
+ 18150K .......... .......... .......... .......... .......... 70% 26.1M 0s
+ 18200K .......... .......... .......... .......... .......... 70% 27.3M 0s
+ 18250K .......... .......... .......... .......... .......... 70% 28.0M 0s
+ 18300K .......... .......... .......... .......... .......... 71% 28.0M 0s
+ 18350K .......... .......... .......... .......... .......... 71% 21.7M 0s
+ 18400K .......... .......... .......... .......... .......... 71% 27.2M 0s
+ 18450K .......... .......... .......... .......... .......... 71% 28.7M 0s
+ 18500K .......... .......... .......... .......... .......... 71% 28.6M 0s
+ 18550K .......... .......... .......... .......... .......... 71% 27.2M 0s
+ 18600K .......... .......... .......... .......... .......... 72% 28.4M 0s
+ 18650K .......... .......... .......... .......... .......... 72% 28.2M 0s
+ 18700K .......... .......... .......... .......... .......... 72% 27.5M 0s
+ 18750K .......... .......... .......... .......... .......... 72% 21.8M 0s
+ 18800K .......... .......... .......... .......... .......... 72% 28.2M 0s
+ 18850K .......... .......... .......... .......... .......... 73% 28.6M 0s
+ 18900K .......... .......... .......... .......... .......... 73% 28.8M 0s
+ 18950K .......... .......... .......... .......... .......... 73% 27.2M 0s
+ 19000K .......... .......... .......... .......... .......... 73% 27.2M 0s
+ 19050K .......... .......... .......... .......... .......... 73% 28.3M 0s
+ 19100K .......... .......... .......... .......... .......... 74% 28.1M 0s
+ 19150K .......... .......... .......... .......... .......... 74% 21.6M 0s
+ 19200K .......... .......... .......... .......... .......... 74% 27.7M 0s
+ 19250K .......... .......... .......... .......... .......... 74% 28.3M 0s
+ 19300K .......... .......... .......... .......... .......... 74% 28.3M 0s
+ 19350K .......... .......... .......... .......... .......... 75% 26.5M 0s
+ 19400K .......... .......... .......... .......... .......... 75% 27.9M 0s
+ 19450K .......... .......... .......... .......... .......... 75% 27.2M 0s
+ 19500K .......... .......... .......... .......... .......... 75% 28.2M 0s
+ 19550K .......... .......... .......... .......... .......... 75% 21.8M 0s
+ 19600K .......... .......... .......... .......... .......... 76% 26.7M 0s
+ 19650K .......... .......... .......... .......... .......... 76% 27.2M 0s
+ 19700K .......... .......... .......... .......... .......... 76% 27.4M 0s
+ 19750K .......... .......... .......... .......... .......... 76% 26.7M 0s
+ 19800K .......... .......... .......... .......... .......... 76% 26.0M 0s
+ 19850K .......... .......... .......... .......... .......... 76% 25.5M 0s
+ 19900K .......... .......... .......... .......... .......... 77% 26.8M 0s
+ 19950K .......... .......... .......... .......... .......... 77% 21.2M 0s
+ 20000K .......... .......... .......... .......... .......... 77% 26.9M 0s
+ 20050K .......... .......... .......... .......... .......... 77% 29.1M 0s
+ 20100K .......... .......... .......... .......... .......... 77% 28.4M 0s
+ 20150K .......... .......... .......... .......... .......... 78% 27.2M 0s
+ 20200K .......... .......... .......... .......... .......... 78% 27.5M 0s
+ 20250K .......... .......... .......... .......... .......... 78% 27.6M 0s
+ 20300K .......... .......... .......... .......... .......... 78% 27.8M 0s
+ 20350K .......... .......... .......... .......... .......... 78% 21.5M 0s
+ 20400K .......... .......... .......... .......... .......... 79% 28.8M 0s
+ 20450K .......... .......... .......... .......... .......... 79% 28.9M 0s
+ 20500K .......... .......... .......... .......... .......... 79% 27.3M 0s
+ 20550K .......... .......... .......... .......... .......... 79% 28.8M 0s
+ 20600K .......... .......... .......... .......... .......... 79% 27.8M 0s
+ 20650K .......... .......... .......... .......... .......... 80% 28.6M 0s
+ 20700K .......... .......... .......... .......... .......... 80% 27.6M 0s
+ 20750K .......... .......... .......... .......... .......... 80% 21.9M 0s
+ 20800K .......... .......... .......... .......... .......... 80% 28.6M 0s
+ 20850K .......... .......... .......... .......... .......... 80% 27.8M 0s
+ 20900K .......... .......... .......... .......... .......... 81% 27.3M 0s
+ 20950K .......... .......... .......... .......... .......... 81% 27.7M 0s
+ 21000K .......... .......... .......... .......... .......... 81% 27.3M 0s
+ 21050K .......... .......... .......... .......... .......... 81% 28.2M 0s
+ 21100K .......... .......... .......... .......... .......... 81% 27.4M 0s
+ 21150K .......... .......... .......... .......... .......... 82% 21.1M 0s
+ 21200K .......... .......... .......... .......... .......... 82% 29.0M 0s
+ 21250K .......... .......... .......... .......... .......... 82% 28.0M 0s
+ 21300K .......... .......... .......... .......... .......... 82% 25.0M 0s
+ 21350K .......... .......... .......... .......... .......... 82% 27.6M 0s
+ 21400K .......... .......... .......... .......... .......... 82% 28.0M 0s
+ 21450K .......... .......... .......... .......... .......... 83% 27.9M 0s
+ 21500K .......... .......... .......... .......... .......... 83% 29.1M 0s
+ 21550K .......... .......... .......... .......... .......... 83% 21.9M 0s
+ 21600K .......... .......... .......... .......... .......... 83% 27.8M 0s
+ 21650K .......... .......... .......... .......... .......... 83% 27.6M 0s
+ 21700K .......... .......... .......... .......... .......... 84% 28.2M 0s
+ 21750K .......... .......... .......... .......... .......... 84% 26.5M 0s
+ 21800K .......... .......... .......... .......... .......... 84% 27.7M 0s
+ 21850K .......... .......... .......... .......... .......... 84% 27.1M 0s
+ 21900K .......... .......... .......... .......... .......... 84% 27.5M 0s
+ 21950K .......... .......... .......... .......... .......... 85% 21.9M 0s
+ 22000K .......... .......... .......... .......... .......... 85% 27.7M 0s
+ 22050K .......... .......... .......... .......... .......... 85% 27.8M 0s
+ 22100K .......... .......... .......... .......... .......... 85% 28.3M 0s
+ 22150K .......... .......... .......... .......... .......... 85% 26.9M 0s
+ 22200K .......... .......... .......... .......... .......... 86% 27.5M 0s
+ 22250K .......... .......... .......... .......... .......... 86% 28.7M 0s
+ 22300K .......... .......... .......... .......... .......... 86% 27.5M 0s
+ 22350K .......... .......... .......... .......... .......... 86% 21.7M 0s
+ 22400K .......... .......... .......... .......... .......... 86% 29.1M 0s
+ 22450K .......... .......... .......... .......... .......... 87% 27.7M 0s
+ 22500K .......... .......... .......... .......... .......... 87% 27.6M 0s
+ 22550K .......... .......... .......... .......... .......... 87% 27.1M 0s
+ 22600K .......... .......... .......... .......... .......... 87% 27.9M 0s
+ 22650K .......... .......... .......... .......... .......... 87% 28.6M 0s
+ 22700K .......... .......... .......... .......... .......... 88% 28.9M 0s
+ 22750K .......... .......... .......... .......... .......... 88% 22.3M 0s
+ 22800K .......... .......... .......... .......... .......... 88% 28.8M 0s
+ 22850K .......... .......... .......... .......... .......... 88% 27.5M 0s
+ 22900K .......... .......... .......... .......... .......... 88% 25.4M 0s
+ 22950K .......... .......... .......... .......... .......... 88% 26.3M 0s
+ 23000K .......... .......... .......... .......... .......... 89% 26.5M 0s
+ 23050K .......... .......... .......... .......... .......... 89% 27.3M 0s
+ 23100K .......... .......... .......... .......... .......... 89% 26.0M 0s
+ 23150K .......... .......... .......... .......... .......... 89% 21.0M 0s
+ 23200K .......... .......... .......... .......... .......... 89% 26.9M 0s
+ 23250K .......... .......... .......... .......... .......... 90% 28.1M 0s
+ 23300K .......... .......... .......... .......... .......... 90% 27.8M 0s
+ 23350K .......... .......... .......... .......... .......... 90% 27.4M 0s
+ 23400K .......... .......... .......... .......... .......... 90% 27.0M 0s
+ 23450K .......... .......... .......... .......... .......... 90% 27.4M 0s
+ 23500K .......... .......... .......... .......... .......... 91% 27.2M 0s
+ 23550K .......... .......... .......... .......... .......... 91% 20.6M 0s
+ 23600K .......... .......... .......... .......... .......... 91% 26.4M 0s
+ 23650K .......... .......... .......... .......... .......... 91% 25.4M 0s
+ 23700K .......... .......... .......... .......... .......... 91% 26.4M 0s
+ 23750K .......... .......... .......... .......... .......... 92% 25.0M 0s
+ 23800K .......... .......... .......... .......... .......... 92% 25.7M 0s
+ 23850K .......... .......... .......... .......... .......... 92% 27.6M 0s
+ 23900K .......... .......... .......... .......... .......... 92% 26.6M 0s
+ 23950K .......... .......... .......... .......... .......... 92% 20.6M 0s
+ 24000K .......... .......... .......... .......... .......... 93% 27.9M 0s
+ 24050K .......... .......... .......... .......... .......... 93% 27.3M 0s
+ 24100K .......... .......... .......... .......... .......... 93% 26.9M 0s
+ 24150K .......... .......... .......... .......... .......... 93% 26.6M 0s
+ 24200K .......... .......... .......... .......... .......... 93% 28.5M 0s
+ 24250K .......... .......... .......... .......... .......... 94% 27.5M 0s
+ 24300K .......... .......... .......... .......... .......... 94% 26.8M 0s
+ 24350K .......... .......... .......... .......... .......... 94% 21.4M 0s
+ 24400K .......... .......... .......... .......... .......... 94% 27.6M 0s
+ 24450K .......... .......... .......... .......... .......... 94% 27.5M 0s
+ 24500K .......... .......... .......... .......... .......... 94% 27.6M 0s
+ 24550K .......... .......... .......... .......... .......... 95% 27.9M 0s
+ 24600K .......... .......... .......... .......... .......... 95% 28.6M 0s
+ 24650K .......... .......... .......... .......... .......... 95% 27.0M 0s
+ 24700K .......... .......... .......... .......... .......... 95% 26.3M 0s
+ 24750K .......... .......... .......... .......... .......... 95% 22.3M 0s
+ 24800K .......... .......... .......... .......... .......... 96% 28.6M 0s
+ 24850K .......... .......... .......... .......... .......... 96% 28.0M 0s
+ 24900K .......... .......... .......... .......... .......... 96% 26.9M 0s
+ 24950K .......... .......... .......... .......... .......... 96% 26.2M 0s
+ 25000K .......... .......... .......... .......... .......... 96% 26.9M 0s
+ 25050K .......... .......... .......... .......... .......... 97% 26.5M 0s
+ 25100K .......... .......... .......... .......... .......... 97% 26.3M 0s
+ 25150K .......... .......... .......... .......... .......... 97% 21.5M 0s
+ 25200K .......... .......... .......... .......... .......... 97% 28.4M 0s
+ 25250K .......... .......... .......... .......... .......... 97% 28.4M 0s
+ 25300K .......... .......... .......... .......... .......... 98% 26.6M 0s
+ 25350K .......... .......... .......... .......... .......... 98% 27.8M 0s
+ 25400K .......... .......... .......... .......... .......... 98% 27.3M 0s
+ 25450K .......... .......... .......... .......... .......... 98% 28.1M 0s
+ 25500K .......... .......... .......... .......... .......... 98% 29.0M 0s
+ 25550K .......... .......... .......... .......... .......... 99% 20.7M 0s
+ 25600K .......... .......... .......... .......... .......... 99% 27.2M 0s
+ 25650K .......... .......... .......... .......... .......... 99% 27.8M 0s
+ 25700K .......... .......... .......... .......... .......... 99% 28.3M 0s
+ 25750K .......... .......... .......... .......... .......... 99% 28.0M 0s
+ 25800K .......... .......... .......... .......... ....      100% 30.0M=1.0s
+
+2026-08-06 08:01:02 (25.3 MB/s) - 'asterisk.tar.gz' saved [26465168/26465168]
+
++ echo '5b0e5d276aeb014bf8a08a94d1055a9e97b9dce3375846eea70da5221bf9efe7  asterisk.tar.gz'
++ sha256sum -c -
+asterisk.tar.gz: OK
++ tar -xzf asterisk.tar.gz
++ cd asterisk-22.7.0
++ ./configure --with-jansson-bundled --with-pjproject-bundled
+checking build system type... aarch64-unknown-linux-gnu
+checking host system type... aarch64-unknown-linux-gnu
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for wchar.h... yes
+checking for minix/config.h... no
+checking for sys/param.h... yes
+checking for sys/select.h... yes
+checking for sys/socket.h... yes
+checking for utime.h... yes
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking whether char is unsigned... yes
+checking for uname... /usr/bin/uname
+checking for g++... g++
+checking whether the compiler supports GNU C++... yes
+checking whether g++ accepts -g... yes
+checking for g++ option to enable C++11 features... none needed
+checking how to run the C preprocessor... gcc -E
+checking how to run the C++ preprocessor... g++ -E
+checking whether g++ supports C++11 features by default... yes
+checking whether g++ supports C++14 features by default... yes
+checking whether g++ supports C++17 features by default... yes
+checking whether g++ supports C++20 features by default... no
+checking whether g++ supports C++20 features with -std=gnu++20... yes
+checking whether g++ supports C++23 features by default... no
+checking whether g++ supports C++23 features with -std=gnu++23... no
+checking whether g++ supports C++23 features with -std=c++23... no
+checking whether g++ supports C++23 features with +std=c++23... no
+checking whether g++ supports C++23 features with -h std=c++23... no
+checking whether g++ supports C++23 features with -std:c++23... no
+configure: No compiler with C++23 support was found
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for egrep... grep -E
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for gawk... no
+checking for mawk... mawk
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether ln -s works... yes
+checking for ranlib... ranlib
+checking for GNU make... make
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for strip... strip
+checking for ar... ar
+checking for bison... :
+checking for cmp... /usr/bin/cmp
+checking for cat... /usr/bin/cat
+checking for cut... /usr/bin/cut
+checking for flex... :
+checking for grep... (cached) /usr/bin/grep
+checking for python2.7... no
+checking for python2... no
+checking for python... no
+checking for python3... no
+checking for find... /usr/bin/find
+checking for basename... /usr/bin/basename
+checking for dirname... /usr/bin/dirname
+checking for sh... /bin/bash
+checking for ln... /usr/bin/ln
+checking for doxygen... :
+checking for dot... :
+checking for wget... /usr/bin/wget
+checking for curl... :
+checking for xmllint... :
+checking for xmlstarlet... no
+checking for xml... no
+checking for bash... /bin/bash
+checking for git... :
+checking for alembic... :
+checking for bzip2... /usr/bin/bzip2
+checking for tar... /usr/bin/tar
+checking for patch... /usr/bin/patch
+checking for sed... (cached) /usr/bin/sed
+checking for nm... /usr/bin/nm
+checking for realpath... /usr/bin/realpath
+checking for ldconfig... /usr/sbin/ldconfig
+checking for sha1sum... /usr/bin/sha1sum
+checking for openssl... /usr/bin/openssl
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for bison that supports parse-param... 
+checking for soxmix... no
+checking for md5... no
+checking for md5sum... md5sum
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for egrep -e... (cached) /usr/bin/grep -E
+checking whether gcc is Clang... no
+checking whether pthreads work with "-pthread" and "-lpthread"... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking whether more special flags are required for pthreads... no
+checking for PTHREAD_PRIO_INHERIT... yes
+checking for RAII support... checking for gcc -fnested-functions... no
+checking for clang strsep/strcmp optimization... no
+configure: checking OPENSSL with pkg-config
+configure: checking whether system openssl > 1.1.0
+checking for openssl >= 1.1.0... yes
+checking for embedded jansson (may have to download)... configuring
+[jansson]  Downloading https://raw.githubusercontent.com/asterisk/third-party/master/jansson/2.14.1/jansson-2.14.1.tar.bz2 to /tmp/jansson-2.14.1.tar.bz2
+[jansson]  Verifying /tmp/jansson-2.14.1.tar.bz2
+[jansson]  Verify successful
+[jansson]  Verifying /tmp/jansson-2.14.1.tar.bz2
+[jansson]  Verify successful
+[jansson]  Unpacking /tmp/jansson-2.14.1.tar.bz2
+[jansson]  Applying patches /tmp/asterisk-22.7.0/third-party/jansson/patches /tmp/asterisk-22.7.0/third-party/jansson/source
+No patches in /tmp/asterisk-22.7.0/third-party/jansson/patches
+[jansson]  Rebuilding
+[jansson]  Configuring
+checking for bundled jansson... yes
+checking for embedded pjproject (may have to download)... configuring
+[pjproject]  Downloading https://raw.githubusercontent.com/asterisk/third-party/master/pjproject/2.15.1/pjproject-2.15.1.tar.bz2 to /tmp/pjproject-2.15.1.tar.bz2
+[pjproject]  Verifying /tmp/pjproject-2.15.1.tar.bz2
+[pjproject]  Verify successful
+[pjproject]  Verifying /tmp/pjproject-2.15.1.tar.bz2
+[pjproject]  Verify successful
+[pjproject]  Unpacking /tmp/pjproject-2.15.1.tar.bz2
+[pjproject]  Applying patches /tmp/asterisk-22.7.0/third-party/pjproject/patches /tmp/asterisk-22.7.0/third-party/pjproject/source
+[pjproject]  Applying user.mak
+[pjproject]  Rebuilding
+[pjproject]  Applying custom include file patches/asterisk_malloc_debug.h
+[pjproject]  Applying custom include file patches/config_site.h
+[pjproject]  Configuring with --with-ssl --prefix=/opt/pjproject --disable-speex-codec --disable-speex-aec --disable-bcg729 --disable-gsm-codec --disable-ilbc-codec --disable-l16-codec --disable-g722-codec --disable-g7221-codec --disable-opencore-amr --disable-silk --disable-opus --disable-video --disable-v4l2 --disable-sound --disable-ext-sound --disable-sdl --disable-libyuv --disable-ffmpeg --disable-openh264 --disable-ipp --disable-libwebrtc --disable-libsrtp --disable-upnp --without-external-pa --without-external-srtp --disable-resample --disable-g711-codec --enable-epoll
+checking for bundled pjproject... yes
+checking for gawk... (cached) mawk
+checking for curl-config... /usr/bin/curl-config
+checking for the version of libcurl... 7.88.1
+checking for libcurl >= version 7.10.1... yes
+checking whether libcurl is usable... yes
+checking for curl_free... yes
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for sys/types.h... (cached) yes
+checking for netinet/in.h... yes
+checking for arpa/nameser.h... yes
+checking for netdb.h... yes
+checking for resolv.h... yes
+checking for arpa/nameser.h... (cached) yes
+checking for assert.h... yes
+checking for ctype.h... yes
+checking for dlfcn.h... yes
+checking for errno.h... yes
+checking for fcntl.h... yes
+checking for float.h... yes
+checking for grp.h... yes
+checking for inttypes.h... (cached) yes
+checking for limits.h... yes
+checking for locale.h... yes
+checking for math.h... yes
+checking for pwd.h... yes
+checking for netinet/in.h... (cached) yes
+checking for regex.h... yes
+checking for sched.h... yes
+checking for stdarg.h... yes
+checking for stdint.h... (cached) yes
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for syslog.h... yes
+checking for sys/file.h... yes
+checking for sys/ioctl.h... yes
+checking for sys/param.h... (cached) yes
+checking for sys/resource.h... yes
+checking for sys/socket.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/time.h... yes
+checking for sys/types.h... (cached) yes
+checking for sys/un.h... yes
+checking for termios.h... yes
+checking for time.h... yes
+checking for unistd.h... (cached) yes
+checking for arpa/inet.h... yes
+checking for libintl.h... yes
+checking for malloc.h... yes
+checking for netdb.h... (cached) yes
+checking for stddef.h... yes
+checking for strings.h... (cached) yes
+checking for sys/event.h... no
+checking for utime.h... (cached) yes
+checking for libedit... yes
+checking for Testing for libedit unicode support... yes
+checking for uuid_generate_random in -luuid... yes
+checking for uuid/uuid.h... yes
+checking for libjwt >= 1.15.3... no
+checking for clock_gettime in -lrt... yes
+checking for libxml-2.0... yes
+checking for uriParseUriA in -luriparser... no
+checking for xsltLoadStylesheetPI in -lxslt... no
+checking for xsltCleanupGlobals in -lxslt... no
+checking for xlocale.h... no
+checking for winsock.h... no
+checking for winsock2.h... no
+checking for sys/poll.h... yes
+checking for gcc option to enable large file support... none needed
+checking for _Bool... yes
+checking for stdbool.h that conforms to C99 or later... yes
+checking for an ANSI C-conforming const... yes
+checking for uid_t... yes
+checking for gid_t... yes
+checking for inline... inline
+checking for long double with more range or precision than double... yes
+checking for mode_t... yes
+checking for off_t... yes
+checking for pid_t... yes
+checking for size_t... (cached) yes
+checking for struct stat.st_blksize... yes
+checking for struct ucred.uid... yes
+checking for struct ucred.cr_uid... no
+checking for struct sockpeercred.uid... no
+checking for struct ifreq.ifr_ifru.ifru_hwaddr... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for working volatile... yes
+checking for ptrdiff_t... yes
+checking for struct stat.st_mtim... yes
+checking for struct stat.st_mtimensec... no
+checking for struct stat.st_mtimespec... no
+checking for struct sockaddr_in6.sin6_len... no
+checking for struct sockaddr_in.sin_len... no
+checking for working chown... yes
+checking whether closedir returns void... no
+checking for error_at_line... yes
+checking for vfork.h... no
+checking for fork... yes
+checking for vfork... yes
+checking for working fork... yes
+checking for working vfork... (cached) yes
+checking for declarations of fseeko and ftello... yes
+checking for working memcmp... yes
+checking for getpagesize... yes
+checking for vprintf... yes
+checking for working mmap... yes
+checking types of arguments for select... int,fd_set *,struct timeval *
+checking whether lstat correctly handles trailing slash... yes
+checking whether stat accepts an empty string... no
+checking for working strcoll... yes
+checking for strftime... yes
+checking for working strnlen... yes
+checking for working strtod... yes
+checking whether utime accepts a null argument... yes
+checking for asprintf... yes
+checking for atexit... yes
+checking for closefrom... yes
+checking for dup2... yes
+checking for eaccess... yes
+checking for endpwent... yes
+checking for euidaccess... yes
+checking for ffsll... yes
+checking for ftruncate... yes
+checking for getcwd... yes
+checking for gethostbyname... yes
+checking for gethostname... yes
+checking for getloadavg... yes
+checking for gettimeofday... yes
+checking for glob... yes
+checking for ioperm... no
+checking for inet_ntoa... yes
+checking for isascii... yes
+checking for memchr... yes
+checking for memmove... yes
+checking for memset... yes
+checking for mkdir... yes
+checking for mkdtemp... yes
+checking for munmap... yes
+checking for newlocale... yes
+checking for pipe2... yes
+checking for ppoll... yes
+checking for putenv... yes
+checking for re_comp... yes
+checking for regcomp... yes
+checking for select... yes
+checking for setenv... yes
+checking for socket... yes
+checking for strcasecmp... yes
+checking for strcasestr... yes
+checking for strchr... yes
+checking for strcspn... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strlcat... no
+checking for strlcpy... no
+checking for strncasecmp... yes
+checking for strndup... yes
+checking for strnlen... yes
+checking for strrchr... yes
+checking for strsep... yes
+checking for strspn... yes
+checking for strstr... yes
+checking for strtod... (cached) yes
+checking for strtol... yes
+checking for strtold... yes
+checking for strtoq... yes
+checking for unsetenv... yes
+checking for uselocale... yes
+checking for utime... yes
+checking for vasprintf... yes
+checking for getpeereid... no
+checking for sysctl... no
+checking for swapctl... no
+checking for malloc_trim... yes
+checking for htonll... no
+checking for ntohll... no
+checking for sqrt in -lm... yes
+checking for exp2... yes
+checking for log2... yes
+checking for exp10... yes
+checking for log10... yes
+checking for sin... yes
+checking for cos... yes
+checking for tan... yes
+checking for asin... yes
+checking for acos... yes
+checking for atan... yes
+checking for atan2... yes
+checking for pow... yes
+checking for rint... yes
+checking for exp... yes
+checking for log... yes
+checking for remainder... yes
+checking for fmod... yes
+checking for round... yes
+checking for roundf... yes
+checking for trunc... yes
+checking for floor... yes
+checking for ceil... yes
+checking for exp2l... yes
+checking for log2l... yes
+checking for exp10l... yes
+checking for log10l... yes
+checking for sinl... yes
+checking for cosl... yes
+checking for tanl... yes
+checking for asinl... yes
+checking for acosl... yes
+checking for atanl... yes
+checking for atan2l... yes
+checking for powl... yes
+checking for sqrtl... yes
+checking for rintl... yes
+checking for expl... yes
+checking for logl... yes
+checking for remainderl... yes
+checking for fmodl... yes
+checking for roundl... yes
+checking for truncl... yes
+checking for floorl... yes
+checking for ceill... yes
+checking for LLONG_MAX in limits.h... yes
+checking for timersub in time.h... yes
+checking for a version of GNU ld that supports the --dynamic-list flag... yes
+checking for sys/poll.h... (cached) yes
+checking for inet_aton... yes
+checking for IP_PKTINFO... yes
+checking for gcc options needed to detect all undeclared functions... none needed
+checking whether gethostbyname_r is declared... yes
+checking for library containing gethostbyname_r... none required
+checking for gethostbyname_r with 6 arguments... yes
+checking for gethostbyname_r with 5 arguments... no
+checking for byteswap.h... yes
+checking for __swap16 variant of <sys/endian.h> byteswapping macros... no
+checking for bswap16 variant of <sys/endian.h> byteswapping macros... no
+checking for locale_t in locale.h... yes
+checking for O_EVTONLY in fcntl.h... no
+checking for O_SYMLINK in fcntl.h... no
+checking for PTHREAD_RWLOCK_INITIALIZER in pthread.h... yes
+checking for PTHREAD_RWLOCK_PREFER_WRITER_NP in pthread.h... yes
+checking for PTHREAD_MUTEX_RECURSIVE_NP in pthread.h... yes
+checking for PTHREAD_MUTEX_ADAPTIVE_NP in pthread.h... yes
+checking for pthread_spinlock_t in pthread.h... yes
+checking for pthread_rwlock_timedwrlock() in pthread.h... yes
+checking for working unnamed semaphores... yes
+checking if PTHREAD_ONCE_INIT needs braces... no
+checking for PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP in pthread.h... yes
+checking whether we can compare a mutex to its initial value... no
+checking for compiler sync operations... yes
+checking for compiler atomic operations... yes
+checking if your system printf is NULL-safe.... (null)yes
+checking if socket() accepts SOCK_NONBLOCK... yes
+checking if we can increase the maximum select-able file descriptor... no
+checking if we have usable eventfd support... yes
+checking for compiler 'attribute pure' support... yes
+checking for compiler 'attribute malloc' support... yes
+checking for compiler 'attribute const' support... yes
+checking for compiler 'attribute unused' support... yes
+checking for compiler 'attribute always_inline' support... no
+checking for compiler 'attribute deprecated' support... yes
+checking for compiler 'attribute sentinel' support... yes
+checking for compiler 'attribute warn_unused_result' support... yes
+checking for compiler 'attribute may_alias' support... yes
+checking for compiler 'attribute constructor' support... yes
+checking for compiler 'attribute destructor' support... yes
+checking for compiler 'attribute noreturn' support... yes
+checking for -fsanitize=address support... yes
+checking for -fsanitize=thread support... yes
+checking for -fsanitize=leak support... yes
+checking for -fsanitize=undefined support... yes
+checking for -Wdeclaration-after-statement support... yes
+checking for -Wtrampolines support... yes
+checking for _FORTIFY_SOURCE support... yes
+checking for -fno-strict-overflow... yes
+checking for -Wno-format-truncation... yes
+checking for -Wno-format-y2k... yes
+checking for -Wno-stringop-truncation... yes
+checking for -Wshadow... yes
+checking for -march=native support... yes
+checking whether to use rpath... not needed
+checking for sysinfo... yes
+checking for library containing res_9_ninit... no
+checking for res_ninit... yes
+checking for library containing res_9_ndestroy... no
+checking for res_ndestroy... no
+checking for library containing res_9_close... no
+checking for res_close... no
+checking for struct __res_state._u._ext.nsaddrs... yes
+checking for BIND_8_COMPAT required... no
+checking for GLOB_NOMAGIC in glob.h... yes
+checking for GLOB_BRACE in glob.h... yes
+checking for RTLD_NOLOAD in dlfcn.h... yes
+checking for IP_MTU_DISCOVER in netinet/in.h... yes
+checking size of int... 4
+checking size of long... 8
+checking size of long long... 8
+checking size of char *... 8
+checking size of long... (cached) 8
+checking size of long long... (cached) 8
+checking size of fd_set.fds_bits... (cached) 8
+checking for dladdr in dlfcn.h... yes
+checking for bfd_openr in -lbfd... no
+checking for bfd_openr in -lbfd... (cached) no
+checking for bfd_openr in -lbfd... (cached) no
+checking for cap_from_text in -lcap... no
+checking for DAHDI_RESET_COUNTERS in dahdi/user.h... no
+checking for DAHDI_DEFAULT_MTU_MRU in dahdi/user.h... no
+checking for DAHDI_CODE in dahdi/user.h... no
+checking for DAHDI_POLICY_HALF_FULL in dahdi/user.h... no
+checking for enhanced dahdi vmwi support... no
+checking if "int foo = DAHDI_ECHOCANCEL_FAX_MODE" compiles using dahdi/user.h... no
+checking for getifaddrs() support... yes
+checking for timerfd support... yes
+checking for gsm_create in -lgsm... no
+checking for libilbc < 3... no
+checking for iconv_open in -liconv... no
+checking for libiconv_open in -liconv... no
+checking for iconv_close in -lc... yes
+checking for iconv.h... yes
+checking for icaltimezone_get_utc_timezone in -lical... no
+checking for iks_start_sasl in -liksemel... no
+checking for UW IMAP Toolkit c-client library... no
+checking for system c-client library...... no
+checking for SQLConnect in -liodbc... no
+checking for inotify_init in -lc... yes
+checking for sys/inotify.h... yes
+checking for jack_activate in -ljack... no
+checking for kqueue in -lc... no
+checking for kevent64... no
+checking for ldap_initialize in -lldap... no
+checking for mysql_config... no
+checking for neon-config... no
+checking for neon-config... no
+checking for netsnmp-agent... no
+checking for net-snmp-config... no
+checking for newtBell in -lnewt... yes
+checking for newt.h... yes
+checking for ub_ctx_delete in -lunbound... no
+checking for SQLConnect in -lodbc... no
+checking for ogg_stream_init in -logg... yes
+checking for ogg/ogg.h... yes
+checking for backtrace in -lexecinfo... no
+checking for backtrace in -lc... yes
+checking for execinfo.h... yes
+checking for ba2str in -lbluetooth... no
+checking for bs_version in -lbeanstalk... no
+checking for pg_config... no
+checking for poptStrerror in -lpopt... no
+checking for portaudio-2.0... no
+checking for Pa_GetDeviceCount in -lportaudio... no
+checking for pri_connected_line_update in -lpri... no
+checking for resample_open in -lresample... no
+checking for fftw_malloc in -lfftw3... no
+checking for sf_open in -lsndfile... no
+checking for minimum version of SpanDSP... yes
+checking for span_set_message_handler in -lspandsp... yes
+checking for spandsp.h... yes
+checking for t38_terminal_init in -lspandsp... yes
+checking for spandsp.h... (cached) yes
+checking for ss7_set_isup_timer in -lss7... no
+checking for openr2_chan_new in -lopenr2... no
+checking for opus_encoder_create in -lopus... yes
+checking for opus/opus.h... yes
+checking for op_open_callbacks in -lopusfile... no
+checking for luaL_newstate in -llua5.4... no
+checking for luaL_newstate in -llua5.3... no
+checking for luaL_newstate in -llua5.2... no
+checking for luaL_newstate in -llua5.1... no
+checking for luaL_newstate in -llua... no
+checking for rc_read_config in -lfreeradius-client... no
+checking for rc_read_config in -lradiusclient-ng... no
+checking for rc_read_config in -lradcli... no
+checking for codec2_create in -lcodec2... no
+checking for cpg_join in -lcpg... no
+checking for corosync_cfg_state_track in -lcfg... 
