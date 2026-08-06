@@ -1,0 +1,25 @@
+=== SERVICE ORDER ===
+--- /etc/systemd/system/franzfon-wizard.service ---
+After=network.target freepbx.service
+WorkingDirectory=/opt/franzfon/wizard/backend
+ExecStart=/usr/bin/node src/index.js
+EnvironmentFile=[PATH]
+--- /etc/systemd/system/franzfon-setup.service ---
+After=mysql.service mariadb.service
+Before=franzfon-wizard.service franzfon.service asterisk.service
+Wants=mysql.service mariadb.service
+ExecStart=/opt/franzfon/scripts/post-reset-setup.sh
+--- /etc/systemd/system/asterisk.service ---
+After=network-online.target mariadb.service
+Wants=network-online.target
+WorkingDirectory=/var/lib/asterisk
+ExecStart=/usr/sbin/asterisk
+--- /lib/systemd/system/freepbx.service ---
+After=apache2.service
+After=mariadb.service
+After=network-online.target
+Wants=network-online.target
+ExecStart=/usr/sbin/fwconsole start
+--- /etc/systemd/system/sangoma-pnpd.service ---
+After=mariadb.service
+ExecStart=/usr/local/bin/pnp_server

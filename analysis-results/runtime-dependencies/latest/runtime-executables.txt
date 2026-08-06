@@ -1,0 +1,10 @@
+=== CANDIDATE RUNTIME EXECUTABLES ===
+/usr/sbin/asterisk	ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=b1ea1aa3e63bd1557b3fc5f45062df1378aa70f4, for GNU/Linux 3.2.0, not stripped
+/usr/local/bin/fwconsole	MISSING
+/usr/local/bin/pnp_server	Python script, ASCII text executable
+/usr/bin/ffmpeg	ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=fc780eeb84acbb97ac9ebb7ff9abafc9e3cbbdc1, for GNU/Linux 3.2.0, not stripped
+/usr/bin/sox	ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=08430972f751516c29e1c44ad69f42e3b9e68e5e, for GNU/Linux 3.2.0, stripped
+/usr/bin/mysql	symbolic link to mariadb
+/usr/bin/mysqldump	symbolic link to mariadb-dump
+/usr/bin/sqlite3	ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=a2967b32b2930dba2fe396961439ffa262bc25ee, for GNU/Linux 3.2.0, stripped
+/usr/bin/redis-cli	ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=108028a04c11612ec676f194ce45a34020d8c742, for GNU/Linux 3.2.0, stripped

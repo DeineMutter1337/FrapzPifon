@@ -1,0 +1,5 @@
+fwconsole	4	/opt/franzfon/scripts/prepare-iso.sh
+/var/www/html/admin	0	
+/etc/freepbx.conf	1	/opt/franzfon/scripts/prepare-iso.sh
+/etc/amportal.conf	1	/opt/franzfon/scripts/prepare-iso.sh
+TOTAL_FREEPBX_REFERENCES=6
