@@ -1,0 +1,70 @@
+name: FRANZFON ARM64 Installer Static CI
+run-name: "Installer Static CI • ${{ github.sha }}"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'installer/**'
+      - 'scripts/stream_vma_extract.py'
+      - '.github/workflows/franzfon-installer-static-ci.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install validation tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends shellcheck python3
+
+      - name: Bash syntax
+        run: |
+          set -euxo pipefail
+          while IFS= read -r -d '' script; do
+            bash -n "$script"
+          done < <(find installer scripts -type f -name '*.sh' -print0)
+
+      - name: ShellCheck
+        run: |
+          set -euxo pipefail
+          shellcheck \
+            --severity=warning \
+            installer/*.sh \
+            scripts/*.sh
+
+      - name: Python syntax
+        run: |
+          set -euxo pipefail
+          python3 -m py_compile scripts/stream_vma_extract.py
+
+      - name: Installer safety assertions
+        run: |
+          set -euxo pipefail
+
+          # Installation must remain staged and disabled unless explicitly activated.
+          grep -F 'systemctl disable franzfon-wizard.service' installer/franzfon-arm64-install-app.sh
+          grep -F 'if [ "$ACTIVATE" -eq 1 ]' installer/franzfon-arm64-install-app.sh
+          ! grep -RE 'systemctl enable --now franzfon-wizard' installer/franzfon-arm64-install-app.sh
+
+          # Existing x86 node_modules and runtime databases must not enter the clean payload.
+          grep -F "--exclude='node_modules/'" installer/franzfon-arm64-prepare.sh
+          grep -F "--exclude='*.db'" installer/franzfon-arm64-prepare.sh
+          grep -F "--exclude='*.env'" installer/franzfon-arm64-prepare.sh
+
+          # No code intended to neutralize or bypass licensing may be introduced.
+          ! grep -REi 'bypass.{0,40}licen[cs]e|disable.{0,40}licen[cs]e|crack|patch.{0,40}activation' \
+            installer scripts docs
+
+      - name: Help output smoke tests
+        run: |
+          set -euxo pipefail
+          bash installer/franzfon-arm64-prepare.sh --help
+          bash installer/franzfon-arm64-install-app.sh --help
