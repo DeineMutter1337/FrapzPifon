@@ -33,7 +33,37 @@ write_files:
       Web after installation: http://127.0.0.1:3000/
       Lab login password: franzfon
 
+  - path: /usr/local/sbin/franzfon-fix-efi-fstab
+    permissions: '0755'
+    content: |
+      #!/bin/sh
+      set -eu
+
+      tmp="$(mktemp)"
+      awk '
+        BEGIN { OFS="\t" }
+        /^[[:space:]]*#/ || NF == 0 { print; next }
+        $2 == "/boot/efi" {
+          $1 = "/dev/vda15"
+          if ($4 !~ /(^|,)nofail(,|$)/) {
+            $4 = $4 ",nofail"
+          }
+          if ($4 !~ /(^|,)x-systemd.device-timeout=5s(,|$)/) {
+            $4 = $4 ",x-systemd.device-timeout=5s"
+          }
+        }
+        { print }
+      ' /etc/fstab > "$tmp"
+      install -m 0644 "$tmp" /etc/fstab
+      rm -f "$tmp"
+
+      if mountpoint -q /boot/efi; then
+        umount /boot/efi || true
+      fi
+      mount /boot/efi
+
 runcmd:
+  - [/usr/local/sbin/franzfon-fix-efi-fstab]
   - [systemctl, enable, --now, ssh.service]
   - [bash, -lc, 'git clone https://github.com/DeineMutter1337/FrapzPifon.git /home/franzfon/FrapzPifon || true']
   - [chown, -R, 'franzfon:franzfon', /home/franzfon/FrapzPifon]
