@@ -21,7 +21,9 @@ Options:
 
 This stage does not install or enable FRANZFON services. It creates a sanitized
 payload from the official appliance and refuses to copy x86 binaries,
-node_modules, databases, environment files, credentials, license state or SSH keys.
+node_modules, databases, environment files, private keys or machine identity.
+Application code implementing the original license mechanism is preserved;
+license state itself is excluded with the runtime databases and environment files.
 EOF
 }
 
@@ -66,6 +68,17 @@ EXTRACTOR="$REPO_ROOT/scripts/stream_vma_extract.py"
 [ -f "$EXTRACTOR" ] || { echo "Missing extractor: $EXTRACTOR" >&2; exit 1; }
 
 WORK_DIR="${WORK_DIR:-/var/tmp/franzfon-arm64-prepare}"
+WORK_PARENT="$(dirname "$WORK_DIR")"
+OUTPUT_DIR="$(realpath -m "$OUTPUT_DIR")"
+WORK_DIR="$(realpath -m "$WORK_DIR")"
+
+case "$OUTPUT_DIR/" in
+  "$WORK_DIR/"*)
+    echo '--output must not be inside --workdir because temporary files are removed.' >&2
+    exit 1
+    ;;
+esac
+
 EXTRACTED="$WORK_DIR/extracted"
 MOUNT_DIR="$WORK_DIR/root"
 STAGE_DIR="$WORK_DIR/stage"
@@ -90,12 +103,13 @@ trap cleanup EXIT
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get install -y --no-install-recommends \
-  ca-certificates python3 python3-zstandard file util-linux e2fsprogs rsync
+  ca-certificates python3 python3-zstandard file util-linux e2fsprogs rsync coreutils
 
-AVAILABLE_KB="$(df -Pk "$(dirname "$WORK_DIR")" | awk 'NR==2 {print $4}')"
+mkdir -p "$WORK_PARENT"
+AVAILABLE_KB="$(df -Pk "$WORK_PARENT" | awk 'NR==2 {print $4}')"
 REQUIRED_KB=$((12 * 1024 * 1024))
 if [ "${AVAILABLE_KB:-0}" -lt "$REQUIRED_KB" ]; then
-  echo "At least 12 GiB free space is required in $(dirname "$WORK_DIR")." >&2
+  echo "At least 12 GiB free space is required in $WORK_PARENT." >&2
   exit 1
 fi
 
@@ -143,16 +157,20 @@ rsync -a --safe-links \
   --exclude='data/' \
   --exclude='backups/' \
   --exclude='backup/' \
+  --exclude='config/' \
   --exclude='*.env' \
   --exclude='*.db' \
   --exclude='*.db-shm' \
   --exclude='*.db-wal' \
   --exclude='*.sqlite' \
   --exclude='*.sqlite3' \
-  --exclude='*license*' \
-  --exclude='*credential*' \
-  --exclude='*secret*' \
+  --exclude='*.key' \
+  --exclude='id_rsa*' \
+  --exclude='id_ed25519*' \
   "$MOUNT_DIR/opt/franzfon/" "$STAGE_DIR/payload/opt/franzfon/"
+
+mkdir -p "$STAGE_DIR/payload/opt/franzfon/config"
+chmod 0750 "$STAGE_DIR/payload/opt/franzfon/config"
 
 shopt -s nullglob
 for UNIT in \
@@ -178,8 +196,8 @@ fi
 
 if find "$STAGE_DIR" -type f \( \
     -name '*.env' -o -name '*.db' -o -name '*.db-shm' -o -name '*.db-wal' \
-    -o -name '*.sqlite' -o -name '*.sqlite3' -o -iname '*license*' \
-    -o -iname '*credential*' -o -iname '*secret*' \
+    -o -name '*.sqlite' -o -name '*.sqlite3' -o -name '*.key' \
+    -o -name 'id_rsa*' -o -name 'id_ed25519*' \
   \) -print -quit | grep -q .; then
   echo 'Safety check failed: sensitive runtime file was copied.' >&2
   exit 1
@@ -218,13 +236,14 @@ This payload intentionally excludes:
 - all existing node_modules and native x86 addons
 - SQLite and MariaDB runtime data
 - environment files and credentials
-- license state
+- license state stored in runtime data/configuration
 - backups
-- SSH keys and machine identity
+- SSH/private keys and machine identity
 
-Backend and frontend dependencies must be rebuilt natively on ARM64 from the
-included package-lock files. Asterisk is installed separately as an ARM64 build.
-The original FRANZFON license mechanism remains unchanged.
+Application code implementing the original licensing mechanism is preserved and
+must not be modified to bypass activation. Backend and frontend dependencies
+must be rebuilt natively on ARM64 from the included package-lock files.
+Asterisk is installed separately as an ARM64 build.
 EOF
 
 printf '\n[6/6] Publishing local payload\n'
