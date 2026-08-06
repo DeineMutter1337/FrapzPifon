@@ -55,7 +55,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get install -y --no-install-recommends \
   mariadb-server mariadb-client redis-server sqlite3 unixodbc odbc-mariadb \
-  openssl curl file iproute2
+  openssl curl file iproute2 binutils
 
 install -d -m 0700 "$STATE_DIR"
 install -d -o root -g root -m 0750 "$APP_ROOT/config"
@@ -322,9 +322,19 @@ find /etc/asterisk -type f -exec chmod 0640 {} +
 chmod 0640 /etc/asterisk/res_odbc.conf
 
 printf '\n[5/8] Validating native binaries and configuration files\n'
-file "$ASTERISK_PREFIX/sbin/asterisk" | grep -E 'ARM aarch64|ARM64' >/dev/null
-file "$APP_ROOT/wizard/backend/node_modules/better-sqlite3/build/Release/better_sqlite3.node" \
-  | grep -E 'ARM aarch64|ARM64' >/dev/null
+assert_aarch64_elf() {
+  local target="$1"
+  local machine
+  [ -e "$target" ] || { echo "ARM64 validation target missing: $target" >&2; exit 1; }
+  machine="$(readelf -h "$target" | awk '$1 == "Machine:" {print $2}')"
+  [ "$machine" = AArch64 ] || {
+    echo "Expected AArch64 ELF, found '${machine:-unknown}': $target" >&2
+    exit 1
+  }
+}
+
+assert_aarch64_elf "$ASTERISK_PREFIX/sbin/asterisk"
+assert_aarch64_elf "$APP_ROOT/wizard/backend/node_modules/better-sqlite3/build/Release/better_sqlite3.node"
 "$ASTERISK_PREFIX/sbin/asterisk" -V
 /usr/local/bin/node --check "$APP_ROOT/wizard/backend/src/index.js"
 
