@@ -1,73 +1,90 @@
 ● mariadb.service - MariaDB 10.11.14 database server
      Loaded: loaded (/usr/lib/systemd/system/mariadb.service; enabled; preset: enabled)
-     Active: active (running) since Thu 2026-08-06 11:12:06 UTC; 46s ago
+     Active: active (running) since Thu 2026-08-06 11:24:13 UTC; 2s ago
        Docs: man:mariadbd(8)
              https://mariadb.com/kb/en/library/systemd/
-    Process: 54323 ExecStartPre=/usr/bin/install -m 755 -o mysql -g root -d /var/run/mysqld (code=exited, status=0/SUCCESS)
-    Process: 54325 ExecStartPre=/bin/sh -c systemctl unset-environment _WSREP_START_POSITION (code=exited, status=0/SUCCESS)
-    Process: 54327 ExecStartPre=/bin/sh -c [ ! -e /usr/bin/galera_recovery ] && VAR= ||   VAR=`/usr/bin/galera_recovery`; [ $? -eq 0 ]   && systemctl set-environment _WSREP_START_POSITION=$VAR || exit 1 (code=exited, status=0/SUCCESS)
-    Process: 54370 ExecStartPost=/bin/sh -c systemctl unset-environment _WSREP_START_POSITION (code=exited, status=0/SUCCESS)
-    Process: 54372 ExecStartPost=/etc/mysql/debian-start (code=exited, status=0/SUCCESS)
-   Main PID: 54358 (mariadbd)
+    Process: 54137 ExecStartPre=/usr/bin/install -m 755 -o mysql -g root -d /var/run/mysqld (code=exited, status=0/SUCCESS)
+    Process: 54139 ExecStartPre=/bin/sh -c systemctl unset-environment _WSREP_START_POSITION (code=exited, status=0/SUCCESS)
+    Process: 54141 ExecStartPre=/bin/sh -c [ ! -e /usr/bin/galera_recovery ] && VAR= ||   VAR=`/usr/bin/galera_recovery`; [ $? -eq 0 ]   && systemctl set-environment _WSREP_START_POSITION=$VAR || exit 1 (code=exited, status=0/SUCCESS)
+    Process: 54184 ExecStartPost=/bin/sh -c systemctl unset-environment _WSREP_START_POSITION (code=exited, status=0/SUCCESS)
+    Process: 54186 ExecStartPost=/etc/mysql/debian-start (code=exited, status=0/SUCCESS)
+   Main PID: 54171 (mariadbd)
      Status: "Taking your SQL requests now..."
-      Tasks: 13 (limit: 126011)
-     Memory: 81.3M (peak: 84.3M)
-        CPU: 283ms
+      Tasks: 14 (limit: 126011)
+     Memory: 81.8M (peak: 84.7M)
+        CPU: 246ms
      CGroup: /system.slice/mariadb.service
-             └─54358 /usr/sbin/mariadbd
+             └─54171 /usr/sbin/mariadbd
 
-Aug 06 11:12:06 runnervma9114 mariadbd[54358]: 2026-08-06 11:12:06 0 [Note] Plugin 'FEEDBACK' is disabled.
-Aug 06 11:12:06 runnervma9114 mariadbd[54358]: 2026-08-06 11:12:06 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
-Aug 06 11:12:06 runnervma9114 mariadbd[54358]: 2026-08-06 11:12:06 0 [Note] Server socket created on IP: '127.0.0.1', port: '3306'.
-Aug 06 11:12:06 runnervma9114 mariadbd[54358]: 2026-08-06 11:12:06 0 [Note] /usr/sbin/mariadbd: ready for connections.
-Aug 06 11:12:06 runnervma9114 mariadbd[54358]: Version: '10.11.14-MariaDB-0ubuntu0.24.04.1'  socket: '/run/mysqld/mysqld.sock'  port: 3306  Ubuntu 24.04
-Aug 06 11:12:06 runnervma9114 mariadbd[54358]: 2026-08-06 11:12:06 0 [Note] InnoDB: Buffer pool(s) load completed at 260806 11:12:06
-Aug 06 11:12:06 runnervma9114 systemd[1]: Started mariadb.service - MariaDB 10.11.14 database server.
-Aug 06 11:12:06 runnervma9114 /etc/mysql/debian-start[54375]: Upgrading MariaDB tables if necessary.
-Aug 06 11:12:06 runnervma9114 /etc/mysql/debian-start[54391]: Checking for insecure root accounts.
-Aug 06 11:12:06 runnervma9114 /etc/mysql/debian-start[54395]: Triggering myisam-recover for all MyISAM tables and aria-recover for all Aria tables
+Aug 06 11:24:13 runnervma9114 mariadbd[54171]: 2026-08-06 11:24:13 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+Aug 06 11:24:13 runnervma9114 mariadbd[54171]: 2026-08-06 11:24:13 0 [Note] Server socket created on IP: '127.0.0.1', port: '3306'.
+Aug 06 11:24:13 runnervma9114 mariadbd[54171]: 2026-08-06 11:24:13 0 [Note] /usr/sbin/mariadbd: ready for connections.
+Aug 06 11:24:13 runnervma9114 mariadbd[54171]: Version: '10.11.14-MariaDB-0ubuntu0.24.04.1'  socket: '/run/mysqld/mysqld.sock'  port: 3306  Ubuntu 24.04
+Aug 06 11:24:13 runnervma9114 mariadbd[54171]: 2026-08-06 11:24:13 0 [Note] InnoDB: Buffer pool(s) load completed at 260806 11:24:13
+Aug 06 11:24:13 runnervma9114 systemd[1]: Started mariadb.service - MariaDB 10.11.14 database server.
+Aug 06 11:24:13 runnervma9114 /etc/mysql/debian-start[54189]: Upgrading MariaDB tables if necessary.
+Aug 06 11:24:13 runnervma9114 /etc/mysql/debian-start[54203]: Checking for insecure root accounts.
+Aug 06 11:24:13 runnervma9114 /etc/mysql/debian-start[54209]: Triggering myisam-recover for all MyISAM tables and aria-recover for all Aria tables
+Aug 06 11:24:15 runnervma9114 mariadbd[54171]: 2026-08-06 11:24:15 32 [Warning] Access denied for user 'franzfon'@'localhost' (using password: YES)
 
 ● redis-server.service - Advanced key-value store
      Loaded: loaded (/usr/lib/systemd/system/redis-server.service; enabled; preset: enabled)
-     Active: active (running) since Thu 2026-08-06 11:12:05 UTC; 46s ago
+     Active: active (running) since Thu 2026-08-06 11:24:13 UTC; 2s ago
        Docs: http://redis.io/documentation,
              man:redis-server(1)
-   Main PID: 54312 (redis-server)
+   Main PID: 54127 (redis-server)
      Status: "Ready to accept connections"
       Tasks: 5 (limit: 19092)
-     Memory: 3.5M (peak: 4.3M)
-        CPU: 86ms
+     Memory: 3.8M (peak: 4.1M)
+        CPU: 32ms
      CGroup: /system.slice/redis-server.service
-             └─54312 "/usr/bin/redis-server 127.0.0.1:6379"
+             └─54127 "/usr/bin/redis-server 127.0.0.1:6379"
 
-Aug 06 11:12:05 runnervma9114 systemd[1]: Starting redis-server.service - Advanced key-value store...
-Aug 06 11:12:05 runnervma9114 systemd[1]: Started redis-server.service - Advanced key-value store.
+Aug 06 11:24:13 runnervma9114 systemd[1]: Starting redis-server.service - Advanced key-value store...
+Aug 06 11:24:13 runnervma9114 systemd[1]: Started redis-server.service - Advanced key-value store.
 
 ● asterisk.service - Asterisk PBX for FRANZFON ARM64
      Loaded: loaded (/etc/systemd/system/asterisk.service; enabled; preset: enabled)
-     Active: active (running) since Thu 2026-08-06 11:12:06 UTC; 46s ago
-   Main PID: 54382 (asterisk)
-      Tasks: 55 (limit: 19092)
-     Memory: 46.2M (peak: 46.8M)
-        CPU: 739ms
+     Active: deactivating (stop) since Thu 2026-08-06 11:24:15 UTC; 537ms ago
+   Main PID: 54198 (asterisk); Control PID: 54344 (asterisk)
+      Tasks: 56 (limit: 19092)
+     Memory: 48.0M (peak: 48.2M)
+        CPU: 648ms
      CGroup: /system.slice/asterisk.service
-             └─54382 /opt/franzfon-arm64/asterisk/sbin/asterisk -f -U asterisk -G asterisk
+             ├─54198 /opt/franzfon-arm64/asterisk/sbin/asterisk -f -U asterisk -G asterisk
+             └─54344 rasterisk fon-arm64/asterisk/sbin/asterisk -rx "core stop now"
 
-Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: app_amd declined to load.
-Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: app_followme declined to load.
-Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: chan_unistim declined to load.
-Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: pbx_dundi declined to load.
-Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: app_festival declined to load.
-Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: app_alarmreceiver declined to load.
-Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: pbx_ael declined to load.
-Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: res_prometheus declined to load.
-Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: func_odbc declined to load.
-Aug 06 11:12:07 runnervma9114 asterisk[54382]: Asterisk Ready.
+Aug 06 11:24:14 runnervma9114 asterisk[54198]: [2026-08-06 11:24:14] ERROR[54198]: loader.c:2687 load_modules: pbx_ael declined to load.
+Aug 06 11:24:14 runnervma9114 asterisk[54198]: [2026-08-06 11:24:14] ERROR[54198]: loader.c:2687 load_modules: res_prometheus declined to load.
+Aug 06 11:24:14 runnervma9114 asterisk[54198]: [2026-08-06 11:24:14] ERROR[54198]: loader.c:2687 load_modules: func_odbc declined to load.
+Aug 06 11:24:14 runnervma9114 asterisk[54198]: Asterisk Ready.
+Aug 06 11:24:15 runnervma9114 asterisk[54198]: [2026-08-06 11:24:15] WARNING[54331]: db.c:540 ast_db_del2: AstDB key /FFPROBE/armed does not exist
+Aug 06 11:24:15 runnervma9114 asterisk[54198]: [2026-08-06 11:24:15] WARNING[54334]: db.c:540 ast_db_del2: AstDB key /FFPROBE/callerid does not exist
+Aug 06 11:24:15 runnervma9114 asterisk[54198]: [2026-08-06 11:24:15] WARNING[54341]: db.c:540 ast_db_del2: AstDB key /FFPROBE/result does not exist
+Aug 06 11:24:15 runnervma9114 systemd[1]: Stopping asterisk.service - Asterisk PBX for FRANZFON ARM64...
+Aug 06 11:24:15 runnervma9114 asterisk[54198]: Asterisk cleanly ending (0).
+Aug 06 11:24:15 runnervma9114 asterisk[54198]: Executing last minute cleanups
 
 ● franzfon-wizard.service - FRANZFON Wizard ARM64
      Loaded: loaded (/etc/systemd/system/franzfon-wizard.service; enabled; preset: enabled)
-     Active: activating (auto-restart) (Result: exit-code) since Thu 2026-08-06 11:12:50 UTC; 2s ago
-    Process: 54831 ExecStartPre=/bin/bash -c ! ss -H -ltn sport = :3000 | grep -q . (code=exited, status=0/SUCCESS)
-    Process: 54835 ExecStart=/usr/local/bin/node src/index.js (code=exited, status=1/FAILURE)
-   Main PID: 54835 (code=exited, status=1/FAILURE)
-        CPU: 422ms
+     Active: active (running) since Thu 2026-08-06 11:24:15 UTC; 1s ago
+    Process: 54304 ExecStartPre=/bin/bash -c ! ss -H -ltn sport = :3000 | grep -q . (code=exited, status=0/SUCCESS)
+   Main PID: 54312 (node)
+      Tasks: 13 (limit: 19092)
+     Memory: 52.3M (peak: 54.1M)
+        CPU: 642ms
+     CGroup: /system.slice/franzfon-wizard.service
+             ├─54312 /usr/local/bin/node src/index.js
+             ├─54339 /bin/sh -c "systemctl stop asterisk"
+             └─54340 systemctl stop asterisk
+
+Aug 06 11:24:15 runnervma9114 node[54312]: [FRANZFON] ensureAdminPjsipEndpoint: Endpoint 200 fehlt, lege ihn an...
+Aug 06 11:24:15 runnervma9114 node[54312]: [BLF] AMI-Verbindung hergestellt
+Aug 06 11:24:15 runnervma9114 node[54312]: [FRANZFON] ensureAdminPjsipEndpoint fehlgeschlagen: ENOENT: no such file or directory, open '/etc/asterisk/pjsip_custom.conf'
+Aug 06 11:24:15 runnervma9114 node[54312]: [BLF] AMI-Willkommen: Asterisk Call Manager/11.0.0
+Aug 06 11:24:15 runnervma9114 node[54312]: [BLF] AMI-Authentifizierung erfolgreich
+Aug 06 11:24:15 runnervma9114 node[54312]: [BLF] Lade initialen Extension-Status...
+Aug 06 11:24:15 runnervma9114 node[54312]: [FRANZFON] Starte Asterisk neu...
+Aug 06 11:24:15 runnervma9114 node[54312]: [Asterisk-Restart][transports] Stop angefordert
+Aug 06 11:24:15 runnervma9114 node[54312]: [CDR] WARNUNG: MySQL nicht erreichbar: Access denied for user 'franzfon'@'localhost' (using password: YES)
+Aug 06 11:24:15 runnervma9114 node[54312]: [BLF] 1 Extensions geladen

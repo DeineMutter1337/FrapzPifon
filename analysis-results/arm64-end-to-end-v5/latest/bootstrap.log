@@ -27,7 +27,7 @@ After this operation, 603 kB of additional disk space will be used.
 Get:1 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 odbcinst arm64 2.3.12-1ubuntu0.24.04.1 [9632 B]
 Get:2 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 odbc-mariadb arm64 3.1.15-3 [108 kB]
 Get:3 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 unixodbc arm64 2.3.12-1ubuntu0.24.04.1 [26.3 kB]
-Fetched 143 kB in 1s (180 kB/s)
+Fetched 143 kB in 1s (124 kB/s)
 Selecting previously unselected package odbcinst.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 202450 files and directories currently installed.)
 Preparing to unpack .../odbcinst_2.3.12-1ubuntu0.24.04.1_arm64.deb ...
@@ -58,7 +58,7 @@ Service restarts being deferred:
 No containers need to be restarted.
 
 User sessions running outdated binaries:
- runner @ user manager service: systemd[1287]
+ runner @ user manager service: systemd[1333]
 
 No VM guests are running outdated hypervisor (qemu) binaries on this host.
 
@@ -84,8 +84,52 @@ Synchronizing state of redis-server.service with SysV service script with /usr/l
 Executing: /usr/lib/systemd/systemd-sysv-install enable redis-server
 Created symlink /etc/systemd/system/multi-user.target.wants/asterisk.service → /etc/systemd/system/asterisk.service.
 Created symlink /etc/systemd/system/multi-user.target.wants/franzfon-wizard.service → /etc/systemd/system/franzfon-wizard.service.
-Asterisk 22.7.0 built by root @ runnervma9114 on a aarch64 running Linux on 2026-08-06 11:10:18 UTC
+Asterisk 22.7.0 built by root @ runnervma9114 on a aarch64 running Linux on 2026-08-06 11:22:29 UTC
 Module                         Description                              Use Count  Status      Support Level
 res_pjsip.so                   Basic SIP resource                       50         Running              core
 1 modules loaded
-curl: (7) Failed to connect to 127.0.0.1 port 3000 after 0 ms: Couldn't connect to server
+● asterisk.service - Asterisk PBX for FRANZFON ARM64
+     Loaded: loaded (/etc/systemd/system/asterisk.service; enabled; preset: enabled)
+     Active: deactivating (stop) since Thu 2026-08-06 11:24:15 UTC; 502ms ago
+   Main PID: 54198 (asterisk); Control PID: 54344 (asterisk)
+      Tasks: 56 (limit: 19092)
+     Memory: 48.2M (peak: 48.2M)
+        CPU: 648ms
+     CGroup: /system.slice/asterisk.service
+             ├─54198 /opt/franzfon-arm64/asterisk/sbin/asterisk -f -U asterisk -G asterisk
+             └─54344 rasterisk fon-arm64/asterisk/sbin/asterisk -rx "core stop now"
+
+Aug 06 11:24:14 runnervma9114 asterisk[54198]: [2026-08-06 11:24:14] ERROR[54198]: loader.c:2687 load_modules: pbx_ael declined to load.
+Aug 06 11:24:14 runnervma9114 asterisk[54198]: [2026-08-06 11:24:14] ERROR[54198]: loader.c:2687 load_modules: res_prometheus declined to load.
+Aug 06 11:24:14 runnervma9114 asterisk[54198]: [2026-08-06 11:24:14] ERROR[54198]: loader.c:2687 load_modules: func_odbc declined to load.
+Aug 06 11:24:14 runnervma9114 asterisk[54198]: Asterisk Ready.
+Aug 06 11:24:15 runnervma9114 asterisk[54198]: [2026-08-06 11:24:15] WARNING[54331]: db.c:540 ast_db_del2: AstDB key /FFPROBE/armed does not exist
+Aug 06 11:24:15 runnervma9114 asterisk[54198]: [2026-08-06 11:24:15] WARNING[54334]: db.c:540 ast_db_del2: AstDB key /FFPROBE/callerid does not exist
+Aug 06 11:24:15 runnervma9114 asterisk[54198]: [2026-08-06 11:24:15] WARNING[54341]: db.c:540 ast_db_del2: AstDB key /FFPROBE/result does not exist
+Aug 06 11:24:15 runnervma9114 systemd[1]: Stopping asterisk.service - Asterisk PBX for FRANZFON ARM64...
+Aug 06 11:24:15 runnervma9114 asterisk[54198]: Asterisk cleanly ending (0).
+Aug 06 11:24:15 runnervma9114 asterisk[54198]: Executing last minute cleanups
+
+● franzfon-wizard.service - FRANZFON Wizard ARM64
+     Loaded: loaded (/etc/systemd/system/franzfon-wizard.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-08-06 11:24:15 UTC; 1s ago
+    Process: 54304 ExecStartPre=/bin/bash -c ! ss -H -ltn sport = :3000 | grep -q . (code=exited, status=0/SUCCESS)
+   Main PID: 54312 (node)
+      Tasks: 13 (limit: 19092)
+     Memory: 52.3M (peak: 54.1M)
+        CPU: 642ms
+     CGroup: /system.slice/franzfon-wizard.service
+             ├─54312 /usr/local/bin/node src/index.js
+             ├─54339 /bin/sh -c "systemctl stop asterisk"
+             └─54340 systemctl stop asterisk
+
+Aug 06 11:24:15 runnervma9114 node[54312]: [FRANZFON] ensureAdminPjsipEndpoint: Endpoint 200 fehlt, lege ihn an...
+Aug 06 11:24:15 runnervma9114 node[54312]: [BLF] AMI-Verbindung hergestellt
+Aug 06 11:24:15 runnervma9114 node[54312]: [FRANZFON] ensureAdminPjsipEndpoint fehlgeschlagen: ENOENT: no such file or directory, open '/etc/asterisk/pjsip_custom.conf'
+Aug 06 11:24:15 runnervma9114 node[54312]: [BLF] AMI-Willkommen: Asterisk Call Manager/11.0.0
+Aug 06 11:24:15 runnervma9114 node[54312]: [BLF] AMI-Authentifizierung erfolgreich
+Aug 06 11:24:15 runnervma9114 node[54312]: [BLF] Lade initialen Extension-Status...
+Aug 06 11:24:15 runnervma9114 node[54312]: [FRANZFON] Starte Asterisk neu...
+Aug 06 11:24:15 runnervma9114 node[54312]: [Asterisk-Restart][transports] Stop angefordert
+Aug 06 11:24:15 runnervma9114 node[54312]: [CDR] WARNUNG: MySQL nicht erreichbar: Access denied for user 'franzfon'@'localhost' (using password: YES)
+Aug 06 11:24:15 runnervma9114 node[54312]: [BLF] 1 Extensions geladen
