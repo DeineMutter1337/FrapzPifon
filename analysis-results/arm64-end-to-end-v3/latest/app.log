@@ -512,10 +512,10 @@ templates/systemd/sangoma-pnpd.service: OK
 [2/7] Installing native Debian ARM64 runtime packages
 Hit:1 https://packages.microsoft.com/repos/azure-cli noble InRelease
 Get:2 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
-Get:3 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.2 kB]
+Get:3 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [643 B]
 Get:4 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [266 kB]
 Get:5 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [306 kB]
-Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [643 B]
+Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.2 kB]
 Hit:7 http://ports.ubuntu.com/ubuntu-ports noble InRelease
 Get:8 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease [126 kB]
 Get:9 http://ports.ubuntu.com/ubuntu-ports noble-backports InRelease [126 kB]
@@ -538,7 +538,7 @@ Get:25 http://ports.ubuntu.com/ubuntu-ports noble-security/universe Translation-
 Get:26 http://ports.ubuntu.com/ubuntu-ports noble-security/universe arm64 Components [76.4 kB]
 Get:27 http://ports.ubuntu.com/ubuntu-ports noble-security/restricted arm64 Packages [1999 kB]
 Get:28 http://ports.ubuntu.com/ubuntu-ports noble-security/restricted Translation-en [302 kB]
-Fetched 12.6 MB in 6s (2089 kB/s)
+Fetched 12.6 MB in 6s (2050 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -732,7 +732,7 @@ Get:108 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libwavpack1 arm64 
 Get:109 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 libsox-fmt-base arm64 14.4.2+git20190427-4build4 [34.8 kB]
 Get:110 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 sox arm64 14.4.2+git20190427-4build4 [101 kB]
 Preconfiguring packages ...
-Fetched 76.4 MB in 23s (3265 kB/s)
+Fetched 76.4 MB in 22s (3469 kB/s)
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 200092 files and directories currently installed.)
 Removing mysql-client (8.0.46-0ubuntu0.24.04.3) ...
 Removing mysql-server (8.0.46-0ubuntu0.24.04.3) ...
@@ -1244,8 +1244,8 @@ No VM guests are running outdated hypervisor (qemu) binaries on this host.
 [3/7] Installing verified Node.js 20.20.2 ARM64
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 24.1M    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 24.1M  100 24.1M    0     0  79.4M      0 --:--:-- --:--:-- --:--:-- 79.2M
-/var/tmp/franzfon-node.MiqfYD/node-v20.20.2-linux-arm64.tar.xz: OK
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 23 24.1M   23 5760k    0     0  16.0M      0  0:00:01 --:--:--  0:00:01 15.9M100 24.1M  100 24.1M    0     0  42.8M      0 --:--:-- --:--:-- --:--:-- 42.8M
+/var/tmp/franzfon-node.jzUlCI/node-v20.20.2-linux-arm64.tar.xz: OK
 v20.20.2
 10.8.2
 
