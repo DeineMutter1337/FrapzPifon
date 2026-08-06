@@ -9,4 +9,8 @@ processed 7000 extents
 processed 8000 extents
 processed 9000 extents
 done: 9040 extents
-scripts/configuration_contract_audit.sh: line 76: syntax error near unexpected token `('
+find: ‘/home/runner/work/FrapzPifon/FrapzPifon/franzfon-config-root/var/lib/mysql/sys’: Permission denied
+find: ‘/home/runner/work/FrapzPifon/FrapzPifon/franzfon-config-root/var/lib/mysql/mysql’: Permission denied
+find: ‘/home/runner/work/FrapzPifon/FrapzPifon/franzfon-config-root/var/lib/mysql/asteriskcdrdb’: Permission denied
+find: ‘/home/runner/work/FrapzPifon/FrapzPifon/franzfon-config-root/var/lib/mysql/performance_schema’: Permission denied
+awk: fatal: cannot open file `/home/runner/work/FrapzPifon/FrapzPifon/franzfon-config-root/etc/asterisk/keys/default.key' for reading: Permission denied
