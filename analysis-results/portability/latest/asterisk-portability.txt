@@ -410,3 +410,12 @@ asterisk22.0-freepbx-asterisk-modules	1.0-1.sng12	amd64
 /usr/lib/x86_64-linux-gnu/asterisk/modules/res_tonedetect.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=f23811c28ae7b649e619042a3a4f361f5933d487, not stripped
 /usr/lib/x86_64-linux-gnu/asterisk/modules/res_websocket_client.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=5aec9a36bc26d41f77d4a32daeec886e02025e86, not stripped
 /usr/lib/x86_64-linux-gnu/asterisk/modules/res_xmpp.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=43e6daee60e5927a573744b4bfa9c150647816ab, not stripped
+
+=== NONFREE / HARDWARE-SPECIFIC PACKAGE HINTS ===
+asterisk22-addons-bluetooth	22.7.0-1.sng12	amd64
+asterisk22-addons-ooh323	22.7.0-1.sng12	amd64
+asterisk22-dahdi	22.7.0-1.sng12	amd64
+asterisk22-flite	2.4-44.2505af1.sng12	amd64
+asterisk22-g729	2007-1.sng12	amd64
+asterisk22-res-digium-phone	3.6.12-1.sng12	amd64
+sangoma-pbx17	2408-1.sng12	all

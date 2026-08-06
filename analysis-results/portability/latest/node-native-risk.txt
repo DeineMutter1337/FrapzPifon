@@ -1,26 +1,15 @@
 === NATIVE NODE ADDONS (.node) ===
-/opt/franzfon/wizard/backend/node_modules/better-sqlite3/build/Release/better_sqlite3.node	ELF 64-bit LSB shared object, x86-64, version 1 (GNU/Linux), dynamically linked, BuildID[sha1]=851caf4774df1d0033c83b2fd0dcb8f0f1020dc7, not stripped
-sha256=0914f8e521cb1cf069772c7c4228ea212e001ed6373b1d9f9a9772a6c7fb035a
-/opt/franzfon/wizard/frontend/node_modules/@rolldown/binding-linux-x64-gnu/rolldown-binding.linux-x64-gnu.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped
-sha256=a583ae0c2ce035764094f68c3f2bd7747372c37b49f1ac72640037ee0d2e74c4
-/opt/franzfon/wizard/frontend/node_modules/@rolldown/binding-linux-x64-musl/rolldown-binding.linux-x64-musl.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped
-sha256=b61afa879fc646472af63e37226e2d8ecc4d375a0b655f2578cbeadffbacec90
-/opt/franzfon/wizard/frontend/node_modules/@img/sharp-linuxmusl-x64/lib/sharp-linuxmusl-x64.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped
-sha256=528d57cd87dc0787d6c0ab25f4b614abbff528ebbdbb8f86c117e305b2dfa85c
-/opt/franzfon/wizard/frontend/node_modules/@img/sharp-linux-x64/lib/sharp-linux-x64.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=bb8dd6af4993ab3b53638650231c51726feee796, stripped
-sha256=fdbcd90b39941fb7a4bc1b70f1c3e98d4b56b4d1150d4b4dbd0dc62945aeedd5
-/opt/franzfon/wizard/frontend/node_modules/lightningcss-linux-x64-gnu/lightningcss.linux-x64-gnu.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped
-sha256=2024f99789a601c7438b387117032ba07594cbba9b784064b47cdc60a0972326
-/opt/franzfon/wizard/frontend/node_modules/@rollup/rollup-linux-x64-musl/rollup.linux-x64-musl.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped
-sha256=f5e856f7967bed93d82d7a401301a6e66833bbcbae5258f7ca63ecf464a1cdad
-/opt/franzfon/wizard/frontend/node_modules/@rollup/rollup-linux-x64-gnu/rollup.linux-x64-gnu.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped
-sha256=a29bb9c53efb7c96557350995cd137b917c125f860d5095296d218bd0feab8cf
-/opt/franzfon/wizard/frontend/node_modules/@tailwindcss/oxide-linux-x64-musl/tailwindcss-oxide.linux-x64-musl.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped
-sha256=873ca743964253912d81c871d6de8576d23bd4b4105c079c3a21e938fbfa41e7
-/opt/franzfon/wizard/frontend/node_modules/@tailwindcss/oxide-linux-x64-gnu/tailwindcss-oxide.linux-x64-gnu.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped
-sha256=e53480389e5ea780096dec54cfa786f6f6a9dab813db9b797861481e0fed9354
-/opt/franzfon/wizard/frontend/node_modules/lightningcss-linux-x64-musl/lightningcss.linux-x64-musl.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped
-sha256=e2c30fdc3868240af5ad6c8ec0a034848bad9a78f4b0fd32f3a41cd890814b19
+/opt/franzfon/wizard/backend/node_modules/better-sqlite3/build/Release/better_sqlite3.node	ELF 64-bit LSB shared object, x86-64, version 1 (GNU/Linux), dynamically linked, BuildID[sha1]=851caf4774df1d0033c83b2fd0dcb8f0f1020dc7, not stripped	sha256=0914f8e521cb1cf069772c7c4228ea212e001ed6373b1d9f9a9772a6c7fb035a
+/opt/franzfon/wizard/frontend/node_modules/@rolldown/binding-linux-x64-gnu/rolldown-binding.linux-x64-gnu.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped	sha256=a583ae0c2ce035764094f68c3f2bd7747372c37b49f1ac72640037ee0d2e74c4
+/opt/franzfon/wizard/frontend/node_modules/@rolldown/binding-linux-x64-musl/rolldown-binding.linux-x64-musl.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped	sha256=b61afa879fc646472af63e37226e2d8ecc4d375a0b655f2578cbeadffbacec90
+/opt/franzfon/wizard/frontend/node_modules/@img/sharp-linuxmusl-x64/lib/sharp-linuxmusl-x64.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped	sha256=528d57cd87dc0787d6c0ab25f4b614abbff528ebbdbb8f86c117e305b2dfa85c
+/opt/franzfon/wizard/frontend/node_modules/@img/sharp-linux-x64/lib/sharp-linux-x64.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=bb8dd6af4993ab3b53638650231c51726feee796, stripped	sha256=fdbcd90b39941fb7a4bc1b70f1c3e98d4b56b4d1150d4b4dbd0dc62945aeedd5
+/opt/franzfon/wizard/frontend/node_modules/lightningcss-linux-x64-gnu/lightningcss.linux-x64-gnu.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped	sha256=2024f99789a601c7438b387117032ba07594cbba9b784064b47cdc60a0972326
+/opt/franzfon/wizard/frontend/node_modules/@rollup/rollup-linux-x64-musl/rollup.linux-x64-musl.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped	sha256=f5e856f7967bed93d82d7a401301a6e66833bbcbae5258f7ca63ecf464a1cdad
+/opt/franzfon/wizard/frontend/node_modules/@rollup/rollup-linux-x64-gnu/rollup.linux-x64-gnu.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped	sha256=a29bb9c53efb7c96557350995cd137b917c125f860d5095296d218bd0feab8cf
+/opt/franzfon/wizard/frontend/node_modules/@tailwindcss/oxide-linux-x64-musl/tailwindcss-oxide.linux-x64-musl.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped	sha256=873ca743964253912d81c871d6de8576d23bd4b4105c079c3a21e938fbfa41e7
+/opt/franzfon/wizard/frontend/node_modules/@tailwindcss/oxide-linux-x64-gnu/tailwindcss-oxide.linux-x64-gnu.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped	sha256=e53480389e5ea780096dec54cfa786f6f6a9dab813db9b797861481e0fed9354
+/opt/franzfon/wizard/frontend/node_modules/lightningcss-linux-x64-musl/lightningcss.linux-x64-musl.node	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped	sha256=e2c30fdc3868240af5ad6c8ec0a034848bad9a78f4b0fd32f3a41cd890814b19
 
 === BUILD MARKERS ===
 /opt/franzfon/wizard/backend/node_modules/better-sqlite3/binding.gyp	942 bytes
@@ -28,7 +17,7 @@ sha256=e2c30fdc3868240af5ad6c8ec0a034848bad9a78f4b0fd32f3a41cd890814b19
 /opt/franzfon/wizard/backend/node_modules/better-sqlite3/deps/defines.gypi	1128 bytes
 /opt/franzfon/wizard/frontend/node_modules/sharp/src/binding.gyp	10597 bytes
 
-=== PACKAGES DECLARING GYP / INSTALL SCRIPTS ===
+=== PACKAGES DECLARING NATIVE INSTALL HOOKS ===
 /opt/franzfon/wizard/backend/node_modules/better-sqlite3/package.json	{"name":"better-sqlite3","version":"12.6.2","gypfile":null,"scripts":{"preinstall":null,"install":"prebuild-install || node-gyp rebuild --release","postinstall":null}}
 /opt/franzfon/wizard/frontend/node_modules/sharp/package.json	{"name":"sharp","version":"0.34.5","gypfile":null,"scripts":{"preinstall":null,"install":"node install/check.js || npm run build","postinstall":null}}
 /opt/franzfon/wizard/frontend/node_modules/esbuild/package.json	{"name":"esbuild","version":"0.27.7","gypfile":null,"scripts":{"preinstall":null,"install":null,"postinstall":"node install.js"}}

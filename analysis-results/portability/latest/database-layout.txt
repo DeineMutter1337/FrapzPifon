@@ -1,0 +1,18 @@
+=== DATABASE DIRECTORIES ===
+4.0K	/var/lib/mysql/asteriskcdrdb
+4.0K	/var/lib/mysql/mysql
+4.0K	/var/lib/mysql/performance_schema
+4.0K	/var/lib/redis
+12K	/var/lib/mysql/sys
+173M	/var/lib/mysql
+
+=== FRANZFON DATABASE MARKERS ===
+79691776	/var/lib/mysql/ibdata1
+741376	/opt/franzfon/wizard/backend/data/franzfon.db
+57344	/var/lib/postfix/smtp_scache.db
+20480	/var/lib/asterisk/astdb.sqlite3
+12288	/var/lib/apt/listchanges.db
+0	/var/lib/asterisk/franzfon.db
+0	/opt/franzfon/wizard/backend/node_modules/better-sqlite3/test.db
+0	/opt/franzfon/wizard/backend/franzfon.db
+0	/opt/franzfon/franzfon.db

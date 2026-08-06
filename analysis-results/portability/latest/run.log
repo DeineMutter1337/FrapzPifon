@@ -20,6 +20,31 @@ done: 9040 extents
 
 ===== NODE PROJECT MANIFESTS =====
 
+===== NODE NATIVE RISKS =====
+
 ===== NATIVE FRANZFON BINARIES =====
 
 ===== ASTERISK PORTABILITY =====
+
+===== APT AND RUNTIME SOURCES =====
+
+===== APPLICATION SHAPE =====
+
+===== DATABASE LAYOUT WITHOUT CONTENTS =====
+
+===== GENERATE PORTABILITY VERDICT INPUT =====
+
+===== SANITIZE =====
+Portability audit v2 completed successfully.
+application-shape.txt	32641 bytes
+apt-sources.txt	1492 bytes
+asterisk-portability.txt	76743 bytes
+baseline.txt	4135 bytes
+database-layout.txt	591 bytes
+franzfon-native-binaries.txt	4064 bytes
+franzfon-services.txt	2876 bytes
+node-native-risk.txt	4292 bytes
+node-project-manifests.txt	1283 bytes
+portability-verdict-input.txt	493 bytes
+run.log	760 bytes
+summary.txt	45 bytes

@@ -1,0 +1,11 @@
+ARM64_PORTABILITY_AUDIT_VERSION=2
+FRANZFON_NODE_PROJECTS=2
+NATIVE_NODE_ADDONS=11
+FRANZFON_NATIVE_BINARIES=15
+ASTERISK_AMD64_PACKAGES=27
+
+Interpretation:
+- JavaScript, JSON, shell and static web files are architecture-independent.
+- Every x86-64 ELF, .node addon and proprietary codec needs an ARM64 build or replacement.
+- Asterisk distribution packages must be replaced by ARM64 Asterisk packages/builds.
+- Database data should be migrated logically rather than by copying raw MariaDB files.
