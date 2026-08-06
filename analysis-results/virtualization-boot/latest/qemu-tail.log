@@ -1,0 +1,18 @@
+franzfon-arm64-lab  | Downloading official Debian 12 ARM64 image...
+franzfon-arm64-lab  |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+franzfon-arm64-lab  |                                  Dload  Upload   Total   Spent    Left  Speed
+franzfon-arm64-lab  |   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   393  100   393    0     0    595      0 --:--:-- --:--:-- --:--:--   595
+franzfon-arm64-lab  |   0  413M    0  179k    0     0   117k      0  0:59:55  0:00:01  0:59:54  117k  1  413M    1 6468k    0     0  2562k      0  0:02:45  0:00:02  0:02:43 6289k 25  413M   25  106M    0     0  30.1M      0  0:00:13  0:00:03  0:00:10 53.1M 72  413M   72  301M    0     0  66.6M      0  0:00:06  0:00:04  0:00:02  100M100  413M  100  413M    0     0  81.1M      0  0:00:05  0:00:05 --:--:--  115M
+franzfon-arm64-lab  |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+franzfon-arm64-lab  |                                  Dload  Upload   Total   Spent    Left  Speed
+franzfon-arm64-lab  |   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  6416  100  6416    0     0   6574      0 --:--:-- --:--:-- --:--:--  6573
+franzfon-arm64-lab  | /state/base/debian-12-generic-arm64.qcow2.part: OK
+franzfon-arm64-lab  | Formatting '/state/active.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=34359738368 backing_file=/state/base/debian-12-generic-arm64.qcow2 backing_fmt=qcow2 lazy_refcounts=off refcount_bits=16
+franzfon-arm64-lab  | Starting FRANZFON ARM64 lab
+franzfon-arm64-lab  |   CPUs:       4
+franzfon-arm64-lab  |   Memory:     4096 MiB
+franzfon-arm64-lab  |   Active:     /state/active.qcow2
+franzfon-arm64-lab  |   Backing:    /state/base/debian-12-generic-arm64.qcow2
+franzfon-arm64-lab  |   SSH:        127.0.0.1:2222
+franzfon-arm64-lab  |   Web:        http://127.0.0.1:3000/
+franzfon-arm64-lab  | qemu-system-aarch64: -device virtio-net-pci,netdev=net0: failed to find romfile "efi-virtio.rom"
