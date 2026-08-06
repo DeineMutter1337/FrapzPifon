@@ -9,6 +9,10 @@ on:
       - 'virtualization/**'
       - '.github/workflows/franzfon-virtualization-lab-ci.yml'
 
+concurrency:
+  group: franzfon-arm64-virtualization-lab
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
