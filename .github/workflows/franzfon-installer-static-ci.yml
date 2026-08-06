@@ -32,6 +32,7 @@ jobs:
           bash -n installer/franzfon-arm64-prepare.sh
           bash -n installer/franzfon-arm64-install-app.sh
           bash -n installer/franzfon-arm64-install-asterisk.sh
+          bash -n installer/franzfon-arm64-bootstrap.sh
           bash -n scripts/configuration_contract_audit.sh
 
       - name: ShellCheck
@@ -41,6 +42,7 @@ jobs:
             installer/franzfon-arm64-prepare.sh \
             installer/franzfon-arm64-install-app.sh \
             installer/franzfon-arm64-install-asterisk.sh \
+            installer/franzfon-arm64-bootstrap.sh \
             scripts/configuration_contract_audit.sh
 
       - name: Python syntax
@@ -54,7 +56,11 @@ jobs:
 
           grep -F -- 'systemctl disable franzfon-wizard.service' installer/franzfon-arm64-install-app.sh
           grep -F -- 'systemctl disable asterisk.service' installer/franzfon-arm64-install-asterisk.sh
+          grep -F -- 'if [ "$ACTIVATE" -eq 1 ]' installer/franzfon-arm64-bootstrap.sh
+          grep -F -- 'LICENSE_STATE_IMPORTED=no' installer/franzfon-arm64-bootstrap.sh
+
           ! grep -RE -- 'systemctl enable --now (franzfon-wizard|asterisk)' installer
+          ! grep -RE -- '^ACTIVATE=1$' installer
 
           grep -F -- "--exclude='node_modules/'" installer/franzfon-arm64-prepare.sh
           grep -F -- "--exclude='*.db'" installer/franzfon-arm64-prepare.sh
@@ -75,3 +81,4 @@ jobs:
           bash installer/franzfon-arm64-prepare.sh --help
           bash installer/franzfon-arm64-install-app.sh --help
           bash installer/franzfon-arm64-install-asterisk.sh --help
+          bash installer/franzfon-arm64-bootstrap.sh --help
