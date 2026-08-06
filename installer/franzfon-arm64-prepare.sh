@@ -157,10 +157,10 @@ mkdir -p "$STAGE_DIR/payload/opt/franzfon"
 rsync -a --safe-links \
   --exclude='node_modules/' \
   --exclude='.astro/' \
-  --exclude='data/' \
-  --exclude='backups/' \
-  --exclude='backup/' \
-  --exclude='config/' \
+  --exclude='/data/' \
+  --exclude='/backups/' \
+  --exclude='/backup/' \
+  --exclude='/config/' \
   --exclude='*.env' \
   --exclude='*.db' \
   --exclude='*.db-shm' \
@@ -190,6 +190,13 @@ if [ -f "$MOUNT_DIR/usr/local/bin/pnp_server" ]; then
   mkdir -p "$STAGE_DIR/payload/usr/local/bin"
   cp -a "$MOUNT_DIR/usr/local/bin/pnp_server" "$STAGE_DIR/payload/usr/local/bin/"
 fi
+
+HOLIDAY_MODULE="$(find "$STAGE_DIR/payload/opt/franzfon/wizard/backend/src/data" \
+  -maxdepth 2 -type f -name 'german-holidays*' -print -quit 2>/dev/null || true)"
+[ -n "$HOLIDAY_MODULE" ] || {
+  echo 'Required static application data is missing: german-holidays' >&2
+  exit 1
+}
 
 printf '\n[4/6] Refusing architecture-specific or sensitive payloads\n'
 if find "$STAGE_DIR" -type d -name node_modules -print -quit | grep -q .; then

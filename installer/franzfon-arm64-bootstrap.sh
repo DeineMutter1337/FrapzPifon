@@ -352,6 +352,7 @@ Type=simple
 User=root
 WorkingDirectory=/opt/franzfon/wizard/backend
 EnvironmentFile=/opt/franzfon/config/database.env
+Environment=PATH=/opt/franzfon-arm64/asterisk/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ExecStartPre=/bin/bash -c '! ss -H -ltn sport = :3000 | grep -q .'
 ExecStart=/usr/local/bin/node src/index.js
 Restart=on-failure
