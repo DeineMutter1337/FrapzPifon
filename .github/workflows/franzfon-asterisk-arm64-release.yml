@@ -63,7 +63,7 @@ jobs:
           tar --zstd -C / -cf "dist/$ASSET_NAME" \
             opt/franzfon-arm64/asterisk \
             var/lib/asterisk
-          sha256sum "dist/$ASSET_NAME" > "dist/$ASSET_NAME.sha256"
+          (cd dist && sha256sum "$ASSET_NAME" > "$ASSET_NAME.sha256")
 
       - name: Upload workflow artifact
         uses: actions/upload-artifact@v4
