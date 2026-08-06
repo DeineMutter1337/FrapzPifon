@@ -1,1 +1,78 @@
-Unsupported OS family: ubuntu. Debian-compatible ARM64 is required.
+Get:1 https://packages.microsoft.com/repos/azure-cli noble InRelease [3564 B]
+Get:2 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+Get:3 https://packages.microsoft.com/repos/azure-cli noble/main arm64 Packages [2380 B]
+Get:4 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [643 B]
+Get:5 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [266 kB]
+Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.2 kB]
+Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [306 kB]
+Hit:8 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Get:9 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease [126 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports noble-backports InRelease [126 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease [126 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 Packages [1225 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports noble-updates/main Translation-en [281 kB]
+Get:14 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 Components [178 kB]
+Get:15 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 Packages [1708 kB]
+Get:16 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe Translation-en [335 kB]
+Get:17 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 Components [387 kB]
+Get:18 http://ports.ubuntu.com/ubuntu-ports noble-updates/restricted arm64 Packages [2105 kB]
+Get:19 http://ports.ubuntu.com/ubuntu-ports noble-updates/restricted Translation-en [320 kB]
+Get:20 http://ports.ubuntu.com/ubuntu-ports noble-updates/multiverse arm64 Packages [72.7 kB]
+Get:21 http://ports.ubuntu.com/ubuntu-ports noble-updates/multiverse Translation-en [12.3 kB]
+Get:22 http://ports.ubuntu.com/ubuntu-ports noble-backports/main arm64 Components [3584 B]
+Get:23 http://ports.ubuntu.com/ubuntu-ports noble-backports/universe arm64 Packages [31.2 kB]
+Get:24 http://ports.ubuntu.com/ubuntu-ports noble-backports/universe arm64 Components [12.6 kB]
+Get:25 http://ports.ubuntu.com/ubuntu-ports noble-security/main arm64 Packages [971 kB]
+Get:26 http://ports.ubuntu.com/ubuntu-ports noble-security/main Translation-en [201 kB]
+Get:27 http://ports.ubuntu.com/ubuntu-ports noble-security/main arm64 Components [43.3 kB]
+Get:28 http://ports.ubuntu.com/ubuntu-ports noble-security/universe arm64 Packages [1260 kB]
+Get:29 http://ports.ubuntu.com/ubuntu-ports noble-security/universe Translation-en [239 kB]
+Get:30 http://ports.ubuntu.com/ubuntu-ports noble-security/universe arm64 Components [76.4 kB]
+Get:31 http://ports.ubuntu.com/ubuntu-ports noble-security/restricted arm64 Packages [1996 kB]
+Get:32 http://ports.ubuntu.com/ubuntu-ports noble-security/restricted Translation-en [301 kB]
+Get:33 http://ports.ubuntu.com/ubuntu-ports noble-security/multiverse arm64 Packages [68.7 kB]
+Get:34 http://ports.ubuntu.com/ubuntu-ports noble-security/multiverse Translation-en [10.6 kB]
+Fetched 12.8 MB in 3s (5116 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ca-certificates is already the newest version (20260601~24.04.1).
+python3 is already the newest version (3.12.3-0ubuntu2.1).
+python3-zstandard is already the newest version (0.22.0-1build1).
+python3-zstandard set to manually installed.
+file is already the newest version (1:5.45-3build1).
+util-linux is already the newest version (2.39.3-9ubuntu6.5).
+e2fsprogs is already the newest version (1.47.0-2.4~exp1ubuntu4.1).
+e2fsprogs set to manually installed.
+rsync is already the newest version (3.2.7-1ubuntu1.5).
+coreutils is already the newest version (9.4-3ubuntu6.2).
+0 upgraded, 0 newly installed, 0 to remove and 84 not upgraded.
+
+[1/6] Streaming and validating official VMA image
+device 1: drive-scsi0, virtual size=34359738368
+processed 1000 extents
+processed 2000 extents
+processed 3000 extents
+processed 4000 extents
+processed 5000 extents
+processed 6000 extents
+processed 7000 extents
+processed 8000 extents
+processed 9000 extents
+done: 9040 extents
+
+[2/6] Attaching source disk read-only
+
+[3/6] Copying architecture-independent application files
+
+[4/6] Refusing architecture-specific or sensitive payloads
+
+[5/6] Creating reproducible payload manifest
+
+[6/6] Publishing local payload
+
+Payload prepared successfully:
+  /var/lib/franzfon-arm64/payload
+Files: 509
+Size:  13M

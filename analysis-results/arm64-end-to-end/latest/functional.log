@@ -1,4 +1,0 @@
-++ /usr/local/bin/node -p process.arch
-+ test arm64 = arm64
-+ grep -E 'ARM aarch64|ARM64'
-+ file /opt/franzfon/wizard/backend/node_modules/better-sqlite3/build/Release/better_sqlite3.node
