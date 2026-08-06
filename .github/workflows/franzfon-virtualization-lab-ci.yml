@@ -1,0 +1,81 @@
+name: FRANZFON ARM64 Virtualization Lab CI
+run-name: "Virtualization Lab CI • ${{ github.sha }}"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'virtualization/**'
+      - '.github/workflows/franzfon-virtualization-lab-ci.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install script validation tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends shellcheck
+
+      - name: Validate shell scripts
+        run: |
+          set -euxo pipefail
+          bash -n virtualization/qemu/entrypoint.sh
+          bash -n virtualization/qemu/labctl.sh
+          shellcheck --severity=warning \
+            virtualization/qemu/entrypoint.sh \
+            virtualization/qemu/labctl.sh
+
+      - name: Validate PowerShell controller
+        shell: pwsh
+        run: |
+          $tokens = $null
+          $errors = $null
+          [System.Management.Automation.Language.Parser]::ParseFile(
+            (Resolve-Path 'virtualization/lab.ps1'),
+            [ref]$tokens,
+            [ref]$errors
+          ) | Out-Null
+          if ($errors.Count -gt 0) {
+            $errors | Format-List | Out-String | Write-Error
+            exit 1
+          }
+
+      - name: Validate Docker Compose
+        run: |
+          set -euxo pipefail
+          docker compose -f virtualization/docker-compose.yml config >/dev/null
+
+      - name: Build QEMU lab image
+        run: |
+          set -euxo pipefail
+          docker build -t franzfon-arm64-lab-ci virtualization/qemu
+
+      - name: Verify QEMU tooling and firmware paths
+        run: |
+          set -euxo pipefail
+          docker run --rm --entrypoint /bin/bash franzfon-arm64-lab-ci -lc '
+            command -v qemu-system-aarch64
+            command -v qemu-img
+            command -v cloud-localds
+            command -v socat
+            test -s /usr/share/AAVMF/AAVMF_CODE.fd
+            test -s /usr/share/AAVMF/AAVMF_VARS.fd
+          '
+
+      - name: Verify official Debian ARM64 image endpoint
+        run: |
+          set -euxo pipefail
+          curl --fail --location --silent --show-error --head \
+            https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-arm64.qcow2 \
+            >/dev/null
+          curl --fail --location --silent --show-error --head \
+            https://cloud.debian.org/images/cloud/bookworm/latest/SHA512SUMS \
+            >/dev/null
