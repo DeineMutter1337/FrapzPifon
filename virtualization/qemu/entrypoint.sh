@@ -11,6 +11,7 @@ BASE_IMAGE="$BASE_DIR/$BASE_NAME"
 ACTIVE_IMAGE="$STATE_DIR/active.qcow2"
 BACKING_FILE="$STATE_DIR/backing-path"
 SEED_IMAGE="$STATE_DIR/cloud-init-seed.img"
+SEED_HASH_FILE="$STATE_DIR/cloud-init-seed.sha256"
 VARS_IMAGE="$STATE_DIR/AAVMF_VARS.fd"
 EFI_HELPER_IMAGE="$STATE_DIR/efi-compat.raw"
 EFI_HELPER_UUID_FILE="$STATE_DIR/efi-compat.partuuid"
@@ -40,10 +41,18 @@ if [ ! -s "$BASE_IMAGE" ]; then
   mv "$TMP_SUMS" "$BASE_DIR/SHA512SUMS"
 fi
 
-if [ ! -s "$SEED_IMAGE" ]; then
+CURRENT_SEED_HASH="$(cat \
+  /opt/franzfon-lab/cloud-init/user-data \
+  /opt/franzfon-lab/cloud-init/meta-data \
+  | sha256sum | awk '{print $1}')"
+STORED_SEED_HASH="$(cat "$SEED_HASH_FILE" 2>/dev/null || true)"
+if [ ! -s "$SEED_IMAGE" ] || [ "$STORED_SEED_HASH" != "$CURRENT_SEED_HASH" ]; then
+  echo 'Creating updated cloud-init seed...'
+  rm -f "$SEED_IMAGE" "$SEED_HASH_FILE"
   cloud-localds "$SEED_IMAGE" \
     /opt/franzfon-lab/cloud-init/user-data \
     /opt/franzfon-lab/cloud-init/meta-data
+  printf '%s\n' "$CURRENT_SEED_HASH" > "$SEED_HASH_FILE"
 fi
 
 if [ ! -s "$VARS_IMAGE" ]; then
