@@ -79,8 +79,8 @@ Starting FRANZFON ARM64 lab
   Memory:     ${VM_MEMORY_MB} MiB
   Active:     $ACTIVE_IMAGE
   Backing:    $BACKING_IMAGE
-  SSH:        127.0.0.1:2222
-  Web:        http://127.0.0.1:3000/
+  SSH guest:  127.0.0.1:2222
+  Web guest:  http://127.0.0.1:3000/
 EOF
 
 exec qemu-system-aarch64 \
@@ -95,7 +95,7 @@ exec qemu-system-aarch64 \
   -drive if=virtio,format=qcow2,file="$ACTIVE_IMAGE",discard=unmap \
   -drive if=virtio,format=raw,readonly=on,file="$SEED_IMAGE" \
   -device virtio-rng-pci \
-  -device virtio-net-pci,netdev=net0 \
+  -device virtio-net-pci,netdev=net0,romfile= \
   -netdev "$NETDEV" \
   -qmp "unix:$QMP_SOCKET,server=on,wait=off" \
   -display none \
