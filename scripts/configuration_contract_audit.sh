@@ -107,15 +107,15 @@ DB="$ROOT/opt/franzfon/wizard/backend/data/franzfon.db"
 {
   echo '=== MARIADB DATABASE DIRECTORY NAMES ==='
   if [ -d "$ROOT/var/lib/mysql" ]; then
-    find "$ROOT/var/lib/mysql" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' \
+    sudo find "$ROOT/var/lib/mysql" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' 2>/dev/null \
       | grep -Ev '^(mysql|performance_schema|sys)$' | sort || true
   fi
   echo
   echo '=== NON-SYSTEM MARIADB TABLE FILE STEMS ==='
   if [ -d "$ROOT/var/lib/mysql" ]; then
-    find "$ROOT/var/lib/mysql" -mindepth 2 -maxdepth 2 -type f \
+    sudo find "$ROOT/var/lib/mysql" -mindepth 2 -maxdepth 2 -type f \
       \( -name '*.ibd' -o -name '*.frm' -o -name '*.MAD' -o -name '*.MAI' \) \
-      -printf '%h/%f\n' \
+      -printf '%h/%f\n' 2>/dev/null \
       | sed "s#^$ROOT/var/lib/mysql/##; s/\.[^.]*$//" \
       | grep -Ev '^(mysql|performance_schema|sys)/' | sort -u || true
   fi
@@ -123,12 +123,14 @@ DB="$ROOT/opt/franzfon/wizard/backend/data/franzfon.db"
 
 {
   echo '=== ASTERISK CONFIG FILES ==='
-  find "$ROOT/etc/asterisk" -maxdepth 2 -type f -printf '%P\n' 2>/dev/null | sort
+  sudo find "$ROOT/etc/asterisk" \
+    -path "$ROOT/etc/asterisk/keys" -prune -o \
+    -maxdepth 2 -type f -printf '%P\n' 2>/dev/null | sort
   echo
   echo '=== ASTERISK INCLUDE GRAPH ==='
   while IFS= read -r -d '' CONF; do
     REL="${CONF#$ROOT/etc/asterisk/}"
-    awk -v source="$REL" '
+    sudo awk -v source="$REL" '
       /^[[:space:]]*#(include|tryinclude)[[:space:]]+/ {
         target=$0
         sub(/^[[:space:]]*#(include|tryinclude)[[:space:]]+/, "", target)
@@ -136,7 +138,11 @@ DB="$ROOT/opt/franzfon/wizard/backend/data/franzfon.db"
         printf "%s\t%s\n", source, target
       }
     ' "$CONF"
-  done < <(find "$ROOT/etc/asterisk" -type f -print0 2>/dev/null) | sort -u
+  done < <(
+    sudo find "$ROOT/etc/asterisk" \
+      -path "$ROOT/etc/asterisk/keys" -prune -o \
+      -type f \( -name '*.conf' -o -name '*.conf.inc' \) -print0 2>/dev/null
+  ) | sort -u
 } > "$OUT/asterisk-config-contract.txt"
 
 {
