@@ -1,0 +1,90 @@
+name: Patch Native Addon Discovery v3
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/patch-native-addon-discovery-v3.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Replace hard-coded addon paths by line markers
+        run: |
+          set -euxo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          bootstrap = Path('installer/franzfon-arm64-bootstrap.sh')
+          lines = bootstrap.read_text(encoding='utf-8').splitlines()
+          marker = 'assert_aarch64_elf "$APP_ROOT/wizard/backend/node_modules/better-sqlite3/build/Release/better_sqlite3.node"'
+          indexes = [i for i, line in enumerate(lines) if line.strip() == marker]
+          if len(indexes) != 1:
+              raise SystemExit(f'Bootstrap marker count: {len(indexes)}')
+          i = indexes[0]
+          replacement = [
+              'NATIVE_ADDON_COUNT=0',
+              "while IFS= read -r -d '' native_addon; do",
+              '  assert_aarch64_elf "$native_addon"',
+              '  NATIVE_ADDON_COUNT=$((NATIVE_ADDON_COUNT + 1))',
+              "done < <(find -L \"$APP_ROOT/wizard/backend/node_modules\" -type f -name '*.node' -print0)",
+              '[ "$NATIVE_ADDON_COUNT" -gt 0 ] || {',
+              "  echo 'No native Node.js addon was found after npm installation.' >&2",
+              '  exit 1',
+              '}',
+          ]
+          lines[i:i+1] = replacement
+          bootstrap.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+
+          workflow = Path('.github/workflows/franzfon-arm64-end-to-end-v3.yml')
+          lines = workflow.read_text(encoding='utf-8').splitlines()
+          starts = [i for i, line in enumerate(lines) if 'ADDON=/opt/franzfon/wizard/backend/node_modules/better-sqlite3/' in line]
+          if len(starts) != 1:
+              raise SystemExit(f'E2E addon marker count: {len(starts)}')
+          start = starts[0]
+          ends = [i for i in range(start, min(start + 10, len(lines))) if 'grep -Fx AArch64' in lines[i]]
+          if len(ends) != 1:
+              raise SystemExit(f'E2E addon block end count: {len(ends)}')
+          end = ends[0]
+          indent = '          '
+          replacement = [
+              indent + ': > report/native-node-addons-elf.txt',
+              indent + 'NATIVE_ADDON_COUNT=0',
+              indent + "while IFS= read -r -d '' native_addon; do",
+              indent + '  {',
+              indent + '    echo "FILE=$native_addon"',
+              indent + '    readelf -h "$native_addon"',
+              indent + '    echo',
+              indent + '  } >> report/native-node-addons-elf.txt',
+              indent + '  readelf -h "$native_addon" | awk \'$1 == "Machine:" {print $2}\' | grep -Fx AArch64',
+              indent + '  NATIVE_ADDON_COUNT=$((NATIVE_ADDON_COUNT + 1))',
+              indent + "done < <(find -L /opt/franzfon/wizard/backend/node_modules -type f -name '*.node' -print0)",
+              indent + 'test "$NATIVE_ADDON_COUNT" -gt 0',
+              indent + 'echo "NATIVE_ADDON_COUNT=$NATIVE_ADDON_COUNT" | tee report/native-node-addon-count.txt',
+          ]
+          lines[start:end+1] = replacement
+          workflow.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+          PY
+
+          bash -n installer/franzfon-arm64-bootstrap.sh
+          grep -F 'NATIVE_ADDON_COUNT' installer/franzfon-arm64-bootstrap.sh
+          grep -F 'native-node-addons-elf.txt' .github/workflows/franzfon-arm64-end-to-end-v3.yml
+
+      - name: Commit marker-based fix
+        run: |
+          set -euxo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add installer/franzfon-arm64-bootstrap.sh .github/workflows/franzfon-arm64-end-to-end-v3.yml
+          git commit -m 'Validate all installed native Node addons on ARM64'
+          git pull --rebase origin main
+          git push origin HEAD:main
