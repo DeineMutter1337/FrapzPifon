@@ -105,14 +105,14 @@ rm -rf "$WORK_DIR"
 mkdir -p "$WORK_DIR/source" "$WORK_DIR/stage"
 chmod 0700 "$WORK_DIR"
 
-printf '\n[1/7] Downloading and verifying Asterisk %s\n' "$ASTERISK_VERSION"
+printf '\n[1/8] Downloading and verifying Asterisk %s\n' "$ASTERISK_VERSION"
 cd "$WORK_DIR/source"
 wget -O asterisk.tar.gz "$ASTERISK_URL"
 printf '%s  %s\n' "$ASTERISK_SHA256" asterisk.tar.gz | sha256sum -c -
 tar -xzf asterisk.tar.gz
 cd "asterisk-${ASTERISK_VERSION}"
 
-printf '\n[2/7] Configuring native ARM64 build\n'
+printf '\n[2/8] Configuring native ARM64 build\n'
 ./configure \
   --prefix="$PREFIX" \
   --sysconfdir=/etc \
@@ -133,7 +133,7 @@ menuselect/menuselect \
   --enable res_odbc \
   menuselect.makeopts
 
-printf '\n[3/7] Compiling Asterisk\n'
+printf '\n[3/8] Compiling Asterisk\n'
 JOBS="$(nproc 2>/dev/null || echo 2)"
 if [ "$JOBS" -gt 4 ]; then JOBS=4; fi
 make -j"$JOBS"
@@ -149,7 +149,7 @@ REQUIRED_MODULES=(
   res/res_odbc.so
 )
 
-printf '\n[4/7] Validating required modules\n'
+printf '\n[4/8] Validating required modules\n'
 for module in "${REQUIRED_MODULES[@]}"; do
   [ -f "$module" ] || { echo "Required module missing: $module" >&2; exit 1; }
   DESCRIPTION="$(file -b "$module")"
@@ -166,12 +166,12 @@ case "$BINARY_DESCRIPTION" in
   *) echo "Asterisk binary is not ARM64: $BINARY_DESCRIPTION" >&2; exit 1 ;;
 esac
 
-printf '\n[5/7] Staging installation\n'
+printf '\n[5/8] Staging installation\n'
 make DESTDIR="$WORK_DIR/stage" install
 STAGED_BINARY="$WORK_DIR/stage$PREFIX/sbin/asterisk"
 [ -x "$STAGED_BINARY" ] || { echo "Staged Asterisk binary missing: $STAGED_BINARY" >&2; exit 1; }
 
-printf '\n[6/7] Publishing managed installation\n'
+printf '\n[6/8] Publishing managed installation\n'
 if [ -e "$PREFIX" ]; then
   BACKUP="${PREFIX}.backup.$(date +%Y%m%d%H%M%S)"
   mv "$PREFIX" "$BACKUP"
@@ -188,6 +188,18 @@ ARCHITECTURE=$(uname -m)
 INSTALLED_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 EOF
 chmod 0644 "$MANAGED_MARKER"
+
+printf '\n[7/8] Registering managed shared libraries\n'
+ASTERISK_SSL_LIBRARY="$(find "$PREFIX" -type f -name 'libasteriskssl.so.1' -print -quit)"
+[ -n "$ASTERISK_SSL_LIBRARY" ] || {
+  echo 'Managed libasteriskssl.so.1 was not installed.' >&2
+  exit 1
+}
+ASTERISK_LIBRARY_DIR="$(dirname "$ASTERISK_SSL_LIBRARY")"
+printf '%s\n' "$ASTERISK_LIBRARY_DIR" > /etc/ld.so.conf.d/franzfon-asterisk.conf
+chmod 0644 /etc/ld.so.conf.d/franzfon-asterisk.conf
+ldconfig
+ldconfig -p | grep -F 'libasteriskssl.so.1' >/dev/null
 
 if ! getent group asterisk >/dev/null; then
   groupadd --system asterisk
@@ -239,11 +251,12 @@ systemctl daemon-reload
 systemctl disable asterisk.service >/dev/null 2>&1 || true
 systemctl stop asterisk.service >/dev/null 2>&1 || true
 
-printf '\n[7/7] Final native validation\n'
+printf '\n[8/8] Final native validation\n'
 "$PREFIX/sbin/asterisk" -V
 file "$PREFIX/sbin/asterisk"
 
 printf '\nAsterisk ARM64 installation completed.\n'
 printf 'Prefix:  %s\n' "$PREFIX"
+printf 'Library: %s\n' "$ASTERISK_LIBRARY_DIR"
 printf 'Service: asterisk.service (disabled and stopped)\n'
 printf 'Next: install the sanitized FRANZFON configuration and run the bootstrap validation.\n'
