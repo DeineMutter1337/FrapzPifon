@@ -1,0 +1,172 @@
+name: FRANZFON Phase 2 Analysis
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip util-linux e2fsprogs lvm2 file jq pciutils
+          python3 -m pip install --user zstandard
+
+      - name: Stream-extract official FRANZFON appliance
+        run: |
+          mkdir -p extracted
+          python3 scripts/stream_vma_extract.py \
+            'https://franzfon.de/updates/proxmox/vzdump-qemu-900-2026_08_04-01_09_26.vma.zst' \
+            extracted
+          ls -lah extracted
+          du -h --apparent-size extracted/* || true
+          du -h extracted/* || true
+
+      - name: Attach disk read-only
+        id: attach
+        run: |
+          RAW="$(find extracted -maxdepth 1 -type f \( -name '*.raw' -o -name 'disk-*' \) | head -n1)"
+          test -n "$RAW"
+          LOOP="$(sudo losetup --find --show --partscan --read-only "$RAW")"
+          echo "loop=$LOOP" >> "$GITHUB_OUTPUT"
+          sleep 2
+          sudo lsblk -f "$LOOP"
+
+      - name: Find and mount Linux root read-only
+        id: mount
+        run: |
+          LOOP='${{ steps.attach.outputs.loop }}'
+          sudo vgchange -ay || true
+          ROOTDEV="$(lsblk -rno PATH,FSTYPE "$LOOP" | awk '$2 ~ /^(ext4|xfs|btrfs)$/ {print $1}' | tail -n1)"
+          if [ -z "$ROOTDEV" ]; then
+            ROOTDEV="$(sudo lvs --noheadings -o lv_path 2>/dev/null | xargs -r -n1 sudo blkid -o value -s TYPE 2>/dev/null | head -n1)"
+          fi
+          if [ -z "$ROOTDEV" ]; then
+            ROOTDEV="$(sudo blkid | awk -F: '/TYPE="(ext4|xfs|btrfs)"/ {print $1}' | tail -n1)"
+          fi
+          test -n "$ROOTDEV"
+          sudo mkdir -p /mnt/franzfon
+          FSTYPE="$(sudo blkid -o value -s TYPE "$ROOTDEV")"
+          if [ "$FSTYPE" = ext4 ]; then
+            sudo mount -o ro,noload "$ROOTDEV" /mnt/franzfon
+          else
+            sudo mount -o ro "$ROOTDEV" /mnt/franzfon
+          fi
+          echo "rootdev=$ROOTDEV" >> "$GITHUB_OUTPUT"
+          echo "Mounted $ROOTDEV ($FSTYPE)"
+
+      - name: Build sanitized technical inventory
+        run: |
+          ROOT=/mnt/franzfon
+          OUT="$GITHUB_WORKSPACE/report"
+          mkdir -p "$OUT"
+
+          {
+            echo '=== OS RELEASE ==='
+            cat "$ROOT/etc/os-release" 2>/dev/null || true
+            echo
+            echo '=== KERNEL/BOOT FILES ==='
+            find "$ROOT/boot" -maxdepth 2 -type f -printf '%P\t%s bytes\n' 2>/dev/null | sort || true
+          } > "$OUT/system.txt"
+
+          {
+            echo '=== PARTITIONS ==='
+            sudo lsblk -f
+            echo
+            echo '=== FILESYSTEM USAGE ==='
+            df -hT "$ROOT" || true
+          } > "$OUT/storage.txt"
+
+          if [ -f "$ROOT/var/lib/dpkg/status" ]; then
+            awk '/^Package:|^Version:|^Architecture:/{printf "%s ",$0} /^$/{print ""}' \
+              "$ROOT/var/lib/dpkg/status" > "$OUT/packages.txt"
+          fi
+
+          {
+            echo '=== SYSTEMD UNITS ==='
+            find "$ROOT/etc/systemd/system" "$ROOT/lib/systemd/system" -type f \
+              \( -name '*.service' -o -name '*.timer' -o -name '*.socket' \) -print 2>/dev/null | sort
+            echo
+            echo '=== FRANZFON/ASTERISK-RELATED UNIT DIRECTIVES ==='
+            grep -RHIEn --include='*.service' --include='*.timer' --include='*.socket' \
+              'franz|asterisk|ExecStart|WorkingDirectory|User=|Group=|After=|Requires=' \
+              "$ROOT/etc/systemd/system" "$ROOT/lib/systemd/system" 2>/dev/null \
+              | sed -E 's/(PASSWORD|PASS|TOKEN|SECRET|KEY)=([^ ]+)/\1=[REDACTED]/Ig' || true
+          } > "$OUT/services.txt"
+
+          {
+            echo '=== RELEVANT TOP-LEVEL DIRECTORIES ==='
+            for d in opt srv usr/local var/www etc/asterisk var/lib/asterisk var/spool/asterisk; do
+              [ -e "$ROOT/$d" ] && find "$ROOT/$d" -maxdepth 4 -printf '%y\t%p\t%s\n' 2>/dev/null
+            done
+          } > "$OUT/relevant-tree.txt"
+
+          {
+            echo '=== EXECUTABLE / BINARY ARCHITECTURES ==='
+            find "$ROOT/opt" "$ROOT/srv" "$ROOT/usr/local" "$ROOT/var/www" \
+              -xdev -type f -size -200M 2>/dev/null -print0 \
+              | xargs -0 -r file \
+              | grep -Ei 'ELF|script|Java|Mono|\.NET|WebAssembly' || true
+          } > "$OUT/binaries.txt"
+
+          {
+            echo '=== RUNTIME MARKERS ==='
+            find "$ROOT/opt" "$ROOT/srv" "$ROOT/usr/local" "$ROOT/var/www" \
+              -type f \( -name package.json -o -name yarn.lock -o -name pnpm-lock.yaml \
+              -o -name requirements.txt -o -name pyproject.toml -o -name composer.json \
+              -o -name '*.jar' -o -name '*.dll' -o -name '*.runtimeconfig.json' \
+              -o -name go.mod -o -name Cargo.toml \) -printf '%p\t%s\n' 2>/dev/null | sort
+          } > "$OUT/runtimes.txt"
+
+          {
+            echo '=== DATABASE MARKERS ==='
+            find "$ROOT/opt" "$ROOT/srv" "$ROOT/usr/local" "$ROOT/var/www" "$ROOT/var/lib" \
+              -maxdepth 5 -type f \( -name '*.sqlite' -o -name '*.sqlite3' -o -name '*.db' \
+              -o -name 'PG_VERSION' -o -name 'ibdata1' \) -printf '%p\t%s\n' 2>/dev/null | sort
+            echo
+            grep -RIlE 'sqlite|postgres|mariadb|mysql' \
+              "$ROOT/etc/systemd/system" "$ROOT/lib/systemd/system" 2>/dev/null | sort || true
+          } > "$OUT/databases.txt"
+
+          {
+            echo '=== ASTERISK INVENTORY ==='
+            find "$ROOT/etc/asterisk" -maxdepth 2 -type f -printf '%P\t%s\n' 2>/dev/null | sort || true
+            echo
+            find "$ROOT/usr/lib" "$ROOT/usr/lib64" -path '*asterisk*' -type f -printf '%p\t%s\n' 2>/dev/null | sort || true
+          } > "$OUT/asterisk.txt"
+
+          {
+            echo '=== UPDATE / BACKUP MARKERS ==='
+            grep -RIlE 'franzfon\.de|update|upgrade|backup|restore' \
+              "$ROOT/etc/systemd/system" "$ROOT/lib/systemd/system" "$ROOT/etc/cron.d" \
+              "$ROOT/opt" "$ROOT/srv" "$ROOT/usr/local" 2>/dev/null | head -n 1000 || true
+          } > "$OUT/update-backup.txt"
+
+          sed -ri 's#([A-Za-z0-9_]*(PASSWORD|PASS|TOKEN|SECRET|PRIVATE_KEY)[A-Za-z0-9_]*[=:])[[:space:]]*[^[:space:]]+#\1[REDACTED]#Ig' "$OUT"/*.txt || true
+          echo "Generated report files:"
+          ls -lh "$OUT"
+
+      - name: Upload sanitized analysis
+        uses: actions/upload-artifact@v4
+        with:
+          name: franzfon-phase2-analysis
+          path: report/
+          retention-days: 7
+          compression-level: 9
+
+      - name: Cleanup
+        if: always()
+        run: |
+          sudo umount /mnt/franzfon 2>/dev/null || true
+          sudo vgchange -an 2>/dev/null || true
+          LOOP='${{ steps.attach.outputs.loop }}'
+          [ -n "$LOOP" ] && sudo losetup -d "$LOOP" 2>/dev/null || true
