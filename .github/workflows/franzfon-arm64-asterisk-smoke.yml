@@ -1,5 +1,5 @@
-name: FRANZFON Asterisk 22.7 ARM64 Smoke Test v2 NATIVE
-run-name: "Asterisk 22.7 native ARM64 • ${{ github.sha }}"
+name: FRANZFON Asterisk 22.7 ARM64 Native Validation v3
+run-name: "Asterisk 22.7 ARM64 native v3 • ${{ github.sha }}"
 
 on:
   workflow_dispatch:
@@ -12,8 +12,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: franzfon-arm64-asterisk-smoke
-  cancel-in-progress: true
+  group: franzfon-arm64-asterisk-native-v3
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -36,20 +36,26 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
             build-essential ca-certificates wget file pkg-config patch perl bzip2 xz-utils \
+            bison flex python3 \
             libedit-dev libxml2-dev libsqlite3-dev uuid-dev libssl-dev \
             libcurl4-openssl-dev libspeex-dev libspeexdsp-dev libogg-dev \
             libvorbis-dev libopus-dev libnewt-dev libncurses-dev libspandsp-dev \
-            unixodbc-dev
+            unixodbc-dev liburiparser-dev libxslt1-dev
 
-      - name: Compile Asterisk 22.7.0 on native ARM64
+      - name: Compile and stage Asterisk 22.7.0
         id: compile
         run: |
           mkdir -p asterisk-arm64-report
           set +e
           (
             set -euxo pipefail
-            cd /tmp
-            wget -O asterisk.tar.gz \
+            BUILD_ROOT="$RUNNER_TEMP/asterisk-native-v3"
+            STAGE_ROOT="$RUNNER_TEMP/asterisk-native-v3-stage"
+            rm -rf "$BUILD_ROOT" "$STAGE_ROOT"
+            mkdir -p "$BUILD_ROOT" "$STAGE_ROOT"
+            cd "$BUILD_ROOT"
+
+            wget -q --show-progress -O asterisk.tar.gz \
               https://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-22.7.0.tar.gz
             echo "5b0e5d276aeb014bf8a08a94d1055a9e97b9dce3375846eea70da5221bf9efe7  asterisk.tar.gz" \
               | sha256sum -c -
@@ -57,44 +63,75 @@ jobs:
             cd asterisk-22.7.0
 
             ./configure \
+              --prefix=/usr \
+              --sysconfdir=/etc \
+              --localstatedir=/var \
               --with-jansson-bundled \
               --with-pjproject-bundled
 
             make menuselect.makeopts
             menuselect/menuselect --disable BUILD_NATIVE menuselect.makeopts
-            make -j"$(nproc)"
+            menuselect/menuselect \
+              --enable chan_pjsip \
+              --enable res_pjsip \
+              --enable res_http_websocket \
+              --enable res_ari \
+              --enable app_voicemail \
+              --enable func_odbc \
+              --enable cdr_adaptive_odbc \
+              --enable res_odbc \
+              menuselect.makeopts
 
+            make -j"$(nproc)"
+            make DESTDIR="$STAGE_ROOT" install
+
+            REQUIRED_MODULES=(
+              channels/chan_pjsip.so
+              res/res_pjsip.so
+              res/res_http_websocket.so
+              res/res_ari.so
+              apps/app_voicemail.so
+              funcs/func_odbc.so
+              cdr/cdr_adaptive_odbc.so
+              res/res_odbc.so
+            )
+
+            MISSING=0
             {
-              echo "=== ARCHITECTURE ==="
+              echo 'RUN_MARKER=NATIVE_ARM64_V3'
+              echo "SOURCE_SHA256=5b0e5d276aeb014bf8a08a94d1055a9e97b9dce3375846eea70da5221bf9efe7"
+              echo "GITHUB_SHA=$GITHUB_SHA"
+              echo
+              echo '=== ARCHITECTURE ==='
               uname -m
               file main/asterisk
               echo
-              echo "=== VERSION ==="
+              echo '=== VERSION ==='
               ./main/asterisk -V
               echo
-              echo "=== REQUIRED FRANZFON CORE MODULES ==="
-              for module in \
-                channels/chan_pjsip.so \
-                res/res_pjsip.so \
-                res/res_http_websocket.so \
-                res/res_ari.so \
-                apps/app_voicemail.so \
-                funcs/func_odbc.so \
-                cdr/cdr_adaptive_odbc.so \
-                res/res_odbc.so; do
+              echo '=== REQUIRED FRANZFON CORE MODULES ==='
+              for module in "${REQUIRED_MODULES[@]}"; do
                 if [ -f "$module" ]; then
-                  printf "PASS\t%s\t" "$module"
+                  printf 'PASS\t%s\t' "$module"
                   file -b "$module"
                 else
-                  printf "MISSING\t%s\n" "$module"
+                  printf 'MISSING\t%s\n' "$module"
+                  MISSING=1
                 fi
               done
               echo
-              echo "=== INTENTIONALLY OMITTED FROM V1 ==="
-              echo "DAHDI hardware stack"
-              echo "G.729 proprietary codec"
-              echo "Digium phone module"
+              echo '=== STAGED INSTALLATION ==='
+              test -x "$STAGE_ROOT/usr/sbin/asterisk"
+              file "$STAGE_ROOT/usr/sbin/asterisk"
+              find "$STAGE_ROOT/usr/lib" -type f -name '*.so' | wc -l
+              echo
+              echo '=== INTENTIONALLY OMITTED FROM V1 ==='
+              echo 'DAHDI hardware stack'
+              echo 'G.729 proprietary codec'
+              echo 'Digium phone module'
             } | tee "$GITHUB_WORKSPACE/asterisk-arm64-report/asterisk-arm64-build.txt"
+
+            test "$MISSING" -eq 0
           ) 2>&1 | tee asterisk-arm64-report/build.log
           RC=${PIPESTATUS[0]}
           echo "$RC" > asterisk-arm64-report/exit-code.txt
@@ -107,13 +144,15 @@ jobs:
           RC='${{ steps.compile.outputs.rc }}'
           : "${RC:=1}"
           {
+            echo 'RUN_MARKER=NATIVE_ARM64_V3'
+            echo "GITHUB_SHA=$GITHUB_SHA"
             echo "ASTERISK_ARM64_BUILD_RC=$RC"
             if [ "$RC" = 0 ]; then
               echo 'VERDICT=PASS'
-              echo 'Asterisk 22.7.0 compiled on a native ARM64 runner.'
+              echo 'Asterisk 22.7.0 compiled and staged on a native ARM64 runner with all required FRANZFON modules.'
             else
               echo 'VERDICT=FAIL'
-              echo 'See build.log for the exact dependency or compile error.'
+              echo 'See build.log for the exact dependency, compiler or required-module failure.'
             fi
           } > asterisk-arm64-report/verdict.txt
 
@@ -121,10 +160,10 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: franzfon-asterisk-22-7-native-arm64-smoke
+          name: franzfon-asterisk-22-7-native-arm64-v3
           path: asterisk-arm64-report/
-          if-no-files-found: warn
-          retention-days: 7
+          if-no-files-found: error
+          retention-days: 14
           compression-level: 9
 
       - name: Publish logs and verdict
@@ -141,19 +180,19 @@ jobs:
           git add analysis-results/arm64-asterisk-smoke/latest
 
           if ! git diff --cached --quiet; then
-            git commit -m 'Update native Asterisk 22.7 ARM64 smoke test'
+            git commit -m 'Update native Asterisk 22.7 ARM64 validation v3'
             git pull --rebase origin main
             git push origin HEAD:main
           else
-            echo 'No Asterisk smoke-test changes to commit.'
+            echo 'No Asterisk validation changes to commit.'
           fi
 
-      - name: Mark failure after publishing logs
+      - name: Mark validation failure after publishing logs
         if: always()
         run: |
           RC='${{ steps.compile.outputs.rc }}'
           if [ "$RC" != 0 ]; then
-            echo 'Native Asterisk ARM64 smoke test failed. Logs were published.' >&2
+            echo 'Native Asterisk ARM64 validation failed. Logs were published.' >&2
             exit 1
           fi
-          echo 'Native Asterisk ARM64 smoke test passed.'
+          echo 'Native Asterisk ARM64 validation passed.'
