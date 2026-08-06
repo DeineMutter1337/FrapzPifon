@@ -23,6 +23,43 @@ The validated stack includes:
 
 The automated validation confirms that no x86 executable remains below `/opt/franzfon` or `/opt/franzfon-arm64`.
 
+## Recommended validation path
+
+Do not move directly from CI to a physical Raspberry Pi. The next layer is the resettable full-system ARM64 virtual lab in [`virtualization/`](virtualization/README.md).
+
+It runs a complete Debian 12 ARM64 guest under QEMU inside Docker Desktop and provides reusable QCOW2 checkpoints. This keeps systemd, Asterisk, MariaDB, permissions and reboot behavior close to the later Pi installation while allowing a broken experiment to be discarded without reinstalling hardware.
+
+On Windows 11:
+
+```powershell
+cd virtualization
+.\lab.ps1 start
+.\lab.ps1 ssh
+```
+
+Inside the VM:
+
+```bash
+cd ~/FrapzPifon
+git pull
+sudo bash installer/franzfon-arm64-install.sh --activate
+sudo bash installer/franzfon-arm64-selftest.sh
+```
+
+After the first green VM installation:
+
+```powershell
+.\lab.ps1 checkpoint installed-green
+```
+
+Restore that exact state after later experiments:
+
+```powershell
+.\lab.ps1 restore installed-green
+```
+
+The physical Pi test comes only after clean install, checkpoint restore, cold boot and functional SIP checks have passed in this VM.
+
 ## Target system
 
 Use a clean Debian-compatible ARM64 installation, preferably:
@@ -51,6 +88,7 @@ The installer performs these stages:
 6. creates fresh MariaDB, ODBC and Asterisk configuration
 7. handles the FRANZFON first-boot Asterisk restart
 8. enables services only after HTTP and Asterisk health checks pass
+9. runs the read-only ARM64 post-install self-test
 
 Without `--activate`, the software is installed but Asterisk and FRANZFON remain disabled and stopped:
 
@@ -69,7 +107,7 @@ sudo bash installer/franzfon-arm64-bootstrap.sh --activate
 After successful activation, open:
 
 ```text
-http://<raspberry-pi-ip>:3000/
+http://<device-ip>:3000/
 ```
 
 Relevant ports:
@@ -87,6 +125,7 @@ Firewall and router rules are not changed automatically.
 ## Status and diagnostics
 
 ```bash
+sudo bash installer/franzfon-arm64-selftest.sh
 systemctl status franzfon-wizard.service asterisk.service mariadb.service redis-server.service
 journalctl -u franzfon-wizard.service -u asterisk.service -n 200 --no-pager
 sudo /opt/franzfon-arm64/asterisk/sbin/asterisk -rx 'core show version'
@@ -128,4 +167,4 @@ analysis-results/arm64-unified-installer/latest/
 analysis-results/installer-static/latest/
 ```
 
-The next milestone is a physical Raspberry Pi installation and real SIP call test with an endpoint and provider trunk.
+The next milestone is a repeatable Debian 12 ARM64 VM cycle: clean install, self-test, checkpoint, restore, cold boot and a real SIP call between disposable test endpoints. The Raspberry Pi follows only after that cycle is green.
