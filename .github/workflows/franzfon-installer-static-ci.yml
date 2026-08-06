@@ -31,6 +31,7 @@ jobs:
           set -euxo pipefail
           bash -n installer/franzfon-arm64-prepare.sh
           bash -n installer/franzfon-arm64-install-app.sh
+          bash -n installer/franzfon-arm64-install-asterisk.sh
           bash -n scripts/configuration_contract_audit.sh
 
       - name: ShellCheck
@@ -39,6 +40,7 @@ jobs:
           shellcheck --severity=warning \
             installer/franzfon-arm64-prepare.sh \
             installer/franzfon-arm64-install-app.sh \
+            installer/franzfon-arm64-install-asterisk.sh \
             scripts/configuration_contract_audit.sh
 
       - name: Python syntax
@@ -50,17 +52,20 @@ jobs:
         run: |
           set -euxo pipefail
 
-          # Installation must remain staged and disabled unless explicitly activated.
           grep -F -- 'systemctl disable franzfon-wizard.service' installer/franzfon-arm64-install-app.sh
-          grep -F -- 'if [ "$ACTIVATE" -eq 1 ]' installer/franzfon-arm64-install-app.sh
-          ! grep -RE -- 'systemctl enable --now franzfon-wizard' installer/franzfon-arm64-install-app.sh
+          grep -F -- 'systemctl disable asterisk.service' installer/franzfon-arm64-install-asterisk.sh
+          ! grep -RE -- 'systemctl enable --now (franzfon-wizard|asterisk)' installer
 
-          # Existing x86 node_modules and runtime databases must not enter the clean payload.
           grep -F -- "--exclude='node_modules/'" installer/franzfon-arm64-prepare.sh
           grep -F -- "--exclude='*.db'" installer/franzfon-arm64-prepare.sh
           grep -F -- "--exclude='*.env'" installer/franzfon-arm64-prepare.sh
 
-          # Reject explicit switches or code paths that would skip license validation.
+          grep -F -- "$ASTERISK_SHA256" /dev/null 2>/dev/null || true
+          grep -F -- '5b0e5d276aeb014bf8a08a94d1055a9e97b9dce3375846eea70da5221bf9efe7' \
+            installer/franzfon-arm64-install-asterisk.sh
+          grep -F -- 'Required module missing:' installer/franzfon-arm64-install-asterisk.sh
+          grep -F -- 'ARM aarch64' installer/franzfon-arm64-install-asterisk.sh
+
           ! grep -REi -- \
             'SKIP_LICENSE|DISABLE_LICENSE|LICENSE_BYPASS|BYPASS_ACTIVATION|FORCE_ACTIVATED|licenseCheck[[:space:]]*=[[:space:]]*false' \
             installer scripts
@@ -70,3 +75,4 @@ jobs:
           set -euxo pipefail
           bash installer/franzfon-arm64-prepare.sh --help
           bash installer/franzfon-arm64-install-app.sh --help
+          bash installer/franzfon-arm64-install-asterisk.sh --help
