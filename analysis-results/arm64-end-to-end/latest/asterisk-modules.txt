@@ -1,0 +1,1 @@
+sudo: /opt/franzfon-arm64/asterisk/sbin/asterisk: command not found
