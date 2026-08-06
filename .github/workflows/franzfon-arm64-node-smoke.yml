@@ -1,0 +1,182 @@
+name: FRANZFON ARM64 Node Smoke Test
+run-name: "FRANZFON ARM64 Node Smoke • ${{ github.sha }}"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/franzfon-arm64-node-smoke.yml'
+      - 'scripts/prepare_arm64_node_smoke.sh'
+      - 'scripts/stream_vma_extract.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: franzfon-arm64-node-smoke
+  cancel-in-progress: true
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v4
+
+      - name: Reclaim runner disk space
+        run: |
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc 2>/dev/null || true
+          df -hT
+
+      - name: Install host tools
+        run: |
+          set -euxo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            python3-pip file util-linux e2fsprogs rsync
+          python3 -m pip install --user zstandard
+
+      - name: Enable ARM64 emulation
+        uses: docker/setup-qemu-action@v3
+        with:
+          platforms: arm64
+
+      - name: Prepare sanitized ephemeral application payload
+        id: prepare
+        run: |
+          set +e
+          mkdir -p arm64-smoke-report
+          bash scripts/prepare_arm64_node_smoke.sh 2>&1 | tee arm64-smoke-report/preparation.log
+          RC=${PIPESTATUS[0]}
+          echo "$RC" > arm64-smoke-report/preparation-exit-code.txt
+          echo "rc=$RC" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Rebuild and test backend on ARM64
+        id: backend
+        if: steps.prepare.outputs.rc == '0'
+        run: |
+          set +e
+          docker run --rm --platform linux/arm64/v8 \
+            -v "$PWD/arm64-smoke/payload/backend:/work" \
+            -w /work node:20-bookworm \
+            bash -lc '
+              set -euxo pipefail
+              apt-get update
+              apt-get install -y --no-install-recommends python3 make g++ pkg-config file
+              npm ci --omit=dev
+              node --check src/index.js
+              node - <<"NODE"
+              const Database = require("better-sqlite3");
+              const db = new Database(":memory:");
+              db.exec("CREATE TABLE smoke (id INTEGER PRIMARY KEY, value TEXT)");
+              db.prepare("INSERT INTO smoke(value) VALUES (?)").run("arm64-ok");
+              const row = db.prepare("SELECT value FROM smoke").get();
+              if (row.value !== "arm64-ok") throw new Error("SQLite smoke test failed");
+              console.log(`backend_arch=${process.arch}`);
+              console.log(`node_version=${process.version}`);
+              console.log(`better_sqlite3=ok`);
+              NODE
+              file node_modules/better-sqlite3/build/Release/better_sqlite3.node
+            ' 2>&1 | tee arm64-smoke-report/backend-arm64.log
+          RC=${PIPESTATUS[0]}
+          echo "$RC" > arm64-smoke-report/backend-exit-code.txt
+          echo "rc=$RC" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Rebuild frontend on ARM64
+        id: frontend
+        if: steps.prepare.outputs.rc == '0'
+        run: |
+          set +e
+          docker run --rm --platform linux/arm64/v8 \
+            -v "$PWD/arm64-smoke/payload/frontend:/work" \
+            -w /work node:20-bookworm \
+            bash -lc '
+              set -euxo pipefail
+              apt-get update
+              apt-get install -y --no-install-recommends python3 make g++ file
+              npm ci
+              npm run build
+              test -d dist
+              find dist -maxdepth 2 -type f | head -n 50
+              echo "frontend_arch=$(node -p process.arch)"
+              echo "frontend_build=ok"
+            ' 2>&1 | tee arm64-smoke-report/frontend-arm64.log
+          RC=${PIPESTATUS[0]}
+          echo "$RC" > arm64-smoke-report/frontend-exit-code.txt
+          echo "rc=$RC" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Build smoke-test verdict
+        if: always()
+        run: |
+          PREP='${{ steps.prepare.outputs.rc }}'
+          BACK='${{ steps.backend.outputs.rc }}'
+          FRONT='${{ steps.frontend.outputs.rc }}'
+          : "${PREP:=1}"
+          : "${BACK:=1}"
+          : "${FRONT:=1}"
+
+          {
+            echo "PREPARATION_RC=$PREP"
+            echo "BACKEND_ARM64_RC=$BACK"
+            echo "FRONTEND_ARM64_RC=$FRONT"
+            echo
+            if [ "$PREP" = 0 ] && [ "$BACK" = 0 ] && [ "$FRONT" = 0 ]; then
+              echo 'VERDICT=PASS'
+              echo 'The FRANZFON Node backend dependencies rebuild on ARM64, better-sqlite3 works, and the Astro frontend builds on ARM64.'
+            else
+              echo 'VERDICT=FAIL'
+              echo 'See the preparation, backend and frontend logs for the exact failing dependency.'
+            fi
+          } > arm64-smoke-report/verdict.txt
+
+          # Never persist the extracted application payload.
+          rm -rf arm64-smoke extracted-arm64-node franzfon-arm64-node-root
+
+      - name: Upload logs only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: franzfon-arm64-node-smoke-logs
+          path: arm64-smoke-report/
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 9
+
+      - name: Publish logs and verdict only
+        if: always()
+        run: |
+          set -euxo pipefail
+          rm -rf analysis-results/arm64-node-smoke/latest
+          mkdir -p analysis-results/arm64-node-smoke/latest
+          find arm64-smoke-report -maxdepth 1 -type f \( -name '*.txt' -o -name '*.log' \) \
+            -exec cp {} analysis-results/arm64-node-smoke/latest/ \;
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add analysis-results/arm64-node-smoke/latest
+
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update FRANZFON ARM64 Node smoke test'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo 'No smoke-test changes to commit.'
+          fi
+
+      - name: Mark smoke-test failure after publishing logs
+        if: always()
+        run: |
+          PREP='${{ steps.prepare.outputs.rc }}'
+          BACK='${{ steps.backend.outputs.rc }}'
+          FRONT='${{ steps.frontend.outputs.rc }}'
+          if [ "$PREP" != 0 ] || [ "$BACK" != 0 ] || [ "$FRONT" != 0 ]; then
+            echo 'ARM64 Node smoke test failed. Logs were published.' >&2
+            exit 1
+          fi
+          echo 'ARM64 Node smoke test passed.'
