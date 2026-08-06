@@ -1,0 +1,92 @@
+name: FRANZFON ARM64 Portability Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/franzfon-portability.yml'
+      - 'scripts/portability_audit.sh'
+      - 'scripts/stream_vma_extract.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: franzfon-portability-audit
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Reclaim runner disk space
+        run: |
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc 2>/dev/null || true
+          df -hT
+
+      - name: Install tools
+        run: |
+          set -euxo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            python3-pip file jq util-linux parted e2fsprogs
+          python3 -m pip install --user zstandard
+
+      - name: Run targeted portability audit
+        id: audit
+        run: |
+          mkdir -p portability-report
+          set +e
+          bash scripts/portability_audit.sh 2>&1 | tee portability-report/run.log
+          RC=${PIPESTATUS[0]}
+          echo "$RC" > portability-report/exit-code.txt
+          echo "rc=$RC" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Upload portability artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: franzfon-arm64-portability
+          path: portability-report/
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 9
+
+      - name: Publish sanitized portability results
+        if: always()
+        run: |
+          set -euxo pipefail
+          rm -rf analysis-results/portability/latest
+          mkdir -p analysis-results/portability/latest
+          find portability-report -maxdepth 1 -type f \( -name '*.txt' -o -name '*.log' \) \
+            -exec cp {} analysis-results/portability/latest/ \;
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add analysis-results/portability/latest
+
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update FRANZFON ARM64 portability audit'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo 'No portability changes to commit.'
+          fi
+
+      - name: Mark audit failure after diagnostics
+        if: always()
+        run: |
+          RC='${{ steps.audit.outputs.rc }}'
+          if [ -z "$RC" ]; then RC=1; fi
+          if [ "$RC" != '0' ]; then
+            echo "Portability audit failed with exit code $RC." >&2
+            exit "$RC"
+          fi
+          echo 'Portability audit completed successfully.'
