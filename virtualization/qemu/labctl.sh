@@ -27,23 +27,31 @@ valid_name() {
   [[ "$1" =~ ^[A-Za-z0-9._-]+$ ]]
 }
 
+qmp_responds() {
+  [ -S "$QMP_SOCKET" ] || return 1
+  printf '{"execute":"qmp_capabilities"}\n{"execute":"query-status"}\n' \
+    | socat -T 2 - "UNIX-CONNECT:$QMP_SOCKET" >/dev/null 2>&1
+}
+
 require_stopped() {
-  if [ -S "$QMP_SOCKET" ]; then
+  if qmp_responds; then
     echo 'The VM appears to be running. Power it off before changing disk state.' >&2
     exit 1
   fi
+  rm -f "$QMP_SOCKET"
 }
 
 command="${1:-}"
 case "$command" in
   poweroff)
-    [ -S "$QMP_SOCKET" ] || { echo 'QMP socket is unavailable; the VM may already be stopped.' >&2; exit 1; }
+    qmp_responds || { echo 'QMP is unavailable; the VM may already be stopped.' >&2; exit 1; }
     printf '{"execute":"qmp_capabilities"}\n{"execute":"system_powerdown"}\n' \
-      | socat - "UNIX-CONNECT:$QMP_SOCKET" >/dev/null
+      | socat -T 2 - "UNIX-CONNECT:$QMP_SOCKET" >/dev/null
     echo 'ACPI power-off requested.'
     ;;
 
   status)
+    echo "VM running: $(qmp_responds && echo yes || echo no)"
     echo "Backing image: $(cat "$BACKING_FILE" 2>/dev/null || echo unset)"
     if [ -s "$ACTIVE_IMAGE" ]; then
       qemu-img info "$ACTIVE_IMAGE"
