@@ -69,17 +69,7 @@ jobs:
               apt-get install -y --no-install-recommends python3 make g++ pkg-config file
               npm ci --omit=dev
               node --check src/index.js
-              node - <<"NODE"
-              const Database = require("better-sqlite3");
-              const db = new Database(":memory:");
-              db.exec("CREATE TABLE smoke (id INTEGER PRIMARY KEY, value TEXT)");
-              db.prepare("INSERT INTO smoke(value) VALUES (?)").run("arm64-ok");
-              const row = db.prepare("SELECT value FROM smoke").get();
-              if (row.value !== "arm64-ok") throw new Error("SQLite smoke test failed");
-              console.log(`backend_arch=${process.arch}`);
-              console.log(`node_version=${process.version}`);
-              console.log(`better_sqlite3=ok`);
-              NODE
+              node -e "const Database=require(\"better-sqlite3\"); const db=new Database(\":memory:\"); db.exec(\"CREATE TABLE smoke (id INTEGER PRIMARY KEY, value TEXT)\"); db.prepare(\"INSERT INTO smoke(value) VALUES (?)\").run(\"arm64-ok\"); const row=db.prepare(\"SELECT value FROM smoke\").get(); if(row.value!==\"arm64-ok\") throw new Error(\"SQLite smoke test failed\"); console.log(\"backend_arch=\"+process.arch); console.log(\"node_version=\"+process.version); console.log(\"better_sqlite3=ok\");"
               file node_modules/better-sqlite3/build/Release/better_sqlite3.node
             ' 2>&1 | tee arm64-smoke-report/backend-arm64.log
           RC=${PIPESTATUS[0]}
@@ -135,7 +125,6 @@ jobs:
             fi
           } > arm64-smoke-report/verdict.txt
 
-          # Never persist the extracted application payload.
           rm -rf arm64-smoke extracted-arm64-node franzfon-arm64-node-root
 
       - name: Upload logs only
