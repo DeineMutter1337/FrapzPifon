@@ -71,8 +71,9 @@ INSTALL_APP="$SCRIPT_DIR/franzfon-arm64-install-app.sh"
 NORMALIZE_ADDONS="$SCRIPT_DIR/franzfon-arm64-normalize-native-addons.sh"
 INSTALL_ASTERISK="$SCRIPT_DIR/franzfon-arm64-install-asterisk.sh"
 BOOTSTRAP="$SCRIPT_DIR/franzfon-arm64-bootstrap.sh"
+SELFTEST="$SCRIPT_DIR/franzfon-arm64-selftest.sh"
 
-for stage in "$PREPARE" "$INSTALL_APP" "$NORMALIZE_ADDONS" "$INSTALL_ASTERISK" "$BOOTSTRAP"; do
+for stage in "$PREPARE" "$INSTALL_APP" "$NORMALIZE_ADDONS" "$INSTALL_ASTERISK" "$BOOTSTRAP" "$SELFTEST"; do
   [ -f "$stage" ] || { echo "Missing installer stage: $stage" >&2; exit 1; }
 done
 
@@ -115,11 +116,16 @@ BOOTSTRAP_ARGS=()
 [ "$ACTIVATE" -eq 0 ] || BOOTSTRAP_ARGS+=(--activate)
 bash "$BOOTSTRAP" "${BOOTSTRAP_ARGS[@]}"
 
+if [ "$ACTIVATE" -eq 1 ]; then
+  printf '\n[Post-install] Running complete local ARM64 self-test\n'
+  bash "$SELFTEST"
+fi
+
 printf '\nInstallation completed successfully.\n'
 if [ "$ACTIVATE" -eq 1 ]; then
   printf 'FRANZFON web interface: http://<device-ip>:3000/\n'
   systemctl --no-pager --full status asterisk.service franzfon-wizard.service
 else
   printf 'Services remain disabled. Activate after review with:\n'
-  printf '  sudo %q --skip-prepare --force-asterisk --activate\n' "$0"
+  printf '  sudo bash %q --activate\n' "$BOOTSTRAP"
 fi
