@@ -1,0 +1,73 @@
+name: Patch Bootstrap ARM64 Validation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/patch-bootstrap-arm64-validation.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Replace fragile file-text checks with ELF header validation
+        run: |
+          set -euxo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path('installer/franzfon-arm64-bootstrap.sh')
+          text = path.read_text(encoding='utf-8')
+
+          old_packages = "  openssl curl file iproute2\n"
+          new_packages = "  openssl curl file iproute2 binutils\n"
+          if old_packages not in text:
+              raise SystemExit('Expected bootstrap package line not found')
+          text = text.replace(old_packages, new_packages, 1)
+
+          old_check = '''file "$ASTERISK_PREFIX/sbin/asterisk" | grep -E 'ARM aarch64|ARM64' >/dev/null
+          file "$APP_ROOT/wizard/backend/node_modules/better-sqlite3/build/Release/better_sqlite3.node" \\
+            | grep -E 'ARM aarch64|ARM64' >/dev/null
+          '''
+          new_check = '''assert_aarch64_elf() {
+            local target="$1"
+            local machine
+            [ -e "$target" ] || { echo "ARM64 validation target missing: $target" >&2; exit 1; }
+            machine="$(readelf -h "$target" | awk '$1 == "Machine:" {print $2}')"
+            [ "$machine" = AArch64 ] || {
+              echo "Expected AArch64 ELF, found '${machine:-unknown}': $target" >&2
+              exit 1
+            }
+          }
+
+          assert_aarch64_elf "$ASTERISK_PREFIX/sbin/asterisk"
+          assert_aarch64_elf "$APP_ROOT/wizard/backend/node_modules/better-sqlite3/build/Release/better_sqlite3.node"
+          '''
+          if old_check not in text:
+              raise SystemExit('Expected fragile ARM64 validation block not found')
+          text = text.replace(old_check, new_check, 1)
+
+          path.write_text(text, encoding='utf-8')
+          PY
+
+          bash -n installer/franzfon-arm64-bootstrap.sh
+          grep -F 'assert_aarch64_elf' installer/franzfon-arm64-bootstrap.sh
+          ! grep -F "grep -E 'ARM aarch64|ARM64'" installer/franzfon-arm64-bootstrap.sh
+
+      - name: Commit corrected bootstrap
+        run: |
+          set -euxo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add installer/franzfon-arm64-bootstrap.sh
+          git commit -m 'Use ELF headers for bootstrap ARM64 validation'
+          git pull --rebase origin main
+          git push origin HEAD:main
