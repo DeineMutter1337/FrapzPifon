@@ -17,55 +17,114 @@ jobs:
 
       - name: Install tools
         run: |
+          set -euxo pipefail
           sudo apt-get update
           sudo apt-get install -y python3-pip util-linux e2fsprogs lvm2 file jq pciutils
           python3 -m pip install --user zstandard
 
       - name: Stream-extract official FRANZFON appliance
         run: |
-          mkdir -p extracted
+          set -euxo pipefail
+          mkdir -p extracted report
           python3 scripts/stream_vma_extract.py \
             'https://franzfon.de/updates/proxmox/vzdump-qemu-900-2026_08_04-01_09_26.vma.zst' \
             extracted
-          ls -lah extracted
-          du -h --apparent-size extracted/* || true
-          du -h extracted/* || true
 
-      - name: Attach disk read-only
+          {
+            echo '=== EXTRACTED FILES ==='
+            find extracted -maxdepth 1 -type f -printf '%s bytes\t%p\n' | sort -nr
+            echo
+            echo '=== DISK USAGE ==='
+            du -h --apparent-size extracted/* 2>/dev/null || true
+            du -h extracted/* 2>/dev/null || true
+          } | tee report/extraction.txt
+
+      - name: Attach extracted virtual disk read-only
         id: attach
         run: |
-          RAW="$(find extracted -maxdepth 1 -type f \( -name '*.raw' -o -name 'disk-*' \) | head -n1)"
-          test -n "$RAW"
+          set -euxo pipefail
+
+          # The VMA device is commonly named drive-scsi0, not necessarily *.raw.
+          # Select the largest extracted regular file and ignore tiny VM configs.
+          RAW="$(find extracted -maxdepth 1 -type f -size +16M -printf '%s\t%p\n' \
+            | sort -nr | head -n1 | cut -f2-)"
+
+          if [ -z "$RAW" ]; then
+            echo 'No virtual disk candidate found. Extracted files:' >&2
+            find extracted -maxdepth 1 -type f -ls >&2
+            exit 1
+          fi
+
+          echo "Selected virtual disk: $RAW"
+          file "$RAW" || true
+          stat "$RAW"
+
           LOOP="$(sudo losetup --find --show --partscan --read-only "$RAW")"
           echo "loop=$LOOP" >> "$GITHUB_OUTPUT"
+          sudo udevadm settle || true
           sleep 2
-          sudo lsblk -f "$LOOP"
+          sudo lsblk -b -o NAME,PATH,TYPE,SIZE,FSTYPE,FSVER,LABEL,UUID,MOUNTPOINTS "$LOOP" \
+            | tee report/attached-disk.txt
 
       - name: Find and mount Linux root read-only
         id: mount
         run: |
+          set -euxo pipefail
           LOOP='${{ steps.attach.outputs.loop }}'
-          sudo vgchange -ay || true
-          ROOTDEV="$(lsblk -rno PATH,FSTYPE "$LOOP" | awk '$2 ~ /^(ext4|xfs|btrfs)$/ {print $1}' | tail -n1)"
+
+          sudo pvscan --cache || true
+          sudo vgchange -ay --activationmode partial || true
+          sudo udevadm settle || true
+
+          ROOTDEV="$(
+            sudo lsblk -bprno PATH,FSTYPE,SIZE "$LOOP" \
+              | awk '$2 ~ /^(ext4|xfs|btrfs)$/ {print $3 "\t" $1}' \
+              | sort -nr | head -n1 | cut -f2-
+          )"
+
           if [ -z "$ROOTDEV" ]; then
-            ROOTDEV="$(sudo lvs --noheadings -o lv_path 2>/dev/null | xargs -r -n1 sudo blkid -o value -s TYPE 2>/dev/null | head -n1)"
+            ROOTDEV="$(
+              while read -r LV; do
+                [ -n "$LV" ] || continue
+                TYPE="$(sudo blkid -o value -s TYPE "$LV" 2>/dev/null || true)"
+                case "$TYPE" in
+                  ext4|xfs|btrfs)
+                    SIZE="$(sudo blockdev --getsize64 "$LV" 2>/dev/null || echo 0)"
+                    printf '%s\t%s\n' "$SIZE" "$LV"
+                    ;;
+                esac
+              done < <(sudo lvs --noheadings -o lv_path 2>/dev/null | xargs -r -n1)
+            )"
+            ROOTDEV="$(printf '%s\n' "$ROOTDEV" | sort -nr | head -n1 | cut -f2-)"
           fi
+
           if [ -z "$ROOTDEV" ]; then
-            ROOTDEV="$(sudo blkid | awk -F: '/TYPE="(ext4|xfs|btrfs)"/ {print $1}' | tail -n1)"
+            echo 'Could not identify a Linux root filesystem.' >&2
+            sudo lsblk -f >&2 || true
+            sudo pvs >&2 || true
+            sudo vgs >&2 || true
+            sudo lvs -a -o +devices >&2 || true
+            exit 1
           fi
-          test -n "$ROOTDEV"
-          sudo mkdir -p /mnt/franzfon
+
           FSTYPE="$(sudo blkid -o value -s TYPE "$ROOTDEV")"
-          if [ "$FSTYPE" = ext4 ]; then
-            sudo mount -o ro,noload "$ROOTDEV" /mnt/franzfon
-          else
-            sudo mount -o ro "$ROOTDEV" /mnt/franzfon
-          fi
+          sudo mkdir -p /mnt/franzfon
+
+          case "$FSTYPE" in
+            ext4)   sudo mount -o ro,noload "$ROOTDEV" /mnt/franzfon ;;
+            xfs)    sudo mount -o ro,norecovery "$ROOTDEV" /mnt/franzfon ;;
+            btrfs)  sudo mount -o ro "$ROOTDEV" /mnt/franzfon ;;
+            *)      echo "Unsupported root filesystem: $FSTYPE" >&2; exit 1 ;;
+          esac
+
+          test -f /mnt/franzfon/etc/os-release
           echo "rootdev=$ROOTDEV" >> "$GITHUB_OUTPUT"
           echo "Mounted $ROOTDEV ($FSTYPE)"
+          sudo lsblk -f | tee report/storage-layout.txt
 
       - name: Build sanitized technical inventory
         run: |
+          set -euxo pipefail
           ROOT=/mnt/franzfon
           OUT="$GITHUB_WORKSPACE/report"
           mkdir -p "$OUT"
@@ -74,16 +133,19 @@ jobs:
             echo '=== OS RELEASE ==='
             cat "$ROOT/etc/os-release" 2>/dev/null || true
             echo
-            echo '=== KERNEL/BOOT FILES ==='
+            echo '=== MACHINE / PACKAGE ARCHITECTURE ==='
+            cat "$ROOT/var/lib/dpkg/arch" 2>/dev/null || true
+            echo
+            echo '=== KERNEL / BOOT FILES ==='
             find "$ROOT/boot" -maxdepth 2 -type f -printf '%P\t%s bytes\n' 2>/dev/null | sort || true
           } > "$OUT/system.txt"
 
           {
-            echo '=== PARTITIONS ==='
-            sudo lsblk -f
-            echo
             echo '=== FILESYSTEM USAGE ==='
             df -hT "$ROOT" || true
+            echo
+            echo '=== FSTAB ==='
+            sed -E 's#(credentials=)[^, ]+#\1[REDACTED]#Ig' "$ROOT/etc/fstab" 2>/dev/null || true
           } > "$OUT/storage.txt"
 
           if [ -f "$ROOT/var/lib/dpkg/status" ]; then
@@ -96,9 +158,9 @@ jobs:
             find "$ROOT/etc/systemd/system" "$ROOT/lib/systemd/system" -type f \
               \( -name '*.service' -o -name '*.timer' -o -name '*.socket' \) -print 2>/dev/null | sort
             echo
-            echo '=== FRANZFON/ASTERISK-RELATED UNIT DIRECTIVES ==='
+            echo '=== FRANZFON / ASTERISK-RELATED UNIT DIRECTIVES ==='
             grep -RHIEn --include='*.service' --include='*.timer' --include='*.socket' \
-              'franz|asterisk|ExecStart|WorkingDirectory|User=|Group=|After=|Requires=' \
+              'franz|asterisk|ExecStart|ExecStartPre|ExecStartPost|WorkingDirectory|User=|Group=|After=|Requires=' \
               "$ROOT/etc/systemd/system" "$ROOT/lib/systemd/system" 2>/dev/null \
               | sed -E 's/(PASSWORD|PASS|TOKEN|SECRET|KEY)=([^ ]+)/\1=[REDACTED]/Ig' || true
           } > "$OUT/services.txt"
@@ -152,14 +214,16 @@ jobs:
           } > "$OUT/update-backup.txt"
 
           sed -ri 's#([A-Za-z0-9_]*(PASSWORD|PASS|TOKEN|SECRET|PRIVATE_KEY)[A-Za-z0-9_]*[=:])[[:space:]]*[^[:space:]]+#\1[REDACTED]#Ig' "$OUT"/*.txt || true
-          echo "Generated report files:"
+          echo 'Generated report files:'
           ls -lh "$OUT"
 
       - name: Upload sanitized analysis
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: franzfon-phase2-analysis
           path: report/
+          if-no-files-found: warn
           retention-days: 7
           compression-level: 9
 
