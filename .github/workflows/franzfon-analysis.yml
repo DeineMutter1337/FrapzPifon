@@ -2,222 +2,64 @@ name: FRANZFON Phase 2 Analysis
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/franzfon-analysis.yml'
+      - 'scripts/**'
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: franzfon-phase2-analysis
+  cancel-in-progress: true
 
 jobs:
   analyze:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 180
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install tools
+      - name: Reclaim runner disk space
+        run: |
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc 2>/dev/null || true
+          df -hT
+
+      - name: Install analysis tools
         run: |
           set -euxo pipefail
           sudo apt-get update
-          sudo apt-get install -y python3-pip util-linux e2fsprogs lvm2 file jq pciutils
+          sudo apt-get install -y --no-install-recommends \
+            python3-pip zstd file jq libguestfs-tools fuse3
           python3 -m pip install --user zstandard
+          if [ -e /dev/kvm ]; then sudo chmod 0666 /dev/kvm || true; fi
+          guestfish --version
+          virt-filesystems --version
 
-      - name: Stream-extract official FRANZFON appliance
+      - name: Analyze appliance and capture complete log
+        id: analysis
         run: |
-          set -euxo pipefail
-          mkdir -p extracted report
-          python3 scripts/stream_vma_extract.py \
-            'https://franzfon.de/updates/proxmox/vzdump-qemu-900-2026_08_04-01_09_26.vma.zst' \
-            extracted
+          mkdir -p report
+          set +e
+          bash scripts/analyze_franzfon.sh 2>&1 | tee report/run.log
+          RC=${PIPESTATUS[0]}
+          echo "$RC" > report/exit-code.txt
+          echo "rc=$RC" >> "$GITHUB_OUTPUT"
 
-          {
-            echo '=== EXTRACTED FILES ==='
-            find extracted -maxdepth 1 -type f -printf '%s bytes\t%p\n' | sort -nr
-            echo
-            echo '=== DISK USAGE ==='
-            du -h --apparent-size extracted/* 2>/dev/null || true
-            du -h extracted/* 2>/dev/null || true
-          } | tee report/extraction.txt
+          # Final safety scrub for the complete execution log.
+          sed -ri \
+            -e 's#([A-Za-z0-9_]*(PASSWORD|PASS|TOKEN|SECRET|PRIVATE_KEY|API_KEY)[A-Za-z0-9_]*[=:])[[:space:]]*[^[:space:]]+#\1[REDACTED]#Ig' \
+            -e 's#(Authorization:[[:space:]]*(Bearer|Basic))[[:space:]]+[^[:space:]]+#\1 [REDACTED]#Ig' \
+            -e 's#([a-zA-Z][a-zA-Z0-9+.-]*://)[^/@[:space:]]+:[^/@[:space:]]+@#\1[REDACTED]@#g' \
+            report/run.log 2>/dev/null || true
 
-      - name: Attach extracted virtual disk read-only
-        id: attach
-        run: |
-          set -euxo pipefail
+          exit 0
 
-          # The VMA device is commonly named drive-scsi0, not necessarily *.raw.
-          # Select the largest extracted regular file and ignore tiny VM configs.
-          RAW="$(find extracted -maxdepth 1 -type f -size +16M -printf '%s\t%p\n' \
-            | sort -nr | head -n1 | cut -f2-)"
-
-          if [ -z "$RAW" ]; then
-            echo 'No virtual disk candidate found. Extracted files:' >&2
-            find extracted -maxdepth 1 -type f -ls >&2
-            exit 1
-          fi
-
-          echo "Selected virtual disk: $RAW"
-          file "$RAW" || true
-          stat "$RAW"
-
-          LOOP="$(sudo losetup --find --show --partscan --read-only "$RAW")"
-          echo "loop=$LOOP" >> "$GITHUB_OUTPUT"
-          sudo udevadm settle || true
-          sleep 2
-          sudo lsblk -b -o NAME,PATH,TYPE,SIZE,FSTYPE,FSVER,LABEL,UUID,MOUNTPOINTS "$LOOP" \
-            | tee report/attached-disk.txt
-
-      - name: Find and mount Linux root read-only
-        id: mount
-        run: |
-          set -euxo pipefail
-          LOOP='${{ steps.attach.outputs.loop }}'
-
-          sudo pvscan --cache || true
-          sudo vgchange -ay --activationmode partial || true
-          sudo udevadm settle || true
-
-          ROOTDEV="$(
-            sudo lsblk -bprno PATH,FSTYPE,SIZE "$LOOP" \
-              | awk '$2 ~ /^(ext4|xfs|btrfs)$/ {print $3 "\t" $1}' \
-              | sort -nr | head -n1 | cut -f2-
-          )"
-
-          if [ -z "$ROOTDEV" ]; then
-            ROOTDEV="$(
-              while read -r LV; do
-                [ -n "$LV" ] || continue
-                TYPE="$(sudo blkid -o value -s TYPE "$LV" 2>/dev/null || true)"
-                case "$TYPE" in
-                  ext4|xfs|btrfs)
-                    SIZE="$(sudo blockdev --getsize64 "$LV" 2>/dev/null || echo 0)"
-                    printf '%s\t%s\n' "$SIZE" "$LV"
-                    ;;
-                esac
-              done < <(sudo lvs --noheadings -o lv_path 2>/dev/null | xargs -r -n1)
-            )"
-            ROOTDEV="$(printf '%s\n' "$ROOTDEV" | sort -nr | head -n1 | cut -f2-)"
-          fi
-
-          if [ -z "$ROOTDEV" ]; then
-            echo 'Could not identify a Linux root filesystem.' >&2
-            sudo lsblk -f >&2 || true
-            sudo pvs >&2 || true
-            sudo vgs >&2 || true
-            sudo lvs -a -o +devices >&2 || true
-            exit 1
-          fi
-
-          FSTYPE="$(sudo blkid -o value -s TYPE "$ROOTDEV")"
-          sudo mkdir -p /mnt/franzfon
-
-          case "$FSTYPE" in
-            ext4)   sudo mount -o ro,noload "$ROOTDEV" /mnt/franzfon ;;
-            xfs)    sudo mount -o ro,norecovery "$ROOTDEV" /mnt/franzfon ;;
-            btrfs)  sudo mount -o ro "$ROOTDEV" /mnt/franzfon ;;
-            *)      echo "Unsupported root filesystem: $FSTYPE" >&2; exit 1 ;;
-          esac
-
-          test -f /mnt/franzfon/etc/os-release
-          echo "rootdev=$ROOTDEV" >> "$GITHUB_OUTPUT"
-          echo "Mounted $ROOTDEV ($FSTYPE)"
-          sudo lsblk -f | tee report/storage-layout.txt
-
-      - name: Build sanitized technical inventory
-        run: |
-          set -euxo pipefail
-          ROOT=/mnt/franzfon
-          OUT="$GITHUB_WORKSPACE/report"
-          mkdir -p "$OUT"
-
-          {
-            echo '=== OS RELEASE ==='
-            cat "$ROOT/etc/os-release" 2>/dev/null || true
-            echo
-            echo '=== MACHINE / PACKAGE ARCHITECTURE ==='
-            cat "$ROOT/var/lib/dpkg/arch" 2>/dev/null || true
-            echo
-            echo '=== KERNEL / BOOT FILES ==='
-            find "$ROOT/boot" -maxdepth 2 -type f -printf '%P\t%s bytes\n' 2>/dev/null | sort || true
-          } > "$OUT/system.txt"
-
-          {
-            echo '=== FILESYSTEM USAGE ==='
-            df -hT "$ROOT" || true
-            echo
-            echo '=== FSTAB ==='
-            sed -E 's#(credentials=)[^, ]+#\1[REDACTED]#Ig' "$ROOT/etc/fstab" 2>/dev/null || true
-          } > "$OUT/storage.txt"
-
-          if [ -f "$ROOT/var/lib/dpkg/status" ]; then
-            awk '/^Package:|^Version:|^Architecture:/{printf "%s ",$0} /^$/{print ""}' \
-              "$ROOT/var/lib/dpkg/status" > "$OUT/packages.txt"
-          fi
-
-          {
-            echo '=== SYSTEMD UNITS ==='
-            find "$ROOT/etc/systemd/system" "$ROOT/lib/systemd/system" -type f \
-              \( -name '*.service' -o -name '*.timer' -o -name '*.socket' \) -print 2>/dev/null | sort
-            echo
-            echo '=== FRANZFON / ASTERISK-RELATED UNIT DIRECTIVES ==='
-            grep -RHIEn --include='*.service' --include='*.timer' --include='*.socket' \
-              'franz|asterisk|ExecStart|ExecStartPre|ExecStartPost|WorkingDirectory|User=|Group=|After=|Requires=' \
-              "$ROOT/etc/systemd/system" "$ROOT/lib/systemd/system" 2>/dev/null \
-              | sed -E 's/(PASSWORD|PASS|TOKEN|SECRET|KEY)=([^ ]+)/\1=[REDACTED]/Ig' || true
-          } > "$OUT/services.txt"
-
-          {
-            echo '=== RELEVANT TOP-LEVEL DIRECTORIES ==='
-            for d in opt srv usr/local var/www etc/asterisk var/lib/asterisk var/spool/asterisk; do
-              [ -e "$ROOT/$d" ] && find "$ROOT/$d" -maxdepth 4 -printf '%y\t%p\t%s\n' 2>/dev/null
-            done
-          } > "$OUT/relevant-tree.txt"
-
-          {
-            echo '=== EXECUTABLE / BINARY ARCHITECTURES ==='
-            find "$ROOT/opt" "$ROOT/srv" "$ROOT/usr/local" "$ROOT/var/www" \
-              -xdev -type f -size -200M 2>/dev/null -print0 \
-              | xargs -0 -r file \
-              | grep -Ei 'ELF|script|Java|Mono|\.NET|WebAssembly' || true
-          } > "$OUT/binaries.txt"
-
-          {
-            echo '=== RUNTIME MARKERS ==='
-            find "$ROOT/opt" "$ROOT/srv" "$ROOT/usr/local" "$ROOT/var/www" \
-              -type f \( -name package.json -o -name yarn.lock -o -name pnpm-lock.yaml \
-              -o -name requirements.txt -o -name pyproject.toml -o -name composer.json \
-              -o -name '*.jar' -o -name '*.dll' -o -name '*.runtimeconfig.json' \
-              -o -name go.mod -o -name Cargo.toml \) -printf '%p\t%s\n' 2>/dev/null | sort
-          } > "$OUT/runtimes.txt"
-
-          {
-            echo '=== DATABASE MARKERS ==='
-            find "$ROOT/opt" "$ROOT/srv" "$ROOT/usr/local" "$ROOT/var/www" "$ROOT/var/lib" \
-              -maxdepth 5 -type f \( -name '*.sqlite' -o -name '*.sqlite3' -o -name '*.db' \
-              -o -name 'PG_VERSION' -o -name 'ibdata1' \) -printf '%p\t%s\n' 2>/dev/null | sort
-            echo
-            grep -RIlE 'sqlite|postgres|mariadb|mysql' \
-              "$ROOT/etc/systemd/system" "$ROOT/lib/systemd/system" 2>/dev/null | sort || true
-          } > "$OUT/databases.txt"
-
-          {
-            echo '=== ASTERISK INVENTORY ==='
-            find "$ROOT/etc/asterisk" -maxdepth 2 -type f -printf '%P\t%s\n' 2>/dev/null | sort || true
-            echo
-            find "$ROOT/usr/lib" "$ROOT/usr/lib64" -path '*asterisk*' -type f -printf '%p\t%s\n' 2>/dev/null | sort || true
-          } > "$OUT/asterisk.txt"
-
-          {
-            echo '=== UPDATE / BACKUP MARKERS ==='
-            grep -RIlE 'franzfon\.de|update|upgrade|backup|restore' \
-              "$ROOT/etc/systemd/system" "$ROOT/lib/systemd/system" "$ROOT/etc/cron.d" \
-              "$ROOT/opt" "$ROOT/srv" "$ROOT/usr/local" 2>/dev/null | head -n 1000 || true
-          } > "$OUT/update-backup.txt"
-
-          sed -ri 's#([A-Za-z0-9_]*(PASSWORD|PASS|TOKEN|SECRET|PRIVATE_KEY)[A-Za-z0-9_]*[=:])[[:space:]]*[^[:space:]]+#\1[REDACTED]#Ig' "$OUT"/*.txt || true
-          echo 'Generated report files:'
-          ls -lh "$OUT"
-
-      - name: Upload sanitized analysis
+      - name: Upload sanitized analysis artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -227,10 +69,34 @@ jobs:
           retention-days: 7
           compression-level: 9
 
-      - name: Cleanup
+      - name: Publish latest sanitized diagnostics to repository
         if: always()
         run: |
-          sudo umount /mnt/franzfon 2>/dev/null || true
-          sudo vgchange -an 2>/dev/null || true
-          LOOP='${{ steps.attach.outputs.loop }}'
-          [ -n "$LOOP" ] && sudo losetup -d "$LOOP" 2>/dev/null || true
+          set -euxo pipefail
+          rm -rf analysis-results/latest
+          mkdir -p analysis-results/latest
+          find report -maxdepth 1 -type f \( -name '*.txt' -o -name '*.log' \) \
+            -exec cp {} analysis-results/latest/ \;
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add analysis-results/latest
+
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update latest sanitized FRANZFON analysis'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo 'No diagnostic changes to commit.'
+          fi
+
+      - name: Mark analysis failure after publishing diagnostics
+        if: always()
+        run: |
+          RC='${{ steps.analysis.outputs.rc }}'
+          if [ -z "$RC" ]; then RC=1; fi
+          if [ "$RC" != '0' ]; then
+            echo "Analysis failed with exit code $RC. Diagnostics were committed to analysis-results/latest/." >&2
+            exit "$RC"
+          fi
+          echo 'Analysis completed successfully.'
