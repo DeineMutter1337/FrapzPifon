@@ -1,0 +1,42 @@
+#cloud-config
+hostname: franzfon-arm64-lab
+manage_etc_hosts: true
+timezone: Europe/Berlin
+ssh_pwauth: true
+disable_root: true
+
+users:
+  - default
+  - name: franzfon
+    gecos: FRANZFON ARM64 Lab
+    groups: [adm, sudo]
+    shell: /bin/bash
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    lock_passwd: false
+    passwd: $6$HtT/ZFzh5YzTTXPV$.ecZUNRiCfDa4JjNprU2V6yLqakfXjQJve/QspLylAadjdkR/NXYj5jHiHmhNnNziC7dF.Cmq3ivueXrC3lGE.
+
+package_update: true
+package_upgrade: false
+packages:
+  - ca-certificates
+  - curl
+  - git
+  - openssh-server
+
+write_files:
+  - path: /etc/motd
+    permissions: '0644'
+    content: |
+      FRANZFON ARM64 disposable test VM
+
+      Repository: /home/franzfon/FrapzPifon
+      Web after installation: http://127.0.0.1:3000/
+      Lab login password: franzfon
+
+runcmd:
+  - [systemctl, enable, --now, ssh.service]
+  - [bash, -lc, 'git clone https://github.com/DeineMutter1337/FrapzPifon.git /home/franzfon/FrapzPifon || true']
+  - [chown, -R, 'franzfon:franzfon', /home/franzfon/FrapzPifon]
+  - [bash, -lc, 'echo cloud-init-complete > /var/lib/franzfon-lab-ready']
+
+final_message: 'FRANZFON ARM64 lab ready after $UPTIME seconds'
