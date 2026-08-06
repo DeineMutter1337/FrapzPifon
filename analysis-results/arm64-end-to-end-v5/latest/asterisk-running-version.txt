@@ -1,0 +1,1 @@
+Asterisk 22.7.0 built by root @ runnervmscnyy on a aarch64 running Linux on 2026-08-06 11:34:26 UTC

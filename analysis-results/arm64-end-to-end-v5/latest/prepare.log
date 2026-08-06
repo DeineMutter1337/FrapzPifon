@@ -1,38 +1,32 @@
-Get:1 https://packages.microsoft.com/repos/azure-cli noble InRelease [3564 B]
+Hit:1 https://packages.microsoft.com/repos/azure-cli noble InRelease
 Get:2 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
-Get:3 https://packages.microsoft.com/repos/azure-cli noble/main arm64 Packages [2380 B]
+Get:3 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [266 kB]
 Get:4 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [306 kB]
-Get:5 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [266 kB]
+Get:5 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.2 kB]
 Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [643 B]
-Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.2 kB]
-Hit:8 http://ports.ubuntu.com/ubuntu-ports noble InRelease
-Get:9 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease [126 kB]
-Get:10 http://ports.ubuntu.com/ubuntu-ports noble-backports InRelease [126 kB]
-Get:11 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease [126 kB]
-Get:12 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 Packages [1225 kB]
-Get:13 http://ports.ubuntu.com/ubuntu-ports noble-updates/main Translation-en [281 kB]
-Get:14 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 Components [178 kB]
-Get:15 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 Packages [1708 kB]
-Get:16 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe Translation-en [335 kB]
-Get:17 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 Components [387 kB]
-Get:18 http://ports.ubuntu.com/ubuntu-ports noble-updates/restricted arm64 Packages [2105 kB]
-Get:19 http://ports.ubuntu.com/ubuntu-ports noble-updates/restricted Translation-en [320 kB]
-Get:20 http://ports.ubuntu.com/ubuntu-ports noble-updates/multiverse arm64 Packages [72.7 kB]
-Get:21 http://ports.ubuntu.com/ubuntu-ports noble-updates/multiverse Translation-en [12.3 kB]
-Get:22 http://ports.ubuntu.com/ubuntu-ports noble-backports/main arm64 Components [3584 B]
-Get:23 http://ports.ubuntu.com/ubuntu-ports noble-backports/universe arm64 Packages [31.2 kB]
-Get:24 http://ports.ubuntu.com/ubuntu-ports noble-backports/universe arm64 Components [12.6 kB]
-Get:25 http://ports.ubuntu.com/ubuntu-ports noble-security/main arm64 Packages [974 kB]
-Get:26 http://ports.ubuntu.com/ubuntu-ports noble-security/main Translation-en [201 kB]
-Get:27 http://ports.ubuntu.com/ubuntu-ports noble-security/main arm64 Components [43.3 kB]
-Get:28 http://ports.ubuntu.com/ubuntu-ports noble-security/universe arm64 Packages [1260 kB]
-Get:29 http://ports.ubuntu.com/ubuntu-ports noble-security/universe Translation-en [239 kB]
-Get:30 http://ports.ubuntu.com/ubuntu-ports noble-security/universe arm64 Components [76.4 kB]
-Get:31 http://ports.ubuntu.com/ubuntu-ports noble-security/restricted arm64 Packages [1999 kB]
-Get:32 http://ports.ubuntu.com/ubuntu-ports noble-security/restricted Translation-en [302 kB]
-Get:33 http://ports.ubuntu.com/ubuntu-ports noble-security/multiverse arm64 Packages [68.7 kB]
-Get:34 http://ports.ubuntu.com/ubuntu-ports noble-security/multiverse Translation-en [10.6 kB]
-Fetched 12.8 MB in 2s (6309 kB/s)
+Hit:7 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Get:8 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease [126 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports noble-backports InRelease [126 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease [126 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 Packages [1225 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports noble-updates/main Translation-en [281 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 Components [178 kB]
+Get:14 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 Packages [1708 kB]
+Get:15 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe Translation-en [335 kB]
+Get:16 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 Components [387 kB]
+Get:17 http://ports.ubuntu.com/ubuntu-ports noble-updates/restricted arm64 Packages [2105 kB]
+Get:18 http://ports.ubuntu.com/ubuntu-ports noble-updates/restricted Translation-en [320 kB]
+Get:19 http://ports.ubuntu.com/ubuntu-ports noble-backports/main arm64 Components [3584 B]
+Get:20 http://ports.ubuntu.com/ubuntu-ports noble-backports/universe arm64 Components [12.6 kB]
+Get:21 http://ports.ubuntu.com/ubuntu-ports noble-security/main arm64 Packages [974 kB]
+Get:22 http://ports.ubuntu.com/ubuntu-ports noble-security/main Translation-en [201 kB]
+Get:23 http://ports.ubuntu.com/ubuntu-ports noble-security/main arm64 Components [43.3 kB]
+Get:24 http://ports.ubuntu.com/ubuntu-ports noble-security/universe arm64 Packages [1260 kB]
+Get:25 http://ports.ubuntu.com/ubuntu-ports noble-security/universe Translation-en [239 kB]
+Get:26 http://ports.ubuntu.com/ubuntu-ports noble-security/universe arm64 Components [76.4 kB]
+Get:27 http://ports.ubuntu.com/ubuntu-ports noble-security/restricted arm64 Packages [1999 kB]
+Get:28 http://ports.ubuntu.com/ubuntu-ports noble-security/restricted Translation-en [302 kB]
+Fetched 12.6 MB in 1s (8756 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -47,7 +41,7 @@ e2fsprogs is already the newest version (1.47.0-2.4~exp1ubuntu4.1).
 e2fsprogs set to manually installed.
 rsync is already the newest version (3.2.7-1ubuntu1.5).
 coreutils is already the newest version (9.4-3ubuntu6.2).
-0 upgraded, 0 newly installed, 0 to remove and 84 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 10 not upgraded.
 
 [1/6] Streaming and validating official VMA image
 device 1: drive-scsi0, virtual size=34359738368

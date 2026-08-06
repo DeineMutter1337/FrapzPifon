@@ -1,7 +1,7 @@
 RUN_MARKER=FRANZFON_ARM64_E2E_V5
-GITHUB_SHA=c1a2da5a86f987a713538fd0cc7277723574a106
+GITHUB_SHA=64efa47a2027d6935ebdbd93c3aafd794e24e8b6
 PREPARE_JOB=success
-INTEGRATION_JOB=failure
+INTEGRATION_JOB=success
 
-VERDICT=FAIL
-Read stage-outcomes.txt and the first failed stage log.
+VERDICT=PASS
+The complete FRANZFON stack installed and ran natively on ARM64.
