@@ -1,7 +1,7 @@
 RUN_MARKER=FRANZFON_ARM64_E2E_V4
-GITHUB_SHA=edb80eadd6f1e2f8cab38ac36c56848f0ae4320c
-PREPARE_JOB=cancelled
-INTEGRATION_JOB=cancelled
+GITHUB_SHA=02f56e3314537fd5e836ed68aad909735a08e01d
+PREPARE_JOB=success
+INTEGRATION_JOB=failure
 
 VERDICT=FAIL
 Read stage-outcomes.txt and the first failed stage log.
