@@ -1,0 +1,185 @@
+name: FRANZFON ARM64 Unified Installer Validation
+run-name: "Unified ARM64 installer • ${{ github.sha }}"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'installer/**'
+      - 'scripts/stream_vma_extract.py'
+      - '.github/workflows/franzfon-arm64-unified-installer.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: franzfon-arm64-unified-installer
+  cancel-in-progress: true
+
+jobs:
+  install:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 240
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Confirm clean native ARM64 host
+        run: |
+          set -euxo pipefail
+          test "$(uname -m)" = aarch64
+          test ! -e /opt/franzfon
+          test ! -e /opt/franzfon-arm64/asterisk
+          df -hT
+
+      - name: Run the public one-command installer
+        id: install
+        run: |
+          mkdir -p unified-report
+          set +e
+          sudo bash installer/franzfon-arm64-install.sh --activate \
+            2>&1 | tee unified-report/install.log
+          RC=${PIPESTATUS[0]}
+          echo "rc=$RC" >> "$GITHUB_OUTPUT"
+          printf 'INSTALL_RC=%s\n' "$RC" > unified-report/install-exit-code.txt
+          exit 0
+
+      - name: Validate complete running installation
+        id: functional
+        if: steps.install.outputs.rc == '0'
+        run: |
+          set +e
+          (
+            set -euxo pipefail
+            test "$(/usr/local/bin/node -p process.arch)" = arm64
+
+            systemctl is-active --quiet mariadb.service
+            systemctl is-active --quiet redis-server.service
+            systemctl is-active --quiet asterisk.service
+            systemctl is-active --quiet franzfon-wizard.service
+
+            ASTERISK=/opt/franzfon-arm64/asterisk/sbin/asterisk
+            sudo "$ASTERISK" -rx 'core show version' \
+              | tee unified-report/asterisk-version.txt
+            sudo "$ASTERISK" -rx 'module show like chan_pjsip.so' \
+              | tee unified-report/chan-pjsip.txt | grep -F chan_pjsip.so
+            sudo "$ASTERISK" -rx 'module show like res_http_websocket.so' \
+              | tee unified-report/websocket.txt | grep -F res_http_websocket.so
+            sudo "$ASTERISK" -rx 'odbc show' \
+              | tee unified-report/odbc.txt | grep -F asteriskcdrdb
+
+            curl --fail --location --silent --show-error --max-time 10 \
+              http://127.0.0.1:3000/ \
+              --output /tmp/franzfon-unified-index.html
+            test -s /tmp/franzfon-unified-index.html
+            grep -Eiq 'franzfon|<!doctype html|<html' /tmp/franzfon-unified-index.html
+            sha256sum /tmp/franzfon-unified-index.html \
+              > unified-report/http-response-sha256.txt
+
+            sudo grep -F 'STACK_ENABLED=yes' /etc/franzfon-arm64/install-state
+            sudo grep -F 'LICENSE_STATE_IMPORTED=no' /etc/franzfon-arm64/install-state
+            sudo grep -F 'FREEPBX_REQUIRED=no' /etc/franzfon-arm64/install-state
+
+            sudo test -s /var/lib/asterisk/documentation/core-en_US.xml
+            sudo test -f /etc/asterisk/pjsip_custom.conf
+            sudo mariadb --protocol=socket --user=root --batch --skip-column-names \
+              --execute="SELECT COUNT(*) FROM mysql.user WHERE User IN ('asterisk','franzfon')" \
+              | grep -Fx 2
+
+            X86_FOUND=0
+            while IFS= read -r -d '' path; do
+              description="$(sudo file -b "$path" 2>/dev/null || true)"
+              case "$description" in
+                *x86-64*|*Intel\ 80386*|*PE32*)
+                  printf '%s\t%s\n' "$path" "$description" \
+                    | tee -a unified-report/unexpected-x86.txt
+                  X86_FOUND=1
+                  ;;
+              esac
+            done < <(sudo find -L /opt/franzfon /opt/franzfon-arm64 -type f -print0)
+            test "$X86_FOUND" = 0
+          ) 2>&1 | tee unified-report/functional.log
+          RC=${PIPESTATUS[0]}
+          echo "rc=$RC" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Collect sanitized diagnostics
+        if: always()
+        run: |
+          set +e
+          mkdir -p unified-report
+          {
+            echo "INSTALL_RC=${{ steps.install.outputs.rc }}"
+            echo "FUNCTIONAL_RC=${{ steps.functional.outputs.rc }}"
+          } > unified-report/stage-results.txt
+
+          sudo systemctl --no-pager --full status \
+            mariadb.service redis-server.service asterisk.service franzfon-wizard.service \
+            > unified-report/service-status.log 2>&1
+          sudo journalctl --no-pager -n 600 \
+            -u asterisk.service -u franzfon-wizard.service \
+            > unified-report/service-journal.log 2>&1
+
+          if sudo test -f /opt/franzfon/config/database.env; then
+            sudo awk -F= '$1 == "SESSION_SECRET" || $1 == "CDR_DB_PASSWORD" {print $1 "=" substr($0, index($0, "=") + 1)}' \
+              /opt/franzfon/config/database.env > /tmp/franzfon-secret-values
+            while IFS='=' read -r key value; do
+              [ -n "$value" ] || continue
+              find unified-report -type f -print0 \
+                | xargs -0 -r sed -i "s#${value}#[REDACTED_${key}]#g"
+            done < /tmp/franzfon-secret-values
+            rm -f /tmp/franzfon-secret-values
+          fi
+          exit 0
+
+      - name: Build verdict
+        if: always()
+        run: |
+          INSTALL='${{ steps.install.outputs.rc }}'; : "${INSTALL:=1}"
+          FUNCTIONAL='${{ steps.functional.outputs.rc }}'; : "${FUNCTIONAL:=1}"
+          {
+            echo 'RUN_MARKER=FRANZFON_ARM64_UNIFIED_INSTALLER_V1'
+            echo "GITHUB_SHA=$GITHUB_SHA"
+            echo "INSTALL_RC=$INSTALL"
+            echo "FUNCTIONAL_RC=$FUNCTIONAL"
+            echo
+            if [ "$INSTALL" = 0 ] && [ "$FUNCTIONAL" = 0 ]; then
+              echo 'VERDICT=PASS'
+              echo 'The public one-command installer produced a fully running native ARM64 stack.'
+            else
+              echo 'VERDICT=FAIL'
+              echo 'Read install.log or functional.log for the first failure.'
+            fi
+          } > unified-report/verdict.txt
+
+      - name: Upload diagnostic artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: franzfon-arm64-unified-installer-report
+          path: unified-report/
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Publish sanitized verdict
+        if: always()
+        run: |
+          set -euxo pipefail
+          TARGET=analysis-results/arm64-unified-installer/latest
+          rm -rf "$TARGET"
+          mkdir -p "$TARGET"
+          cp -a unified-report/. "$TARGET/"
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$TARGET"
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update unified FRANZFON ARM64 installer verdict'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      - name: Mark failed validation after publishing logs
+        if: always()
+        run: grep -F 'VERDICT=PASS' unified-report/verdict.txt
