@@ -97,6 +97,9 @@ CREATE DATABASE IF NOT EXISTS asteriskcdrdb
 CREATE USER IF NOT EXISTS 'asterisk'@'localhost' IDENTIFIED BY '${CDR_DB_PASSWORD}';
 ALTER USER 'asterisk'@'localhost' IDENTIFIED BY '${CDR_DB_PASSWORD}';
 GRANT ALL PRIVILEGES ON asteriskcdrdb.* TO 'asterisk'@'localhost';
+CREATE USER IF NOT EXISTS 'franzfon'@'localhost' IDENTIFIED BY '${CDR_DB_PASSWORD}';
+ALTER USER 'franzfon'@'localhost' IDENTIFIED BY '${CDR_DB_PASSWORD}';
+GRANT ALL PRIVILEGES ON asteriskcdrdb.* TO 'franzfon'@'localhost';
 FLUSH PRIVILEGES;
 USE asteriskcdrdb;
 CREATE TABLE IF NOT EXISTS cdr (
@@ -135,6 +138,8 @@ CREATE TABLE IF NOT EXISTS cdr (
 SQL
 
 mariadb --protocol=socket --user=asterisk --password="$CDR_DB_PASSWORD" \
+  --database=asteriskcdrdb --execute='SELECT 1' >/dev/null
+mariadb --protocol=socket --user=franzfon --password="$CDR_DB_PASSWORD" \
   --database=asteriskcdrdb --execute='SELECT 1' >/dev/null
 
 printf '\n[3/8] Configuring ODBC for Asterisk CDR\n'
@@ -246,8 +251,10 @@ user_agent=FRANZFON ARM64
 endpoint_identifier_order=ip,username,anonymous
 
 #include pjsip_franzfon.conf
+#include pjsip_custom.conf
 EOF
 : > /etc/asterisk/pjsip_franzfon.conf
+: > /etc/asterisk/pjsip_custom.conf
 
 cat > /etc/asterisk/extensions.conf <<'EOF'
 [general]
@@ -401,13 +408,47 @@ if [ "$ACTIVATE" -eq 1 ]; then
   "$ASTERISK_PREFIX/sbin/asterisk" -rx 'module show like res_pjsip.so'
 
   systemctl start franzfon-wizard.service
-  for _ in $(seq 1 45); do
+
+  WIZARD_READY=0
+  for _ in $(seq 1 60); do
     if curl --fail --location --silent --max-time 2 http://127.0.0.1:3000/ >/dev/null 2>&1; then
+      WIZARD_READY=1
       break
     fi
     sleep 1
   done
-  curl --fail --location --silent --show-error --max-time 5 http://127.0.0.1:3000/ >/dev/null
+  [ "$WIZARD_READY" -eq 1 ] || {
+    systemctl --no-pager --full status franzfon-wizard.service || true
+    journalctl --no-pager -n 100 -u franzfon-wizard.service || true
+    echo 'FRANZFON wizard did not become HTTP-ready.' >&2
+    exit 1
+  }
+
+  # The FRANZFON first-boot routine may rewrite PJSIP files and restart
+  # Asterisk once. Require three consecutive healthy checks afterwards.
+  ASTERISK_STABLE=0
+  for _ in $(seq 1 90); do
+    if systemctl is-active --quiet asterisk.service \
+      && "$ASTERISK_PREFIX/sbin/asterisk" -rx 'core show version' >/dev/null 2>&1; then
+      ASTERISK_STABLE=$((ASTERISK_STABLE + 1))
+      if [ "$ASTERISK_STABLE" -ge 3 ]; then
+        break
+      fi
+    else
+      ASTERISK_STABLE=0
+    fi
+    sleep 1
+  done
+  [ "$ASTERISK_STABLE" -ge 3 ] || {
+    systemctl --no-pager --full status asterisk.service || true
+    journalctl --no-pager -n 150 -u asterisk.service || true
+    echo 'Asterisk did not stabilize after FRANZFON first boot.' >&2
+    exit 1
+  }
+
+  curl --fail --location --silent --show-error --max-time 5 \
+    http://127.0.0.1:3000/ >/dev/null
+  "$ASTERISK_PREFIX/sbin/asterisk" -rx 'core show version'
   sed -i 's/^STACK_ENABLED=no$/STACK_ENABLED=yes/' "$STATE_DIR/install-state"
   systemctl --no-pager --full status asterisk.service franzfon-wizard.service
   echo 'FRANZFON ARM64 stack activated successfully.'
