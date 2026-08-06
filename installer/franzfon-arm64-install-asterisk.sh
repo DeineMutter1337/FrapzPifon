@@ -171,6 +171,13 @@ make DESTDIR="$WORK_DIR/stage" install
 STAGED_BINARY="$WORK_DIR/stage$PREFIX/sbin/asterisk"
 [ -x "$STAGED_BINARY" ] || { echo "Staged Asterisk binary missing: $STAGED_BINARY" >&2; exit 1; }
 
+STAGED_DATA="$WORK_DIR/stage/var/lib/asterisk"
+STAGED_CORE_XML="$(find "$STAGED_DATA/documentation" -maxdepth 1 -type f -name 'core-*.xml' -print -quit 2>/dev/null || true)"
+[ -n "$STAGED_CORE_XML" ] || {
+  echo 'Staged Asterisk XML documentation is missing.' >&2
+  exit 1
+}
+
 printf '\n[6/8] Publishing managed installation\n'
 if [ -e "$PREFIX" ]; then
   BACKUP="${PREFIX}.backup.$(date +%Y%m%d%H%M%S)"
@@ -216,6 +223,16 @@ install -d -o asterisk -g asterisk -m 0750 \
   /var/spool/asterisk/voicemail \
   /var/run/asterisk
 install -d -o root -g asterisk -m 0750 /etc/asterisk
+
+rsync -a "$STAGED_DATA/" /var/lib/asterisk/
+chown -R asterisk:asterisk /var/lib/asterisk
+find /var/lib/asterisk/documentation -type d -exec chmod 0755 {} +
+find /var/lib/asterisk/documentation -type f -exec chmod 0644 {} +
+RUNTIME_CORE_XML="$(find /var/lib/asterisk/documentation -maxdepth 1 -type f -name 'core-*.xml' -print -quit)"
+[ -s "$RUNTIME_CORE_XML" ] || {
+  echo 'Published Asterisk XML documentation is missing.' >&2
+  exit 1
+}
 
 cat > /etc/systemd/system/asterisk.service <<EOF
 [Unit]
