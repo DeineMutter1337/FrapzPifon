@@ -1,0 +1,295 @@
+name: FRANZFON ARM64 End-to-End Validation v4
+run-name: "FRANZFON ARM64 E2E v4 • ${{ github.sha }}"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'installer/**'
+      - 'scripts/stream_vma_extract.py'
+      - '.github/workflows/franzfon-arm64-end-to-end-v4.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: franzfon-arm64-e2e-v4
+  cancel-in-progress: true
+
+jobs:
+  prepare:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 90
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Confirm native ARM64 runner
+        run: |
+          set -euxo pipefail
+          test "$(uname -m)" = aarch64
+          df -hT
+
+      - name: Prepare sanitized payload
+        run: |
+          mkdir -p report
+          set +e
+          sudo bash installer/franzfon-arm64-prepare.sh \
+            --output /var/lib/franzfon-arm64/payload \
+            --workdir /var/tmp/franzfon-arm64-e2e-v4-prepare \
+            2>&1 | tee report/prepare.log
+          RC=${PIPESTATUS[0]}
+          printf 'STAGE=prepare\nRC=%s\n' "$RC" > report/prepare-verdict.txt
+          if [ "$RC" = 0 ]; then
+            echo 'VERDICT=PASS' >> report/prepare-verdict.txt
+          else
+            echo 'VERDICT=FAIL' >> report/prepare-verdict.txt
+          fi
+          exit "$RC"
+
+      - name: Package payload
+        run: |
+          set -euxo pipefail
+          sudo tar --numeric-owner -C /var/lib/franzfon-arm64 \
+            -czf "$GITHUB_WORKSPACE/payload.tar.gz" payload
+          sudo chown "$(id -u):$(id -g)" payload.tar.gz
+          sha256sum payload.tar.gz > report/payload-sha256.txt
+
+      - name: Upload payload
+        uses: actions/upload-artifact@v4
+        with:
+          name: franzfon-e2e-v4-payload
+          path: payload.tar.gz
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
+
+      - name: Upload prepare report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: franzfon-e2e-v4-prepare-report
+          path: report/
+          if-no-files-found: error
+          retention-days: 14
+
+  integration:
+    needs: prepare
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 180
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: franzfon-e2e-v4-payload
+          path: artifacts/payload
+
+      - name: Restore payload
+        run: |
+          set -euxo pipefail
+          mkdir -p report
+          sudo mkdir -p /var/lib/franzfon-arm64
+          sudo tar -xzf artifacts/payload/payload.tar.gz -C /var/lib/franzfon-arm64
+          sha256sum artifacts/payload/payload.tar.gz > report/restored-payload-sha256.txt
+
+      - name: Install application natively
+        id: app
+        run: |
+          set -euxo pipefail
+          sudo bash installer/franzfon-arm64-install-app.sh \
+            --payload /var/lib/franzfon-arm64/payload \
+            2>&1 | tee report/app.log
+          test "$(/usr/local/bin/node -p process.arch)" = arm64
+          printf 'STAGE=app\nVERDICT=PASS\n' > report/app-verdict.txt
+
+      - name: Normalize and verify native Node addons
+        id: addons
+        run: |
+          set -euxo pipefail
+          sudo bash installer/franzfon-arm64-normalize-native-addons.sh \
+            2>&1 | tee report/native-addons.log
+
+          CANONICAL=/opt/franzfon/wizard/backend/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+          test -e "$CANONICAL"
+          readelf -h "$CANONICAL" | tee report/better-sqlite3-elf.txt
+          readelf -h "$CANONICAL" | grep -Eq 'Machine:[[:space:]]+AArch64'
+
+          find -L /opt/franzfon/wizard/backend/node_modules -type f -name '*.node' -print0 \
+            | xargs -0 -r file > report/native-addon-files.txt
+          test -s report/native-addon-files.txt
+          printf 'STAGE=addons\nVERDICT=PASS\n' > report/addons-verdict.txt
+
+      - name: Compile Asterisk natively
+        id: asterisk
+        run: |
+          set -euxo pipefail
+          sudo bash installer/franzfon-arm64-install-asterisk.sh \
+            --workdir /var/tmp/franzfon-arm64-e2e-v4-asterisk \
+            2>&1 | tee report/asterisk-install.log
+
+          ASTERISK=/opt/franzfon-arm64/asterisk/sbin/asterisk
+          test -x "$ASTERISK"
+          readelf -h "$ASTERISK" | tee report/asterisk-elf.txt
+          readelf -h "$ASTERISK" | grep -Eq 'Machine:[[:space:]]+AArch64'
+          "$ASTERISK" -V | tee report/asterisk-version.txt
+          ldconfig -p | grep -F libasteriskssl.so.1
+          printf 'STAGE=asterisk\nVERDICT=PASS\n' > report/asterisk-verdict.txt
+
+      - name: Bootstrap and activate stack
+        id: bootstrap
+        run: |
+          set -euxo pipefail
+          sudo bash installer/franzfon-arm64-bootstrap.sh --activate \
+            2>&1 | tee report/bootstrap.log
+          printf 'STAGE=bootstrap\nVERDICT=PASS\n' > report/bootstrap-verdict.txt
+
+      - name: Functional validation
+        id: functional
+        run: |
+          set -euxo pipefail
+
+          systemctl is-active --quiet mariadb.service
+          systemctl is-active --quiet redis-server.service
+          systemctl is-active --quiet asterisk.service
+          systemctl is-active --quiet franzfon-wizard.service
+
+          ASTERISK=/opt/franzfon-arm64/asterisk/sbin/asterisk
+          "$ASTERISK" -rx 'core show version' | tee report/asterisk-running-version.txt
+          "$ASTERISK" -rx 'module show like chan_pjsip.so' \
+            | tee report/module-chan-pjsip.txt | grep -F chan_pjsip.so
+          "$ASTERISK" -rx 'module show like res_http_websocket.so' \
+            | tee report/module-websocket.txt | grep -F res_http_websocket.so
+          "$ASTERISK" -rx 'module show like res_odbc.so' \
+            | tee report/module-odbc.txt | grep -F res_odbc.so
+          "$ASTERISK" -rx 'odbc show' \
+            | tee report/odbc-show.txt | grep -F asteriskcdrdb
+
+          HTTP_OK=0
+          for attempt in $(seq 1 30); do
+            if curl --fail --location --silent --show-error --max-time 10 \
+              http://127.0.0.1:3000/ --output /tmp/franzfon-index.html; then
+              HTTP_OK=1
+              break
+            fi
+            sleep 2
+          done
+          test "$HTTP_OK" = 1
+          test -s /tmp/franzfon-index.html
+          grep -Eiq 'franzfon|<!doctype html|<html' /tmp/franzfon-index.html
+          sha256sum /tmp/franzfon-index.html > report/http-response-sha256.txt
+
+          grep -F 'LICENSE_STATE_IMPORTED=no' /etc/franzfon-arm64/install-state
+          grep -F 'FREEPBX_REQUIRED=no' /etc/franzfon-arm64/install-state
+          grep -F 'STACK_ENABLED=yes' /etc/franzfon-arm64/install-state
+
+          X86_FOUND=0
+          while IFS= read -r -d '' path; do
+            description="$(file -b "$path" 2>/dev/null || true)"
+            case "$description" in
+              *x86-64*|*Intel\ 80386*|*PE32*)
+                printf '%s\t%s\n' "$path" "$description" | tee -a report/unexpected-x86.txt
+                X86_FOUND=1
+                ;;
+            esac
+          done < <(find -L /opt/franzfon /opt/franzfon-arm64 -type f -print0)
+          test "$X86_FOUND" = 0
+
+          printf 'STAGE=functional\nVERDICT=PASS\n' > report/functional-verdict.txt
+
+      - name: Collect sanitized diagnostics
+        if: always()
+        run: |
+          set +e
+          mkdir -p report
+          {
+            echo "APP_OUTCOME=${{ steps.app.outcome }}"
+            echo "ADDONS_OUTCOME=${{ steps.addons.outcome }}"
+            echo "ASTERISK_OUTCOME=${{ steps.asterisk.outcome }}"
+            echo "BOOTSTRAP_OUTCOME=${{ steps.bootstrap.outcome }}"
+            echo "FUNCTIONAL_OUTCOME=${{ steps.functional.outcome }}"
+          } > report/stage-outcomes.txt
+
+          sudo systemctl --no-pager --full status \
+            mariadb.service redis-server.service asterisk.service franzfon-wizard.service \
+            > report/service-status.log 2>&1
+          sudo journalctl --no-pager -n 600 \
+            -u asterisk.service -u franzfon-wizard.service \
+            > report/service-journal.log 2>&1
+
+          if [ -f /opt/franzfon/config/database.env ]; then
+            while IFS='=' read -r key value; do
+              case "$key" in
+                SESSION_SECRET|CDR_DB_PASSWORD)
+                  [ -n "$value" ] || continue
+                  find report -type f -print0 \
+                    | xargs -0 -r sed -i "s#${value}#[REDACTED_${key}]#g"
+                  ;;
+              esac
+            done < /opt/franzfon/config/database.env
+          fi
+          exit 0
+
+      - name: Upload integration report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: franzfon-e2e-v4-integration-report
+          path: report/
+          if-no-files-found: error
+          retention-days: 14
+
+  publish:
+    if: always()
+    needs: [prepare, integration]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download reports
+        uses: actions/download-artifact@v4
+        with:
+          pattern: franzfon-e2e-v4-*-report
+          path: collected
+          merge-multiple: true
+
+      - name: Publish v4 verdict
+        run: |
+          set -euxo pipefail
+          TARGET=analysis-results/arm64-end-to-end-v4/latest
+          rm -rf "$TARGET"
+          mkdir -p "$TARGET"
+          cp -a collected/. "$TARGET/"
+
+          PREPARE='${{ needs.prepare.result }}'
+          INTEGRATION='${{ needs.integration.result }}'
+          {
+            echo 'RUN_MARKER=FRANZFON_ARM64_E2E_V4'
+            echo "GITHUB_SHA=$GITHUB_SHA"
+            echo "PREPARE_JOB=$PREPARE"
+            echo "INTEGRATION_JOB=$INTEGRATION"
+            echo
+            if [ "$PREPARE" = success ] && [ "$INTEGRATION" = success ]; then
+              echo 'VERDICT=PASS'
+              echo 'The complete FRANZFON stack installed and ran natively on ARM64.'
+            else
+              echo 'VERDICT=FAIL'
+              echo 'Read stage-outcomes.txt and the first failed stage log.'
+            fi
+          } > "$TARGET/verdict.txt"
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$TARGET"
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update FRANZFON ARM64 end-to-end v4 verdict'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      - name: Mark failure after publishing diagnostics
+        if: always()
+        run: grep -F 'VERDICT=PASS' analysis-results/arm64-end-to-end-v4/latest/verdict.txt
