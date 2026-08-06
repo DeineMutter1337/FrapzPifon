@@ -514,9 +514,9 @@ Get:1 https://packages.microsoft.com/repos/azure-cli noble InRelease [3564 B]
 Get:2 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
 Get:3 https://packages.microsoft.com/repos/azure-cli noble/main arm64 Packages [2380 B]
 Get:4 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [306 kB]
-Get:5 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [266 kB]
+Get:5 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [643 B]
 Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.2 kB]
-Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [643 B]
+Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [266 kB]
 Hit:8 http://ports.ubuntu.com/ubuntu-ports noble InRelease
 Get:9 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease [126 kB]
 Get:10 http://ports.ubuntu.com/ubuntu-ports noble-backports InRelease [126 kB]
@@ -544,7 +544,7 @@ Get:31 http://ports.ubuntu.com/ubuntu-ports noble-security/restricted arm64 Pack
 Get:32 http://ports.ubuntu.com/ubuntu-ports noble-security/restricted Translation-en [302 kB]
 Get:33 http://ports.ubuntu.com/ubuntu-ports noble-security/multiverse arm64 Packages [68.7 kB]
 Get:34 http://ports.ubuntu.com/ubuntu-ports noble-security/multiverse Translation-en [10.6 kB]
-Fetched 12.8 MB in 5s (2485 kB/s)
+Fetched 12.8 MB in 6s (2245 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -744,7 +744,7 @@ Get:114 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libwavpack1 arm64 
 Get:115 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 libsox-fmt-base arm64 14.4.2+git20190427-4build4 [34.8 kB]
 Get:116 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 sox arm64 14.4.2+git20190427-4build4 [101 kB]
 Preconfiguring packages ...
-Fetched 83.3 MB in 10s (8104 kB/s)
+Fetched 83.3 MB in 41s (2052 kB/s)
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 199903 files and directories currently installed.)
 Removing mysql-client (8.0.46-0ubuntu0.24.04.3) ...
 Removing mysql-server (8.0.46-0ubuntu0.24.04.3) ...
@@ -1276,15 +1276,15 @@ Service restarts being deferred:
 No containers need to be restarted.
 
 User sessions running outdated binaries:
- runner @ user manager service: systemd[1258]
+ runner @ user manager service: systemd[1154]
 
 No VM guests are running outdated hypervisor (qemu) binaries on this host.
 
 [3/7] Installing verified Node.js 20.20.2 ARM64
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 24.1M  100 24.1M    0     0  79.1M      0 --:--:-- --:--:-- --:--:-- 79.2M
-/var/tmp/franzfon-node.pkHuUq/node-v20.20.2-linux-arm64.tar.xz: OK
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 24.1M  100 24.1M    0     0   153M      0 --:--:-- --:--:-- --:--:--  153M
+/var/tmp/franzfon-node.u8thPe/node-v20.20.2-linux-arm64.tar.xz: OK
 v20.20.2
 10.8.2
 
@@ -1317,6 +1317,7 @@ better-sqlite3 ARM64 smoke test passed
 [6/7] Installing adapted disabled systemd service
 
 [7/7] Final architecture and safety checks
+Scanning 4240 installed files in batches...
 
 Application stage installed successfully and remains disabled.
 Next: install native Asterisk, then run franzfon-arm64-bootstrap.sh.
