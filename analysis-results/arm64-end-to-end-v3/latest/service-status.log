@@ -1,43 +1,43 @@
 Unit asterisk.service could not be found.
 ● mariadb.service - MariaDB 10.11.14 database server
      Loaded: loaded (/usr/lib/systemd/system/mariadb.service; enabled; preset: enabled)
-     Active: active (running) since Thu 2026-08-06 11:08:57 UTC; 21s ago
+     Active: active (running) since Thu 2026-08-06 11:20:19 UTC; 21s ago
        Docs: man:mariadbd(8)
              https://mariadb.com/kb/en/library/systemd/
-   Main PID: 4343 (mariadbd)
+   Main PID: 4358 (mariadbd)
      Status: "Taking your SQL requests now..."
       Tasks: 14 (limit: 126011)
-     Memory: 80.4M (peak: 84.2M)
-        CPU: 275ms
+     Memory: 80.4M (peak: 83.9M)
+        CPU: 255ms
      CGroup: /system.slice/mariadb.service
-             └─4343 /usr/sbin/mariadbd
+             └─4358 /usr/sbin/mariadbd
 
-Aug 06 11:08:57 runnervma9114 mariadbd[4343]: 2026-08-06 11:08:57 0 [Note] InnoDB: log sequence number 45502; transaction id 14
-Aug 06 11:08:57 runnervma9114 mariadbd[4343]: 2026-08-06 11:08:57 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
-Aug 06 11:08:57 runnervma9114 mariadbd[4343]: 2026-08-06 11:08:57 0 [Note] Plugin 'FEEDBACK' is disabled.
-Aug 06 11:08:57 runnervma9114 mariadbd[4343]: 2026-08-06 11:08:57 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
-Aug 06 11:08:57 runnervma9114 mariadbd[4343]: 2026-08-06 11:08:57 0 [Note] Server socket created on IP: '127.0.0.1', port: '3306'.
-Aug 06 11:08:57 runnervma9114 mariadbd[4343]: 2026-08-06 11:08:57 0 [Note] InnoDB: Buffer pool(s) load completed at 260806 11:08:57
-Aug 06 11:08:57 runnervma9114 mariadbd[4343]: 2026-08-06 11:08:57 0 [Note] /usr/sbin/mariadbd: ready for connections.
-Aug 06 11:08:57 runnervma9114 mariadbd[4343]: Version: '10.11.14-MariaDB-0ubuntu0.24.04.1'  socket: '/run/mysqld/mysqld.sock'  port: 3306  Ubuntu 24.04
-Aug 06 11:08:57 runnervma9114 systemd[1]: Started mariadb.service - MariaDB 10.11.14 database server.
-Aug 06 11:08:57 runnervma9114 /etc/mysql/debian-start[4362]: Upgrading MariaDB tables if necessary.
+Aug 06 11:20:19 runnervma9114 mariadbd[4358]: 2026-08-06 11:20:19 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+Aug 06 11:20:19 runnervma9114 mariadbd[4358]: 2026-08-06 11:20:19 0 [Note] Plugin 'FEEDBACK' is disabled.
+Aug 06 11:20:19 runnervma9114 mariadbd[4358]: 2026-08-06 11:20:19 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+Aug 06 11:20:19 runnervma9114 mariadbd[4358]: 2026-08-06 11:20:19 0 [Note] Server socket created on IP: '127.0.0.1', port: '3306'.
+Aug 06 11:20:19 runnervma9114 mariadbd[4358]: 2026-08-06 11:20:19 0 [Note] InnoDB: Buffer pool(s) load completed at 260806 11:20:19
+Aug 06 11:20:19 runnervma9114 mariadbd[4358]: 2026-08-06 11:20:19 0 [Note] /usr/sbin/mariadbd: ready for connections.
+Aug 06 11:20:19 runnervma9114 mariadbd[4358]: Version: '10.11.14-MariaDB-0ubuntu0.24.04.1'  socket: '/run/mysqld/mysqld.sock'  port: 3306  Ubuntu 24.04
+Aug 06 11:20:19 runnervma9114 systemd[1]: Started mariadb.service - MariaDB 10.11.14 database server.
+Aug 06 11:20:19 runnervma9114 /etc/mysql/debian-start[4377]: Upgrading MariaDB tables if necessary.
+Aug 06 11:20:19 runnervma9114 /etc/mysql/debian-start[4388]: Checking for insecure root accounts.
 
 ● redis-server.service - Advanced key-value store
      Loaded: loaded (/usr/lib/systemd/system/redis-server.service; enabled; preset: enabled)
-     Active: active (running) since Thu 2026-08-06 11:08:55 UTC; 23s ago
+     Active: active (running) since Thu 2026-08-06 11:20:17 UTC; 23s ago
        Docs: http://redis.io/documentation,
              man:redis-server(1)
-   Main PID: 4104 (redis-server)
+   Main PID: 4102 (redis-server)
      Status: "Ready to accept connections"
       Tasks: 5 (limit: 19092)
-     Memory: 3.9M (peak: 4.4M)
-        CPU: 54ms
+     Memory: 4.3M (peak: 4.4M)
+        CPU: 55ms
      CGroup: /system.slice/redis-server.service
-             └─4104 "/usr/bin/redis-server 127.0.0.1:6379"
+             └─4102 "/usr/bin/redis-server 127.0.0.1:6379"
 
-Aug 06 11:08:55 runnervma9114 systemd[1]: Starting redis-server.service - Advanced key-value store...
-Aug 06 11:08:55 runnervma9114 systemd[1]: Started redis-server.service - Advanced key-value store.
+Aug 06 11:20:17 runnervma9114 systemd[1]: Starting redis-server.service - Advanced key-value store...
+Aug 06 11:20:17 runnervma9114 systemd[1]: Started redis-server.service - Advanced key-value store.
 
 ○ franzfon-wizard.service - FRANZFON Wizard ARM64
      Loaded: loaded (/etc/systemd/system/franzfon-wizard.service; disabled; preset: enabled)
