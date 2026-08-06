@@ -1,3 +1,5 @@
-ASTERISK_ARM64_BUILD_RC=1
+RUN_MARKER=NATIVE_ARM64_V3
+GITHUB_SHA=6c66de1ff758dce5e3829d77e95132b9073b122e
+ASTERISK_ARM64_BUILD_RC=127
 VERDICT=FAIL
-See build.log for the missing dependency or compile error.
+See build.log for the exact dependency, compiler or required-module failure.

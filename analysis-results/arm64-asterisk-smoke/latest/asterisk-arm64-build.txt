@@ -1,0 +1,9 @@
+RUN_MARKER=NATIVE_ARM64_V3
+SOURCE_SHA256=5b0e5d276aeb014bf8a08a94d1055a9e97b9dce3375846eea70da5221bf9efe7
+GITHUB_SHA=6c66de1ff758dce5e3829d77e95132b9073b122e
+
+=== ARCHITECTURE ===
+aarch64
+main/asterisk: ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=3394fd9ce181e9e05eaa23a593a53915fb299d1b, for GNU/Linux 3.7.0, with debug_info, not stripped
+
+=== VERSION ===
