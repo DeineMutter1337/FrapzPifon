@@ -1,0 +1,164 @@
+name: FRANZFON Asterisk 22.7 ARM64 Smoke Test
+run-name: "Asterisk 22.7 ARM64 Smoke • ${{ github.sha }}"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/franzfon-arm64-asterisk-smoke.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: franzfon-arm64-asterisk-smoke
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v4
+
+      - name: Reclaim runner disk space
+        run: |
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc 2>/dev/null || true
+          df -hT
+
+      - name: Enable ARM64 emulation
+        uses: docker/setup-qemu-action@v3
+        with:
+          platforms: arm64
+
+      - name: Compile Asterisk 22.7.0 natively for ARM64
+        id: compile
+        run: |
+          mkdir -p asterisk-arm64-report
+          set +e
+          docker run --rm --platform linux/arm64/v8 \
+            -v "$PWD/asterisk-arm64-report:/report" \
+            debian:12-slim bash -lc '
+              set -euxo pipefail
+              export DEBIAN_FRONTEND=noninteractive
+              apt-get update
+              apt-get install -y --no-install-recommends \
+                build-essential ca-certificates wget file pkg-config patch perl bzip2 xz-utils \
+                libedit-dev libxml2-dev libsqlite3-dev uuid-dev libssl-dev \
+                libcurl4-openssl-dev libspeex-dev libspeexdsp-dev libogg-dev \
+                libvorbis-dev libopus-dev libnewt-dev libncurses-dev libspandsp-dev
+
+              cd /tmp
+              wget -O asterisk.tar.gz \
+                https://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-22.7.0.tar.gz
+              echo "5b0e5d276aeb014bf8a08a94d1055a9e97b9dce3375846eea70da5221bf9efe7  asterisk.tar.gz" \
+                | sha256sum -c -
+              tar -xzf asterisk.tar.gz
+              cd asterisk-22.7.0
+
+              ./configure \
+                --with-jansson-bundled \
+                --with-pjproject-bundled
+
+              make menuselect.makeopts
+              menuselect/menuselect --disable BUILD_NATIVE menuselect.makeopts
+
+              make -j2
+
+              {
+                echo "=== ARCHITECTURE ==="
+                uname -m
+                file main/asterisk
+                echo
+                echo "=== VERSION ==="
+                ./main/asterisk -V
+                echo
+                echo "=== REQUIRED FRANZFON CORE MODULES ==="
+                for module in \
+                  channels/chan_pjsip.so \
+                  res/res_pjsip.so \
+                  res/res_http_websocket.so \
+                  res/res_ari.so \
+                  apps/app_voicemail.so \
+                  funcs/func_odbc.so \
+                  cdr/cdr_adaptive_odbc.so \
+                  res/res_odbc.so; do
+                  if [ -f "$module" ]; then
+                    printf "PASS\t%s\t" "$module"
+                    file -b "$module"
+                  else
+                    printf "MISSING\t%s\n" "$module"
+                  fi
+                done
+                echo
+                echo "=== INTENTIONALLY OMITTED FROM V1 ==="
+                echo "DAHDI hardware stack"
+                echo "G.729 proprietary codec"
+                echo "Digium phone module"
+                echo "Sangoma PnP daemon"
+              } | tee /report/asterisk-arm64-build.txt
+            ' 2>&1 | tee asterisk-arm64-report/build.log
+          RC=${PIPESTATUS[0]}
+          echo "$RC" > asterisk-arm64-report/exit-code.txt
+          echo "rc=$RC" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Build verdict
+        if: always()
+        run: |
+          RC='${{ steps.compile.outputs.rc }}'
+          : "${RC:=1}"
+          {
+            echo "ASTERISK_ARM64_BUILD_RC=$RC"
+            if [ "$RC" = 0 ]; then
+              echo 'VERDICT=PASS'
+              echo 'Asterisk 22.7.0 compiled natively for ARM64.'
+            else
+              echo 'VERDICT=FAIL'
+              echo 'See build.log for the missing dependency or compile error.'
+            fi
+          } > asterisk-arm64-report/verdict.txt
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: franzfon-asterisk-22-7-arm64-smoke
+          path: asterisk-arm64-report/
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 9
+
+      - name: Publish logs and verdict
+        if: always()
+        run: |
+          set -euxo pipefail
+          rm -rf analysis-results/arm64-asterisk-smoke/latest
+          mkdir -p analysis-results/arm64-asterisk-smoke/latest
+          find asterisk-arm64-report -maxdepth 1 -type f \( -name '*.txt' -o -name '*.log' \) \
+            -exec cp {} analysis-results/arm64-asterisk-smoke/latest/ \;
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add analysis-results/arm64-asterisk-smoke/latest
+
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update Asterisk 22.7 ARM64 smoke test'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo 'No Asterisk smoke-test changes to commit.'
+          fi
+
+      - name: Mark failure after publishing logs
+        if: always()
+        run: |
+          RC='${{ steps.compile.outputs.rc }}'
+          if [ "$RC" != 0 ]; then
+            echo 'Asterisk ARM64 smoke test failed. Logs were published.' >&2
+            exit 1
+          fi
+          echo 'Asterisk ARM64 smoke test passed.'
