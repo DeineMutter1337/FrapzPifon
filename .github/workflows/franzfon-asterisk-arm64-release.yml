@@ -1,5 +1,5 @@
-name: FRANZFON Asterisk ARM64 Release Bundle
-run-name: "Asterisk 22.7 ARM64 Bundle • ${{ github.sha }}"
+name: FRANZFON Asterisk ARM64 Debian 12 Release Bundle
+run-name: "Asterisk 22.7 ARM64 Bookworm Bundle • ${{ github.sha }}"
 
 on:
   workflow_dispatch:
@@ -19,44 +19,61 @@ concurrency:
 jobs:
   build-release:
     runs-on: ubuntu-24.04-arm
+    container:
+      image: debian:bookworm
     timeout-minutes: 90
     env:
-      RELEASE_TAG: asterisk-22.7.0-arm64-v1
+      RELEASE_TAG: asterisk-22.7.0-arm64-bookworm-v2
       ASSET_NAME: franzfon-asterisk-22.7.0-linux-arm64.tar.zst
 
     steps:
+      - name: Install runner tooling inside Debian 12
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends \
+            ca-certificates git gh zstd binutils file
+
       - uses: actions/checkout@v4
 
-      - name: Install bundle tooling
+      - name: Provide non-booted systemd shim for bundle build
         run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends zstd binutils
+          cat > /usr/local/bin/systemctl <<'EOF'
+          #!/usr/bin/env bash
+          case "${1:-}" in
+            daemon-reload|disable|stop) exit 0 ;;
+            is-enabled|is-active) exit 1 ;;
+            *) exit 0 ;;
+          esac
+          EOF
+          chmod 0755 /usr/local/bin/systemctl
 
-      - name: Build with the production ARM64 installer
+      - name: Build with the production ARM64 installer on Debian 12
         run: |
-          sudo bash installer/franzfon-arm64-install-asterisk.sh --keep-work
+          bash installer/franzfon-arm64-install-asterisk.sh --keep-work
 
-      - name: Validate and package installed runtime
+      - name: Validate Debian 12 compatibility and package runtime
         run: |
           set -euxo pipefail
-          test "$(readelf -h /opt/franzfon-arm64/asterisk/sbin/asterisk | awk '$1 == "Machine:" {print $2}')" = AArch64
+          BINARY=/opt/franzfon-arm64/asterisk/sbin/asterisk
+          test "$(readelf -h "$BINARY" | awk '$1 == "Machine:" {print $2}')" = AArch64
           test -s /var/lib/asterisk/documentation/core-en_US.xml
+          "$BINARY" -V
+          ldd --version | head -n 1
           mkdir -p dist
-          sudo tar --zstd -C / -cf "dist/$ASSET_NAME" \
+          tar --zstd -C / -cf "dist/$ASSET_NAME" \
             opt/franzfon-arm64/asterisk \
             var/lib/asterisk
-          sudo chown "$USER:$USER" "dist/$ASSET_NAME"
-          (cd dist && sha256sum "$ASSET_NAME" > "$ASSET_NAME.sha256")
+          sha256sum "dist/$ASSET_NAME" > "dist/$ASSET_NAME.sha256"
 
       - name: Upload workflow artifact
         uses: actions/upload-artifact@v4
         with:
-          name: franzfon-asterisk-22.7.0-arm64
+          name: franzfon-asterisk-22.7.0-arm64-bookworm-v2
           path: dist/
           retention-days: 30
           compression-level: 0
 
-      - name: Publish immutable release assets
+      - name: Publish immutable Debian 12 release assets
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -64,7 +81,7 @@ jobs:
           if ! gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
             gh release create "$RELEASE_TAG" \
               --target "$GITHUB_SHA" \
-              --title 'FRANZFON Asterisk 22.7.0 ARM64 bundle v1' \
-              --notes 'Native AArch64 build produced by the verified repository installer. The installer verifies the accompanying SHA-256 file before extraction.'
+              --title 'FRANZFON Asterisk 22.7.0 ARM64 Debian 12 bundle v2' \
+              --notes 'Native AArch64 build compiled inside Debian 12 Bookworm for Raspberry Pi OS and Debian 12 compatibility. The installer verifies SHA-256, ELF architecture, required modules and executes the staged binary before publication.'
           fi
           gh release upload "$RELEASE_TAG" dist/* --clobber
