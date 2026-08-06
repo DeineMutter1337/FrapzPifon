@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ASTERISK_VERSION='22.7.0'
-RELEASE_TAG='asterisk-22.7.0-arm64-v1'
+RELEASE_TAG='asterisk-22.7.0-arm64-bookworm-v2'
 ASSET="franzfon-asterisk-${ASTERISK_VERSION}-linux-arm64.tar.zst"
 BASE_URL="https://github.com/DeineMutter1337/FrapzPifon/releases/download/${RELEASE_TAG}"
 BUNDLE_URL="$BASE_URL/$ASSET"
@@ -22,9 +22,10 @@ Options:
   --force            Replace a previous managed installation.
   -h, --help         Show help.
 
-Downloads a native AArch64 Asterisk 22.7.0 bundle produced by the repository's
-native GitHub ARM64 runner. The SHA-256 digest, ELF architecture, required
-modules and runtime documentation are validated before installation.
+Downloads a native AArch64 Asterisk 22.7.0 bundle built inside Debian 12
+Bookworm. The SHA-256 digest, ELF architecture, required modules, runtime
+documentation and target-system dynamic-linker compatibility are validated
+before the existing managed installation is replaced.
 EOF
 }
 
@@ -67,12 +68,12 @@ TMP="$(mktemp -d /var/tmp/franzfon-asterisk-bundle.XXXXXX)"
 trap 'rm -rf "$TMP"' EXIT
 cd "$TMP"
 
-printf '\n[1/6] Downloading verified native ARM64 bundle\n'
+printf '\n[1/7] Downloading verified Debian 12 ARM64 bundle\n'
 curl --fail --location --retry 4 "$BUNDLE_URL" --output "$ASSET"
 curl --fail --location --retry 4 "$SHA256_URL" --output "$ASSET.sha256"
 sha256sum -c "$ASSET.sha256"
 
-printf '\n[2/6] Extracting and validating bundle\n'
+printf '\n[2/7] Extracting and validating bundle\n'
 mkdir stage
 tar --zstd -xf "$ASSET" -C stage
 STAGED_PREFIX="$TMP/stage$PREFIX"
@@ -95,7 +96,13 @@ find "$STAGED_DATA/documentation" -maxdepth 1 -type f -name 'core-*.xml' -print 
   exit 1
 }
 
-printf '\n[3/6] Publishing managed Asterisk runtime\n'
+printf '\n[3/7] Preflighting target-system runtime compatibility\n'
+STAGED_SSL_LIBRARY="$(find "$STAGED_PREFIX" -type f -name 'libasteriskssl.so.1' -print -quit)"
+[ -n "$STAGED_SSL_LIBRARY" ] || { echo 'Staged libasteriskssl.so.1 missing.' >&2; exit 1; }
+STAGED_LIBRARY_DIR="$(dirname "$STAGED_SSL_LIBRARY")"
+LD_LIBRARY_PATH="$STAGED_LIBRARY_DIR${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}" "$BINARY" -V
+
+printf '\n[4/7] Publishing managed Asterisk runtime\n'
 if [ -e "$PREFIX" ]; then
   BACKUP="${PREFIX}.backup.$(date +%Y%m%d%H%M%S)"
   mv "$PREFIX" "$BACKUP"
@@ -104,7 +111,7 @@ fi
 mkdir -p "$(dirname "$PREFIX")"
 rsync -a "$STAGED_PREFIX/" "$PREFIX/"
 
-printf '\n[4/6] Installing runtime data and service account\n'
+printf '\n[5/7] Installing runtime data and service account\n'
 getent group asterisk >/dev/null || groupadd --system asterisk
 id asterisk >/dev/null 2>&1 || useradd --system --gid asterisk --home-dir /var/lib/asterisk --shell /usr/sbin/nologin asterisk
 install -d -o asterisk -g asterisk -m 0750 \
@@ -116,7 +123,7 @@ chown -R asterisk:asterisk /var/lib/asterisk
 find /var/lib/asterisk/documentation -type d -exec chmod 0755 {} +
 find /var/lib/asterisk/documentation -type f -exec chmod 0644 {} +
 
-printf '\n[5/6] Registering libraries and disabled systemd service\n'
+printf '\n[6/7] Registering libraries and disabled systemd service\n'
 SSL_LIBRARY="$(find "$PREFIX" -type f -name 'libasteriskssl.so.1' -print -quit)"
 [ -n "$SSL_LIBRARY" ] || { echo 'libasteriskssl.so.1 missing.' >&2; exit 1; }
 printf '%s\n' "$(dirname "$SSL_LIBRARY")" > /etc/ld.so.conf.d/franzfon-asterisk.conf
@@ -155,9 +162,9 @@ systemctl daemon-reload
 systemctl disable asterisk.service >/dev/null 2>&1 || true
 systemctl stop asterisk.service >/dev/null 2>&1 || true
 
-printf '\n[6/6] Final native validation\n'
+printf '\n[7/7] Final native validation\n'
 "$PREFIX/sbin/asterisk" -V
 [ "$(readelf -h "$PREFIX/sbin/asterisk" | awk '$1 == "Machine:" {print $2}')" = AArch64 ]
 systemctl is-enabled asterisk.service >/dev/null 2>&1 && { echo 'Asterisk service unexpectedly enabled.' >&2; exit 1; }
 
-echo 'Verified Asterisk ARM64 bundle installed successfully and remains disabled.'
+echo 'Verified Debian 12 Asterisk ARM64 bundle installed successfully and remains disabled.'
