@@ -114,7 +114,7 @@ if [ ! -s "$EFI_HELPER_IMAGE" ] || [ "$STORED_EFI_PARTUUID" != "$EFI_PARTUUID" ]
   truncate -s 64M "$EFI_HELPER_IMAGE"
   sgdisk \
     --clear \
-    --new=1:2048:0 \
+    --new=1:2048:131037 \
     --typecode=1:ef00 \
     --partition-guid=1:"$EFI_PARTUUID" \
     --change-name=1:FRANZFON-EFI \
@@ -123,7 +123,8 @@ if [ ! -s "$EFI_HELPER_IMAGE" ] || [ "$STORED_EFI_PARTUUID" != "$EFI_PARTUUID" ]
     -F 32 \
     -n FRANZFON_EFI \
     --offset 2048 \
-    "$EFI_HELPER_IMAGE" >/dev/null
+    "$EFI_HELPER_IMAGE" \
+    64495 >/dev/null
   printf '%s\n' "$EFI_PARTUUID" > "$EFI_HELPER_UUID_FILE"
 fi
 
