@@ -1,4 +1,82 @@
-Unit mariadb.service could not be found.
-Unit redis-server.service could not be found.
-Unit asterisk.service could not be found.
-Unit franzfon-wizard.service could not be found.
+● mariadb.service - MariaDB 10.11.14 database server
+     Loaded: loaded (/usr/lib/systemd/system/mariadb.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-08-06 20:30:31 UTC; 48s ago
+       Docs: man:mariadbd(8)
+             https://mariadb.com/kb/en/library/systemd/
+   Main PID: 46969 (mariadbd)
+     Status: "Taking your SQL requests now..."
+      Tasks: 16 (limit: 126011)
+     Memory: 81.9M (peak: 84.6M)
+        CPU: 258ms
+     CGroup: /system.slice/mariadb.service
+             └─46969 /usr/sbin/mariadbd
+
+Aug 06 20:30:31 runnervmyv9d9 mariadbd[46969]: 2026-08-06 20:30:31 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+Aug 06 20:30:31 runnervmyv9d9 mariadbd[46969]: 2026-08-06 20:30:31 0 [Note] Server socket created on IP: '127.0.0.1', port: '3306'.
+Aug 06 20:30:31 runnervmyv9d9 mariadbd[46969]: 2026-08-06 20:30:31 0 [Note] /usr/sbin/mariadbd: ready for connections.
+Aug 06 20:30:31 runnervmyv9d9 mariadbd[46969]: Version: '10.11.14-MariaDB-0ubuntu0.24.04.1'  socket: '/run/mysqld/mysqld.sock'  port: 3306  Ubuntu 24.04
+Aug 06 20:30:31 runnervmyv9d9 mariadbd[46969]: 2026-08-06 20:30:31 0 [Note] InnoDB: Buffer pool(s) load completed at 260806 20:30:31
+Aug 06 20:30:31 runnervmyv9d9 systemd[1]: Started mariadb.service - MariaDB 10.11.14 database server.
+Aug 06 20:30:31 runnervmyv9d9 /etc/mysql/debian-start[46987]: Upgrading MariaDB tables if necessary.
+Aug 06 20:30:31 runnervmyv9d9 /etc/mysql/debian-start[47001]: Checking for insecure root accounts.
+Aug 06 20:30:31 runnervmyv9d9 /etc/mysql/debian-start[47005]: Triggering myisam-recover for all MyISAM tables and aria-recover for all Aria tables
+Aug 06 20:30:33 runnervmyv9d9 mariadbd[46969]: 2026-08-06 20:30:33 31 [Warning] Aborted connection 31 to db: 'asteriskcdrdb' user: 'asterisk' host: 'localhost' (Got an error reading communication packets)
+
+● redis-server.service - Advanced key-value store
+     Loaded: loaded (/usr/lib/systemd/system/redis-server.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-08-06 20:30:31 UTC; 49s ago
+       Docs: http://redis.io/documentation,
+             man:redis-server(1)
+   Main PID: 46924 (redis-server)
+     Status: "Ready to accept connections"
+      Tasks: 5 (limit: 19092)
+     Memory: 4.3M (peak: 4.3M)
+        CPU: 75ms
+     CGroup: /system.slice/redis-server.service
+             └─46924 "/usr/bin/redis-server 127.0.0.1:6379"
+
+Aug 06 20:30:31 runnervmyv9d9 systemd[1]: Starting redis-server.service - Advanced key-value store...
+Aug 06 20:30:31 runnervmyv9d9 systemd[1]: Started redis-server.service - Advanced key-value store.
+
+● asterisk.service - Asterisk PBX
+     Loaded: loaded (/etc/systemd/system/asterisk.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-08-06 20:30:33 UTC; 46s ago
+       Docs: man:asterisk(8)
+   Main PID: 47161 (asterisk)
+      Tasks: 56 (limit: 19092)
+     Memory: 46.3M (peak: 47.1M)
+        CPU: 802ms
+     CGroup: /system.slice/asterisk.service
+             └─47161 /opt/franzfon-arm64/asterisk/sbin/asterisk -f -U asterisk -G asterisk
+
+Aug 06 20:30:34 runnervmyv9d9 asterisk[47161]: [2026-08-06 20:30:34] ERROR[47161]: loader.c:2687 load_modules: app_amd declined to load.
+Aug 06 20:30:34 runnervmyv9d9 asterisk[47161]: [2026-08-06 20:30:34] ERROR[47161]: loader.c:2687 load_modules: app_followme declined to load.
+Aug 06 20:30:34 runnervmyv9d9 asterisk[47161]: [2026-08-06 20:30:34] ERROR[47161]: loader.c:2687 load_modules: chan_unistim declined to load.
+Aug 06 20:30:34 runnervmyv9d9 asterisk[47161]: [2026-08-06 20:30:34] ERROR[47161]: loader.c:2687 load_modules: pbx_dundi declined to load.
+Aug 06 20:30:34 runnervmyv9d9 asterisk[47161]: [2026-08-06 20:30:34] ERROR[47161]: loader.c:2687 load_modules: app_festival declined to load.
+Aug 06 20:30:34 runnervmyv9d9 asterisk[47161]: [2026-08-06 20:30:34] ERROR[47161]: loader.c:2687 load_modules: app_alarmreceiver declined to load.
+Aug 06 20:30:34 runnervmyv9d9 asterisk[47161]: [2026-08-06 20:30:34] ERROR[47161]: loader.c:2687 load_modules: pbx_ael declined to load.
+Aug 06 20:30:34 runnervmyv9d9 asterisk[47161]: [2026-08-06 20:30:34] ERROR[47161]: loader.c:2687 load_modules: res_prometheus declined to load.
+Aug 06 20:30:34 runnervmyv9d9 asterisk[47161]: [2026-08-06 20:30:34] ERROR[47161]: loader.c:2687 load_modules: func_odbc declined to load.
+Aug 06 20:30:34 runnervmyv9d9 asterisk[47161]: Asterisk Ready.
+
+● franzfon-wizard.service - FRANZFON Wizard ARM64
+     Loaded: loaded (/etc/systemd/system/franzfon-wizard.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-08-06 20:30:32 UTC; 47s ago
+   Main PID: 47109 (node)
+      Tasks: 11 (limit: 19092)
+     Memory: 36.3M (peak: 55.4M)
+        CPU: 832ms
+     CGroup: /system.slice/franzfon-wizard.service
+             └─47109 /usr/local/bin/node src/index.js
+
+Aug 06 20:30:42 runnervmyv9d9 node[47109]: [FRANZFON] Sound-Asset installiert: callfilter/cf-abweisung.wav
+Aug 06 20:30:42 runnervmyv9d9 node[47109]: [FRANZFON] Sound-Asset installiert: callfilter/cf-anonym.wav
+Aug 06 20:30:42 runnervmyv9d9 node[47109]: [FRANZFON] Sound-Asset installiert: callfilter/cf-press1.wav
+Aug 06 20:30:42 runnervmyv9d9 node[47109]: [FRANZFON] Sound-Asset installiert: callfilter/cf-voicemail.wav
+Aug 06 20:30:42 runnervmyv9d9 node[47109]: [FRANZFON] Sound-Asset installiert: consent/consent-ansage-cloud.wav
+Aug 06 20:30:42 runnervmyv9d9 node[47109]: [FRANZFON] Sound-Asset installiert: consent/consent-ansage-lokal.wav
+Aug 06 20:30:42 runnervmyv9d9 node[47109]: [FRANZFON] Sound-Asset installiert: consent/consent-zustimmung-cloud.wav
+Aug 06 20:30:42 runnervmyv9d9 node[47109]: [FRANZFON] Sound-Asset installiert: consent/consent-zustimmung-lokal.wav
+Aug 06 20:30:53 runnervmyv9d9 node[47109]: [Dead-Token-Poll] Schedule gestartet (Intervall: 86400s, Endpoint: /dead-tokens)
+Aug 06 20:30:56 runnervmyv9d9 node[47109]: [FRANZFON] Fax-Dialplan-Abgleich übersprungen (Fax nicht eingerichtet)
