@@ -34,23 +34,22 @@ jobs:
           set -euxo pipefail
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
-            python3-pip zstd file jq libguestfs-tools fuse3
+            python3-pip zstd file jq util-linux parted lvm2 \
+            e2fsprogs xfsprogs btrfs-progs kpartx
           python3 -m pip install --user zstandard
-          if [ -e /dev/kvm ]; then sudo chmod 0666 /dev/kvm || true; fi
-          guestfish --version
-          virt-filesystems --version
+          losetup --version | head -n1
+          lvm version | head -n8
 
       - name: Analyze appliance and capture complete log
         id: analysis
         run: |
           mkdir -p report
           set +e
-          bash scripts/analyze_franzfon.sh 2>&1 | tee report/run.log
+          bash scripts/analyze_franzfon_loop.sh 2>&1 | tee report/run.log
           RC=${PIPESTATUS[0]}
           echo "$RC" > report/exit-code.txt
           echo "rc=$RC" >> "$GITHUB_OUTPUT"
 
-          # Final safety scrub for the complete execution log.
           sed -ri \
             -e 's#([A-Za-z0-9_]*(PASSWORD|PASS|TOKEN|SECRET|PRIVATE_KEY|API_KEY)[A-Za-z0-9_]*[=:])[[:space:]]*[^[:space:]]+#\1[REDACTED]#Ig' \
             -e 's#(Authorization:[[:space:]]*(Bearer|Basic))[[:space:]]+[^[:space:]]+#\1 [REDACTED]#Ig' \
