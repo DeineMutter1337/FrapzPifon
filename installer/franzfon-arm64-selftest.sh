@@ -47,7 +47,7 @@ check_output() {
   local expected="$2"
   shift 2
   local output
-  output="$($@ 2>/dev/null || true)"
+  output="$("$@" 2>/dev/null || true)"
   if grep -Fq -- "$expected" <<<"$output"; then pass "$label"; else fail "$label"; fi
 }
 
