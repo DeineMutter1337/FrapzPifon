@@ -7,6 +7,9 @@ RUN apt-get update \
       ca-certificates \
       cloud-image-utils \
       curl \
+      dosfstools \
+      gdisk \
+      python3-minimal \
       qemu-efi-aarch64 \
       qemu-system-arm \
       qemu-utils \
