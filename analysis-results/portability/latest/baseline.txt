@@ -1,0 +1,108 @@
+=== OS ===
+PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+NAME="Debian GNU/Linux"
+VERSION_ID="12"
+VERSION="12 (bookworm)"
+VERSION_CODENAME=bookworm
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+=== ROOT FILESYSTEM ===
+/dev/loop0p1	ext4
+
+=== PACKAGE ARCHITECTURE COUNTS ===
+all 1737
+amd64 875
+
+=== IMPORTANT PACKAGE VERSIONS ===
+asterisk-sounds-core-en-alaw	1.5-2.sng12	all
+asterisk-sounds-core-en-au-alaw	1.5-2.sng12	all
+asterisk-sounds-core-en-au-ulaw	1.5-2.sng12	all
+asterisk-sounds-core-en-au-wideband	1.5-2.sng12	all
+asterisk-sounds-core-en-gb-alaw	1.5-2.sng12	all
+asterisk-sounds-core-en-gb-ulaw	1.5-2.sng12	all
+asterisk-sounds-core-en-gb-wideband	1.5-2.sng12	all
+asterisk-sounds-core-en-ulaw	1.5-2.sng12	all
+asterisk-sounds-core-en-wideband	1.5-2.sng12	all
+asterisk-sounds-core-es-alaw	1.5-2.sng12	all
+asterisk-sounds-core-es-ulaw	1.5-2.sng12	all
+asterisk-sounds-core-es-wideband	1.5-2.sng12	all
+asterisk-sounds-core-fr-alaw	1.5-2.sng12	all
+asterisk-sounds-core-fr-ulaw	1.5-2.sng12	all
+asterisk-sounds-core-fr-wideband	1.5-2.sng12	all
+asterisk-sounds-core-it-alaw	1.5-2.sng12	all
+asterisk-sounds-core-it-ulaw	1.5-2.sng12	all
+asterisk-sounds-core-it-wideband	1.5-2.sng12	all
+asterisk-sounds-core-ja-alaw	1.5-2.sng12	all
+asterisk-sounds-core-ja-ulaw	1.5-2.sng12	all
+asterisk-sounds-core-ja-wideband	1.5-2.sng12	all
+asterisk-sounds-extra-en-alaw	1.5-2.sng12	all
+asterisk-sounds-extra-en-ulaw	1.5-2.sng12	all
+asterisk-sounds-extra-en-wideband	1.5-2.sng12	all
+asterisk-sounds-moh-opsound-alaw	2.03-1.sng12	all
+asterisk-sounds-moh-opsound-sln	2.03-1.sng12	all
+asterisk-sounds-moh-opsound-ulaw	2.03-1.sng12	all
+asterisk-sounds-moh-opsound-wideband	2.03-1.sng12	all
+asterisk-version-switch	6.1-33.sng12	all
+asterisk22	22.7.0-1.sng12	amd64
+asterisk22-addons	22.7.0-1.sng12	amd64
+asterisk22-addons-bluetooth	22.7.0-1.sng12	amd64
+asterisk22-addons-core	22.7.0-1.sng12	amd64
+asterisk22-addons-mysql	22.7.0-1.sng12	amd64
+asterisk22-addons-ooh323	22.7.0-1.sng12	amd64
+asterisk22-core	22.7.0-1.sng12	amd64
+asterisk22-curl	22.7.0-1.sng12	amd64
+asterisk22-dahdi	22.7.0-1.sng12	amd64
+asterisk22-doc	22.7.0-1.sng12	amd64
+asterisk22-flite	2.4-44.2505af1.sng12	amd64
+asterisk22-g729	2007-1.sng12	amd64
+asterisk22-odbc	22.7.0-1.sng12	amd64
+asterisk22-ogg	22.7.0-1.sng12	amd64
+asterisk22-res-digium-phone	3.6.12-1.sng12	amd64
+asterisk22-resample	22.7.0-1.sng12	amd64
+asterisk22-snmp	22.7.0-1.sng12	amd64
+asterisk22-speex	22.7.0-1.sng12	amd64
+asterisk22-sqlite3	22.7.0-1.sng12	amd64
+asterisk22-voicemail	22.7.0-1.sng12	amd64
+asterisk22.0-freepbx-asterisk-modules	1.0-1.sng12	amd64
+freepbx17	17.1-1.sng12	amd64
+haproxy	2.6.12-1+deb12u3	amd64
+mariadb-client	1:10.11.14-0+deb12u2	amd64
+mariadb-client-core	1:10.11.14-0+deb12u2	amd64
+mariadb-common	1:10.11.14-0+deb12u2	all
+mariadb-plugin-provider-bzip2	1:10.11.14-0+deb12u2	amd64
+mariadb-plugin-provider-lz4	1:10.11.14-0+deb12u2	amd64
+mariadb-plugin-provider-lzma	1:10.11.14-0+deb12u2	amd64
+mariadb-plugin-provider-lzo	1:10.11.14-0+deb12u2	amd64
+mariadb-plugin-provider-snappy	1:10.11.14-0+deb12u2	amd64
+mariadb-server	1:10.11.14-0+deb12u2	amd64
+mariadb-server-core	1:10.11.14-0+deb12u2	amd64
+mysql-common	5.8+1.1.0	all
+nodejs	20.20.0-1nodesource1	amd64
+php8.2	8.2.30-1~deb12u1	all
+php8.2-bcmath	8.2.30-1~deb12u1	amd64
+php8.2-bz2	8.2.30-1~deb12u1	amd64
+php8.2-cli	8.2.30-1~deb12u1	amd64
+php8.2-common	8.2.30-1~deb12u1	amd64
+php8.2-curl	8.2.30-1~deb12u1	amd64
+php8.2-fpm	8.2.30-1~deb12u1	amd64
+php8.2-gd	8.2.30-1~deb12u1	amd64
+php8.2-igbinary	3.2.13-1	amd64
+php8.2-intl	8.2.30-1~deb12u1	amd64
+php8.2-ldap	8.2.30-1~deb12u1	amd64
+php8.2-mbstring	8.2.30-1~deb12u1	amd64
+php8.2-mysql	8.2.30-1~deb12u1	amd64
+php8.2-opcache	8.2.30-1~deb12u1	amd64
+php8.2-readline	8.2.30-1~deb12u1	amd64
+php8.2-redis	5.3.7+4.3.0-3	amd64
+php8.2-soap	8.2.30-1~deb12u1	amd64
+php8.2-sqlite3	8.2.30-1~deb12u1	amd64
+php8.2-ssh2	1.3.1+0.13-7	amd64
+php8.2-xml	8.2.30-1~deb12u1	amd64
+php8.2-zip	8.2.30-1~deb12u1	amd64
+redis-server	5:7.0.15-1~deb12u6	amd64
+redis-tools	5:7.0.15-1~deb12u6	amd64
+sangoma-pbx17	2408-1.sng12	all
+sqlite3	3.40.1-2+deb12u2	amd64

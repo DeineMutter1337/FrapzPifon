@@ -1,0 +1,124 @@
+===== /etc/systemd/system/franzfon-firstboot.service =====
+[Unit]
+Description=FRANZFON First Boot Init (machine-id, ssh keys, secrets)
+Before=ssh.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/franzfon-firstboot.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+
+===== /etc/systemd/system/franzfon-issue.service =====
+[Unit]
+Description=FRANZFON: /etc/issue aus motd-banner.sh aktualisieren
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c '/opt/franzfon/scripts/motd-banner.sh > /etc/issue'
+
+===== /etc/systemd/system/franzfon-setup.service =====
+[Unit]
+Description=FRANZFON Post-Reset Setup
+Documentation=https://franzfon.de
+After=mysql.service mariadb.service
+Before=franzfon-wizard.service franzfon.service asterisk.service
+Wants=mysql.service mariadb.service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/franzfon/scripts/post-reset-setup.sh
+RemainAfterExit=yes
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+
+===== /etc/systemd/system/franzfon-wizard.service =====
+[Unit]
+Description=FranzFon Setup Wizard
+After=network.target freepbx.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/franzfon/wizard/backend
+ExecStartPre=/bin/bash -c 'for i in $(seq 1 15); do ss -tlnp | grep -q ":3000 " || exit 0; sleep 1; done; echo "Port 3000 nicht freigegeben"; exit 1'
+ExecStart=/usr/bin/node src/index.js
+EnvironmentFile=/opt/franzfon/config/database.env
+Restart=on-failure
+RestartSec=5
+Environment=NODE_ENV=production
+KillMode=mixed
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
+
+===== /etc/systemd/system/franzfon-issue.timer =====
+[Unit]
+Description=FRANZFON: /etc/issue periodisch aktualisieren
+After=franzfon-firstboot.service
+
+[Timer]
+OnBootSec=30s
+OnUnitActiveSec=5min
+Unit=franzfon-issue.service
+
+[Install]
+WantedBy=timers.target
+
+===== /etc/systemd/system/asterisk.service =====
+# FRANZFON-NATIVE-UNIT-v1
+[Unit]
+Description=Asterisk PBX
+Documentation=man:asterisk(8)
+After=network-online.target mariadb.service
+Wants=network-online.target
+
+[Service]
+Type=forking
+PIDFile=/run/asterisk/asterisk.pid
+Environment=HOME=/var/lib/asterisk
+WorkingDirectory=/var/lib/asterisk
+User=root
+Group=root
+ExecStart=/usr/sbin/asterisk
+ExecStop=/usr/sbin/asterisk -rx "core stop now"
+ExecReload=/usr/sbin/asterisk -rx "core reload"
+Restart=on-failure
+RestartSec=5
+KillMode=mixed
+KillSignal=SIGTERM
+TimeoutStopSec=30
+TimeoutStartSec=60
+LimitNOFILE=8192
+LimitNPROC=8192
+
+[Install]
+WantedBy=multi-user.target
+
+===== /etc/systemd/system/sangoma-pnpd.service =====
+# Sangoma PNPD Service (systemd)
+#
+# Copyright (c) 2018, Sangoma Technologies Corporation
+# This file is managed by the FreePBX 'sysadmin' Module.
+#
+
+[Unit]
+Description=Sangoma PnP Service
+After=mariadb.service
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/local/bin/pnp_server
+User=asterisk
+
+[Install]
+WantedBy=default.target
+

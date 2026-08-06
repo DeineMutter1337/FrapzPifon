@@ -1,0 +1,56 @@
+===== /opt/franzfon/wizard/backend/package.json =====
+{
+  "name": "franzfon-wizard",
+  "version": "1.2.0",
+  "type": null,
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node test/run-all.js",
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "engines": null,
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "archiver": "^7.0.1",
+    "axios": "^1.6.0",
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^12.6.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-session": "^1.19.0",
+    "multer": "^2.0.2",
+    "mysql2": "^3.16.2",
+    "nodemailer": "^7.0.13",
+    "ws": "^8.19.0",
+    "xml2js": "^0.6.2"
+  },
+  "optionalDependencies": null,
+  "devDependencies": null
+}
+
+===== /opt/franzfon/wizard/frontend/package.json =====
+{
+  "name": "franzfon-wizard-frontend",
+  "version": "0.1.0",
+  "type": "module",
+  "main": null,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "engines": null,
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^5.18.1",
+    "chart.js": "^4.5.1",
+    "tailwindcss": "^4.3.0"
+  },
+  "optionalDependencies": null,
+  "devDependencies": null
+}
+

@@ -1,0 +1,412 @@
+=== ASTERISK PACKAGES ===
+asterisk-sounds-core-en-alaw	1.5-2.sng12	all
+asterisk-sounds-core-en-au-alaw	1.5-2.sng12	all
+asterisk-sounds-core-en-au-ulaw	1.5-2.sng12	all
+asterisk-sounds-core-en-au-wideband	1.5-2.sng12	all
+asterisk-sounds-core-en-gb-alaw	1.5-2.sng12	all
+asterisk-sounds-core-en-gb-ulaw	1.5-2.sng12	all
+asterisk-sounds-core-en-gb-wideband	1.5-2.sng12	all
+asterisk-sounds-core-en-ulaw	1.5-2.sng12	all
+asterisk-sounds-core-en-wideband	1.5-2.sng12	all
+asterisk-sounds-core-es-alaw	1.5-2.sng12	all
+asterisk-sounds-core-es-ulaw	1.5-2.sng12	all
+asterisk-sounds-core-es-wideband	1.5-2.sng12	all
+asterisk-sounds-core-fr-alaw	1.5-2.sng12	all
+asterisk-sounds-core-fr-ulaw	1.5-2.sng12	all
+asterisk-sounds-core-fr-wideband	1.5-2.sng12	all
+asterisk-sounds-core-it-alaw	1.5-2.sng12	all
+asterisk-sounds-core-it-ulaw	1.5-2.sng12	all
+asterisk-sounds-core-it-wideband	1.5-2.sng12	all
+asterisk-sounds-core-ja-alaw	1.5-2.sng12	all
+asterisk-sounds-core-ja-ulaw	1.5-2.sng12	all
+asterisk-sounds-core-ja-wideband	1.5-2.sng12	all
+asterisk-sounds-extra-en-alaw	1.5-2.sng12	all
+asterisk-sounds-extra-en-ulaw	1.5-2.sng12	all
+asterisk-sounds-extra-en-wideband	1.5-2.sng12	all
+asterisk-sounds-moh-opsound-alaw	2.03-1.sng12	all
+asterisk-sounds-moh-opsound-sln	2.03-1.sng12	all
+asterisk-sounds-moh-opsound-ulaw	2.03-1.sng12	all
+asterisk-sounds-moh-opsound-wideband	2.03-1.sng12	all
+asterisk-version-switch	6.1-33.sng12	all
+asterisk22	22.7.0-1.sng12	amd64
+asterisk22-addons	22.7.0-1.sng12	amd64
+asterisk22-addons-bluetooth	22.7.0-1.sng12	amd64
+asterisk22-addons-core	22.7.0-1.sng12	amd64
+asterisk22-addons-mysql	22.7.0-1.sng12	amd64
+asterisk22-addons-ooh323	22.7.0-1.sng12	amd64
+asterisk22-core	22.7.0-1.sng12	amd64
+asterisk22-curl	22.7.0-1.sng12	amd64
+asterisk22-dahdi	22.7.0-1.sng12	amd64
+asterisk22-doc	22.7.0-1.sng12	amd64
+asterisk22-flite	2.4-44.2505af1.sng12	amd64
+asterisk22-g729	2007-1.sng12	amd64
+asterisk22-odbc	22.7.0-1.sng12	amd64
+asterisk22-ogg	22.7.0-1.sng12	amd64
+asterisk22-res-digium-phone	3.6.12-1.sng12	amd64
+asterisk22-resample	22.7.0-1.sng12	amd64
+asterisk22-snmp	22.7.0-1.sng12	amd64
+asterisk22-speex	22.7.0-1.sng12	amd64
+asterisk22-sqlite3	22.7.0-1.sng12	amd64
+asterisk22-voicemail	22.7.0-1.sng12	amd64
+asterisk22.0-freepbx-asterisk-modules	1.0-1.sng12	amd64
+
+=== ASTERISK MODULE BINARIES ===
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_adsiprog.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=287e8b130578964ddb3ca58862ac23cd5d2125eb, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_agent_pool.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=ba13f015519c97410b7e7150d8aa73bfed92c3eb, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_alarmreceiver.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=a1caa23cf9f1805d77bb253565d6fe14cb9e52d2, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_amd.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=0db377afba55b96b43687f23123bc8dbf731436c, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_attended_transfer.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=8b333a54361d917fd6fd7cba72de5fb1c61f3ff8, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_audiosocket.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=06ac1d145691912cba733fb5f5f263a1a3f4d897, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_authenticate.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=b005808c7b5546bb26e78582f8c57caac74fd582, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_blind_transfer.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=947ad20307c4591ff1b65bff109ddf050b79c1b4, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_bridgeaddchan.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=65ee662c4f160f110feaf15fa5dd70b96d5c78ce, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_bridgewait.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=9ae6ccdb81022d89c762746e56665983064cc932, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_broadcast.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=68ebd835abd56c3c8250b4173468cf493c018cb1, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_cdr.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=345c4709ec9aab0313c614fa987f8f515222c8aa, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_celgenuserevent.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=444df159474236ed15438e0d58af963bce6087f4, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_chanisavail.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=237cc537a9d2fc5cef84626f217ef542951ee450, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_channelredirect.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=401f8a678b9de620f0f31611825c758909abed56, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_chanspy.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=cb6492df0f0e4afd2a065552c01cd721d5a09ded, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_confbridge.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=cd6861fa3564087baec39a5a5f7726b89752fa3c, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_controlplayback.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=decd271898ca5600f7b28957f3779950fe2142a2, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_db.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=a89990fb53406685d09c031b46fae51d0253adf5, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_dial.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=7f3886059e71c76fb26d53819d24b60420a90639, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_dictate.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=86860c0829eff6350de00dd712b2e47b66c26200, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_directed_pickup.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=419e5a720e3dede4b841dd950226addf26d3bffe, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_directory.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=5927a157f1af743bca3e60e9e0676398086bc880, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_disa.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=f00a197441a5263234010e7804cc08a4ecc68012, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_dtmfstore.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d426bbf388fcae9131b77608b91019f55d9ec1f6, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_dumpchan.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=de68c3df883f88d098be816feac92cc2f42bb293, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_echo.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=3d4b490d3bb6d4dbba6938e82137ece31fa3ccda, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_exec.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=21dd97b018915dd074e1c422c58670f35d0a08ce, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_externalivr.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=cdb9c146d9b77a810156b4ebd3ab6f3c83fe3b05, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_festival.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=2ea4a93903d1aac0b8574d668c21a7f4e29fd85e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_flash.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=9691f2c536e87a6520f78a96d371ff29df4c6a5b, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_flite.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=e6f96408c122cd7c0ee95669c07d3ccdf23b8153, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_followme.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=761dd64c215babd0048209593d8bafb8736611bd, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_forkcdr.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=a53d783d2c56948bccfcd404b385f2e9458d9c9f, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_getcpeid.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=03abf7446e886280b295fb1f110d4849a8cb5964, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_if.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=ce43c63752509a51bb193dc57366514aa286fc3d, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_jack.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=105a2504c0ea04bcd9f2c060b39f78aedbe595f6, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_meetme.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=0e74948097de780e0da695cbdf808b53359ebc8b, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_mf.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=5871db2fb52e920bd0e3bbb953d8de52942afabd, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_milliwatt.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=54803b22989aa2c1cd406aa2e20531bdf7bd1520, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_minivm.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=294581aae40355530d6d18f96acced6267bb0422, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_mixmonitor.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=b144d768b4a684e688b2211c08384ac619e71d37, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_morsecode.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=a6486d29b721d4b03da9c1a33b82f20efc6afaf3, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_mp3.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=f99063ce4d0554c796967e47e9f37a66f3df965f, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_originate.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=f9c0d1114db6d7414df36feaed705c24aea7b78c, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_page.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=eee03a7be44069c4418ebf204ff9b2fffab65ab3, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_playback.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=5d9caf21a09911468adadb8fd87bfae36678776c, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_playtones.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=fb760b33903df19129b7147821d755c35d8952b0, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_privacy.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=f2333522f46eecc81b72edb566bde6229edc3b07, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_queue.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=0f44658308ce6b5f44512c3e452ecd5d60e06d2c, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_read.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=00aa90c7f237249152b21c2a63a3ca27183f4b61, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_readexten.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=082adfb79f309e394d2e2f0255fc4cd3e7ea33a0, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_record.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=b804d1c99e616114f988fed67a43b1a01bf33e28, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_reload.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=25172c97bc36232cf50e55375b5f81a3481f6163, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_sayunixtime.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=c7701e5a5962f278df2ef8aafb8e765be94c3a35, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_senddtmf.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=0d171ca880c1cdf47c64b98cd86a0f9863c437f4, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_sendtext.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=f67c767c1cacdff4d4c35120b540a4450048f1c0, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_sf.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=04a8bfc625844dec2f72184b55a063ff1268a4f2, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_signal.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=5719db8dabe91181457f9b2de86b5c832c98f87c, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_sla.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=86e8429836d3d612ea4ee241b47b66b45be8d967, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_sms.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=636959a793e052aac81feb00cd914d196747deac, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_softhangup.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=93758e5697877347284c9fd6f6ed03f0026ecc8e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_speech_utils.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1356803f0cb871e4757a384f2921ef781f29affb, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_stack.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=796be50348d6dd63596a7f36556e8d7b3c62ae0b, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_stasis.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=341c1085f72c3b475b72bc2982f96e7c1bbf565e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_stream_echo.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=495b2ebbd5d5251cd6502d8a5cc9680c41289c96, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_system.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=54d604fe96f6be4ea45ce1435f108473a1245f5c, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_talkdetect.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=cfe54d52d4d5496f52b516fe7a76f605e46cbfda, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_test.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=e5c54074a04294fb35fbcc3ca5f0beccffbb1ceb, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_transfer.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=f1fe67defba76a84440a83ac4ed4457a451acb31, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_userevent.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=68a9f95a4f9b95bf4f456182bec594dc55e8ea6b, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_verbose.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=cb636218fa67456771e339b1ed4d339a4e98748d, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_voicemail.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=87914d6a34ae8094fc57fb15fde9c1defa819bfb, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_waitforcond.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=b1edc9b2d7238d85c3613f47429f5478f1300c06, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_waitforring.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=e8a7868d1df5428bbb6d5ac899f7c266cf2bef04, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_waitforsilence.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=f7ce122c9658a280d4177b755f475854b3b009b9, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_waituntil.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=9374549aa32e2b0da39bf7665d90a76cfd6d16a6, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_while.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=e7ad7e4ed055279132b1571cc27c1802d19b64f9, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/app_zapateller.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=b64d2130111c593e6e875075fd561ef98ac60078, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/bridge_builtin_features.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=0069354f159767375795490c93a393ee3b295a56, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/bridge_builtin_interval_features.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=2ced74d6bcb75ea7ebd9ae13fb2dee851383bd4d, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/bridge_holding.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=f9ffacb73e4683a83cd18155a5ef23cedce15f8b, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/bridge_native_rtp.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=ff3a667077103d3f2e63f5c047b3235eee4001f6, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/bridge_simple.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=89c8ebe93cadbdf4f718f18fd1e87f6ab45fcd6e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/bridge_softmix.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=f873328dd91737d53e1929a438a118bff4d1c5b0, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/cdr_adaptive_odbc.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=02c9f0da33611081563ecaf7e1a06c7d79f97865, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/cdr_csv.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=b82bd4cc50d3e727fd29b7f274f7e3ff25083dd1, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/cdr_custom.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=bd11f10a99a9bce1549e8813d543ec7e346b9cfd, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/cdr_manager.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=534c03da7335fd49edf7653085fe6a958da1259f, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/cdr_odbc.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=36b983e259fde606c9d880132644fd946629af5e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/cdr_radius.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=dae4c95f2a2be3ba70843c63fb592d0719f4abc9, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/cdr_sqlite3_custom.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=11a7a33ccd9c652735030250777d03d51a6cccf5, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/cel_custom.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=fe76ba61445a03e4bc9fe8e79bca18af3d079c25, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/cel_manager.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=6c25a3b41508f4acd67cdf6ca995ebed43e00d16, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/cel_odbc.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=dcbcfa10d608bcad56d2b53048299ff890746930, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/cel_radius.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=6ce07566347746be9de8555b9799953f722affb3, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/cel_sqlite3_custom.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=75cd58b0ea91087327fbadf6bd61bb418461ab7b, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/chan_audiosocket.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=9268fbcfbab218496944ed04ae98c4740b4f4108, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/chan_bridge_media.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=77a8f3b536621f70a88e51f1fd4c5deaee398fc3, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/chan_console.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=75523cdcca90953f9443f167b895bdcb7b3b4ea0, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/chan_dahdi.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=b6121f2b76343121110ecc0c3579fd039793bf68, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/chan_iax2.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=84712f2a49d35882bc7a6ac3d9a71fe7f62297b1, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/chan_mobile.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=0ad4e127654071d212c268b6705949317c1b3cb0, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/chan_motif.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=ed70006a730e466780b8086c2eb92cbcf0b6bc66, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/chan_ooh323.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=ab40b1030718064f66df1acf9891dc333269cc8e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/chan_pjsip.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=b1fc9c0a52792cc53b31220250a1f1713f2d1f6f, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/chan_rtp.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=e905d0c99c100ed0cb7263456924bd5329150e5a, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/chan_unistim.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=e4947a6e83c4b045f16b062dd06900d13ad7be67, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/chan_websocket.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=ec438c2d94266c38727895d2dcf33abe1e4a9e36, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/codec_a_mu.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=7229d963f28193ecf726e784baad7a29890c9f6b, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/codec_adpcm.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=8385e152c11dd143e973aae7d43dab654aa61dd3, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/codec_alaw.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=b0f290a01527e8308c9685cd1491c377d23009ec, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/codec_ast22_g729.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=059f43f69b6ecbedf59f1c7e8871e7c854c4ee1a, stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/codec_codec2.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1e5f57e6dd305642f4dfc81bbc7e2281eed704b3, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/codec_dahdi.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d86910d33297d9cf1eb68146efbd394cf2b0137b, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/codec_g722.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=7afaffda0fa58f8c3310c1ac158bfb6f7dd9df66, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/codec_g726.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=2f7ae6017fde0f79a1dd0993464b9327dc216e80, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/codec_gsm.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=69ff27a450a9e62f154c9e00876ec285e4d9e171, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/codec_ilbc.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=b36dd7815877c953be62024487af6f93729d587e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/codec_lpc10.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=8ede0a800b1fe009b257a7dd92596a2737060db7, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/codec_opus.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=6fb3ab6ba57b34cdfb2299c152f4d95f5bb5df65, stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/codec_resample.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=fbca6e57e69f1e3e2caf1131d32c444d218fff09, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/codec_silk.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=7ec2286d73919d60a592cea065458b9d41684465, stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/codec_siren14.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=ca91061b98ff3d865bdaf03d857533996bc87a2f, stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/codec_siren7.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=2bfadcfdfc59926cc68647351b75d6384f4b7638, stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/codec_speex.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=28e05d6a457adea8f429d478918e058ce9973642, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/codec_ulaw.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=131ed1d49026c7995c8facf9444f5503a21fa09b, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_g719.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d5ef7ecebf713074edecfa10ec4fd3d9a84f7d1c, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_g723.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=b167ecf6fdd7cdda5bfa6210fe1142ccb7cfb77a, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_g726.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=b7cff1ec5cf98afaf716a2ccaedce1f4d421a19c, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_g729.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=8beeaddb3786d445bbfc9737ee93bf1971cd58a4, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_gsm.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=405bf08232d0c65ec3086e8cb50fc7e3202274e4, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_h263.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=001fd1278961fde136850058924e16d280924f23, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_h264.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=96669fa3d175675556d760a032f35bfada0c2ca4, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_ilbc.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=2bf3174a6b2219d503e195b2e7973007611668c0, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_mp3.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=7d90b35a136d46180f20ac547b9fbc3e2a509f3d, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_ogg_opus.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=4772fa04ff3f7fce31167e1345b5a364cf974054, stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_ogg_speex.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d1d2fd3d2b3f0ef2d0d98e68e6fcf124b5a9b552, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_ogg_vorbis.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=7e3506b88bee7c66ab9c9865924b19c918f60aef, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_pcm.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=110f514c1099402711bdd1a74c0b378efec576a9, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_siren14.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=25f97671dbf2ef65434f012f67490161a448fb50, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_siren7.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=eb30dc57cdad857cd7322ec6def9b9b8b362dd43, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_sln.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=c5b5457c5dd9215971b7fb9a653158eafa5d1b4e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_vox.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=37e0d16cdf0ab988bd55285e7ef5bdcd4019e461, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_wav.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=ca80d9274d4cdc43d83514b2ce410c19c1203f3c, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/format_wav_gsm.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=fcdc0032a833f7fa2c6808c97b80d48880081207, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_aes.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=08b24c85a70656edaf4b18af47b58c6697bc0fbe, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_base64.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=4b8d01606a4d972477751e0d5798aa3f5a739639, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_blacklist.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=f409c80379192ead41e806e500719da5703ac184, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_callcompletion.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=b85288826c6d4cc4a175933c36cd428f75583420, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_callerid.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=bacf252d8a99af35661ec3ab37ce7d9847d8f407, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_cdr.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=a772e78e7d6dd97617d3a678fcb5aad658049b81, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_channel.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=4a67c1c3b90c26386c9a66fe71347f0387d4a802, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_config.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=8d38d95b26bf47ca16bad11f03fc757d04797b4a, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_curl.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=e13701669637dc246f461918352128ed103b0fda, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_cut.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=03c2fb48b7b4742ef79107f64174ded922ddec7e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_db.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=8d7dd08f8c5fda0029ac232721c12a360d119162, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_devstate.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=0d48c7b6ab1d9551b21ed74069182abc3aa596ca, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_dialgroup.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=c6e41e6d8c2bb1f56f35141b5156fe37b3c6b5b5, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_dialplan.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=a49c2b9fe89959d581eb330a3210dbfe25bb8381, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_enum.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=bf3d1f860a7480d5508c0b7435e7369bda4ec0f6, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_env.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=54fc5759b4886edb712fe23ea33019521a8862e6, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_evalexten.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=9617b74ac07812ae25ddfc050be6c33b64e4eda6, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_export.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=819b67a0010bc7c185151e33e0f58a58a197bc4e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_extstate.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=3f3c30a44df31ca00d680c9ae192bb8fdb35a2c2, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_frame_drop.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=55906b95b72cccdd887de4f1a500e6d922cc0cd7, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_frame_trace.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=20b40aaa7b3aa44078e2e5a5268c7fbf8fde58bd, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_global.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=092dfc37ec040cabce0794fa03c3623a7a48a623, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_groupcount.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=bb2e30b728ae390aa390b67bb3990641b1f4334a, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_hangupcause.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=3548f0cb79209483f1fc1afe62659a65fbc1b8f9, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_holdintercept.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=2f0db4705a1d28edb27c2c813c8c67adabe3c51e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_iconv.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=e08be5c5cc551f67facc66b5889380f6f7feae2f, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_jitterbuffer.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d89515d17ce8d75347317a024a0d0b1486299a01, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_json.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=621871572ff7d4c01daf7583ca115f6b049ee672, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_lock.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=0186238a409d9d649ef9b79d5b5840bbb5616f15, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_logic.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=5010cebaf0cb602c560a00ae6525cbffc898928f, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_math.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=0c70047fbb227eddddaf92050bd9c5eb57e2fa76, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_md5.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=7dd7ef91c10222a0239e56f4dd8a74ef60bd0d90, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_module.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=645fe502e1dbf486872b3a9857b14e2954918e05, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_odbc.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=42f6d5f355c8be752d400ce570f4ef2c737a0a19, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_periodic_hook.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=0dd6bfe99116b351b6db081cc6b9c7b997e121b9, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_pitchshift.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=328046992c201a369dc132a2e59bb67af5305746, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_pjsip_aor.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=9d9be70e3dcbc5856c8c5b83a26d739688c86e19, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_pjsip_contact.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d99d75c57d8a6bae857be1564595d39591e54d41, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_pjsip_endpoint.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=e1a6fec8abb1343d3a77621f5f07480d4ac23cdf, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_presencestate.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=4f3c895803b6d75aa32663889fc306e6dcce7d70, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_rand.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d191aed2b4e67c5342493a30c99f408f3da69205, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_realtime.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=a6f07d51b500a1eec7db3e3ac1f60b2a25e09d85, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_sayfiles.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=eb51e1cda13528ac05113144e7a218c4a4b805c6, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_scramble.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=9ce3fafb2cdd1c80f00fd054160c84112bcf7376, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_sha1.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=3b72c47c814d49f816840e9f6845e16d64235b51, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_shell.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=2433700f102685874752fe8c04c0817db125e381, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_sorcery.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=4b0cf18f9f40efd257b9746b272df7a9975d8327, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_speex.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=a80f2da4bf557d56e11b896d0ae0762322a88d12, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_sprintf.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=203504771b2dcd9109560bd291bd96bf4ef1d975, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_srv.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=41c1e618c2ca1cf148467695f617000c84374bc4, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_strings.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=0163bb151fafa54dd54af24625ddee8999408317, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_sysinfo.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=7e592466a2ba64206b8d4f4e05950a614570e745, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_talkdetect.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=65c4d391092f8160ed02d405e3fc9c77c974dcba, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_timeout.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=dcde2126b26e5ed795c39d9d9ad905a4e8fd97c6, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_uri.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=392b1d9136c35f8aa7ef4579c8238064764e7680, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_uuid.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=ffddc35981cad1a8ede77b48cf094b985432f8d4, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_version.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=8bc345a13372241594106cddc07d0679c22d1144, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_vmcount.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=40a3a1041feb36975d481439db9f9e4f4636987e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/func_volume.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=6a9caf4ff1c9a4242772b1ea468db6c72a9e64ea, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/pbx_ael.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=63ff8435f58fe3563e54e65e2fadd0500dad817a, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/pbx_config.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=8239f0c95b598a4d33036814a7da2b2a28ba10b1, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/pbx_dundi.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=4986db354aa3e61fe521def09085d70e8ed09524, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/pbx_loopback.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=51162daea4d8ba6969a7f4677e8d708f29028c57, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/pbx_lua.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1d1b7ad104043c9a1d1aa5505ccfc3d11ff01340, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/pbx_realtime.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=fd92931e48217406ac02525367226e27de73b864, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/pbx_spool.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=b8d9519a6628c8790da1733b8751796ef2ea1a3e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_adsi.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=057fe05021804de3bb2768ae7f706acb10f171e1, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_aeap.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=e2d2338d880c7dc9b6357e0ac156b68061fd6ea7, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_ael_share.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=8f5c515c5ee9cb335c552b8e7ea2f3519d9a610c, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_agi.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=0aece358171a9bc4c96ef9b99bd0361e076578f5, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_ari.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=7fac56a610b5395a8705e175b34ea9bf535f8a18, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_ari_applications.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=991a3d457b78d938a6fb17f386bc4ff09734dd8f, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_ari_asterisk.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=4c71afa17c19938a416150981588f21ffd2914d4, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_ari_bridges.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=6bc76e32af7bc5b8bafae3e38eda48d444c25c61, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_ari_channels.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=4a56bbf43b76c8204163bb5568f17fe2d742dbae, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_ari_device_states.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=8e132058cc95de1c32c9615aaa072d1632df555f, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_ari_endpoints.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=4d2f6188de5a09dc156c3bf3b5277d1f48e39948, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_ari_events.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d051b789aa9f2f5018dd1cef343d083982c0633c, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_ari_model.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=cb2385c84d6606db6f719fa5f6f96e07604c650d, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_ari_playbacks.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=164d662c2cbfedc303c932847d826058de479132, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_ari_recordings.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=ed3d0615aca6f6a11f1763a4f3615f4898b6c61e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_ari_sounds.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=426f1c3d36b72b585ea5b3ca645ef9119763cf64, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_audiosocket.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=a9bf988eeed6252797442ad58b3035f526aa14ad, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_calendar.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=33cf458b3220a02626667c4c846a3177a4fbe091, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_calendar_caldav.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d883d577479c0be0ac52270c7017aed6794f47b8, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_calendar_ews.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=b91eba39006883c3e96ac783a23d68ee6d16db7e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_calendar_exchange.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=0448737024b31a9e0e8508a4fdd0f3b11eca5d58, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_calendar_icalendar.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=eec96c7c031eca01a4124a071301f447f4fb0cbb, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_chan_stats.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=3983b2e8e8dec1e05010de89978d2db60d7f7a2b, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_clialiases.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=dcef425cbcc712cd03d2c9ab3f7743728254236e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_clioriginate.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=9ec99736eff26b8cff60f7277afde3fd6ae22ef3, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_config_curl.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=c7268d6ac8816342de53f7bf735feb2d14664c31, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_config_ldap.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=25cb80cde5b3eadb74f02ff582e2c5157ae00b7b, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_config_mysql.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=e10eb6b400ccd23b846fb53cc7e14b0e815ea17e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_config_odbc.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=dc010b05a1318c9f8c1156aeefb71e03a7506ac1, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_config_sqlite3.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=aacb4c646a61d5afbdb4286c90cbc1bd48077d1f, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_convert.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=6b6cd9e7fc286f5142705ef798007be36cf67316, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_crypto.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=4fcde26150715550a7f98bb00555b12fdfd6d6ca, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_curl.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=4659c689834b68fd879bb61cc6fa21da75d4dd81, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_digium_phone.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=7dba9989921d840b9bd82a312f6bcda849d3b95e, stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_endpoint_stats.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=c250cec9ccf79b8268b15aeb9d4a87dde829c672, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_fax.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d2ba46b1ee264942abc16f8d289621bb77d7c4c9, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_fax_spandsp.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=787aa8280ab4a2be90523b8f2fa90857c446b61b, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_format_attr_celt.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=92ec784d330a29889c2032c8b49e7724313849df, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_format_attr_g729.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=c1b647447311c35ee2239a90f15acbae5f87c73d, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_format_attr_h263.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=f6679b8845f0ce58ab3ee4e01d25907ea11cfd61, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_format_attr_h264.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=2615264e9d94c9576661b64435b1d42681453763, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_format_attr_ilbc.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=556332358b0d08fbb4c23a0acdc18ebfebf4331c, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_format_attr_opus.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=879fdeebcaa792604e65b7934298c9d10f243cb7, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_format_attr_silk.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=67cbb7259a39b9753aeb6fde28b816f6245e31b4, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_format_attr_siren14.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=51c013fd8320a4d06cecea0880e78b584d891bd0, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_format_attr_siren7.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=e0f37cdb8d5ee0e05da20a2642acd0d65bd31812, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_format_attr_vp8.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=15165e2feddf58a2895e9c4c57931b5eae55ce46, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_geolocation.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=cc90b41af19a91206f6879229174ab866b8b4f03, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_hep.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=6ddeb0b04af3077e4d4355662babb55902dab98c, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_hep_pjsip.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=f795b512961bbc5f50556015dce80845e15ef7da, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_hep_rtcp.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=cb9e261970002b8086741fc99a478f7aab8dd01a, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_http_media_cache.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d2c9562a0ce88070749177c037bc7be27cd01073, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_http_post.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=3bda7c543a8f8755f0aa8e0f4a171f93f89427f2, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_http_websocket.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=0164cd0e6f38184f3146ba56daf7b4e5528b114f, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_limit.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=74636195c9f154bf1c3f0faf150c7eb847aeb6dd, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_manager_devicestate.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=dbf4192c13649222a6a1ef4c93903d9650c4f578, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_manager_presencestate.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=ed9c9a05efed29c55b3eb2a1e5e0444b4e5fc99f, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_musiconhold.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=08855b4ba736617474816563deeb32a7c4569506, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_mutestream.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=014ee549f71eaf0138b7f9bb7d94d646cbafb957, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_mwi_devstate.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=e4f085e6264f8cbc893509c631f617393f54aa19, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_odbc.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=dbdebe7eae5325b5c07b08fa920026a379adda26, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_odbc_transaction.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=46c4637938a07cc6c2f42731c3af5e4c3b6ea4ad, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_parking.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d23d6157b92e83905dce44c0adf6095e0f2c512f, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_phoneprov.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=5466486a3e4e68a51b3bbf1b00234081276d27f7, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjproject.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=b14c03a3f32235c28202e134dc855884977b0596, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=7c105ae91bce9b88daf3e2f8d72fbaa4743020ff, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_acl.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=403b85d4eeec3f46e20c345b04f2c5721f1f4e42, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_aoc.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=771f0ae65b2701048f4f5122acc6e6eabedc42bb, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_authenticator_digest.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=31d81c753d97084c4d237f98c41ec146245cf42e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_caller_id.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=ccc2b8fb2675d2ad0150d46326cf1837bb9515f0, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_callid.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=3f6939d0367abf91f889f644f17169a413be6621, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_config_wizard.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=790f7b36384daa29961a597e82784526f1ab3e2f, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_dialog_info_body_generator.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d6d21fc72cca2ab6391990fa7363f05d8791d0db, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_dialog_info_digium_body_supplement.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=3d3fd6707531a37495414da701d952290018616c, stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_diversion.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=bf8a8c36c020f61e38aacf840cf11d2c1af81b87, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_dlg_options.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=24a615a26c67385d4b07deefdb1740e0b3e167c4, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_dtmf_info.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=7e04a35fef606799c163285d3652059e325ea064, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_empty_info.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=252047291c848950bf4f28cb6e181b6ae7fe948a, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_endpoint_identifier_anonymous.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d0e42b1d3f7897bc1f75549f1616433417b3fe3f, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_endpoint_identifier_dpma.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=458800e0c530afb2ad060e5639b97dcb9a3e7402, stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_endpoint_identifier_ip.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=3689a2eb79e26c5f4069820e34261ee0db4a63cc, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_endpoint_identifier_user.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=6383f4299a60e0499eb37c015da41f2b50fd1437, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_exten_state.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=21f85fc13f02d48d66d012a7671add6334d1f177, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_geolocation.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=dc314bd39882637b8138992059531130803450ee, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_header_funcs.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=c70555d1b48a5c96f434e1b152bb636cbea0b674, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_history.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d0d36b48cc9fa5889dca82a5c8c5e799678fb9f2, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_logger.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=2acea9f1b77c1a9771effb3589c504e8f7859318, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_messaging.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=53dc1019d72105cfc92be1fd61c5d345ca5c8668, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_mwi.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=6f81076386939f16e011d49a3f97db14a23fc23d, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_mwi_body_generator.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=68584964f99933a1aa22a4e27b8704cb88f97f05, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_nat.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=64e6d41b95d9f78d887b02c8a47969bbd1c7e25f, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_notify.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=a05d3cced1342ca90bcdae9547b62ac2a8e3cab1, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_one_touch_record_info.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=f2003b2e05e7819bc0796e73dcaaf5216686a7d2, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_outbound_authenticator_digest.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=54a1a986c281617c77dd689f800629db55cc0874, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_outbound_publish.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=195d2e043d594478f724ef8ab7e3058a65ed1783, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_outbound_registration.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=744a9978fedba8bbda9d706abc4d21f2891ddcd9, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_path.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=b697a7ee164aeb8eb71dfbae5fff05c85313fa6d, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_phoneprov_provider.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=68820efb561327bee6f747cb43b6b57dccedfbfa, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_pidf_body_generator.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=bd7f005cc3b57b6ee896fdabdc52290e447217fd, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_pidf_digium_body_supplement.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=0a798895b117b67065b24da87480b87eef3a228a, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_pidf_eyebeam_body_supplement.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=5ca0bccb9f33ef437e87344eb573867ee3f229ec, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_publish_asterisk.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=916d8aec9bc1b6649b17ab179b8d0bdbe054824d, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_pubsub.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=6f972ca5b54a65739e7eb66e10b8b942ebd6522c, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_refer.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=7d6ec83eb98d1bd24ec5083437a701dd61fa3b2b, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_registrar.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=3480d9bab90dbe4d7182f1dd892484804d2d5299, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_rfc3326.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=4c8f67f877a159a5122f90b7ff2e0b42162496b8, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_rfc3329.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=6287b59b7993ec1a1b2c7fd071870ac4a19114ae, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_sdp_rtp.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=0adb30032af61a3574ff452a7a3d3207cf50b4f8, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_send_info.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=2430963a5a0a0972cea6a4c55516b196cb6d8e86, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_send_to_voicemail.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=139384c1fa3426a0f034c0af0601f9bc13a789fc, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_session.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=8a4850d7b055bf0ef4251536d644fddf0e471cc3, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_sips_contact.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=e4e4f1ad3bf6a9bc77be03a39ff8ed8ac3b47d11, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_stir_shaken.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=c14991742082a26baf23d9d714d2cc3b4df09be1, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_t38.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=c3fa5462c0e69dea83a29899b4e37f26fe072e35, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_transport_websocket.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=92c31b80eb51d82e7c7321903293a218ee6062aa, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_pjsip_xpidf_body_generator.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1225d04991917e32c886027ccf2371c108b40e28, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_prometheus.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=dff5374ec9495e925535cf4db44e82a8a252656a, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_realtime.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=66b3b34c0579f5efe5eebc0b6bd244fab333dcd4, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_resolver_unbound.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=4216ab42c22b21abd410e96d2ecc7dd6f8371e07, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_rtp_asterisk.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=ce6a3ac35deaf99a13ebdbb834dafc23bd4526c9, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_rtp_multicast.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1d7f55b91d9b000cd43260a8f2d58e35d9adaa3b, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_security_log.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=c9c81d1c30a98809f7c0933c408e977f9eed6124, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_smdi.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=fe57ec3c8c5f9399b4621e74b7c33b708447e5d3, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_snmp.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=6301be96a8fb890a37783f2d119cd2eb401742ed, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_sorcery_astdb.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=5e0410b0ecf653634f427fb69e7aa0d8b442bc0e, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_sorcery_config.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=cf6a2dc20fe820fc80bcb5f12eeba0f9bed6534f, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_sorcery_memory.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=83e7c534ef019f60162f2b4a22a95c9746e3e565, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_sorcery_memory_cache.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=8df17e368124f6e44e3513d73f9a19eebc54c701, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_sorcery_realtime.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=69d1b294b1e3da22e9dc0d0bcc5f307abac3dc90, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_speech.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=294555f92091a73ebe83cb86d511f7fbbaa95dc9, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_speech_aeap.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=af6dd894bf15ac72051993c2deebec40a87ab853, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_srtp.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=71f0341ad9480c4cce35d2e91d8ab01653a9c311, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_stasis.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1a9d4ee9c09656f9ffc2417098f72b06cbd4f412, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_stasis_answer.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1424008e7c97dbc5480a85f8c69a9a6279fe4eec, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_stasis_device_state.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d71c267343bc26d47df531aee3d4456dffac62f6, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_stasis_playback.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=37818d1087a5df6adc8ca6946a01f3304ad22434, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_stasis_recording.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d4b8838c46aa640dfbbe07bb3c940cc4d8b635da, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_stasis_snoop.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=440efeef633ccedbecf2f46ce01bd54b9455f8d9, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_statsd.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=03adde0268dd51fbdf96305ba2a85e1378ed9bfb, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_stir_shaken.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=b6cd65a5841ea95c7b8726a8bd5cb9f465d55f46, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_stun_monitor.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=a1ea56b6d022dd32bc1e67ba10a75dfac08e45e1, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_timing_dahdi.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=0cb1ba9b95d4156cd3f51b485f578cf1b06500b9, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_timing_pthread.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=068ffdb6f7de431c1ba6be37ab267e8b722e6adf, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_timing_timerfd.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=2af43c01f194acbcbb18e4a3f732c8eb4927a1b1, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_tonedetect.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=f23811c28ae7b649e619042a3a4f361f5933d487, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_websocket_client.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=5aec9a36bc26d41f77d4a32daeec886e02025e86, not stripped
+/usr/lib/x86_64-linux-gnu/asterisk/modules/res_xmpp.so	ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=43e6daee60e5927a573744b4bfa9c150647816ab, not stripped
