@@ -7,7 +7,7 @@
 + ASTERISK=/opt/franzfon-arm64/asterisk/sbin/asterisk
 + sudo /opt/franzfon-arm64/asterisk/sbin/asterisk -rx 'core show version'
 + tee unified-report/asterisk-version.txt
-Asterisk 22.7.0 built by root @ runnervma9114 on a aarch64 running Linux on 2026-08-06 12:07:42 UTC
+Asterisk 22.7.0 built by root @ runnervma9114 on a aarch64 running Linux on 2026-08-06 14:22:12 UTC
 + sudo /opt/franzfon-arm64/asterisk/sbin/asterisk -rx 'module show like chan_pjsip.so'
 + tee unified-report/chan-pjsip.txt
 + grep -F chan_pjsip.so
@@ -20191,7 +20191,7 @@ FREEPBX_REQUIRED=no
 + IFS=
 + read -r -d '' path
 ++ sudo file -b /opt/franzfon/wizard/backend/data/franzfon.db-shm
-+ description='SQLite Write-Ahead Log shared memory, counter 151, page size 4096, 421 frames, 96 pages, frame checksum 0xa16628ce, salt 0x20ec5af2d5dfb77, header checksum 0xb8b1a4c1, read-mark[1] 0x1a5'
++ description='SQLite Write-Ahead Log shared memory, counter 151, page size 4096, 421 frames, 96 pages, frame checksum 0x968c2ce4, salt 0x882fbf0f95587d06, header checksum 0x79ed9f8e, read-mark[1] 0x1a5'
 + case "$description" in
 + IFS=
 + read -r -d '' path
@@ -21936,7 +21936,7 @@ FREEPBX_REQUIRED=no
 + IFS=
 + read -r -d '' path
 ++ sudo file -b /opt/franzfon-arm64/asterisk/lib/asterisk/modules/func_version.so
-+ description='ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=756796814ba29d00bbbe988133bb2f82d9e6ff93, with debug_info, not stripped'
++ description='ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=8c9380aabf81100e504ccb6a46a6b0f2e7408806, with debug_info, not stripped'
 + case "$description" in
 + IFS=
 + read -r -d '' path
@@ -22936,7 +22936,7 @@ FREEPBX_REQUIRED=no
 + IFS=
 + read -r -d '' path
 ++ sudo file -b /opt/franzfon-arm64/asterisk/sbin/asterisk
-+ description='ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=a586600c79a93ae0c46ad241168e6774e67abc10, for GNU/Linux 3.7.0, with debug_info, not stripped'
++ description='ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=637e935ec0c93fe096206a1e722e5aa4dbda39bd, for GNU/Linux 3.7.0, with debug_info, not stripped'
 + case "$description" in
 + IFS=
 + read -r -d '' path
