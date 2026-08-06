@@ -13,6 +13,9 @@ $ErrorActionPreference = 'Stop'
 $LabRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 Push-Location $LabRoot
 
+$SshPort = if ($env:FRANZFON_LAB_SSH_PORT) { $env:FRANZFON_LAB_SSH_PORT } else { '2222' }
+$WebPort = if ($env:FRANZFON_LAB_WEB_PORT) { $env:FRANZFON_LAB_WEB_PORT } else { '13000' }
+
 function Invoke-Compose {
     param([string[]]$ComposeArgs)
 
@@ -64,9 +67,9 @@ try {
             Invoke-Compose @('up', '-d', '--build')
             Write-Host ''
             Write-Host 'FRANZFON ARM64 VM started.'
-            Write-Host 'SSH:  ssh -p 2222 franzfon@127.0.0.1'
+            Write-Host "SSH:  ssh -p $SshPort franzfon@127.0.0.1"
             Write-Host 'User: franzfon  Password: franzfon'
-            Write-Host 'Web:  http://127.0.0.1:3000/'
+            Write-Host "Web:  http://127.0.0.1:$WebPort/"
             Write-Host ''
             Write-Host 'First boot and cloud-init can take several minutes under ARM emulation.'
         }
@@ -87,7 +90,7 @@ try {
             & ssh `
                 -o StrictHostKeyChecking=no `
                 -o UserKnownHostsFile=NUL `
-                -p 2222 `
+                -p $SshPort `
                 franzfon@127.0.0.1
         }
 
