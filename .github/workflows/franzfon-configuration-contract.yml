@@ -1,0 +1,86 @@
+name: FRANZFON Configuration Contract Audit
+run-name: "FRANZFON Config Contract • ${{ github.sha }}"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/franzfon-configuration-contract.yml'
+      - 'scripts/configuration_contract_audit.sh'
+      - 'scripts/stream_vma_extract.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: franzfon-configuration-contract
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Reclaim disk space
+        run: |
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc 2>/dev/null || true
+          df -hT
+
+      - name: Install tools
+        run: |
+          set -euxo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            python3-pip util-linux e2fsprogs sqlite3
+          python3 -m pip install --user zstandard
+
+      - name: Audit sanitized configuration contract
+        id: audit
+        run: |
+          mkdir -p config-contract-report
+          set +e
+          bash scripts/configuration_contract_audit.sh 2>&1 | tee config-contract-report/run.log
+          RC=${PIPESTATUS[0]}
+          echo "$RC" > config-contract-report/exit-code.txt
+          echo "rc=$RC" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: franzfon-configuration-contract
+          path: config-contract-report/
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 9
+
+      - name: Publish sanitized report
+        if: always()
+        run: |
+          set -euxo pipefail
+          rm -rf analysis-results/config-contract/latest
+          mkdir -p analysis-results/config-contract/latest
+          find config-contract-report -maxdepth 1 -type f \( -name '*.txt' -o -name '*.log' \) \
+            -exec cp {} analysis-results/config-contract/latest/ \;
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add analysis-results/config-contract/latest
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update FRANZFON configuration contract'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      - name: Mark failure after publishing report
+        if: always()
+        run: |
+          RC='${{ steps.audit.outputs.rc }}'
+          if [ "$RC" != 0 ]; then
+            echo 'Configuration contract audit failed. Logs were published.' >&2
+            exit 1
+          fi
