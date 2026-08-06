@@ -1,0 +1,96 @@
+name: Patch Sanitized Application Data
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/patch-sanitized-app-data.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Preserve nested application data and expose native Asterisk
+        run: |
+          set -euxo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          prepare = Path('installer/franzfon-arm64-prepare.sh')
+          text = prepare.read_text(encoding='utf-8')
+
+          replacements = {
+              "  --exclude='data/' \\\n": "  --exclude='/data/' \\\n",
+              "  --exclude='backups/' \\\n": "  --exclude='/backups/' \\\n",
+              "  --exclude='backup/' \\\n": "  --exclude='/backup/' \\\n",
+              "  --exclude='config/' \\\n": "  --exclude='/config/' \\\n",
+          }
+          for old, new in replacements.items():
+              if old not in text:
+                  raise SystemExit(f'Missing rsync exclusion marker: {old!r}')
+              text = text.replace(old, new, 1)
+
+          marker = '''if [ -f "$MOUNT_DIR/usr/local/bin/pnp_server" ]; then
+            mkdir -p "$STAGE_DIR/payload/usr/local/bin"
+            cp -a "$MOUNT_DIR/usr/local/bin/pnp_server" "$STAGE_DIR/payload/usr/local/bin/"
+          fi
+
+          printf '\\n[4/6] Refusing architecture-specific or sensitive payloads\\n'
+          '''
+          replacement = '''if [ -f "$MOUNT_DIR/usr/local/bin/pnp_server" ]; then
+            mkdir -p "$STAGE_DIR/payload/usr/local/bin"
+            cp -a "$MOUNT_DIR/usr/local/bin/pnp_server" "$STAGE_DIR/payload/usr/local/bin/"
+          fi
+
+          HOLIDAY_MODULE="$(find "$STAGE_DIR/payload/opt/franzfon/wizard/backend/src/data" \\
+            -maxdepth 2 -type f -name 'german-holidays*' -print -quit 2>/dev/null || true)"
+          [ -n "$HOLIDAY_MODULE" ] || {
+            echo 'Required static application data is missing: german-holidays' >&2
+            exit 1
+          }
+
+          printf '\\n[4/6] Refusing architecture-specific or sensitive payloads\\n'
+          '''
+          if marker not in text:
+              raise SystemExit('Missing payload validation insertion marker')
+          text = text.replace(marker, replacement, 1)
+          prepare.write_text(text, encoding='utf-8')
+
+          bootstrap = Path('installer/franzfon-arm64-bootstrap.sh')
+          text = bootstrap.read_text(encoding='utf-8')
+          old = '''EnvironmentFile=/opt/franzfon/config/database.env
+          ExecStartPre=/bin/bash -c '! ss -H -ltn sport = :3000 | grep -q .'
+          '''
+          new = '''EnvironmentFile=/opt/franzfon/config/database.env
+          Environment=PATH=/opt/franzfon-arm64/asterisk/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+          ExecStartPre=/bin/bash -c '! ss -H -ltn sport = :3000 | grep -q .'
+          '''
+          if old not in text:
+              raise SystemExit('Missing wizard service environment marker')
+          text = text.replace(old, new, 1)
+          bootstrap.write_text(text, encoding='utf-8')
+          PY
+
+          bash -n installer/franzfon-arm64-prepare.sh
+          bash -n installer/franzfon-arm64-bootstrap.sh
+          grep -F -- "--exclude='/data/'" installer/franzfon-arm64-prepare.sh
+          grep -F -- "-name 'german-holidays*'" installer/franzfon-arm64-prepare.sh
+          grep -F -- 'Environment=PATH=/opt/franzfon-arm64/asterisk/sbin:' installer/franzfon-arm64-bootstrap.sh
+
+      - name: Commit sanitizer and service fix
+        run: |
+          set -euxo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add installer/franzfon-arm64-prepare.sh installer/franzfon-arm64-bootstrap.sh
+          git commit -m 'Preserve nested application data in ARM64 payload'
+          git pull --rebase origin main
+          git push origin HEAD:main
