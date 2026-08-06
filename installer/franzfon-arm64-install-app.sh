@@ -7,7 +7,6 @@ NODE_SHA256='73093db209e4e9e09dd7d15a47aeaab1b74833830df03efa5f942a1122c5fa71'
 NODE_BASE_URL="https://nodejs.org/download/release/v${NODE_VERSION}"
 
 PAYLOAD_DIR=''
-ACTIVATE=0
 
 usage() {
   cat <<'EOF'
@@ -16,13 +15,13 @@ Usage:
 
 Options:
   --payload PATH  Output directory produced by franzfon-arm64-prepare.sh.
-  --activate      Enable/start the wizard only when its database environment and
-                  Asterisk are already configured. Default: install but do not start.
   -h, --help      Show help.
 
 This installs only native ARM64 runtimes and architecture-independent FRANZFON
-application files. It does not migrate licenses, bypass activation, import raw
-MariaDB files or install x86 binaries.
+application files. It never starts or enables FRANZFON. Activation is performed
+only by franzfon-arm64-bootstrap.sh after Asterisk and databases are validated.
+It does not migrate licenses, bypass activation, import raw MariaDB files or
+install x86 binaries.
 EOF
 }
 
@@ -31,7 +30,6 @@ while [ "$#" -gt 0 ]; do
     --payload)
       [ "$#" -ge 2 ] || { echo 'Missing value for --payload' >&2; exit 2; }
       PAYLOAD_DIR="$2"; shift 2 ;;
-    --activate) ACTIVATE=1; shift ;;
     -h|--help) usage; exit 0 ;;
     *) echo "Unknown argument: $1" >&2; usage >&2; exit 2 ;;
   esac
@@ -132,30 +130,36 @@ rm -rf node_modules
 '
 file node_modules/better-sqlite3/build/Release/better_sqlite3.node | grep -E 'ARM aarch64|ARM64' >/dev/null
 
-printf '\n[6/7] Installing adapted systemd service without FreePBX dependency\n'
+printf '\n[6/7] Installing adapted disabled systemd service\n'
 cat > /etc/systemd/system/franzfon-wizard.service <<'EOF'
 [Unit]
 Description=FRANZFON Wizard ARM64
-After=network-online.target mariadb.service asterisk.service
-Wants=network-online.target mariadb.service asterisk.service
+After=network-online.target mariadb.service redis-server.service asterisk.service
+Wants=network-online.target mariadb.service redis-server.service asterisk.service
 ConditionPathExists=/opt/franzfon/config/database.env
+ConditionPathExists=/opt/franzfon/wizard/backend/src/index.js
 
 [Service]
 Type=simple
 User=root
 WorkingDirectory=/opt/franzfon/wizard/backend
-ExecStartPre=/bin/bash -c 'for i in $(seq 1 15); do ss -tlnp | grep -q ":3000 " || exit 0; sleep 1; done; echo "Port 3000 nicht freigegeben"; exit 1'
-ExecStart=/usr/local/bin/node src/index.js
 EnvironmentFile=/opt/franzfon/config/database.env
+ExecStartPre=/bin/bash -c '! ss -H -ltn sport = :3000 | grep -q .'
+ExecStart=/usr/local/bin/node src/index.js
 Restart=on-failure
 RestartSec=3
+TimeoutStartSec=45
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
 
 [Install]
 WantedBy=multi-user.target
 EOF
 
 systemctl daemon-reload
-systemctl disable franzfon-wizard.service 2>/dev/null || true
+systemctl disable franzfon-wizard.service >/dev/null 2>&1 || true
+systemctl stop franzfon-wizard.service >/dev/null 2>&1 || true
 
 mkdir -p /etc/franzfon-arm64
 cat > /etc/franzfon-arm64/install-state <<EOF
@@ -164,7 +168,8 @@ APPLICATION_ARCH=arm64
 NODE_VERSION=$NODE_VERSION
 FREEPBX_REQUIRED=no
 WIZARD_ENABLED=no
-DATABASE_CONFIGURED=$([ -f /opt/franzfon/config/database.env ] && echo yes || echo no)
+DATABASE_CONFIGURED=no
+LICENSE_STATE_IMPORTED=no
 EOF
 chmod 0600 /etc/franzfon-arm64/install-state
 
@@ -177,20 +182,18 @@ done | grep -q .; then
   exit 1
 fi
 
-if [ "$ACTIVATE" -eq 1 ]; then
-  [ -f /opt/franzfon/config/database.env ] || {
-    echo 'Cannot activate: /opt/franzfon/config/database.env is missing.' >&2; exit 1;
-  }
-  command -v asterisk >/dev/null 2>&1 || {
-    echo 'Cannot activate: native Asterisk is not installed.' >&2; exit 1;
-  }
-  systemctl enable --now mariadb redis-server franzfon-wizard.service
-  systemctl --no-pager --full status franzfon-wizard.service
-else
-  echo
-  echo 'Application stage installed successfully but not activated.'
-  echo 'Next required stages: native Asterisk, database initialization/migration, then license migration.'
-fi
+systemctl is-enabled franzfon-wizard.service >/dev/null 2>&1 && {
+  echo 'Safety check failed: franzfon-wizard.service was enabled.' >&2
+  exit 1
+}
+systemctl is-active franzfon-wizard.service >/dev/null 2>&1 && {
+  echo 'Safety check failed: franzfon-wizard.service is running.' >&2
+  exit 1
+}
 
 rm -rf "$TMP_NODE"
 trap - EXIT
+
+echo
+echo 'Application stage installed successfully and remains disabled.'
+echo 'Next: install native Asterisk, then run franzfon-arm64-bootstrap.sh.'
