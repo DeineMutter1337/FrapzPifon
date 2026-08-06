@@ -8,25 +8,24 @@ Unable to find image 'node:20-bookworm' locally
 8f963a2bbd53: Pulling fs layer
 78dea6468cd9: Pulling fs layer
 6260d7010302: Pulling fs layer
+5f77b2a79d55: Waiting
 444403cccfb4: Waiting
 8f963a2bbd53: Waiting
 78dea6468cd9: Waiting
 6260d7010302: Waiting
-5f77b2a79d55: Waiting
 0bb7bd28fbdf: Verifying Checksum
 0bb7bd28fbdf: Download complete
-30de66f8fdaf: Verifying Checksum
 30de66f8fdaf: Download complete
-444403cccfb4: Verifying Checksum
-444403cccfb4: Download complete
 599d07e8492b: Verifying Checksum
 599d07e8492b: Download complete
+444403cccfb4: Verifying Checksum
+444403cccfb4: Download complete
 78dea6468cd9: Verifying Checksum
 78dea6468cd9: Download complete
-6260d7010302: Verifying Checksum
-6260d7010302: Download complete
 8f963a2bbd53: Verifying Checksum
 8f963a2bbd53: Download complete
+6260d7010302: Verifying Checksum
+6260d7010302: Download complete
 5f77b2a79d55: Verifying Checksum
 5f77b2a79d55: Download complete
 30de66f8fdaf: Pull complete
@@ -46,7 +45,7 @@ Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB
 Get:4 http://deb.debian.org/debian bookworm/main arm64 Packages [8689 kB]
 Get:5 http://deb.debian.org/debian bookworm-updates/main arm64 Packages [6936 B]
 Get:6 http://deb.debian.org/debian-security bookworm-security/main arm64 Packages [323 kB]
-Fetched 9261 kB in 6s (1540 kB/s)
+Fetched 9261 kB in 6s (1624 kB/s)
 Reading package lists...
 + apt-get install -y --no-install-recommends python3 make g++ pkg-config file
 Reading package lists...
@@ -83,22 +82,9 @@ npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
 npm notice To update run: npm install -g npm@12.0.2
 npm notice
 + node --check src/index.js
-bash: line 19: warning: here-document at line 7 delimited by end-of-file (wanted `NODE')
-+ node -
-[stdin]:11
-    file node_modules/better-sqlite3/build/Release/better_sqlite3.node
-         ^^^^^^^^^^^^
-
-SyntaxError: Unexpected identifier 'node_modules'
-    at makeContextifyScript (node:internal/vm:185:14)
-    at node:internal/process/execution:107:22
-    at [stdin]-wrapper:6:24
-    at runScript (node:internal/process/execution:101:62)
-    at evalScript (node:internal/process/execution:133:3)
-    at node:internal/main/eval_stdin:32:5
-    at Socket.<anonymous> (node:internal/process/execution:234:5)
-    at Socket.emit (node:events:536:35)
-    at endReadableNT (node:internal/streams/readable:1698:12)
-    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
-
-Node.js v20.20.2
++ node -e 'const Database=require("better-sqlite3"); const db=new Database(":memory:"); db.exec("CREATE TABLE smoke (id INTEGER PRIMARY KEY, value TEXT)"); db.prepare("INSERT INTO smoke(value) VALUES (?)").run("arm64-ok"); const row=db.prepare("SELECT value FROM smoke").get(); if(row.value!=="arm64-ok") throw new Error("SQLite smoke test failed"); console.log("backend_arch="+process.arch); console.log("node_version="+process.version); console.log("better_sqlite3=ok");'
+backend_arch=arm64
+node_version=v20.20.2
+better_sqlite3=ok
++ file node_modules/better-sqlite3/build/Release/better_sqlite3.node
+node_modules/better-sqlite3/build/Release/better_sqlite3.node: ELF 64-bit LSB shared object, ARM aarch64, version 1 (GNU/Linux), dynamically linked, BuildID[sha1]=fbc85df9e787ccd2e82a34fb0ff9a644e56b2dc1, not stripped

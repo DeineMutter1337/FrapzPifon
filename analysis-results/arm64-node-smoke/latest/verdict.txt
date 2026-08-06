@@ -1,6 +1,6 @@
 PREPARATION_RC=0
-BACKEND_ARM64_RC=1
+BACKEND_ARM64_RC=0
 FRONTEND_ARM64_RC=0
 
-VERDICT=FAIL
-See the preparation, backend and frontend logs for the exact failing dependency.
+VERDICT=PASS
+The FRANZFON Node backend dependencies rebuild on ARM64, better-sqlite3 works, and the Astro frontend builds on ARM64.

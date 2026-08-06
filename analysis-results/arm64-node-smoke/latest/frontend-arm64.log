@@ -19,7 +19,7 @@ file is already the newest version (1:5.44-3).
 0 upgraded, 0 newly installed, 0 to remove and 80 not upgraded.
 + npm ci
 
-added 313 packages, and audited 314 packages in 50s
+added 313 packages, and audited 314 packages in 54s
 
 158 packages are looking for funding
   run `npm fund` for details
@@ -48,95 +48,95 @@ npm notice
   Run "astro telemetry disable" to opt-out.
   https://astro.build/telemetry
 
-07:45:28 [content] Syncing content
-07:45:28 [content] Synced content
-07:45:28 [types] Generated 1.75s
-07:45:28 [build] output: "static"
-07:45:28 [build] mode: "static"
-07:45:28 [build] directory: /work/dist/
-07:45:28 [build] Collecting build info...
-07:45:28 [build] ✓ Completed in 2.91s.
-07:45:29 [build] Building static entrypoints...
-07:46:16 [vite] ✓ built in 46.76s
-07:46:16 [build] ✓ Completed in 47.33s.
+07:54:22 [content] Syncing content
+07:54:22 [content] Synced content
+07:54:22 [types] Generated 1.82s
+07:54:22 [build] output: "static"
+07:54:22 [build] mode: "static"
+07:54:22 [build] directory: /work/dist/
+07:54:22 [build] Collecting build info...
+07:54:22 [build] ✓ Completed in 3.01s.
+07:54:22 [build] Building static entrypoints...
+07:55:11 [vite] ✓ built in 48.43s
+07:55:11 [build] ✓ Completed in 49.13s.
 
  building client (vite) 
-07:46:16 [vite] transforming...
-07:46:24 [vite] ✓ 7 modules transformed.
-07:46:24 [vite] rendering chunks...
-07:46:25 [vite] computing gzip size...
-07:46:25 [vite] dist/_astro/mein-bereich.astro_astro_type_script_index_0_lang.B13KluqK.js    1.72 kB │ gzip:  1.01 kB
-07:46:25 [vite] dist/_astro/calls.astro_astro_type_script_index_0_lang.DtagAeME.js           2.23 kB │ gzip:  1.17 kB
-07:46:25 [vite] dist/_astro/meine-anrufe.astro_astro_type_script_index_0_lang.4vR0nVo2.js    2.24 kB │ gzip:  1.17 kB
-07:46:25 [vite] dist/_astro/dashboard.astro_astro_type_script_index_0_lang.C3xR8Ayd.js      14.10 kB │ gzip:  5.08 kB
-07:46:25 [vite] dist/_astro/chart.DV9vtJN6.js                                              144.80 kB │ gzip: 50.39 kB
-07:46:25 [vite] ✓ built in 8.68s
+07:55:12 [vite] transforming...
+07:55:20 [vite] ✓ 7 modules transformed.
+07:55:21 [vite] rendering chunks...
+07:55:21 [vite] computing gzip size...
+07:55:21 [vite] dist/_astro/mein-bereich.astro_astro_type_script_index_0_lang.B13KluqK.js    1.72 kB │ gzip:  1.01 kB
+07:55:21 [vite] dist/_astro/calls.astro_astro_type_script_index_0_lang.DtagAeME.js           2.23 kB │ gzip:  1.17 kB
+07:55:21 [vite] dist/_astro/meine-anrufe.astro_astro_type_script_index_0_lang.4vR0nVo2.js    2.24 kB │ gzip:  1.17 kB
+07:55:21 [vite] dist/_astro/dashboard.astro_astro_type_script_index_0_lang.C3xR8Ayd.js      14.10 kB │ gzip:  5.08 kB
+07:55:21 [vite] dist/_astro/chart.DV9vtJN6.js                                              144.80 kB │ gzip: 50.39 kB
+07:55:21 [vite] ✓ built in 9.50s
 
  generating static routes 
-07:46:25 ▶ src/pages/aufnahmen.astro
-07:46:25   └─ /aufnahmen.html (+153ms) 
-07:46:25 ▶ src/pages/backup.astro
-07:46:25   └─ /backup.html (+36ms) 
-07:46:25 ▶ src/pages/call-flows.astro
-07:46:25   └─ /call-flows.html (+60ms) 
-07:46:26 ▶ src/pages/calls.astro
-07:46:26   └─ /calls.html (+35ms) 
-07:46:26 ▶ src/pages/change-password.astro
-07:46:26   └─ /change-password.html (+19ms) 
-07:46:26 ▶ src/pages/contacts.astro
-07:46:26   └─ /contacts.html (+57ms) 
-07:46:26 ▶ src/pages/dashboard.astro
-07:46:26   └─ /dashboard.html (+24ms) 
-07:46:26 ▶ src/pages/devices.astro
-07:46:26   └─ /devices.html (+44ms) 
-07:46:26 ▶ src/pages/fax.astro
-07:46:26   └─ /fax.html (+41ms) 
-07:46:26 ▶ src/pages/license.astro
-07:46:26   └─ /license.html (+34ms) 
-07:46:26 ▶ src/pages/login.astro
-07:46:26   └─ /login.html (+20ms) 
-07:46:26 ▶ src/pages/mein-bereich.astro
-07:46:26   └─ /mein-bereich.html (+24ms) 
-07:46:26 ▶ src/pages/mein-fax.astro
-07:46:26   └─ /mein-fax.html (+22ms) 
-07:46:26 ▶ src/pages/mein-hilfe.astro
-07:46:26   └─ /mein-hilfe.html (+25ms) 
-07:46:26 ▶ src/pages/mein-profil.astro
-07:46:26   └─ /mein-profil.html (+24ms) 
-07:46:26 ▶ src/pages/mein-telefonbuch.astro
-07:46:26   └─ /mein-telefonbuch.html (+22ms) 
-07:46:26 ▶ src/pages/mein-voicemail.astro
-07:46:26   └─ /mein-voicemail.html (+20ms) 
-07:46:26 ▶ src/pages/meine-anrufe.astro
-07:46:26   └─ /meine-anrufe.html (+22ms) 
-07:46:26 ▶ src/pages/meine-einstellungen.astro
-07:46:26   └─ /meine-einstellungen.html (+15ms) 
-07:46:26 ▶ src/pages/meine-personalakte.astro
-07:46:26   └─ /meine-personalakte.html (+15ms) 
-07:46:26 ▶ src/pages/notifications.astro
-07:46:26   └─ /notifications.html (+23ms) 
-07:46:26 ▶ src/pages/personalakten.astro
-07:46:26   └─ /personalakten.html (+21ms) 
-07:46:27 ▶ src/pages/ring-groups.astro
-07:46:27   └─ /ring-groups.html (+26ms) 
-07:46:27 ▶ src/pages/settings.astro
-07:46:27   └─ /settings.html (+51ms) 
-07:46:27 ▶ src/pages/setup.astro
-07:46:27   └─ /setup.html (+25ms) 
-07:46:27 ▶ src/pages/smtp.astro
-07:46:27   └─ /smtp.html (+13ms) 
-07:46:27 ▶ src/pages/start.astro
-07:46:27   └─ /start.html (+8ms) 
-07:46:27 ▶ src/pages/support.astro
-07:46:27   └─ /support.html (+20ms) 
-07:46:27 ▶ src/pages/users.astro
-07:46:27   └─ /users.html (+27ms) 
-07:46:27 ▶ src/pages/voicemail.astro
-07:46:27   └─ /voicemail.html (+19ms) 
-07:46:27 ✓ Completed in 2.13s.
+07:55:22 ▶ src/pages/aufnahmen.astro
+07:55:22   └─ /aufnahmen.html (+147ms) 
+07:55:22 ▶ src/pages/backup.astro
+07:55:22   └─ /backup.html (+34ms) 
+07:55:22 ▶ src/pages/call-flows.astro
+07:55:22   └─ /call-flows.html (+50ms) 
+07:55:22 ▶ src/pages/calls.astro
+07:55:22   └─ /calls.html (+32ms) 
+07:55:22 ▶ src/pages/change-password.astro
+07:55:22   └─ /change-password.html (+18ms) 
+07:55:22 ▶ src/pages/contacts.astro
+07:55:22   └─ /contacts.html (+53ms) 
+07:55:22 ▶ src/pages/dashboard.astro
+07:55:22   └─ /dashboard.html (+22ms) 
+07:55:22 ▶ src/pages/devices.astro
+07:55:22   └─ /devices.html (+42ms) 
+07:55:22 ▶ src/pages/fax.astro
+07:55:22   └─ /fax.html (+39ms) 
+07:55:22 ▶ src/pages/license.astro
+07:55:22   └─ /license.html (+34ms) 
+07:55:22 ▶ src/pages/login.astro
+07:55:22   └─ /login.html (+18ms) 
+07:55:22 ▶ src/pages/mein-bereich.astro
+07:55:22   └─ /mein-bereich.html (+23ms) 
+07:55:22 ▶ src/pages/mein-fax.astro
+07:55:22   └─ /mein-fax.html (+19ms) 
+07:55:22 ▶ src/pages/mein-hilfe.astro
+07:55:22   └─ /mein-hilfe.html (+28ms) 
+07:55:23 ▶ src/pages/mein-profil.astro
+07:55:23   └─ /mein-profil.html (+24ms) 
+07:55:23 ▶ src/pages/mein-telefonbuch.astro
+07:55:23   └─ /mein-telefonbuch.html (+21ms) 
+07:55:23 ▶ src/pages/mein-voicemail.astro
+07:55:23   └─ /mein-voicemail.html (+19ms) 
+07:55:23 ▶ src/pages/meine-anrufe.astro
+07:55:23   └─ /meine-anrufe.html (+18ms) 
+07:55:23 ▶ src/pages/meine-einstellungen.astro
+07:55:23   └─ /meine-einstellungen.html (+14ms) 
+07:55:23 ▶ src/pages/meine-personalakte.astro
+07:55:23   └─ /meine-personalakte.html (+15ms) 
+07:55:23 ▶ src/pages/notifications.astro
+07:55:23   └─ /notifications.html (+23ms) 
+07:55:23 ▶ src/pages/personalakten.astro
+07:55:23   └─ /personalakten.html (+20ms) 
+07:55:23 ▶ src/pages/ring-groups.astro
+07:55:23   └─ /ring-groups.html (+37ms) 
+07:55:23 ▶ src/pages/settings.astro
+07:55:23   └─ /settings.html (+64ms) 
+07:55:23 ▶ src/pages/setup.astro
+07:55:23   └─ /setup.html (+30ms) 
+07:55:23 ▶ src/pages/smtp.astro
+07:55:23   └─ /smtp.html (+12ms) 
+07:55:23 ▶ src/pages/start.astro
+07:55:23   └─ /start.html (+7ms) 
+07:55:23 ▶ src/pages/support.astro
+07:55:23   └─ /support.html (+21ms) 
+07:55:23 ▶ src/pages/users.astro
+07:55:23   └─ /users.html (+25ms) 
+07:55:23 ▶ src/pages/voicemail.astro
+07:55:23   └─ /voicemail.html (+18ms) 
+07:55:23 ✓ Completed in 2.05s.
 
-07:46:27 [build] 30 page(s) built in 61.46s
-07:46:27 [build] Complete!
+07:55:23 [build] 30 page(s) built in 64.10s
+07:55:23 [build] Complete!
 + test -d dist
 + find dist -maxdepth 2 -type f
 + head -n 50
