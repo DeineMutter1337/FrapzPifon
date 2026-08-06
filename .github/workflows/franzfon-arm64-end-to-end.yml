@@ -113,7 +113,7 @@ jobs:
             /opt/franzfon-arm64/asterisk/sbin/asterisk -rx 'odbc show' \
               | grep -F asteriskcdrdb
 
-            curl --fail --silent --show-error --max-time 10 \
+            curl --fail --location --silent --show-error --max-time 10 \
               http://127.0.0.1:3000/ \
               --output /tmp/franzfon-index.html
             test -s /tmp/franzfon-index.html
