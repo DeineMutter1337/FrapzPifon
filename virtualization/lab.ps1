@@ -26,7 +26,15 @@ function Invoke-Compose {
 }
 
 function Get-LabContainerId {
-    $id = & docker compose ps -q vm 2>$null | Select-Object -First 1
+    param([switch]$IncludeStopped)
+
+    $args = @('compose', 'ps')
+    if ($IncludeStopped) {
+        $args += '-a'
+    }
+    $args += @('-q', 'vm')
+
+    $id = & docker @args 2>$null | Select-Object -First 1
     return [string]$id
 }
 
@@ -56,6 +64,24 @@ function Require-CheckpointName {
     }
 }
 
+function Assert-LabContainerRunning {
+    Start-Sleep -Seconds 3
+    $containerId = Get-LabContainerId -IncludeStopped
+    if ([string]::IsNullOrWhiteSpace($containerId)) {
+        throw 'Docker did not create the FRANZFON lab container.'
+    }
+
+    $running = & docker inspect --format '{{.State.Running}}' $containerId 2>$null
+    if ($running -ne 'true') {
+        $exitCode = & docker inspect --format '{{.State.ExitCode}}' $containerId 2>$null
+        Write-Host ''
+        Write-Host "FRANZFON ARM64 VM exited during startup (exit code $exitCode)." -ForegroundColor Red
+        Write-Host 'Docker log:' -ForegroundColor Yellow
+        & docker compose logs --no-color --tail 200 vm
+        throw 'The ARM64 VM did not remain running. See the Docker log above.'
+    }
+}
+
 try {
     & docker version *> $null
     if ($LASTEXITCODE -ne 0) {
@@ -65,6 +91,7 @@ try {
     switch ($Action) {
         'start' {
             Invoke-Compose @('up', '-d', '--build')
+            Assert-LabContainerRunning
             Write-Host ''
             Write-Host 'FRANZFON ARM64 VM started.'
             Write-Host "SSH:  ssh -p $SshPort franzfon@127.0.0.1"
@@ -99,6 +126,7 @@ try {
             Stop-LabGracefully
             Invoke-Compose @('run', '--rm', '--no-deps', '--entrypoint', '/usr/local/bin/labctl', 'vm', 'checkpoint', $Name)
             Invoke-Compose @('up', '-d')
+            Assert-LabContainerRunning
             Write-Host "Checkpoint '$Name' created. A fresh overlay is running on top of it."
         }
 
@@ -107,6 +135,7 @@ try {
             Stop-LabGracefully
             Invoke-Compose @('run', '--rm', '--no-deps', '--entrypoint', '/usr/local/bin/labctl', 'vm', 'restore', $Name)
             Invoke-Compose @('up', '-d')
+            Assert-LabContainerRunning
             Write-Host "Checkpoint '$Name' restored."
         }
 
@@ -114,6 +143,7 @@ try {
             Stop-LabGracefully
             Invoke-Compose @('run', '--rm', '--no-deps', '--entrypoint', '/usr/local/bin/labctl', 'vm', 'reset')
             Invoke-Compose @('up', '-d')
+            Assert-LabContainerRunning
             Write-Host 'VM reset to clean Debian 12 ARM64. Existing checkpoints were kept.'
         }
     }
