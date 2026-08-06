@@ -174,13 +174,19 @@ EOF
 chmod 0600 /etc/franzfon-arm64/install-state
 
 printf '\n[7/7] Final architecture and safety checks\n'
-if find "$INSTALL_ROOT" -type f -print0 | while IFS= read -r -d '' F; do
-  DESC="$(file -b "$F" 2>/dev/null || true)"
-  case "$DESC" in *x86-64*|*Intel\ 80386*|*PE32*) echo "$F"; esac
-done | grep -q .; then
+FILE_COUNT="$(find "$INSTALL_ROOT" -type f -printf '.' | wc -c)"
+printf 'Scanning %s installed files in batches...\n' "$FILE_COUNT"
+X86_REPORT="$(mktemp /var/tmp/franzfon-x86-scan.XXXXXX)"
+find "$INSTALL_ROOT" -type f -print0 \
+  | xargs -0 -r -n 128 file \
+  | grep -E 'x86-64|Intel 80386|PE32' > "$X86_REPORT" || true
+if [ -s "$X86_REPORT" ]; then
+  cat "$X86_REPORT" >&2
+  rm -f "$X86_REPORT"
   echo 'Unexpected x86 file found below /opt/franzfon.' >&2
   exit 1
 fi
+rm -f "$X86_REPORT"
 
 systemctl is-enabled franzfon-wizard.service >/dev/null 2>&1 && {
   echo 'Safety check failed: franzfon-wizard.service was enabled.' >&2
