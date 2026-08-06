@@ -1,0 +1,2762 @@
++ sudo bash installer/franzfon-arm64-install-asterisk.sh --workdir /var/tmp/franzfon-arm64-e2e-v2-asterisk
+Get:1 https://packages.microsoft.com/repos/azure-cli noble InRelease [3564 B]
+Get:2 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+Get:3 https://packages.microsoft.com/repos/azure-cli noble/main arm64 Packages [2380 B]
+Get:4 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.2 kB]
+Get:5 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [643 B]
+Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [306 kB]
+Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [266 kB]
+Hit:8 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Get:9 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease [126 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports noble-backports InRelease [126 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease [126 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 Packages [1225 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports noble-updates/main Translation-en [281 kB]
+Get:14 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 Components [178 kB]
+Get:15 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 Packages [1708 kB]
+Get:16 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe Translation-en [335 kB]
+Get:17 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 Components [387 kB]
+Get:18 http://ports.ubuntu.com/ubuntu-ports noble-updates/restricted arm64 Packages [2105 kB]
+Get:19 http://ports.ubuntu.com/ubuntu-ports noble-updates/restricted Translation-en [320 kB]
+Get:20 http://ports.ubuntu.com/ubuntu-ports noble-updates/multiverse arm64 Packages [72.7 kB]
+Get:21 http://ports.ubuntu.com/ubuntu-ports noble-updates/multiverse Translation-en [12.3 kB]
+Get:22 http://ports.ubuntu.com/ubuntu-ports noble-backports/main arm64 Components [3584 B]
+Get:23 http://ports.ubuntu.com/ubuntu-ports noble-backports/universe arm64 Packages [31.2 kB]
+Get:24 http://ports.ubuntu.com/ubuntu-ports noble-backports/universe arm64 Components [12.6 kB]
+Get:25 http://ports.ubuntu.com/ubuntu-ports noble-security/main arm64 Packages [974 kB]
+Get:26 http://ports.ubuntu.com/ubuntu-ports noble-security/main Translation-en [201 kB]
+Get:27 http://ports.ubuntu.com/ubuntu-ports noble-security/main arm64 Components [43.3 kB]
+Get:28 http://ports.ubuntu.com/ubuntu-ports noble-security/universe arm64 Packages [1260 kB]
+Get:29 http://ports.ubuntu.com/ubuntu-ports noble-security/universe Translation-en [239 kB]
+Get:30 http://ports.ubuntu.com/ubuntu-ports noble-security/universe arm64 Components [76.4 kB]
+Get:31 http://ports.ubuntu.com/ubuntu-ports noble-security/restricted arm64 Packages [1999 kB]
+Get:32 http://ports.ubuntu.com/ubuntu-ports noble-security/restricted Translation-en [302 kB]
+Get:33 http://ports.ubuntu.com/ubuntu-ports noble-security/multiverse arm64 Packages [68.7 kB]
+Get:34 http://ports.ubuntu.com/ubuntu-ports noble-security/multiverse Translation-en [10.6 kB]
+Fetched 12.8 MB in 5s (2503 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ca-certificates is already the newest version (20260601~24.04.1).
+file is already the newest version (1:5.45-3build1).
+pkg-config is already the newest version (1.8.1-2build1).
+patch is already the newest version (2.7.6-7build3).
+patch set to manually installed.
+perl is already the newest version (5.38.2-3.2ubuntu0.3).
+perl set to manually installed.
+bzip2 is already the newest version (1.0.8-5.1build0.1).
+xz-utils is already the newest version (5.6.1+really5.4.5-1ubuntu0.3).
+bison is already the newest version (2:3.8.2+dfsg-1build2).
+flex is already the newest version (2.6.4-8.2build1).
+python3 is already the newest version (3.12.3-0ubuntu2.1).
+rsync is already the newest version (3.2.7-1ubuntu1.5).
+libxml2-dev is already the newest version (2.9.14+dfsg-1.3ubuntu3.8).
+libxml2-dev set to manually installed.
+libncurses-dev is already the newest version (6.4+20240113-1ubuntu2.1).
+libncurses-dev set to manually installed.
+The following additional packages will be installed:
+  libbsd-dev libdeflate-dev libjbig-dev libjpeg-dev libjpeg-turbo8-dev
+  libjpeg8-dev liblerc-dev liblzma-dev libmd-dev libodbccr2 libodbcinst2
+  libopus0 libpng-dev libsharpyuv-dev libslang2-dev libspandsp2t64 libspeex1
+  libspeexdsp1 libsqlite3-0 libssl3t64 libtiff-dev libtiffxx6 liburiparser1
+  libvorbisenc2 libwebp-dev libwebpdecoder3 openssl sqlite3 unixodbc-common
+Suggested packages:
+  libcurl4-doc libidn-dev libkrb5-dev libldap2-dev librtmp-dev libssh2-1-dev
+  liblzma-doc opus-tools speex speex-doc sqlite3-doc libssl-doc
+Recommended packages:
+  libpng-tools
+The following NEW packages will be installed:
+  build-essential libbsd-dev libcurl4-openssl-dev libdeflate-dev libedit-dev
+  libjbig-dev libjpeg-dev libjpeg-turbo8-dev libjpeg8-dev liblerc-dev
+  liblzma-dev libmd-dev libnewt-dev libodbccr2 libodbcinst2 libogg-dev
+  libopus-dev libopus0 libpng-dev libsharpyuv-dev libslang2-dev libspandsp-dev
+  libspandsp2t64 libspeex-dev libspeex1 libspeexdsp-dev libspeexdsp1
+  libtiff-dev libtiffxx6 liburiparser-dev liburiparser1 libvorbis-dev
+  libvorbisenc2 libwebp-dev libwebpdecoder3 libxslt1-dev unixodbc-common
+  unixodbc-dev uuid-dev
+The following packages will be upgraded:
+  libsqlite3-0 libsqlite3-dev libssl-dev libssl3t64 openssl sqlite3 wget
+7 upgraded, 39 newly installed, 0 to remove and 77 not upgraded.
+Need to get 12.9 MB of archives.
+After this operation, 25.4 MB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libssl-dev arm64 3.0.13-0ubuntu3.12 [2338 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libssl3t64 arm64 3.0.13-0ubuntu3.12 [1799 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libsqlite3-dev arm64 3.45.1-1ubuntu2.7 [916 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 sqlite3 arm64 3.45.1-1ubuntu2.7 [140 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libsqlite3-0 arm64 3.45.1-1ubuntu2.7 [705 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 openssl arm64 3.0.13-0ubuntu3.12 [985 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 wget arm64 1.21.4-1ubuntu4.4 [331 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 build-essential arm64 12.10ubuntu1 [4932 B]
+Get:9 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libmd-dev arm64 1.1.0-2build1.1 [43.3 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libbsd-dev arm64 0.12.1-1build1.1 [170 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libcurl4-openssl-dev arm64 8.5.0-2ubuntu10.11 [455 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libdeflate-dev arm64 1.19-1build1.1 [51.2 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libedit-dev arm64 3.1-20230828-1build1 [123 kB]
+Get:14 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libjpeg-turbo8-dev arm64 2.1.5-2ubuntu2 [305 kB]
+Get:15 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libjpeg8-dev arm64 8c-2ubuntu11 [1484 B]
+Get:16 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libjpeg-dev arm64 8c-2ubuntu11 [1482 B]
+Get:17 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 liblerc-dev arm64 4.0.0+ds-4ubuntu2 [168 kB]
+Get:18 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libpng-dev arm64 1.6.43-5ubuntu0.6 [268 kB]
+Get:19 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libslang2-dev arm64 2.3.3-3build2 [554 kB]
+Get:20 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libnewt-dev arm64 0.52.24-2ubuntu2 [72.7 kB]
+Get:21 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libodbccr2 arm64 2.3.12-1ubuntu0.24.04.1 [15.5 kB]
+Get:22 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 unixodbc-common all 2.3.12-1ubuntu0.24.04.1 [8806 B]
+Get:23 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libodbcinst2 arm64 2.3.12-1ubuntu0.24.04.1 [29.8 kB]
+Get:24 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libogg-dev arm64 1.3.5-3build1 [161 kB]
+Get:25 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libopus0 arm64 1.4-1build1 [198 kB]
+Get:26 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libopus-dev arm64 1.4-1build1 [261 kB]
+Get:27 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libsharpyuv-dev arm64 1.3.2-0.4build3 [15.1 kB]
+Get:28 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 libspandsp2t64 arm64 0.0.6+dfsg-2.1build1 [313 kB]
+Get:29 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libjbig-dev arm64 2.1-6.1ubuntu2 [27.5 kB]
+Get:30 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 liblzma-dev arm64 5.6.1+really5.4.5-1ubuntu0.3 [178 kB]
+Get:31 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libwebpdecoder3 arm64 1.3.2-0.4build3 [88.7 kB]
+Get:32 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libwebp-dev arm64 1.3.2-0.4build3 [334 kB]
+Get:33 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libtiffxx6 arm64 4.5.1+git230720-4ubuntu2.5 [5646 B]
+Get:34 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libtiff-dev arm64 4.5.1+git230720-4ubuntu2.5 [337 kB]
+Get:35 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 libspandsp-dev arm64 0.0.6+dfsg-2.1build1 [467 kB]
+Get:36 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libspeex1 arm64 1.2.1-2ubuntu2.24.04.1 [56.2 kB]
+Get:37 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libspeex-dev arm64 1.2.1-2ubuntu2.24.04.1 [69.6 kB]
+Get:38 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libspeexdsp1 arm64 1.2.1-1ubuntu3 [40.2 kB]
+Get:39 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libspeexdsp-dev arm64 1.2.1-1ubuntu3 [49.5 kB]
+Get:40 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 liburiparser1 arm64 0.9.7+dfsg-2build1 [35.4 kB]
+Get:41 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 liburiparser-dev arm64 0.9.7+dfsg-2build1 [15.0 kB]
+Get:42 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libvorbisenc2 arm64 1.3.7-1build3 [80.0 kB]
+Get:43 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libvorbis-dev arm64 1.3.7-1build3 [339 kB]
+Get:44 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libxslt1-dev arm64 1.1.39-0exp1ubuntu0.24.04.3 [91.9 kB]
+Get:45 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 unixodbc-dev arm64 2.3.12-1ubuntu0.24.04.1 [242 kB]
+Get:46 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 uuid-dev arm64 2.39.3-9ubuntu6.5 [34.8 kB]
+Fetched 12.9 MB in 3s (3968 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 199905 files and directories currently installed.)
+Preparing to unpack .../libssl-dev_3.0.13-0ubuntu3.12_arm64.deb ...
+Unpacking libssl-dev:arm64 (3.0.13-0ubuntu3.12) over (3.0.13-0ubuntu3.11) ...
+Preparing to unpack .../libssl3t64_3.0.13-0ubuntu3.12_arm64.deb ...
+Unpacking libssl3t64:arm64 (3.0.13-0ubuntu3.12) over (3.0.13-0ubuntu3.11) ...
+Setting up libssl3t64:arm64 (3.0.13-0ubuntu3.12) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 199905 files and directories currently installed.)
+Preparing to unpack .../00-libsqlite3-dev_3.45.1-1ubuntu2.7_arm64.deb ...
+Unpacking libsqlite3-dev:arm64 (3.45.1-1ubuntu2.7) over (3.45.1-1ubuntu2.6) ...
+Preparing to unpack .../01-sqlite3_3.45.1-1ubuntu2.7_arm64.deb ...
+Unpacking sqlite3 (3.45.1-1ubuntu2.7) over (3.45.1-1ubuntu2.6) ...
+Preparing to unpack .../02-libsqlite3-0_3.45.1-1ubuntu2.7_arm64.deb ...
+Unpacking libsqlite3-0:arm64 (3.45.1-1ubuntu2.7) over (3.45.1-1ubuntu2.6) ...
+Preparing to unpack .../03-openssl_3.0.13-0ubuntu3.12_arm64.deb ...
+Unpacking openssl (3.0.13-0ubuntu3.12) over (3.0.13-0ubuntu3.11) ...
+Preparing to unpack .../04-wget_1.21.4-1ubuntu4.4_arm64.deb ...
+Unpacking wget (1.21.4-1ubuntu4.4) over (1.21.4-1ubuntu4.3) ...
+Selecting previously unselected package build-essential.
+Preparing to unpack .../05-build-essential_12.10ubuntu1_arm64.deb ...
+Unpacking build-essential (12.10ubuntu1) ...
+Selecting previously unselected package libmd-dev:arm64.
+Preparing to unpack .../06-libmd-dev_1.1.0-2build1.1_arm64.deb ...
+Unpacking libmd-dev:arm64 (1.1.0-2build1.1) ...
+Selecting previously unselected package libbsd-dev:arm64.
+Preparing to unpack .../07-libbsd-dev_0.12.1-1build1.1_arm64.deb ...
+Unpacking libbsd-dev:arm64 (0.12.1-1build1.1) ...
+Selecting previously unselected package libcurl4-openssl-dev:arm64.
+Preparing to unpack .../08-libcurl4-openssl-dev_8.5.0-2ubuntu10.11_arm64.deb ...
+Unpacking libcurl4-openssl-dev:arm64 (8.5.0-2ubuntu10.11) ...
+Selecting previously unselected package libdeflate-dev:arm64.
+Preparing to unpack .../09-libdeflate-dev_1.19-1build1.1_arm64.deb ...
+Unpacking libdeflate-dev:arm64 (1.19-1build1.1) ...
+Selecting previously unselected package libedit-dev:arm64.
+Preparing to unpack .../10-libedit-dev_3.1-20230828-1build1_arm64.deb ...
+Unpacking libedit-dev:arm64 (3.1-20230828-1build1) ...
+Selecting previously unselected package libjpeg-turbo8-dev:arm64.
+Preparing to unpack .../11-libjpeg-turbo8-dev_2.1.5-2ubuntu2_arm64.deb ...
+Unpacking libjpeg-turbo8-dev:arm64 (2.1.5-2ubuntu2) ...
+Selecting previously unselected package libjpeg8-dev:arm64.
+Preparing to unpack .../12-libjpeg8-dev_8c-2ubuntu11_arm64.deb ...
+Unpacking libjpeg8-dev:arm64 (8c-2ubuntu11) ...
+Selecting previously unselected package libjpeg-dev:arm64.
+Preparing to unpack .../13-libjpeg-dev_8c-2ubuntu11_arm64.deb ...
+Unpacking libjpeg-dev:arm64 (8c-2ubuntu11) ...
+Selecting previously unselected package liblerc-dev:arm64.
+Preparing to unpack .../14-liblerc-dev_4.0.0+ds-4ubuntu2_arm64.deb ...
+Unpacking liblerc-dev:arm64 (4.0.0+ds-4ubuntu2) ...
+Selecting previously unselected package libpng-dev:arm64.
+Preparing to unpack .../15-libpng-dev_1.6.43-5ubuntu0.6_arm64.deb ...
+Unpacking libpng-dev:arm64 (1.6.43-5ubuntu0.6) ...
+Selecting previously unselected package libslang2-dev:arm64.
+Preparing to unpack .../16-libslang2-dev_2.3.3-3build2_arm64.deb ...
+Unpacking libslang2-dev:arm64 (2.3.3-3build2) ...
+Selecting previously unselected package libnewt-dev:arm64.
+Preparing to unpack .../17-libnewt-dev_0.52.24-2ubuntu2_arm64.deb ...
+Unpacking libnewt-dev:arm64 (0.52.24-2ubuntu2) ...
+Selecting previously unselected package libodbccr2:arm64.
+Preparing to unpack .../18-libodbccr2_2.3.12-1ubuntu0.24.04.1_arm64.deb ...
+Unpacking libodbccr2:arm64 (2.3.12-1ubuntu0.24.04.1) ...
+Selecting previously unselected package unixodbc-common.
+Preparing to unpack .../19-unixodbc-common_2.3.12-1ubuntu0.24.04.1_all.deb ...
+Unpacking unixodbc-common (2.3.12-1ubuntu0.24.04.1) ...
+Selecting previously unselected package libodbcinst2:arm64.
+Preparing to unpack .../20-libodbcinst2_2.3.12-1ubuntu0.24.04.1_arm64.deb ...
+Unpacking libodbcinst2:arm64 (2.3.12-1ubuntu0.24.04.1) ...
+Selecting previously unselected package libogg-dev:arm64.
+Preparing to unpack .../21-libogg-dev_1.3.5-3build1_arm64.deb ...
+Unpacking libogg-dev:arm64 (1.3.5-3build1) ...
+Selecting previously unselected package libopus0:arm64.
+Preparing to unpack .../22-libopus0_1.4-1build1_arm64.deb ...
+Unpacking libopus0:arm64 (1.4-1build1) ...
+Selecting previously unselected package libopus-dev:arm64.
+Preparing to unpack .../23-libopus-dev_1.4-1build1_arm64.deb ...
+Unpacking libopus-dev:arm64 (1.4-1build1) ...
+Selecting previously unselected package libsharpyuv-dev:arm64.
+Preparing to unpack .../24-libsharpyuv-dev_1.3.2-0.4build3_arm64.deb ...
+Unpacking libsharpyuv-dev:arm64 (1.3.2-0.4build3) ...
+Selecting previously unselected package libspandsp2t64:arm64.
+Preparing to unpack .../25-libspandsp2t64_0.0.6+dfsg-2.1build1_arm64.deb ...
+Unpacking libspandsp2t64:arm64 (0.0.6+dfsg-2.1build1) ...
+Selecting previously unselected package libjbig-dev:arm64.
+Preparing to unpack .../26-libjbig-dev_2.1-6.1ubuntu2_arm64.deb ...
+Unpacking libjbig-dev:arm64 (2.1-6.1ubuntu2) ...
+Selecting previously unselected package liblzma-dev:arm64.
+Preparing to unpack .../27-liblzma-dev_5.6.1+really5.4.5-1ubuntu0.3_arm64.deb ...
+Unpacking liblzma-dev:arm64 (5.6.1+really5.4.5-1ubuntu0.3) ...
+Selecting previously unselected package libwebpdecoder3:arm64.
+Preparing to unpack .../28-libwebpdecoder3_1.3.2-0.4build3_arm64.deb ...
+Unpacking libwebpdecoder3:arm64 (1.3.2-0.4build3) ...
+Selecting previously unselected package libwebp-dev:arm64.
+Preparing to unpack .../29-libwebp-dev_1.3.2-0.4build3_arm64.deb ...
+Unpacking libwebp-dev:arm64 (1.3.2-0.4build3) ...
+Selecting previously unselected package libtiffxx6:arm64.
+Preparing to unpack .../30-libtiffxx6_4.5.1+git230720-4ubuntu2.5_arm64.deb ...
+Unpacking libtiffxx6:arm64 (4.5.1+git230720-4ubuntu2.5) ...
+Selecting previously unselected package libtiff-dev:arm64.
+Preparing to unpack .../31-libtiff-dev_4.5.1+git230720-4ubuntu2.5_arm64.deb ...
+Unpacking libtiff-dev:arm64 (4.5.1+git230720-4ubuntu2.5) ...
+Selecting previously unselected package libspandsp-dev:arm64.
+Preparing to unpack .../32-libspandsp-dev_0.0.6+dfsg-2.1build1_arm64.deb ...
+Unpacking libspandsp-dev:arm64 (0.0.6+dfsg-2.1build1) ...
+Selecting previously unselected package libspeex1:arm64.
+Preparing to unpack .../33-libspeex1_1.2.1-2ubuntu2.24.04.1_arm64.deb ...
+Unpacking libspeex1:arm64 (1.2.1-2ubuntu2.24.04.1) ...
+Selecting previously unselected package libspeex-dev:arm64.
+Preparing to unpack .../34-libspeex-dev_1.2.1-2ubuntu2.24.04.1_arm64.deb ...
+Unpacking libspeex-dev:arm64 (1.2.1-2ubuntu2.24.04.1) ...
+Selecting previously unselected package libspeexdsp1:arm64.
+Preparing to unpack .../35-libspeexdsp1_1.2.1-1ubuntu3_arm64.deb ...
+Unpacking libspeexdsp1:arm64 (1.2.1-1ubuntu3) ...
+Selecting previously unselected package libspeexdsp-dev:arm64.
+Preparing to unpack .../36-libspeexdsp-dev_1.2.1-1ubuntu3_arm64.deb ...
+Unpacking libspeexdsp-dev:arm64 (1.2.1-1ubuntu3) ...
+Selecting previously unselected package liburiparser1:arm64.
+Preparing to unpack .../37-liburiparser1_0.9.7+dfsg-2build1_arm64.deb ...
+Unpacking liburiparser1:arm64 (0.9.7+dfsg-2build1) ...
+Selecting previously unselected package liburiparser-dev.
+Preparing to unpack .../38-liburiparser-dev_0.9.7+dfsg-2build1_arm64.deb ...
+Unpacking liburiparser-dev (0.9.7+dfsg-2build1) ...
+Selecting previously unselected package libvorbisenc2:arm64.
+Preparing to unpack .../39-libvorbisenc2_1.3.7-1build3_arm64.deb ...
+Unpacking libvorbisenc2:arm64 (1.3.7-1build3) ...
+Selecting previously unselected package libvorbis-dev:arm64.
+Preparing to unpack .../40-libvorbis-dev_1.3.7-1build3_arm64.deb ...
+Unpacking libvorbis-dev:arm64 (1.3.7-1build3) ...
+Selecting previously unselected package libxslt1-dev:arm64.
+Preparing to unpack .../41-libxslt1-dev_1.1.39-0exp1ubuntu0.24.04.3_arm64.deb ...
+Unpacking libxslt1-dev:arm64 (1.1.39-0exp1ubuntu0.24.04.3) ...
+Selecting previously unselected package unixodbc-dev:arm64.
+Preparing to unpack .../42-unixodbc-dev_2.3.12-1ubuntu0.24.04.1_arm64.deb ...
+Unpacking unixodbc-dev:arm64 (2.3.12-1ubuntu0.24.04.1) ...
+Selecting previously unselected package uuid-dev:arm64.
+Preparing to unpack .../43-uuid-dev_2.39.3-9ubuntu6.5_arm64.deb ...
+Unpacking uuid-dev:arm64 (2.39.3-9ubuntu6.5) ...
+Setting up libjpeg-turbo8-dev:arm64 (2.1.5-2ubuntu2) ...
+Setting up libspeex1:arm64 (1.2.1-2ubuntu2.24.04.1) ...
+Setting up libxslt1-dev:arm64 (1.1.39-0exp1ubuntu0.24.04.3) ...
+Setting up wget (1.21.4-1ubuntu4.4) ...
+Setting up libsqlite3-0:arm64 (3.45.1-1ubuntu2.7) ...
+Setting up libpng-dev:arm64 (1.6.43-5ubuntu0.6) ...
+Setting up libjbig-dev:arm64 (2.1-6.1ubuntu2) ...
+Setting up libwebpdecoder3:arm64 (1.3.2-0.4build3) ...
+Setting up libogg-dev:arm64 (1.3.5-3build1) ...
+Setting up libsqlite3-dev:arm64 (3.45.1-1ubuntu2.7) ...
+Setting up libcurl4-openssl-dev:arm64 (8.5.0-2ubuntu10.11) ...
+Setting up uuid-dev:arm64 (2.39.3-9ubuntu6.5) ...
+Setting up libopus0:arm64 (1.4-1build1) ...
+Setting up libssl-dev:arm64 (3.0.13-0ubuntu3.12) ...
+Setting up libspeex-dev:arm64 (1.2.1-2ubuntu2.24.04.1) ...
+Setting up unixodbc-common (2.3.12-1ubuntu0.24.04.1) ...
+Setting up liblerc-dev:arm64 (4.0.0+ds-4ubuntu2) ...
+Setting up liblzma-dev:arm64 (5.6.1+really5.4.5-1ubuntu0.3) ...
+Setting up liburiparser1:arm64 (0.9.7+dfsg-2build1) ...
+Setting up libspandsp2t64:arm64 (0.0.6+dfsg-2.1build1) ...
+Setting up libspeexdsp1:arm64 (1.2.1-1ubuntu3) ...
+Setting up libmd-dev:arm64 (1.1.0-2build1.1) ...
+Setting up build-essential (12.10ubuntu1) ...
+Setting up libjpeg8-dev:arm64 (8c-2ubuntu11) ...
+Setting up libsharpyuv-dev:arm64 (1.3.2-0.4build3) ...
+Setting up openssl (3.0.13-0ubuntu3.12) ...
+Setting up libtiffxx6:arm64 (4.5.1+git230720-4ubuntu2.5) ...
+Setting up libdeflate-dev:arm64 (1.19-1build1.1) ...
+Setting up libbsd-dev:arm64 (0.12.1-1build1.1) ...
+Setting up sqlite3 (3.45.1-1ubuntu2.7) ...
+Setting up libvorbisenc2:arm64 (1.3.7-1build3) ...
+Setting up libodbccr2:arm64 (2.3.12-1ubuntu0.24.04.1) ...
+Setting up libvorbis-dev:arm64 (1.3.7-1build3) ...
+Setting up libslang2-dev:arm64 (2.3.3-3build2) ...
+Setting up libodbcinst2:arm64 (2.3.12-1ubuntu0.24.04.1) ...
+Setting up libspeexdsp-dev:arm64 (1.2.1-1ubuntu3) ...
+Setting up libjpeg-dev:arm64 (8c-2ubuntu11) ...
+Setting up libopus-dev:arm64 (1.4-1build1) ...
+Setting up liburiparser-dev (0.9.7+dfsg-2build1) ...
+Setting up libwebp-dev:arm64 (1.3.2-0.4build3) ...
+Setting up libtiff-dev:arm64 (4.5.1+git230720-4ubuntu2.5) ...
+Setting up libedit-dev:arm64 (3.1-20230828-1build1) ...
+Setting up libnewt-dev:arm64 (0.52.24-2ubuntu2) ...
+Setting up unixodbc-dev:arm64 (2.3.12-1ubuntu0.24.04.1) ...
+Setting up libspandsp-dev:arm64 (0.0.6+dfsg-2.1build1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Not building database; man-db/auto-update is not 'true'.
+Processing triggers for install-info (7.1-3build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.7) ...
+
+Running kernel seems to be up-to-date.
+
+Restarting services...
+ /etc/needrestart/restart.d/systemd-manager
+ systemctl restart packagekit.service php8.3-fpm.service systemd-journald.service systemd-networkd.service systemd-resolved.service systemd-timedated.service systemd-udevd.service udisks2.service
+
+Service restarts being deferred:
+ systemctl restart hosted-compute-agent.service
+ systemctl restart systemd-logind.service
+ systemctl restart walinuxagent.service
+
+No containers need to be restarted.
+
+User sessions running outdated binaries:
+ runner @ user manager service: systemd[1311]
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+
+[1/8] Downloading and verifying Asterisk 22.7.0
+--2026-08-06 09:47:44--  https://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-22.7.0.tar.gz
+Resolving downloads.asterisk.org (downloads.asterisk.org)... 165.22.184.19, 2604:a880:400:d0::14:9001
+Connecting to downloads.asterisk.org (downloads.asterisk.org)|165.22.184.19|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 26465168 (25M) [application/octet-stream]
+Saving to: ‘asterisk.tar.gz’
+
+     0K .......... .......... .......... .......... ..........  0% 1.90M 13s
+    50K .......... .......... .......... .......... ..........  0% 1.96M 13s
+   100K .......... .......... .......... .......... ..........  0% 1.93M 13s
+   150K .......... .......... .......... .......... ..........  0%  276M 10s
+   200K .......... .......... .......... .......... ..........  0% 1.94M 10s
+   250K .......... .......... .......... .......... ..........  1% 1.94M 11s
+   300K .......... .......... .......... .......... ..........  1%  366M 9s
+   350K .......... .......... .......... .......... ..........  1% 1.96M 10s
+   400K .......... .......... .......... .......... ..........  1%  150M 9s
+   450K .......... .......... .......... .......... ..........  1% 1.95M 9s
+   500K .......... .......... .......... .......... ..........  2%  216M 8s
+   550K .......... .......... .......... .......... ..........  2%  440M 7s
+   600K .......... .......... .......... .......... ..........  2%  615M 7s
+   650K .......... .......... .......... .......... ..........  2% 1.96M 7s
+   700K .......... .......... .......... .......... ..........  2%  185M 7s
+   750K .......... .......... .......... .......... ..........  3%  481M 6s
+   800K .......... .......... .......... .......... ..........  3% 1.95M 7s
+   850K .......... .......... .......... .......... ..........  3%  349M 6s
+   900K .......... .......... .......... .......... ..........  3%  731M 6s
+   950K .......... .......... .......... .......... ..........  3%  736M 6s
+  1000K .......... .......... .......... .......... ..........  4%  723M 5s
+  1050K .......... .......... .......... .......... ..........  4%  566M 5s
+  1100K .......... .......... .......... .......... ..........  4% 1.97M 5s
+  1150K .......... .......... .......... .......... ..........  4%  408M 5s
+  1200K .......... .......... .......... .......... ..........  4%  522M 5s
+  1250K .......... .......... .......... .......... ..........  5%  224M 5s
+  1300K .......... .......... .......... .......... ..........  5%  440M 5s
+  1350K .......... .......... .......... .......... ..........  5%  605M 4s
+  1400K .......... .......... .......... .......... ..........  5%  719M 4s
+  1450K .......... .......... .......... .......... ..........  5% 1.98M 5s
+  1500K .......... .......... .......... .......... ..........  5%  234M 4s
+  1550K .......... .......... .......... .......... ..........  6%  282M 4s
+  1600K .......... .......... .......... .......... ..........  6%  645M 4s
+  1650K .......... .......... .......... .......... ..........  6%  695M 4s
+  1700K .......... .......... .......... .......... ..........  6%  623M 4s
+  1750K .......... .......... .......... .......... ..........  6%  733M 4s
+  1800K .......... .......... .......... .......... ..........  7%  719M 4s
+  1850K .......... .......... .......... .......... ..........  7% 1.99M 4s
+  1900K .......... .......... .......... .......... ..........  7%  239M 4s
+  1950K .......... .......... .......... .......... ..........  7%  421M 4s
+  2000K .......... .......... .......... .......... ..........  7%  731M 4s
+  2050K .......... .......... .......... .......... ..........  8%  715M 3s
+  2100K .......... .......... .......... .......... ..........  8%  687M 3s
+  2150K .......... .......... .......... .......... ..........  8% 1.98M 4s
+  2200K .......... .......... .......... .......... ..........  8%  126M 3s
+  2250K .......... .......... .......... .......... ..........  8%  492M 3s
+  2300K .......... .......... .......... .......... ..........  9%  609M 3s
+  2350K .......... .......... .......... .......... ..........  9%  435M 3s
+  2400K .......... .......... .......... .......... ..........  9%  435M 3s
+  2450K .......... .......... .......... .......... ..........  9%  584M 3s
+  2500K .......... .......... .......... .......... ..........  9%  623M 3s
+  2550K .......... .......... .......... .......... .......... 10%  426M 3s
+  2600K .......... .......... .......... .......... .......... 10%  581M 3s
+  2650K .......... .......... .......... .......... .......... 10%  604M 3s
+  2700K .......... .......... .......... .......... .......... 10%  607M 3s
+  2750K .......... .......... .......... .......... .......... 10% 2.02M 3s
+  2800K .......... .......... .......... .......... .......... 11%  427M 3s
+  2850K .......... .......... .......... .......... .......... 11%  271M 3s
+  2900K .......... .......... .......... .......... .......... 11%  581M 3s
+  2950K .......... .......... .......... .......... .......... 11%  575M 3s
+  3000K .......... .......... .......... .......... .......... 11%  618M 3s
+  3050K .......... .......... .......... .......... .......... 11%  134M 3s
+  3100K .......... .......... .......... .......... .......... 12%  426M 3s
+  3150K .......... .......... .......... .......... .......... 12%  450M 3s
+  3200K .......... .......... .......... .......... .......... 12%  503M 2s
+  3250K .......... .......... .......... .......... .......... 12%  545M 2s
+  3300K .......... .......... .......... .......... .......... 12%  627M 2s
+  3350K .......... .......... .......... .......... .......... 13% 2.06M 3s
+  3400K .......... .......... .......... .......... .......... 13%  164M 2s
+  3450K .......... .......... .......... .......... .......... 13%  362M 2s
+  3500K .......... .......... .......... .......... .......... 13%  536M 2s
+  3550K .......... .......... .......... .......... .......... 13%  461M 2s
+  3600K .......... .......... .......... .......... .......... 14%  363M 2s
+  3650K .......... .......... .......... .......... .......... 14%  273M 2s
+  3700K .......... .......... .......... .......... .......... 14%  331M 2s
+  3750K .......... .......... .......... .......... .......... 14%  389M 2s
+  3800K .......... .......... .......... .......... .......... 14%  589M 2s
+  3850K .......... .......... .......... .......... .......... 15%  603M 2s
+  3900K .......... .......... .......... .......... .......... 15%  629M 2s
+  3950K .......... .......... .......... .......... .......... 15%  486M 2s
+  4000K .......... .......... .......... .......... .......... 15%  661M 2s
+  4050K .......... .......... .......... .......... .......... 15%  635M 2s
+  4100K .......... .......... .......... .......... .......... 16%  605M 2s
+  4150K .......... .......... .......... .......... .......... 16%  622M 2s
+  4200K .......... .......... .......... .......... .......... 16% 2.08M 2s
+  4250K .......... .......... .......... .......... .......... 16%  272M 2s
+  4300K .......... .......... .......... .......... .......... 16%  514M 2s
+  4350K .......... .......... .......... .......... .......... 17%  498M 2s
+  4400K .......... .......... .......... .......... .......... 17%  724M 2s
+  4450K .......... .......... .......... .......... .......... 17%  711M 2s
+  4500K .......... .......... .......... .......... .......... 17%  282M 2s
+  4550K .......... .......... .......... .......... .......... 17%  197M 2s
+  4600K .......... .......... .......... .......... .......... 17%  311M 2s
+  4650K .......... .......... .......... .......... .......... 18%  605M 2s
+  4700K .......... .......... .......... .......... .......... 18%  602M 2s
+  4750K .......... .......... .......... .......... .......... 18%  516M 2s
+  4800K .......... .......... .......... .......... .......... 18%  661M 2s
+  4850K .......... .......... .......... .......... .......... 18%  627M 2s
+  4900K .......... .......... .......... .......... .......... 19%  639M 2s
+  4950K .......... .......... .......... .......... .......... 19%  597M 2s
+  5000K .......... .......... .......... .......... .......... 19% 2.06M 2s
+  5050K .......... .......... .......... .......... .......... 19% 87.5M 2s
+  5100K .......... .......... .......... .......... .......... 19%  169M 2s
+  5150K .......... .......... .......... .......... .......... 20%  423M 2s
+  5200K .......... .......... .......... .......... .......... 20%  613M 2s
+  5250K .......... .......... .......... .......... .......... 20%  657M 2s
+  5300K .......... .......... .......... .......... .......... 20%  582M 2s
+  5350K .......... .......... .......... .......... .......... 20%  715M 2s
+  5400K .......... .......... .......... .......... .......... 21%  717M 2s
+  5450K .......... .......... .......... .......... .......... 21%  519M 2s
+  5500K .......... .......... .......... .......... .......... 21%  619M 2s
+  5550K .......... .......... .......... .......... .......... 21%  509M 2s
+  5600K .......... .......... .......... .......... .......... 21%  686M 2s
+  5650K .......... .......... .......... .......... .......... 22%  713M 2s
+  5700K .......... .......... .......... .......... .......... 22%  508M 2s
+  5750K .......... .......... .......... .......... .......... 22%  649M 1s
+  5800K .......... .......... .......... .......... .......... 22%  656M 1s
+  5850K .......... .......... .......... .......... .......... 22%  683M 1s
+  5900K .......... .......... .......... .......... .......... 23%  673M 1s
+  5950K .......... .......... .......... .......... .......... 23%  517M 1s
+  6000K .......... .......... .......... .......... .......... 23%  701M 1s
+  6050K .......... .......... .......... .......... .......... 23%  670M 1s
+  6100K .......... .......... .......... .......... .......... 23%  462M 1s
+  6150K .......... .......... .......... .......... .......... 23%  644M 1s
+  6200K .......... .......... .......... .......... .......... 24% 2.15M 1s
+  6250K .......... .......... .......... .......... .......... 24%  134M 1s
+  6300K .......... .......... .......... .......... .......... 24%  557M 1s
+  6350K .......... .......... .......... .......... .......... 24%  517M 1s
+  6400K .......... .......... .......... .......... .......... 24%  732M 1s
+  6450K .......... .......... .......... .......... .......... 25%  111M 1s
+  6500K .......... .......... .......... .......... .......... 25%  508M 1s
+  6550K .......... .......... .......... .......... .......... 25%  546M 1s
+  6600K .......... .......... .......... .......... .......... 25%  633M 1s
+  6650K .......... .......... .......... .......... .......... 25%  611M 1s
+  6700K .......... .......... .......... .......... .......... 26%  573M 1s
+  6750K .......... .......... .......... .......... .......... 26%  119M 1s
+  6800K .......... .......... .......... .......... .......... 26%  135M 1s
+  6850K .......... .......... .......... .......... .......... 26%  543M 1s
+  6900K .......... .......... .......... .......... .......... 26%  694M 1s
+  6950K .......... .......... .......... .......... .......... 27%  710M 1s
+  7000K .......... .......... .......... .......... .......... 27%  680M 1s
+  7050K .......... .......... .......... .......... .......... 27%  684M 1s
+  7100K .......... .......... .......... .......... .......... 27%  701M 1s
+  7150K .......... .......... .......... .......... .......... 27%  529M 1s
+  7200K .......... .......... .......... .......... .......... 28%  682M 1s
+  7250K .......... .......... .......... .......... .......... 28%  713M 1s
+  7300K .......... .......... .......... .......... .......... 28%  679M 1s
+  7350K .......... .......... .......... .......... .......... 28%  730M 1s
+  7400K .......... .......... .......... .......... .......... 28% 2.20M 1s
+  7450K .......... .......... .......... .......... .......... 29%  223M 1s
+  7500K .......... .......... .......... .......... .......... 29%  294M 1s
+  7550K .......... .......... .......... .......... .......... 29%  147M 1s
+  7600K .......... .......... .......... .......... .......... 29%  248M 1s
+  7650K .......... .......... .......... .......... .......... 29%  555M 1s
+  7700K .......... .......... .......... .......... .......... 29%  663M 1s
+  7750K .......... .......... .......... .......... .......... 30%  713M 1s
+  7800K .......... .......... .......... .......... .......... 30%  662M 1s
+  7850K .......... .......... .......... .......... .......... 30%  710M 1s
+  7900K .......... .......... .......... .......... .......... 30%  717M 1s
+  7950K .......... .......... .......... .......... .......... 30%  503M 1s
+  8000K .......... .......... .......... .......... .......... 31%  697M 1s
+  8050K .......... .......... .......... .......... .......... 31%  355M 1s
+  8100K .......... .......... .......... .......... .......... 31%  623M 1s
+  8150K .......... .......... .......... .......... .......... 31%  697M 1s
+  8200K .......... .......... .......... .......... .......... 31%  579M 1s
+  8250K .......... .......... .......... .......... .......... 32%  161M 1s
+  8300K .......... .......... .......... .......... .......... 32%  478M 1s
+  8350K .......... .......... .......... .......... .......... 32%  453M 1s
+  8400K .......... .......... .......... .......... .......... 32%  588M 1s
+  8450K .......... .......... .......... .......... .......... 32%  632M 1s
+  8500K .......... .......... .......... .......... .......... 33%  603M 1s
+  8550K .......... .......... .......... .......... .......... 33%  584M 1s
+  8600K .......... .......... .......... .......... .......... 33%  605M 1s
+  8650K .......... .......... .......... .......... .......... 33%  634M 1s
+  8700K .......... .......... .......... .......... .......... 33%  260M 1s
+  8750K .......... .......... .......... .......... .......... 34%  470M 1s
+  8800K .......... .......... .......... .......... .......... 34%  610M 1s
+  8850K .......... .......... .......... .......... .......... 34%  542M 1s
+  8900K .......... .......... .......... .......... .......... 34%  594M 1s
+  8950K .......... .......... .......... .......... .......... 34%  662M 1s
+  9000K .......... .......... .......... .......... .......... 35%  692M 1s
+  9050K .......... .......... .......... .......... .......... 35%  621M 1s
+  9100K .......... .......... .......... .......... .......... 35%  649M 1s
+  9150K .......... .......... .......... .......... .......... 35%  470M 1s
+  9200K .......... .......... .......... .......... .......... 35%  533M 1s
+  9250K .......... .......... .......... .......... .......... 35% 2.29M 1s
+  9300K .......... .......... .......... .......... .......... 36%  191M 1s
+  9350K .......... .......... .......... .......... .......... 36%  354M 1s
+  9400K .......... .......... .......... .......... .......... 36%  563M 1s
+  9450K .......... .......... .......... .......... .......... 36%  341M 1s
+  9500K .......... .......... .......... .......... .......... 36%  210M 1s
+  9550K .......... .......... .......... .......... .......... 37%  375M 1s
+  9600K .......... .......... .......... .......... .......... 37%  600M 1s
+  9650K .......... .......... .......... .......... .......... 37%  605M 1s
+  9700K .......... .......... .......... .......... .......... 37%  631M 1s
+  9750K .......... .......... .......... .......... .......... 37%  637M 1s
+  9800K .......... .......... .......... .......... .......... 38%  595M 1s
+  9850K .......... .......... .......... .......... .......... 38%  601M 1s
+  9900K .......... .......... .......... .......... .......... 38%  440M 1s
+  9950K .......... .......... .......... .......... .......... 38%  139M 1s
+ 10000K .......... .......... .......... .......... .......... 38%  229M 1s
+ 10050K .......... .......... .......... .......... .......... 39%  291M 1s
+ 10100K .......... .......... .......... .......... .......... 39%  584M 1s
+ 10150K .......... .......... .......... .......... .......... 39%  572M 1s
+ 10200K .......... .......... .......... .......... .......... 39%  635M 1s
+ 10250K .......... .......... .......... .......... .......... 39%  630M 1s
+ 10300K .......... .......... .......... .......... .......... 40%  459M 1s
+ 10350K .......... .......... .......... .......... .......... 40%  481M 1s
+ 10400K .......... .......... .......... .......... .......... 40%  632M 1s
+ 10450K .......... .......... .......... .......... .......... 40%  637M 1s
+ 10500K .......... .......... .......... .......... .......... 40%  629M 1s
+ 10550K .......... .......... .......... .......... .......... 41%  631M 1s
+ 10600K .......... .......... .......... .......... .......... 41%  637M 1s
+ 10650K .......... .......... .......... .......... .......... 41%  612M 1s
+ 10700K .......... .......... .......... .......... .......... 41%  606M 1s
+ 10750K .......... .......... .......... .......... .......... 41% 2.23M 1s
+ 10800K .......... .......... .......... .......... .......... 41%  217M 1s
+ 10850K .......... .......... .......... .......... .......... 42%  220M 1s
+ 10900K .......... .......... .......... .......... .......... 42%  244M 1s
+ 10950K .......... .......... .......... .......... .......... 42%  231M 1s
+ 11000K .......... .......... .......... .......... .......... 42%  340M 1s
+ 11050K .......... .......... .......... .......... .......... 42%  174M 1s
+ 11100K .......... .......... .......... .......... .......... 43%  124M 1s
+ 11150K .......... .......... .......... .......... .......... 43%  284M 1s
+ 11200K .......... .......... .......... .......... .......... 43%  694M 1s
+ 11250K .......... .......... .......... .......... .......... 43%  674M 1s
+ 11300K .......... .......... .......... .......... .......... 43%  584M 1s
+ 11350K .......... .......... .......... .......... .......... 44%  398M 1s
+ 11400K .......... .......... .......... .......... .......... 44%  468M 1s
+ 11450K .......... .......... .......... .......... .......... 44%  381M 1s
+ 11500K .......... .......... .......... .......... .......... 44%  221M 1s
+ 11550K .......... .......... .......... .......... .......... 44%  292M 1s
+ 11600K .......... .......... .......... .......... .......... 45%  382M 1s
+ 11650K .......... .......... .......... .......... .......... 45%  566M 1s
+ 11700K .......... .......... .......... .......... .......... 45%  568M 1s
+ 11750K .......... .......... .......... .......... .......... 45%  612M 1s
+ 11800K .......... .......... .......... .......... .......... 45%  618M 1s
+ 11850K .......... .......... .......... .......... .......... 46%  623M 1s
+ 11900K .......... .......... .......... .......... .......... 46%  459M 1s
+ 11950K .......... .......... .......... .......... .......... 46%  533M 1s
+ 12000K .......... .......... .......... .......... .......... 46%  670M 1s
+ 12050K .......... .......... .......... .......... .......... 46%  713M 1s
+ 12100K .......... .......... .......... .......... .......... 47%  705M 1s
+ 12150K .......... .......... .......... .......... .......... 47%  684M 1s
+ 12200K .......... .......... .......... .......... .......... 47%  706M 1s
+ 12250K .......... .......... .......... .......... .......... 47%  693M 1s
+ 12300K .......... .......... .......... .......... .......... 47%  689M 1s
+ 12350K .......... .......... .......... .......... .......... 47%  541M 1s
+ 12400K .......... .......... .......... .......... .......... 48%  685M 1s
+ 12450K .......... .......... .......... .......... .......... 48%  689M 1s
+ 12500K .......... .......... .......... .......... .......... 48%  675M 1s
+ 12550K .......... .......... .......... .......... .......... 48%  504M 1s
+ 12600K .......... .......... .......... .......... .......... 48%  680M 1s
+ 12650K .......... .......... .......... .......... .......... 49%  695M 1s
+ 12700K .......... .......... .......... .......... .......... 49%  688M 1s
+ 12750K .......... .......... .......... .......... .......... 49%  513M 1s
+ 12800K .......... .......... .......... .......... .......... 49%  711M 1s
+ 12850K .......... .......... .......... .......... .......... 49%  702M 1s
+ 12900K .......... .......... .......... .......... .......... 50%  657M 1s
+ 12950K .......... .......... .......... .......... .......... 50%  693M 1s
+ 13000K .......... .......... .......... .......... .......... 50%  717M 1s
+ 13050K .......... .......... .......... .......... .......... 50%  674M 1s
+ 13100K .......... .......... .......... .......... .......... 50%  726M 1s
+ 13150K .......... .......... .......... .......... .......... 51%  499M 1s
+ 13200K .......... .......... .......... .......... .......... 51%  281M 1s
+ 13250K .......... .......... .......... .......... .......... 51%  536M 1s
+ 13300K .......... .......... .......... .......... .......... 51%  579M 1s
+ 13350K .......... .......... .......... .......... .......... 51%  606M 0s
+ 13400K .......... .......... .......... .......... .......... 52%  597M 0s
+ 13450K .......... .......... .......... .......... .......... 52%  649M 0s
+ 13500K .......... .......... .......... .......... .......... 52%  420M 0s
+ 13550K .......... .......... .......... .......... .......... 52%  465M 0s
+ 13600K .......... .......... .......... .......... .......... 52%  612M 0s
+ 13650K .......... .......... .......... .......... .......... 53%  609M 0s
+ 13700K .......... .......... .......... .......... .......... 53% 2.61M 0s
+ 13750K .......... .......... .......... .......... .......... 53%  190M 0s
+ 13800K .......... .......... .......... .......... .......... 53%  288M 0s
+ 13850K .......... .......... .......... .......... .......... 53%  287M 0s
+ 13900K .......... .......... .......... .......... .......... 53%  247M 0s
+ 13950K .......... .......... .......... .......... .......... 54%  348M 0s
+ 14000K .......... .......... .......... .......... .......... 54%  330M 0s
+ 14050K .......... .......... .......... .......... .......... 54%  451M 0s
+ 14100K .......... .......... .......... .......... .......... 54%  560M 0s
+ 14150K .......... .......... .......... .......... .......... 54%  318M 0s
+ 14200K .......... .......... .......... .......... .......... 55%  603M 0s
+ 14250K .......... .......... .......... .......... .......... 55%  656M 0s
+ 14300K .......... .......... .......... .......... .......... 55%  520M 0s
+ 14350K .......... .......... .......... .......... .......... 55%  112M 0s
+ 14400K .......... .......... .......... .......... .......... 55%  458M 0s
+ 14450K .......... .......... .......... .......... .......... 56%  202M 0s
+ 14500K .......... .......... .......... .......... .......... 56%  453M 0s
+ 14550K .......... .......... .......... .......... .......... 56%  544M 0s
+ 14600K .......... .......... .......... .......... .......... 56%  321M 0s
+ 14650K .......... .......... .......... .......... .......... 56%  303M 0s
+ 14700K .......... .......... .......... .......... .......... 57%  392M 0s
+ 14750K .......... .......... .......... .......... .......... 57%  484M 0s
+ 14800K .......... .......... .......... .......... .......... 57%  670M 0s
+ 14850K .......... .......... .......... .......... .......... 57%  487M 0s
+ 14900K .......... .......... .......... .......... .......... 57%  727M 0s
+ 14950K .......... .......... .......... .......... .......... 58%  691M 0s
+ 15000K .......... .......... .......... .......... .......... 58%  686M 0s
+ 15050K .......... .......... .......... .......... .......... 58%  738M 0s
+ 15100K .......... .......... .......... .......... .......... 58%  742M 0s
+ 15150K .......... .......... .......... .......... .......... 58%  552M 0s
+ 15200K .......... .......... .......... .......... .......... 59%  738M 0s
+ 15250K .......... .......... .......... .......... .......... 59%  683M 0s
+ 15300K .......... .......... .......... .......... .......... 59%  718M 0s
+ 15350K .......... .......... .......... .......... .......... 59%  676M 0s
+ 15400K .......... .......... .......... .......... .......... 59%  715M 0s
+ 15450K .......... .......... .......... .......... .......... 59% 21.1M 0s
+ 15500K .......... .......... .......... .......... .......... 60%  183M 0s
+ 15550K .......... .......... .......... .......... .......... 60%  208M 0s
+ 15600K .......... .......... .......... .......... .......... 60%  227M 0s
+ 15650K .......... .......... .......... .......... .......... 60%  281M 0s
+ 15700K .......... .......... .......... .......... .......... 60%  296M 0s
+ 15750K .......... .......... .......... .......... .......... 61%  652M 0s
+ 15800K .......... .......... .......... .......... .......... 61%  718M 0s
+ 15850K .......... .......... .......... .......... .......... 61%  659M 0s
+ 15900K .......... .......... .......... .......... .......... 61%  667M 0s
+ 15950K .......... .......... .......... .......... .......... 61%  539M 0s
+ 16000K .......... .......... .......... .......... .......... 62%  672M 0s
+ 16050K .......... .......... .......... .......... .......... 62%  689M 0s
+ 16100K .......... .......... .......... .......... .......... 62%  673M 0s
+ 16150K .......... .......... .......... .......... .......... 62%  702M 0s
+ 16200K .......... .......... .......... .......... .......... 62%  674M 0s
+ 16250K .......... .......... .......... .......... .......... 63%  393M 0s
+ 16300K .......... .......... .......... .......... .......... 63%  514M 0s
+ 16350K .......... .......... .......... .......... .......... 63%  493M 0s
+ 16400K .......... .......... .......... .......... .......... 63%  718M 0s
+ 16450K .......... .......... .......... .......... .......... 63%  712M 0s
+ 16500K .......... .......... .......... .......... .......... 64%  687M 0s
+ 16550K .......... .......... .......... .......... .......... 64%  717M 0s
+ 16600K .......... .......... .......... .......... .......... 64%  703M 0s
+ 16650K .......... .......... .......... .......... .......... 64%  712M 0s
+ 16700K .......... .......... .......... .......... .......... 64%  728M 0s
+ 16750K .......... .......... .......... .......... .......... 65%  544M 0s
+ 16800K .......... .......... .......... .......... .......... 65%  720M 0s
+ 16850K .......... .......... .......... .......... .......... 65%  670M 0s
+ 16900K .......... .......... .......... .......... .......... 65%  476M 0s
+ 16950K .......... .......... .......... .......... .......... 65%  620M 0s
+ 17000K .......... .......... .......... .......... .......... 65%  710M 0s
+ 17050K .......... .......... .......... .......... .......... 66%  772M 0s
+ 17100K .......... .......... .......... .......... .......... 66%  741M 0s
+ 17150K .......... .......... .......... .......... .......... 66% 3.12M 0s
+ 17200K .......... .......... .......... .......... .......... 66%  204M 0s
+ 17250K .......... .......... .......... .......... .......... 66%  233M 0s
+ 17300K .......... .......... .......... .......... .......... 67%  493M 0s
+ 17350K .......... .......... .......... .......... .......... 67%  610M 0s
+ 17400K .......... .......... .......... .......... .......... 67%  746M 0s
+ 17450K .......... .......... .......... .......... .......... 67%  703M 0s
+ 17500K .......... .......... .......... .......... .......... 67%  686M 0s
+ 17550K .......... .......... .......... .......... .......... 68%  565M 0s
+ 17600K .......... .......... .......... .......... .......... 68%  539M 0s
+ 17650K .......... .......... .......... .......... .......... 68%  569M 0s
+ 17700K .......... .......... .......... .......... .......... 68%  698M 0s
+ 17750K .......... .......... .......... .......... .......... 68% 39.8M 0s
+ 17800K .......... .......... .......... .......... .......... 69%  180M 0s
+ 17850K .......... .......... .......... .......... .......... 69%  391M 0s
+ 17900K .......... .......... .......... .......... .......... 69%  396M 0s
+ 17950K .......... .......... .......... .......... .......... 69%  159M 0s
+ 18000K .......... .......... .......... .......... .......... 69%  379M 0s
+ 18050K .......... .......... .......... .......... .......... 70%  371M 0s
+ 18100K .......... .......... .......... .......... .......... 70%  476M 0s
+ 18150K .......... .......... .......... .......... .......... 70%  408M 0s
+ 18200K .......... .......... .......... .......... .......... 70%  500M 0s
+ 18250K .......... .......... .......... .......... .......... 70%  351M 0s
+ 18300K .......... .......... .......... .......... .......... 71%  338M 0s
+ 18350K .......... .......... .......... .......... .......... 71%  357M 0s
+ 18400K .......... .......... .......... .......... .......... 71%  406M 0s
+ 18450K .......... .......... .......... .......... .......... 71%  447M 0s
+ 18500K .......... .......... .......... .......... .......... 71%  403M 0s
+ 18550K .......... .......... .......... .......... .......... 71%  477M 0s
+ 18600K .......... .......... .......... .......... .......... 72%  563M 0s
+ 18650K .......... .......... .......... .......... .......... 72%  684M 0s
+ 18700K .......... .......... .......... .......... .......... 72%  245M 0s
+ 18750K .......... .......... .......... .......... .......... 72%  218M 0s
+ 18800K .......... .......... .......... .......... .......... 72%  234M 0s
+ 18850K .......... .......... .......... .......... .......... 73%  368M 0s
+ 18900K .......... .......... .......... .......... .......... 73%  599M 0s
+ 18950K .......... .......... .......... .......... .......... 73%  601M 0s
+ 19000K .......... .......... .......... .......... .......... 73%  629M 0s
+ 19050K .......... .......... .......... .......... .......... 73%  666M 0s
+ 19100K .......... .......... .......... .......... .......... 74%  514M 0s
+ 19150K .......... .......... .......... .......... .......... 74%  445M 0s
+ 19200K .......... .......... .......... .......... .......... 74%  592M 0s
+ 19250K .......... .......... .......... .......... .......... 74%  643M 0s
+ 19300K .......... .......... .......... .......... .......... 74%  623M 0s
+ 19350K .......... .......... .......... .......... .......... 75%  599M 0s
+ 19400K .......... .......... .......... .......... .......... 75% 45.4M 0s
+ 19450K .......... .......... .......... .......... .......... 75%  264M 0s
+ 19500K .......... .......... .......... .......... .......... 75%  339M 0s
+ 19550K .......... .......... .......... .......... .......... 75%  278M 0s
+ 19600K .......... .......... .......... .......... .......... 76%  346M 0s
+ 19650K .......... .......... .......... .......... .......... 76%  362M 0s
+ 19700K .......... .......... .......... .......... .......... 76%  417M 0s
+ 19750K .......... .......... .......... .......... .......... 76%  486M 0s
+ 19800K .......... .......... .......... .......... .......... 76%  509M 0s
+ 19850K .......... .......... .......... .......... .......... 76%  396M 0s
+ 19900K .......... .......... .......... .......... .......... 77%  553M 0s
+ 19950K .......... .......... .......... .......... .......... 77%  301M 0s
+ 20000K .......... .......... .......... .......... .......... 77%  324M 0s
+ 20050K .......... .......... .......... .......... .......... 77%  396M 0s
+ 20100K .......... .......... .......... .......... .......... 77%  339M 0s
+ 20150K .......... .......... .......... .......... .......... 78%  511M 0s
+ 20200K .......... .......... .......... .......... .......... 78%  372M 0s
+ 20250K .......... .......... .......... .......... .......... 78%  409M 0s
+ 20300K .......... .......... .......... .......... .......... 78%  438M 0s
+ 20350K .......... .......... .......... .......... .......... 78%  119M 0s
+ 20400K .......... .......... .......... .......... .......... 79%  519M 0s
+ 20450K .......... .......... .......... .......... .......... 79%  649M 0s
+ 20500K .......... .......... .......... .......... .......... 79%  696M 0s
+ 20550K .......... .......... .......... .......... .......... 79%  675M 0s
+ 20600K .......... .......... .......... .......... .......... 79%  665M 0s
+ 20650K .......... .......... .......... .......... .......... 80%  707M 0s
+ 20700K .......... .......... .......... .......... .......... 80%  605M 0s
+ 20750K .......... .......... .......... .......... .......... 80%  520M 0s
+ 20800K .......... .......... .......... .......... .......... 80%  684M 0s
+ 20850K .......... .......... .......... .......... .......... 80%  525M 0s
+ 20900K .......... .......... .......... .......... .......... 81%  696M 0s
+ 20950K .......... .......... .......... .......... .......... 81%  686M 0s
+ 21000K .......... .......... .......... .......... .......... 81% 2.72M 0s
+ 21050K .......... .......... .......... .......... .......... 81%  150M 0s
+ 21100K .......... .......... .......... .......... .......... 81%  201M 0s
+ 21150K .......... .......... .......... .......... .......... 82%  417M 0s
+ 21200K .......... .......... .......... .......... .......... 82%  229M 0s
+ 21250K .......... .......... .......... .......... .......... 82%  290M 0s
+ 21300K .......... .......... .......... .......... .......... 82%  247M 0s
+ 21350K .......... .......... .......... .......... .......... 82%  286M 0s
+ 21400K .......... .......... .......... .......... .......... 82%  307M 0s
+ 21450K .......... .......... .......... .......... .......... 83%  285M 0s
+ 21500K .......... .......... .......... .......... .......... 83%  230M 0s
+ 21550K .......... .......... .......... .......... .......... 83%  220M 0s
+ 21600K .......... .......... .......... .......... .......... 83%  301M 0s
+ 21650K .......... .......... .......... .......... .......... 83%  270M 0s
+ 21700K .......... .......... .......... .......... .......... 84%  293M 0s
+ 21750K .......... .......... .......... .......... .......... 84%  283M 0s
+ 21800K .......... .......... .......... .......... .......... 84%  221M 0s
+ 21850K .......... .......... .......... .......... .......... 84%  224M 0s
+ 21900K .......... .......... .......... .......... .......... 84%  333M 0s
+ 21950K .......... .......... .......... .......... .......... 85%  259M 0s
+ 22000K .......... .......... .......... .......... .......... 85%  565M 0s
+ 22050K .......... .......... .......... .......... .......... 85%  678M 0s
+ 22100K .......... .......... .......... .......... .......... 85%  305M 0s
+ 22150K .......... .......... .......... .......... .......... 85%  287M 0s
+ 22200K .......... .......... .......... .......... .......... 86%  267M 0s
+ 22250K .......... .......... .......... .......... .......... 86%  406M 0s
+ 22300K .......... .......... .......... .......... .......... 86%  365M 0s
+ 22350K .......... .......... .......... .......... .......... 86%  471M 0s
+ 22400K .......... .......... .......... .......... .......... 86%  296M 0s
+ 22450K .......... .......... .......... .......... .......... 87%  175M 0s
+ 22500K .......... .......... .......... .......... .......... 87%  314M 0s
+ 22550K .......... .......... .......... .......... .......... 87%  490M 0s
+ 22600K .......... .......... .......... .......... .......... 87%  361M 0s
+ 22650K .......... .......... .......... .......... .......... 87%  355M 0s
+ 22700K .......... .......... .......... .......... .......... 88%  336M 0s
+ 22750K .......... .......... .......... .......... .......... 88% 91.0M 0s
+ 22800K .......... .......... .......... .......... .......... 88%  299M 0s
+ 22850K .......... .......... .......... .......... .......... 88%  315M 0s
+ 22900K .......... .......... .......... .......... .......... 88%  183M 0s
+ 22950K .......... .......... .......... .......... .......... 88%  385M 0s
+ 23000K .......... .......... .......... .......... .......... 89%  603M 0s
+ 23050K .......... .......... .......... .......... .......... 89%  604M 0s
+ 23100K .......... .......... .......... .......... .......... 89%  642M 0s
+ 23150K .......... .......... .......... .......... .......... 89%  481M 0s
+ 23200K .......... .......... .......... .......... .......... 89%  616M 0s
+ 23250K .......... .......... .......... .......... .......... 90%  648M 0s
+ 23300K .......... .......... .......... .......... .......... 90%  596M 0s
+ 23350K .......... .......... .......... .......... .......... 90%  651M 0s
+ 23400K .......... .......... .......... .......... .......... 90%  710M 0s
+ 23450K .......... .......... .......... .......... .......... 90%  571M 0s
+ 23500K .......... .......... .......... .......... .......... 91%  672M 0s
+ 23550K .......... .......... .......... .......... .......... 91%  513M 0s
+ 23600K .......... .......... .......... .......... .......... 91%  716M 0s
+ 23650K .......... .......... .......... .......... .......... 91%  700M 0s
+ 23700K .......... .......... .......... .......... .......... 91%  676M 0s
+ 23750K .......... .......... .......... .......... .......... 92%  710M 0s
+ 23800K .......... .......... .......... .......... .......... 92%  681M 0s
+ 23850K .......... .......... .......... .......... .......... 92%  690M 0s
+ 23900K .......... .......... .......... .......... .......... 92%  711M 0s
+ 23950K .......... .......... .......... .......... .......... 92%  507M 0s
+ 24000K .......... .......... .......... .......... .......... 93%  688M 0s
+ 24050K .......... .......... .......... .......... .......... 93%  690M 0s
+ 24100K .......... .......... .......... .......... .......... 93%  724M 0s
+ 24150K .......... .......... .......... .......... .......... 93%  445M 0s
+ 24200K .......... .......... .......... .......... .......... 93%  622M 0s
+ 24250K .......... .......... .......... .......... .......... 94%  587M 0s
+ 24300K .......... .......... .......... .......... .......... 94%  568M 0s
+ 24350K .......... .......... .......... .......... .......... 94%  459M 0s
+ 24400K .......... .......... .......... .......... .......... 94%  589M 0s
+ 24450K .......... .......... .......... .......... .......... 94%  592M 0s
+ 24500K .......... .......... .......... .......... .......... 94%  577M 0s
+ 24550K .......... .......... .......... .......... .......... 95%  587M 0s
+ 24600K .......... .......... .......... .......... .......... 95%  652M 0s
+ 24650K .......... .......... .......... .......... .......... 95%  683M 0s
+ 24700K .......... .......... .......... .......... .......... 95%  415M 0s
+ 24750K .......... .......... .......... .......... .......... 95%  410M 0s
+ 24800K .......... .......... .......... .......... .......... 96% 2.75M 0s
+ 24850K .......... .......... .......... .......... .......... 96%  208M 0s
+ 24900K .......... .......... .......... .......... .......... 96%  353M 0s
+ 24950K .......... .......... .......... .......... .......... 96%  217M 0s
+ 25000K .......... .......... .......... .......... .......... 96%  313M 0s
+ 25050K .......... .......... .......... .......... .......... 97%  399M 0s
+ 25100K .......... .......... .......... .......... .......... 97%  579M 0s
+ 25150K .......... .......... .......... .......... .......... 97%  470M 0s
+ 25200K .......... .......... .......... .......... .......... 97%  497M 0s
+ 25250K .......... .......... .......... .......... .......... 97%  503M 0s
+ 25300K .......... .......... .......... .......... .......... 98%  112M 0s
+ 25350K .......... .......... .......... .......... .......... 98%  442M 0s
+ 25400K .......... .......... .......... .......... .......... 98%  652M 0s
+ 25450K .......... .......... .......... .......... .......... 98%  699M 0s
+ 25500K .......... .......... .......... .......... .......... 98%  712M 0s
+ 25550K .......... .......... .......... .......... .......... 99%  391M 0s
+ 25600K .......... .......... .......... .......... .......... 99%  640M 0s
+ 25650K .......... .......... .......... .......... .......... 99%  692M 0s
+ 25700K .......... .......... .......... .......... .......... 99%  709M 0s
+ 25750K .......... .......... .......... .......... .......... 99%  713M 0s
+ 25800K .......... .......... .......... .......... ....      100%  691M=0.6s
+
+2026-08-06 09:47:45 (39.4 MB/s) - ‘asterisk.tar.gz’ saved [26465168/26465168]
+
+asterisk.tar.gz: OK
+
+[2/8] Configuring native ARM64 build
+checking build system type... aarch64-unknown-linux-gnu
+checking host system type... aarch64-unknown-linux-gnu
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for wchar.h... yes
+checking for minix/config.h... no
+checking for sys/param.h... yes
+checking for sys/select.h... yes
+checking for sys/socket.h... yes
+checking for utime.h... yes
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking whether char is unsigned... yes
+checking for uname... /usr/bin/uname
+checking for g++... g++
+checking whether the compiler supports GNU C++... yes
+checking whether g++ accepts -g... yes
+checking for g++ option to enable C++11 features... none needed
+checking how to run the C preprocessor... gcc -E
+checking how to run the C++ preprocessor... g++ -E
+checking whether g++ supports C++11 features by default... yes
+checking whether g++ supports C++14 features by default... yes
+checking whether g++ supports C++17 features by default... yes
+checking whether g++ supports C++20 features by default... no
+checking whether g++ supports C++20 features with -std=gnu++20... yes
+checking whether g++ supports C++23 features by default... no
+checking whether g++ supports C++23 features with -std=gnu++23... no
+checking whether g++ supports C++23 features with -std=c++23... no
+checking whether g++ supports C++23 features with +std=c++23... no
+checking whether g++ supports C++23 features with -h std=c++23... no
+checking whether g++ supports C++23 features with -std:c++23... no
+configure: No compiler with C++23 support was found
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for egrep... grep -E
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for gawk... gawk
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether ln -s works... yes
+checking for ranlib... ranlib
+checking for GNU make... make
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for strip... strip
+checking for ar... ar
+checking for bison... /usr/bin/bison
+checking for cmp... /usr/bin/cmp
+checking for cat... /usr/bin/cat
+checking for cut... /usr/bin/cut
+checking for flex... /usr/bin/flex
+checking for grep... (cached) /usr/bin/grep
+checking for python2.7... no
+checking for python2... no
+checking for python... /usr/bin/python
+checking for find... /usr/bin/find
+checking for basename... /usr/bin/basename
+checking for dirname... /usr/bin/dirname
+checking for sh... /bin/bash
+checking for ln... /usr/bin/ln
+checking for doxygen... :
+checking for dot... :
+checking for wget... /usr/bin/wget
+checking for curl... /usr/bin/curl
+checking for xmllint... :
+checking for xmlstarlet... no
+checking for xml... no
+checking for bash... /bin/bash
+checking for git... /usr/bin/git
+checking for alembic... :
+checking for bzip2... /usr/bin/bzip2
+checking for tar... /usr/bin/tar
+checking for patch... /usr/bin/patch
+checking for sed... (cached) /usr/bin/sed
+checking for nm... /usr/bin/nm
+checking for realpath... /usr/bin/realpath
+checking for ldconfig... /usr/sbin/ldconfig
+checking for sha1sum... /usr/bin/sha1sum
+checking for openssl... /usr/bin/openssl
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for bison that supports parse-param... /usr/bin/bison
+checking for soxmix... no
+checking for md5... no
+checking for md5sum... md5sum
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for egrep -e... (cached) /usr/bin/grep -E
+checking whether gcc is Clang... no
+checking whether pthreads work with "-pthread" and "-lpthread"... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking whether more special flags are required for pthreads... no
+checking for PTHREAD_PRIO_INHERIT... yes
+checking for RAII support... checking for gcc -fnested-functions... no
+checking for clang strsep/strcmp optimization... no
+configure: checking OPENSSL with pkg-config
+configure: checking whether system openssl > 1.1.0
+checking for openssl >= 1.1.0... yes
+checking for embedded jansson (may have to download)... configuring
+[jansson]  Downloading https://raw.githubusercontent.com/asterisk/third-party/master/jansson/2.14.1/jansson-2.14.1.tar.bz2 to /tmp/jansson-2.14.1.tar.bz2
+[jansson]  Verifying /tmp/jansson-2.14.1.tar.bz2
+[jansson]  Verify successful
+[jansson]  Verifying /tmp/jansson-2.14.1.tar.bz2
+[jansson]  Verify successful
+[jansson]  Unpacking /tmp/jansson-2.14.1.tar.bz2
+[jansson]  Applying patches /var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/third-party/jansson/patches /var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/third-party/jansson/source
+No patches in /var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/third-party/jansson/patches
+[jansson]  Rebuilding
+[jansson]  Configuring
+checking for bundled jansson... yes
+checking for embedded pjproject (may have to download)... configuring
+[pjproject]  Downloading https://raw.githubusercontent.com/asterisk/third-party/master/pjproject/2.15.1/pjproject-2.15.1.tar.bz2 to /tmp/pjproject-2.15.1.tar.bz2
+[pjproject]  Verifying /tmp/pjproject-2.15.1.tar.bz2
+[pjproject]  Verify successful
+[pjproject]  Verifying /tmp/pjproject-2.15.1.tar.bz2
+[pjproject]  Verify successful
+[pjproject]  Unpacking /tmp/pjproject-2.15.1.tar.bz2
+[pjproject]  Applying patches /var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/third-party/pjproject/patches /var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/third-party/pjproject/source
+[pjproject]  Applying user.mak
+[pjproject]  Rebuilding
+[pjproject]  Applying custom include file patches/asterisk_malloc_debug.h
+[pjproject]  Applying custom include file patches/config_site.h
+[pjproject]  Configuring with --with-ssl --prefix=/opt/pjproject --disable-speex-codec --disable-speex-aec --disable-bcg729 --disable-gsm-codec --disable-ilbc-codec --disable-l16-codec --disable-g722-codec --disable-g7221-codec --disable-opencore-amr --disable-silk --disable-opus --disable-video --disable-v4l2 --disable-sound --disable-ext-sound --disable-sdl --disable-libyuv --disable-ffmpeg --disable-openh264 --disable-ipp --disable-libwebrtc --disable-libsrtp --disable-upnp --without-external-pa --without-external-srtp --disable-resample --disable-g711-codec --enable-epoll
+checking for bundled pjproject... yes
+checking for gawk... (cached) gawk
+checking for curl-config... /usr/bin/curl-config
+checking for the version of libcurl... 8.5.0
+checking for libcurl >= version 7.10.1... yes
+checking whether libcurl is usable... yes
+checking for curl_free... yes
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for sys/types.h... (cached) yes
+checking for netinet/in.h... yes
+checking for arpa/nameser.h... yes
+checking for netdb.h... yes
+checking for resolv.h... yes
+checking for arpa/nameser.h... (cached) yes
+checking for assert.h... yes
+checking for ctype.h... yes
+checking for dlfcn.h... yes
+checking for errno.h... yes
+checking for fcntl.h... yes
+checking for float.h... yes
+checking for grp.h... yes
+checking for inttypes.h... (cached) yes
+checking for limits.h... yes
+checking for locale.h... yes
+checking for math.h... yes
+checking for pwd.h... yes
+checking for netinet/in.h... (cached) yes
+checking for regex.h... yes
+checking for sched.h... yes
+checking for stdarg.h... yes
+checking for stdint.h... (cached) yes
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for syslog.h... yes
+checking for sys/file.h... yes
+checking for sys/ioctl.h... yes
+checking for sys/param.h... (cached) yes
+checking for sys/resource.h... yes
+checking for sys/socket.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/time.h... yes
+checking for sys/types.h... (cached) yes
+checking for sys/un.h... yes
+checking for termios.h... yes
+checking for time.h... yes
+checking for unistd.h... (cached) yes
+checking for arpa/inet.h... yes
+checking for libintl.h... yes
+checking for malloc.h... yes
+checking for netdb.h... (cached) yes
+checking for stddef.h... yes
+checking for strings.h... (cached) yes
+checking for sys/event.h... no
+checking for utime.h... (cached) yes
+checking for libedit... yes
+checking for Testing for libedit unicode support... yes
+checking for uuid_generate_random in -luuid... yes
+checking for uuid/uuid.h... yes
+checking for libjwt >= 1.15.3... no
+checking for clock_gettime in -lrt... yes
+checking for libxml-2.0... yes
+checking for uriParseUriA in -luriparser... yes
+checking for uriparser/Uri.h... yes
+checking for xsltLoadStylesheetPI in -lxslt... yes
+checking for libxslt/xsltInternals.h... yes
+checking for xsltCleanupGlobals in -lxslt... yes
+checking for libxslt/xsltInternals.h... (cached) yes
+checking for xlocale.h... no
+checking for winsock.h... no
+checking for winsock2.h... no
+checking for sys/poll.h... yes
+checking for gcc option to enable large file support... none needed
+checking for _Bool... yes
+checking for stdbool.h that conforms to C99 or later... yes
+checking for an ANSI C-conforming const... yes
+checking for uid_t... yes
+checking for gid_t... yes
+checking for inline... inline
+checking for long double with more range or precision than double... yes
+checking for mode_t... yes
+checking for off_t... yes
+checking for pid_t... yes
+checking for size_t... (cached) yes
+checking for struct stat.st_blksize... yes
+checking for struct ucred.uid... yes
+checking for struct ucred.cr_uid... no
+checking for struct sockpeercred.uid... no
+checking for struct ifreq.ifr_ifru.ifru_hwaddr... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for working volatile... yes
+checking for ptrdiff_t... yes
+checking for struct stat.st_mtim... yes
+checking for struct stat.st_mtimensec... no
+checking for struct stat.st_mtimespec... no
+checking for struct sockaddr_in6.sin6_len... no
+checking for struct sockaddr_in.sin_len... no
+checking for working chown... yes
+checking whether closedir returns void... no
+checking for error_at_line... yes
+checking for vfork.h... no
+checking for fork... yes
+checking for vfork... yes
+checking for working fork... yes
+checking for working vfork... (cached) yes
+checking for declarations of fseeko and ftello... yes
+checking for working memcmp... yes
+checking for getpagesize... yes
+checking for vprintf... yes
+checking for working mmap... yes
+checking types of arguments for select... int,fd_set *,struct timeval *
+checking whether lstat correctly handles trailing slash... yes
+checking whether stat accepts an empty string... no
+checking for working strcoll... yes
+checking for strftime... yes
+checking for working strnlen... yes
+checking for working strtod... yes
+checking whether utime accepts a null argument... yes
+checking for asprintf... yes
+checking for atexit... yes
+checking for closefrom... yes
+checking for dup2... yes
+checking for eaccess... yes
+checking for endpwent... yes
+checking for euidaccess... yes
+checking for ffsll... yes
+checking for ftruncate... yes
+checking for getcwd... yes
+checking for gethostbyname... yes
+checking for gethostname... yes
+checking for getloadavg... yes
+checking for gettimeofday... yes
+checking for glob... yes
+checking for ioperm... no
+checking for inet_ntoa... yes
+checking for isascii... yes
+checking for memchr... yes
+checking for memmove... yes
+checking for memset... yes
+checking for mkdir... yes
+checking for mkdtemp... yes
+checking for munmap... yes
+checking for newlocale... yes
+checking for pipe2... yes
+checking for ppoll... yes
+checking for putenv... yes
+checking for re_comp... yes
+checking for regcomp... yes
+checking for select... yes
+checking for setenv... yes
+checking for socket... yes
+checking for strcasecmp... yes
+checking for strcasestr... yes
+checking for strchr... yes
+checking for strcspn... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strlcat... yes
+checking for strlcpy... yes
+checking for strncasecmp... yes
+checking for strndup... yes
+checking for strnlen... yes
+checking for strrchr... yes
+checking for strsep... yes
+checking for strspn... yes
+checking for strstr... yes
+checking for strtod... (cached) yes
+checking for strtol... yes
+checking for strtold... yes
+checking for strtoq... yes
+checking for unsetenv... yes
+checking for uselocale... yes
+checking for utime... yes
+checking for vasprintf... yes
+checking for getpeereid... no
+checking for sysctl... no
+checking for swapctl... no
+checking for malloc_trim... yes
+checking for htonll... no
+checking for ntohll... no
+checking for sqrt in -lm... yes
+checking for exp2... yes
+checking for log2... yes
+checking for exp10... yes
+checking for log10... yes
+checking for sin... yes
+checking for cos... yes
+checking for tan... yes
+checking for asin... yes
+checking for acos... yes
+checking for atan... yes
+checking for atan2... yes
+checking for pow... yes
+checking for rint... yes
+checking for exp... yes
+checking for log... yes
+checking for remainder... yes
+checking for fmod... yes
+checking for round... yes
+checking for roundf... yes
+checking for trunc... yes
+checking for floor... yes
+checking for ceil... yes
+checking for exp2l... yes
+checking for log2l... yes
+checking for exp10l... yes
+checking for log10l... yes
+checking for sinl... yes
+checking for cosl... yes
+checking for tanl... yes
+checking for asinl... yes
+checking for acosl... yes
+checking for atanl... yes
+checking for atan2l... yes
+checking for powl... yes
+checking for sqrtl... yes
+checking for rintl... yes
+checking for expl... yes
+checking for logl... yes
+checking for remainderl... yes
+checking for fmodl... yes
+checking for roundl... yes
+checking for truncl... yes
+checking for floorl... yes
+checking for ceill... yes
+checking for LLONG_MAX in limits.h... yes
+checking for timersub in time.h... yes
+checking for a version of GNU ld that supports the --dynamic-list flag... yes
+checking for sys/poll.h... (cached) yes
+checking for inet_aton... yes
+checking for IP_PKTINFO... yes
+checking for gcc options needed to detect all undeclared functions... none needed
+checking whether gethostbyname_r is declared... yes
+checking for library containing gethostbyname_r... none required
+checking for gethostbyname_r with 6 arguments... yes
+checking for gethostbyname_r with 5 arguments... no
+checking for byteswap.h... yes
+checking for __swap16 variant of <sys/endian.h> byteswapping macros... no
+checking for bswap16 variant of <sys/endian.h> byteswapping macros... no
+checking for locale_t in locale.h... yes
+checking for O_EVTONLY in fcntl.h... no
+checking for O_SYMLINK in fcntl.h... no
+checking for PTHREAD_RWLOCK_INITIALIZER in pthread.h... yes
+checking for PTHREAD_RWLOCK_PREFER_WRITER_NP in pthread.h... yes
+checking for PTHREAD_MUTEX_RECURSIVE_NP in pthread.h... yes
+checking for PTHREAD_MUTEX_ADAPTIVE_NP in pthread.h... yes
+checking for pthread_spinlock_t in pthread.h... yes
+checking for pthread_rwlock_timedwrlock() in pthread.h... yes
+checking for working unnamed semaphores... yes
+checking if PTHREAD_ONCE_INIT needs braces... no
+checking for PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP in pthread.h... yes
+checking whether we can compare a mutex to its initial value... no
+checking for compiler sync operations... yes
+checking for compiler atomic operations... yes
+checking if your system printf is NULL-safe.... (null)yes
+checking if socket() accepts SOCK_NONBLOCK... yes
+checking if we can increase the maximum select-able file descriptor... no
+checking if we have usable eventfd support... yes
+checking for compiler 'attribute pure' support... yes
+checking for compiler 'attribute malloc' support... yes
+checking for compiler 'attribute const' support... yes
+checking for compiler 'attribute unused' support... yes
+checking for compiler 'attribute always_inline' support... no
+checking for compiler 'attribute deprecated' support... yes
+checking for compiler 'attribute sentinel' support... yes
+checking for compiler 'attribute warn_unused_result' support... yes
+checking for compiler 'attribute may_alias' support... yes
+checking for compiler 'attribute constructor' support... yes
+checking for compiler 'attribute destructor' support... yes
+checking for compiler 'attribute noreturn' support... yes
+checking for -fsanitize=address support... yes
+checking for -fsanitize=thread support... yes
+checking for -fsanitize=leak support... yes
+checking for -fsanitize=undefined support... yes
+checking for -Wdeclaration-after-statement support... yes
+checking for -Wtrampolines support... yes
+checking for _FORTIFY_SOURCE support... yes
+checking for -fno-strict-overflow... yes
+checking for -Wno-format-truncation... yes
+checking for -Wno-format-y2k... yes
+checking for -Wno-stringop-truncation... yes
+checking for -Wshadow... yes
+checking for -march=native support... yes
+checking whether to use rpath... checking for sysinfo... yes
+checking for library containing res_9_ninit... no
+checking for res_ninit... yes
+checking for library containing res_9_ndestroy... no
+checking for res_ndestroy... no
+checking for library containing res_9_close... no
+checking for res_close... no
+checking for struct __res_state._u._ext.nsaddrs... yes
+checking for BIND_8_COMPAT required... no
+checking for GLOB_NOMAGIC in glob.h... yes
+checking for GLOB_BRACE in glob.h... yes
+checking for RTLD_NOLOAD in dlfcn.h... yes
+checking for IP_MTU_DISCOVER in netinet/in.h... yes
+checking size of int... 4
+checking size of long... 8
+checking size of long long... 8
+checking size of char *... 8
+checking size of long... (cached) 8
+checking size of long long... (cached) 8
+checking size of fd_set.fds_bits... (cached) 8
+checking for dladdr in dlfcn.h... yes
+checking for bfd_openr in -lbfd... no
+checking for bfd_openr in -lbfd... (cached) no
+checking for bfd_openr in -lbfd... (cached) no
+checking for cap_from_text in -lcap... no
+checking for DAHDI_RESET_COUNTERS in dahdi/user.h... no
+checking for DAHDI_DEFAULT_MTU_MRU in dahdi/user.h... no
+checking for DAHDI_CODE in dahdi/user.h... no
+checking for DAHDI_POLICY_HALF_FULL in dahdi/user.h... no
+checking for enhanced dahdi vmwi support... no
+checking if "int foo = DAHDI_ECHOCANCEL_FAX_MODE" compiles using dahdi/user.h... no
+checking for getifaddrs() support... yes
+checking for timerfd support... yes
+checking for gsm_create in -lgsm... no
+checking for libilbc < 3... no
+checking for iconv_open in -liconv... no
+checking for libiconv_open in -liconv... no
+checking for iconv_close in -lc... yes
+checking for iconv.h... yes
+checking for icaltimezone_get_utc_timezone in -lical... no
+checking for iks_start_sasl in -liksemel... no
+checking for UW IMAP Toolkit c-client library... no
+checking for system c-client library...... no
+checking for SQLConnect in -liodbc... no
+checking for inotify_init in -lc... yes
+checking for sys/inotify.h... yes
+checking for jack_activate in -ljack... no
+checking for kqueue in -lc... no
+checking for kevent64... no
+checking for ldap_initialize in -lldap... no
+checking for mysql_config... /bin/mysql_config
+checking for MySQL client bool support... yes
+checking for MySQL client my_bool support... no
+checking for neon-config... no
+checking for neon-config... no
+checking for netsnmp-agent... no
+checking for net-snmp-config... no
+checking for newtBell in -lnewt... yes
+checking for newt.h... yes
+checking for ub_ctx_delete in -lunbound... no
+checking for SQLConnect in -lodbc... yes
+checking for sql.h... yes
+checking for ogg_stream_init in -logg... yes
+checking for ogg/ogg.h... yes
+checking for backtrace in -lexecinfo... no
+checking for backtrace in -lc... yes
+checking for execinfo.h... yes
+checking for ba2str in -lbluetooth... no
+checking for bs_version in -lbeanstalk... no
+checking for pg_config... no
+checking for poptStrerror in -lpopt... no
+checking for portaudio-2.0... no
+checking for Pa_GetDeviceCount in -lportaudio... no
+checking for pri_connected_line_update in -lpri... no
+checking for resample_open in -lresample... no
+checking for fftw_malloc in -lfftw3... no
+checking for sf_open in -lsndfile... no
+checking for minimum version of SpanDSP... yes
+checking for span_set_message_handler in -lspandsp... yes
+checking for spandsp.h... yes
+checking for t38_terminal_init in -lspandsp... yes
+checking for spandsp.h... (cached) yes
+checking for ss7_set_isup_timer in -lss7... no
+checking for openr2_chan_new in -lopenr2... no
+checking for opus_encoder_create in -lopus... yes
+checking for opus/opus.h... yes
+checking for op_open_callbacks in -lopusfile... no
+checking for luaL_newstate in -llua5.4... no
+checking for luaL_newstate in -llua5.3... no
+checking for luaL_newstate in -llua5.2... no
+checking for luaL_newstate in -llua5.1... no
+checking for luaL_newstate in -llua... no
+checking for rc_read_config in -lfreeradius-client... no
+checking for rc_read_config in -lradiusclient-ng... no
+checking for rc_read_config in -lradcli... no
+checking for codec2_create in -lcodec2... no
+checking for cpg_join in -lcpg... no
+checking for corosync_cfg_state_track in -lcfg... no
+checking for speex_encode in -lspeex... yes
+checking for speex/speex.h... yes
+checking for speex_preprocess_ctl in -lspeex... no
+checking for speex_preprocess_ctl in -lspeexdsp... yes
+checking for speex/speex.h... (cached) yes
+checking for sqlite3_open in -lsqlite3... yes
+checking for sqlite3.h... yes
+checking for crypt in -lcrypt... yes
+checking for crypt.h... yes
+checking for crypt... no
+checking for crypt_r in -lcrypt... yes
+checking for srtp_init in -lsrtp2... no
+checking for srtp_init in -lsrtp... no
+checking for gmime-3.0... no
+checking for gmime-2.6... no
+checking for gmime-2.4... no
+checking for gmime-2.2... no
+checking for gmime-2.0... no
+checking for malloc in -lhoard... no
+checking for dbinit in -lsybdb... no
+checking for tone_zone_find_by_num in -ltonezone... no
+checking for tone_zone_find in -ltonezone... no
+checking for vorbis_info_init in -lvorbis... yes
+checking for vorbis/codec.h... yes
+checking for OV_CALLBACKS_NOCLOSE declared in vorbis/vorbisfile.h... yes
+checking for compress in -lz... yes
+checking for zlib.h... yes
+checking whether ODBC has support for Unicode types... yes
+checking for linux/compiler.h... no
+checking for sdl-config... no
+checking for IMG_Load in -lSDL_image... no
+checking for sws_getContext in -lavcodec... no
+checking for linux/videodev.h... no
+checking for XOpenDisplay in -lX11... no
+checking for XOpenDisplay in -lX11... (cached) no
+checking for /sbin/launchd... no
+checking for gtk+-2.0... no
+checking for libsystemd... no
+checking for LOG_AUTH in syslog.h... yes
+checking for LOG_AUTHPRIV in syslog.h... yes
+checking for LOG_CRON in syslog.h... yes
+checking for LOG_DAEMON in syslog.h... yes
+checking for LOG_FTP in syslog.h... yes
+checking for LOG_KERN in syslog.h... yes
+checking for LOG_LPR in syslog.h... yes
+checking for LOG_MAIL in syslog.h... yes
+checking for LOG_NEWS in syslog.h... yes
+checking for LOG_SYSLOG in syslog.h... yes
+checking for LOG_UUCP in syslog.h... yes
+checking for bridges/bridge_softmix/include/hrirs.h... yes
+checking for mandatory modules:  JANSSON PJPROJECT... ok
+configure: creating ./config.status
+config.status: creating build_tools/menuselect-deps
+config.status: creating makeopts
+config.status: creating include/asterisk/autoconfig.h
+checking build system type... aarch64-unknown-linux-gnu
+checking host system type... aarch64-unknown-linux-gnu
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking for GNU make... make
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for asprintf... yes
+checking for getloadavg... yes
+checking for setenv... yes
+checking for strcasestr... yes
+checking for strndup... yes
+checking for strnlen... yes
+checking for strsep... yes
+checking for unsetenv... yes
+checking for vasprintf... yes
+checking for newtBell in -lnewt... yes
+checking for newt.h... yes
+checking for initscr in -lncurses... yes
+checking for ncurses.h... yes
+checking for keypad in -ltinfo... yes
+checking for ncurses.h... (cached) yes
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for libxml-2.0... yes
+checking for gtk+-2.0... no
+configure: creating ./config.status
+config.status: creating makeopts
+config.status: creating autoconfig.h
+configure: Menuselect build configuration successfully completed
+
+               .$$$$$$$$$$$$$$$=..      
+            .$7$7..          .7$$7:.    
+          .$$:.                 ,$7.7   
+        .$7.     7$$$$           .$$77  
+     ..$$.       $$$$$            .$$$7 
+    ..7$   .?.   $$$$$   .?.       7$$$.
+   $.$.   .$$$7. $$$$7 .7$$$.      .$$$.
+ .777.   .$$$$$$77$$$77$$$$$7.      $$$,
+ $$$~      .7$$$$$$$$$$$$$7.       .$$$.
+.$$7          .7$$$$$$$7:          ?$$$.
+$$$          ?7$$$$$$$$$$I        .$$$7 
+$$$       .7$$$$$$$$$$$$$$$$      :$$$. 
+$$$       $$$$$$7$$$$$$$$$$$$    .$$$.  
+$$$        $$$   7$$$7  .$$$    .$$$.   
+$$$$             $$$$7         .$$$.    
+7$$$7            7$$$$        7$$$      
+ $$$$$                        $$$       
+  $$$$7.                       $$  (TM)     
+   $$$$$$$.           .7$$$$$$  $$      
+     $$$$$$$$$$$$7$$$$$$$$$.$$$$$$      
+       $$$$$$$$$$$$$$$$.                
+
+configure: Package configured for: 
+configure: OS type  : linux-gnu
+configure: Host CPU : aarch64
+configure: build-cpu:vendor:os: aarch64 : unknown : linux-gnu :
+configure: host-cpu:vendor:os: aarch64 : unknown : linux-gnu :
+make[1]: Entering directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0'
+[jansson]  Cleaning
+[pjproject]  Cleaning
+[libjwt]  Cleaning
+rm -f defaults.h
+rm -f include/asterisk/build.h
+rm -f main/version.c
+rm -f doc/core-en_US.xml
+rm -f doc/full-en_US.xml
+rm -f doc/rest-api/*.wiki
+rm -f doxygen.log
+rm -rf latex
+rm -f rest-api-templates/*.pyc
+make[2]: Entering directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/menuselect'
+rm -f menuselect cmenuselect gmenuselect nmenuselect menuselect.o strcompat.o menuselect_stub.o menuselect_curses.o  menuselect_newt.o
+make[2]: Leaving directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/menuselect'
+cp -f .cleancount .lastclean
+make[1]: Leaving directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0'
+CC="cc" CXX="g++" LD="" AR="" RANLIB="" CFLAGS="" LDFLAGS="" make -C menuselect CONFIGURE_SILENT="--silent" makeopts
+make[1]: Entering directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/menuselect'
+make[1]: 'makeopts' is up to date.
+make[1]: Leaving directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/menuselect'
+CC="cc" CXX="g++" LD="" AR="" RANLIB="" CFLAGS="" LDFLAGS="" make -C menuselect CONFIGURE_SILENT="--silent" menuselect
+make[1]: Entering directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/menuselect'
+gcc -g -D_GNU_SOURCE -Wall -Wno-deprecated-declarations -DHAVE_NCURSES -I/usr/include/libxml2   -c -o menuselect.o menuselect.c
+gcc -g -D_GNU_SOURCE -Wall -Wno-deprecated-declarations -DHAVE_NCURSES   -c -o strcompat.o strcompat.c
+gcc -g -D_GNU_SOURCE -Wall -Wno-deprecated-declarations -DHAVE_NCURSES   -c -o menuselect_stub.o menuselect_stub.c
+gcc  -o menuselect menuselect.o strcompat.o menuselect_stub.o -lxml2 
+make[1]: Leaving directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/menuselect'
+Generating input for menuselect ...
+menuselect/menuselect --check-deps menuselect.makeopts
+menuselect/menuselect --check-deps menuselect.makeopts  
+
+[3/8] Compiling Asterisk
+make[1]: Entering directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0'
+[jansson]  Cleaning
+[libjwt]  Cleaning
+[pjproject]  Cleaning
+rm -f defaults.h
+rm -f include/asterisk/build.h
+rm -f main/version.c
+rm -f doc/core-en_US.xml
+rm -f doc/full-en_US.xml
+rm -f doc/rest-api/*.wiki
+rm -f doxygen.log
+rm -rf latex
+rm -f rest-api-templates/*.pyc
+make[2]: Entering directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/menuselect'
+rm -f menuselect cmenuselect gmenuselect nmenuselect menuselect.o strcompat.o menuselect_stub.o menuselect_curses.o  menuselect_newt.o
+make[2]: Leaving directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/menuselect'
+cp -f .cleancount .lastclean
+make[1]: Leaving directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0'
+CC="cc" CXX="g++" LD="" AR="" RANLIB="" CFLAGS="" LDFLAGS="" make -C menuselect CONFIGURE_SILENT="--silent" makeopts
+make[1]: Entering directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/menuselect'
+make[1]: 'makeopts' is up to date.
+make[1]: Leaving directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/menuselect'
+CC="cc" CXX="g++" LD="" AR="" RANLIB="" CFLAGS="" LDFLAGS="" make -C menuselect CONFIGURE_SILENT="--silent" menuselect
+make[1]: Entering directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/menuselect'
+gcc -g -D_GNU_SOURCE -Wall -Wno-deprecated-declarations -DHAVE_NCURSES -I/usr/include/libxml2   -c -o menuselect.o menuselect.c
+gcc -g -D_GNU_SOURCE -Wall -Wno-deprecated-declarations -DHAVE_NCURSES   -c -o strcompat.o strcompat.c
+gcc -g -D_GNU_SOURCE -Wall -Wno-deprecated-declarations -DHAVE_NCURSES   -c -o menuselect_stub.o menuselect_stub.c
+gcc  -o menuselect menuselect.o strcompat.o menuselect_stub.o -lxml2 
+make[1]: Leaving directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/menuselect'
+menuselect/menuselect --check-deps menuselect.makeopts
+menuselect/menuselect --check-deps menuselect.makeopts  
+   [CC] astcanary.c -> astcanary.o
+   [CC] astdb2sqlite3.c -> astdb2sqlite3.o
+   [CC] astdb2bdb.c -> astdb2bdb.o
+   [CC] hash/hash.c -> hash/hash.o
+   [CC] hash/hash_bigkey.c -> hash/hash_bigkey.o
+   [LD] astcanary.o -> astcanary
+   [CC] hash/hash_buf.c -> hash/hash_buf.o
+   [CC] hash/hash_func.c -> hash/hash_func.o
+   [CC] hash/hash_log2.c -> hash/hash_log2.o
+   [CC] hash/hash_page.c -> hash/hash_page.o
+   [CC] hash/ndbm.c -> hash/ndbm.o
+   [CC] btree/bt_close.c -> btree/bt_close.o
+   [CC] btree/bt_conv.c -> btree/bt_conv.o
+   [CC] btree/bt_debug.c -> btree/bt_debug.o
+   [CC] btree/bt_delete.c -> btree/bt_delete.o
+   [CC] btree/bt_get.c -> btree/bt_get.o
+   [CC] btree/bt_open.c -> btree/bt_open.o
+   [CC] btree/bt_overflow.c -> btree/bt_overflow.o
+   [CC] btree/bt_page.c -> btree/bt_page.o
+   [CC] btree/bt_put.c -> btree/bt_put.o
+   [CC] btree/bt_search.c -> btree/bt_search.o
+   [CC] btree/bt_seq.c -> btree/bt_seq.o
+   [CC] btree/bt_split.c -> btree/bt_split.o
+   [CC] btree/bt_utils.c -> btree/bt_utils.o
+   [CC] db/db.c -> db/db.o
+   [CC] mpool/mpool.c -> mpool/mpool.o
+   [CC] recno/rec_close.c -> recno/rec_close.o
+   [CC] recno/rec_delete.c -> recno/rec_delete.o
+   [CC] recno/rec_get.c -> recno/rec_get.o
+   [CC] recno/rec_open.c -> recno/rec_open.o
+   [CC] recno/rec_put.c -> recno/rec_put.o
+   [CC] recno/rec_search.c -> recno/rec_search.o
+   [CC] recno/rec_seq.c -> recno/rec_seq.o
+   [CC] recno/rec_utils.c -> recno/rec_utils.o
+   [AR] hash/hash.o hash/hash_bigkey.o hash/hash_buf.o hash/hash_func.o hash/hash_log2.o hash/hash_page.o hash/ndbm.o btree/bt_close.o btree/bt_conv.o btree/bt_debug.o btree/bt_delete.o btree/bt_get.o btree/bt_open.o btree/bt_overflow.o btree/bt_page.o btree/bt_put.o btree/bt_search.o btree/bt_seq.o btree/bt_split.o btree/bt_utils.o db/db.o mpool/mpool.o recno/rec_close.o recno/rec_delete.o recno/rec_get.o recno/rec_open.o recno/rec_put.o recno/rec_search.o recno/rec_seq.o recno/rec_utils.o -> libdb1.a
+   [LD] astdb2sqlite3.o db1-ast/libdb1.a -> astdb2sqlite3
+   [LD] astdb2bdb.o db1-ast/libdb1.a -> astdb2bdb
+[jansson]  Rebuilding
+[pjproject]  Rebuilding
+[jansson]  Configuring
+[pjproject]  Configuring with --with-ssl --prefix=/opt/pjproject --disable-speex-codec --disable-speex-aec --disable-bcg729 --disable-gsm-codec --disable-ilbc-codec --disable-l16-codec --disable-g722-codec --disable-g7221-codec --disable-opencore-amr --disable-silk --disable-opus --disable-video --disable-v4l2 --disable-sound --disable-ext-sound --disable-sdl --disable-libyuv --disable-ffmpeg --disable-openh264 --disable-ipp --disable-libwebrtc --disable-libsrtp --disable-upnp --without-external-pa --without-external-srtp --disable-resample --disable-g711-codec --enable-epoll
+[jansson]  Building bundled jansson.
+[pjproject]  Compiling libpj-aarch64-unknown-linux-gnu.a
+[pjproject]  Compiling libpjlib-util-aarch64-unknown-linux-gnu.a
+[pjproject]  Compiling libpjsua-aarch64-unknown-linux-gnu.a
+[pjproject]  Compiling libpjsip-ua-aarch64-unknown-linux-gnu.a
+[pjproject]  Compiling libpjsip-simple-aarch64-unknown-linux-gnu.a
+[pjproject]  Compiling libpjsip-aarch64-unknown-linux-gnu.a
+[pjproject]  Compiling libpjmedia-codec-aarch64-unknown-linux-gnu.a
+[pjproject]  Compiling libpjmedia-videodev-aarch64-unknown-linux-gnu.a
+[pjproject]  Compiling libpjmedia-aarch64-unknown-linux-gnu.a
+[pjproject]  Compiling libpjmedia-audiodev-aarch64-unknown-linux-gnu.a
+[pjproject]  Compiling libpjnath-aarch64-unknown-linux-gnu.a
+[pjproject]  Generating symbols
+   [CC] chan_audiosocket.c -> chan_audiosocket.o
+   [CC] chan_bridge_media.c -> chan_bridge_media.o
+   [CC] chan_iax2.c -> chan_iax2.o
+   [CC] iax2/codec_pref.c -> iax2/codec_pref.o
+   [CC] iax2/firmware.c -> iax2/firmware.o
+   [CC] iax2/format_compatibility.c -> iax2/format_compatibility.o
+   [CC] iax2/netsock.c -> iax2/netsock.o
+   [CC] iax2/parser.c -> iax2/parser.o
+   [CC] iax2/provision.c -> iax2/provision.o
+   [CC] chan_pjsip.c -> chan_pjsip.o
+   [CC] pjsip/cli_commands.c -> pjsip/cli_commands.o
+   [CC] pjsip/dialplan_functions.c -> pjsip/dialplan_functions.o
+   [CC] chan_rtp.c -> chan_rtp.o
+   [CC] chan_unistim.c -> chan_unistim.o
+   [CC] chan_websocket.c -> chan_websocket.o
+   [LD] chan_audiosocket.o -> chan_audiosocket.so
+   [LD] chan_bridge_media.o -> chan_bridge_media.so
+   [LD] chan_pjsip.o pjsip/cli_commands.o pjsip/dialplan_functions.o -> chan_pjsip.so
+   [LD] chan_rtp.o -> chan_rtp.so
+   [LD] chan_websocket.o -> chan_websocket.so
+   [LD] chan_unistim.o -> chan_unistim.so
+   [LD] chan_iax2.o iax2/codec_pref.o iax2/firmware.o iax2/format_compatibility.o iax2/netsock.o iax2/parser.o iax2/provision.o -> chan_iax2.so
+   [CC] pbx_ael.c -> pbx_ael.o
+   [CC] pbx_config.c -> pbx_config.o
+   [CC] pbx_dundi.c -> pbx_dundi.o
+   [CC] dundi-parser.c -> dundi-parser.o
+   [CC] pbx_loopback.c -> pbx_loopback.o
+   [CC] pbx_realtime.c -> pbx_realtime.o
+   [CC] pbx_spool.c -> pbx_spool.o
+   [LD] pbx_ael.o -> pbx_ael.so
+   [LD] pbx_loopback.o -> pbx_loopback.so
+   [LD] pbx_realtime.o -> pbx_realtime.so
+   [LD] pbx_config.o -> pbx_config.so
+   [LD] pbx_spool.o -> pbx_spool.so
+   [LD] pbx_dundi.o dundi-parser.o -> pbx_dundi.so
+   [CC] app_adsiprog.c -> app_adsiprog.o
+   [CC] app_agent_pool.c -> app_agent_pool.o
+   [CC] app_alarmreceiver.c -> app_alarmreceiver.o
+   [CC] app_amd.c -> app_amd.o
+   [CC] app_attended_transfer.c -> app_attended_transfer.o
+   [CC] app_audiosocket.c -> app_audiosocket.o
+   [CC] app_authenticate.c -> app_authenticate.o
+   [CC] app_blind_transfer.c -> app_blind_transfer.o
+   [CC] app_bridgeaddchan.c -> app_bridgeaddchan.o
+   [CC] app_bridgewait.c -> app_bridgewait.o
+   [CC] app_broadcast.c -> app_broadcast.o
+   [CC] app_cdr.c -> app_cdr.o
+   [CC] app_celgenuserevent.c -> app_celgenuserevent.o
+   [CC] app_chanisavail.c -> app_chanisavail.o
+   [CC] app_channelredirect.c -> app_channelredirect.o
+   [CC] app_chanspy.c -> app_chanspy.o
+   [CC] app_confbridge.c -> app_confbridge.o
+   [CC] confbridge/conf_chan_announce.c -> confbridge/conf_chan_announce.o
+   [CC] confbridge/conf_chan_record.c -> confbridge/conf_chan_record.o
+   [CC] confbridge/conf_config_parser.c -> confbridge/conf_config_parser.o
+   [CC] confbridge/conf_state.c -> confbridge/conf_state.o
+   [CC] confbridge/conf_state_empty.c -> confbridge/conf_state_empty.o
+   [CC] confbridge/conf_state_inactive.c -> confbridge/conf_state_inactive.o
+   [CC] confbridge/conf_state_multi.c -> confbridge/conf_state_multi.o
+   [CC] confbridge/conf_state_multi_marked.c -> confbridge/conf_state_multi_marked.o
+   [CC] confbridge/conf_state_single.c -> confbridge/conf_state_single.o
+   [CC] confbridge/conf_state_single_marked.c -> confbridge/conf_state_single_marked.o
+   [CC] confbridge/confbridge_manager.c -> confbridge/confbridge_manager.o
+   [CC] app_controlplayback.c -> app_controlplayback.o
+   [CC] app_db.c -> app_db.o
+   [CC] app_dial.c -> app_dial.o
+   [CC] app_dictate.c -> app_dictate.o
+   [CC] app_directed_pickup.c -> app_directed_pickup.o
+   [CC] app_directory.c -> app_directory.o
+   [CC] app_disa.c -> app_disa.o
+   [CC] app_dtmfstore.c -> app_dtmfstore.o
+   [CC] app_dumpchan.c -> app_dumpchan.o
+   [CC] app_echo.c -> app_echo.o
+   [CC] app_exec.c -> app_exec.o
+   [CC] app_festival.c -> app_festival.o
+   [CC] app_externalivr.c -> app_externalivr.o
+   [CC] app_followme.c -> app_followme.o
+   [CC] app_forkcdr.c -> app_forkcdr.o
+   [CC] app_getcpeid.c -> app_getcpeid.o
+   [CC] app_if.c -> app_if.o
+   [CC] app_mf.c -> app_mf.o
+   [CC] app_milliwatt.c -> app_milliwatt.o
+   [CC] app_minivm.c -> app_minivm.o
+   [CC] app_mixmonitor.c -> app_mixmonitor.o
+   [CC] app_morsecode.c -> app_morsecode.o
+   [CC] app_mp3.c -> app_mp3.o
+   [CC] app_originate.c -> app_originate.o
+   [CC] app_page.c -> app_page.o
+   [CC] app_playback.c -> app_playback.o
+   [CC] app_playtones.c -> app_playtones.o
+   [CC] app_privacy.c -> app_privacy.o
+   [CC] app_queue.c -> app_queue.o
+   [CC] app_read.c -> app_read.o
+   [CC] app_readexten.c -> app_readexten.o
+   [CC] app_record.c -> app_record.o
+   [CC] app_reload.c -> app_reload.o
+   [CC] app_sayunixtime.c -> app_sayunixtime.o
+   [CC] app_senddtmf.c -> app_senddtmf.o
+   [CC] app_sendtext.c -> app_sendtext.o
+   [CC] app_sf.c -> app_sf.o
+   [CC] app_signal.c -> app_signal.o
+   [CC] app_sla.c -> app_sla.o
+   [CC] app_sms.c -> app_sms.o
+   [CC] app_softhangup.c -> app_softhangup.o
+   [CC] app_speech_utils.c -> app_speech_utils.o
+   [CC] app_stack.c -> app_stack.o
+   [CC] app_stasis.c -> app_stasis.o
+   [CC] app_stream_echo.c -> app_stream_echo.o
+   [CC] app_system.c -> app_system.o
+   [CC] app_talkdetect.c -> app_talkdetect.o
+   [CC] app_test.c -> app_test.o
+   [CC] app_transfer.c -> app_transfer.o
+   [CC] app_userevent.c -> app_userevent.o
+   [CC] app_verbose.c -> app_verbose.o
+   [CC] app_voicemail.c -> app_voicemail.o
+   [CC] app_waitforcond.c -> app_waitforcond.o
+   [CC] app_waitforring.c -> app_waitforring.o
+   [CC] app_waitforsilence.c -> app_waitforsilence.o
+   [CC] app_waituntil.c -> app_waituntil.o
+   [CC] app_while.c -> app_while.o
+   [CC] app_zapateller.c -> app_zapateller.o
+   [LD] app_adsiprog.o -> app_adsiprog.so
+   [LD] app_agent_pool.o -> app_agent_pool.so
+   [LD] app_alarmreceiver.o -> app_alarmreceiver.so
+   [LD] app_attended_transfer.o -> app_attended_transfer.so
+   [LD] app_amd.o -> app_amd.so
+   [LD] app_audiosocket.o -> app_audiosocket.so
+   [LD] app_authenticate.o -> app_authenticate.so
+   [LD] app_blind_transfer.o -> app_blind_transfer.so
+   [LD] app_bridgeaddchan.o -> app_bridgeaddchan.so
+   [LD] app_bridgewait.o -> app_bridgewait.so
+   [LD] app_broadcast.o -> app_broadcast.so
+   [LD] app_cdr.o -> app_cdr.so
+   [LD] app_celgenuserevent.o -> app_celgenuserevent.so
+   [LD] app_chanisavail.o -> app_chanisavail.so
+   [LD] app_channelredirect.o -> app_channelredirect.so
+   [LD] app_chanspy.o -> app_chanspy.so
+   [LD] app_confbridge.o confbridge/conf_chan_announce.o confbridge/conf_chan_record.o confbridge/conf_config_parser.o confbridge/conf_state.o confbridge/conf_state_empty.o confbridge/conf_state_inactive.o confbridge/conf_state_multi.o confbridge/conf_state_multi_marked.o confbridge/conf_state_single.o confbridge/conf_state_single_marked.o confbridge/confbridge_manager.o -> app_confbridge.so
+   [LD] app_controlplayback.o -> app_controlplayback.so
+   [LD] app_db.o -> app_db.so
+   [LD] app_dial.o -> app_dial.so
+   [LD] app_dictate.o -> app_dictate.so
+   [LD] app_directed_pickup.o -> app_directed_pickup.so
+   [LD] app_directory.o -> app_directory.so
+   [LD] app_disa.o -> app_disa.so
+   [LD] app_dtmfstore.o -> app_dtmfstore.so
+   [LD] app_dumpchan.o -> app_dumpchan.so
+   [LD] app_echo.o -> app_echo.so
+   [LD] app_exec.o -> app_exec.so
+   [LD] app_externalivr.o -> app_externalivr.so
+   [LD] app_festival.o -> app_festival.so
+   [LD] app_followme.o -> app_followme.so
+   [LD] app_forkcdr.o -> app_forkcdr.so
+   [LD] app_getcpeid.o -> app_getcpeid.so
+   [LD] app_if.o -> app_if.so
+   [LD] app_mf.o -> app_mf.so
+   [LD] app_milliwatt.o -> app_milliwatt.so
+   [LD] app_minivm.o -> app_minivm.so
+   [LD] app_mixmonitor.o -> app_mixmonitor.so
+   [LD] app_morsecode.o -> app_morsecode.so
+   [LD] app_mp3.o -> app_mp3.so
+   [LD] app_originate.o -> app_originate.so
+   [LD] app_page.o -> app_page.so
+   [LD] app_playback.o -> app_playback.so
+   [LD] app_playtones.o -> app_playtones.so
+   [LD] app_privacy.o -> app_privacy.so
+   [LD] app_read.o -> app_read.so
+   [LD] app_readexten.o -> app_readexten.so
+   [LD] app_record.o -> app_record.so
+   [LD] app_reload.o -> app_reload.so
+   [LD] app_sayunixtime.o -> app_sayunixtime.so
+   [LD] app_senddtmf.o -> app_senddtmf.so
+   [LD] app_sendtext.o -> app_sendtext.so
+   [LD] app_sf.o -> app_sf.so
+   [LD] app_signal.o -> app_signal.so
+   [LD] app_sla.o -> app_sla.so
+   [LD] app_sms.o -> app_sms.so
+   [LD] app_speech_utils.o -> app_speech_utils.so
+   [LD] app_softhangup.o -> app_softhangup.so
+   [LD] app_stack.o -> app_stack.so
+   [LD] app_stasis.o -> app_stasis.so
+   [LD] app_stream_echo.o -> app_stream_echo.so
+   [LD] app_system.o -> app_system.so
+   [LD] app_talkdetect.o -> app_talkdetect.so
+   [LD] app_test.o -> app_test.so
+   [LD] app_userevent.o -> app_userevent.so
+   [LD] app_transfer.o -> app_transfer.so
+   [LD] app_verbose.o -> app_verbose.so
+   [LD] app_waitforcond.o -> app_waitforcond.so
+   [LD] app_waitforring.o -> app_waitforring.so
+   [LD] app_waitforsilence.o -> app_waitforsilence.so
+   [LD] app_waituntil.o -> app_waituntil.so
+   [LD] app_while.o -> app_while.so
+   [LD] app_zapateller.o -> app_zapateller.so
+   [LD] app_queue.o -> app_queue.so
+   [LD] app_voicemail.o -> app_voicemail.so
+   [CC] codec_a_mu.c -> codec_a_mu.o
+   [CC] anaFilter.c -> anaFilter.o
+   [CC] f2clib.c -> f2clib.o
+   [CC] src/add.c -> src/add.o
+   [CC] analys.c -> analys.o
+   [CC] constants.c -> constants.o
+   [CC] src/code.c -> src/code.o
+   [CC] createCB.c -> createCB.o
+   [CC] codec_adpcm.c -> codec_adpcm.o
+   [CC] src/debug.c -> src/debug.o
+   [CC] src/decode.c -> src/decode.o
+   [CC] bsynz.c -> bsynz.o
+   [CC] src/long_term.c -> src/long_term.o
+   [CC] doCPLC.c -> doCPLC.o
+   [CC] chanwr.c -> chanwr.o
+   [CC] src/lpc.c -> src/lpc.o
+   [CC] enhancer.c -> enhancer.o
+   [CC] dcbias.c -> dcbias.o
+   [CC] decode.c -> decode.o
+   [CC] filter.c -> filter.o
+   [CC] src/preprocess.c -> src/preprocess.o
+   [CC] deemp.c -> deemp.o
+   [CC] difmag.c -> difmag.o
+   [CC] codec_alaw.c -> codec_alaw.o
+   [CC] src/rpe.c -> src/rpe.o
+   [CC] FrameClassify.c -> FrameClassify.o
+   [CC] dyptrk.c -> dyptrk.o
+   [CC] gainquant.c -> gainquant.o
+   [CC] encode.c -> encode.o
+   [CC] getCBvec.c -> getCBvec.o
+   [CC] codec_g722.c -> codec_g722.o
+   [CC] energy.c -> energy.o
+   [CC] src/gsm_destroy.c -> src/gsm_destroy.o
+   [CC] ham84.c -> ham84.o
+   [CC] helpfun.c -> helpfun.o
+   [CC] hp100.c -> hp100.o
+   [CC] src/gsm_decode.c -> src/gsm_decode.o
+   [CC] invert.c -> invert.o
+   [CC] g722/g722_encode.c -> g722/g722_encode.o
+   [CC] irc2pc.c -> irc2pc.o
+   [CC] hpInput.c -> hpInput.o
+   [CC] ivfilt.c -> ivfilt.o
+   [CC] hpOutput.c -> hpOutput.o
+   [CC] iCBConstruct.c -> iCBConstruct.o
+   [CC] lpcdec.c -> lpcdec.o
+   [CC] lpcenc.c -> lpcenc.o
+   [CC] lpcini.c -> lpcini.o
+   [CC] iCBSearch.c -> iCBSearch.o
+   [CC] src/gsm_encode.c -> src/gsm_encode.o
+   [CC] lpfilt.c -> lpfilt.o
+   [CC] g722/g722_decode.c -> g722/g722_decode.o
+   [CC] median.c -> median.o
+   [CC] src/gsm_explode.c -> src/gsm_explode.o
+   [CC] mload.c -> mload.o
+   [CC] iLBC_decode.c -> iLBC_decode.o
+   [CC] onset.c -> onset.o
+   [CC] pitsyn.c -> pitsyn.o
+   [CC] src/gsm_implode.c -> src/gsm_implode.o
+   [CC] placea.c -> placea.o
+   [CC] iLBC_encode.c -> iLBC_encode.o
+   [CC] codec_g726.c -> codec_g726.o
+   [CC] src/gsm_create.c -> src/gsm_create.o
+   [CC] placev.c -> placev.o
+   [CC] src/gsm_print.c -> src/gsm_print.o
+   [CC] preemp.c -> preemp.o
+   [CC] prepro.c -> prepro.o
+   [CC] random.c -> random.o
+   [CC] src/gsm_option.c -> src/gsm_option.o
+   [CC] rcchk.c -> rcchk.o
+   [CC] src/short_term.c -> src/short_term.o
+   [CC] synths.c -> synths.o
+   [CC] iLBC_test.c -> iLBC_test.o
+   [CC] tbdm.c -> tbdm.o
+   [CC] LPCdecode.c -> LPCdecode.o
+   [CC] voicin.c -> voicin.o
+   [CC] LPCencode.c -> LPCencode.o
+   [CC] src/table.c -> src/table.o
+   [CC] codec_gsm.c -> codec_gsm.o
+   [CC] vparms.c -> vparms.o
+   [CC] lsf.c -> lsf.o
+   [AR] f2clib.o analys.o bsynz.o chanwr.o dcbias.o decode.o deemp.o difmag.o dyptrk.o encode.o energy.o ham84.o hp100.o invert.o irc2pc.o ivfilt.o lpcdec.o lpcenc.o lpcini.o lpfilt.o median.o mload.o onset.o pitsyn.o placea.o placev.o preemp.o prepro.o random.o rcchk.o synths.o tbdm.o voicin.o vparms.o -> liblpc10.a
+   [CC] packing.c -> packing.o
+   [CC] StateConstructW.c -> StateConstructW.o
+   [AR] src/add.o src/code.o src/debug.o src/decode.o src/long_term.o src/lpc.o src/preprocess.o src/rpe.o src/gsm_destroy.o src/gsm_decode.o src/gsm_encode.o src/gsm_explode.o src/gsm_implode.o src/gsm_create.o src/gsm_print.o src/gsm_option.o src/short_term.o src/table.o -> lib/libgsm.a
+   [CC] codec_ilbc.c -> codec_ilbc.o
+   [CC] StateSearchW.c -> StateSearchW.o
+   [CC] syntFilter.c -> syntFilter.o
+   [CC] codec_lpc10.c -> codec_lpc10.o
+   [AR] anaFilter.o constants.o createCB.o doCPLC.o enhancer.o filter.o FrameClassify.o gainquant.o getCBvec.o helpfun.o hpInput.o hpOutput.o iCBConstruct.o iCBSearch.o iLBC_decode.o iLBC_encode.o iLBC_test.o LPCdecode.o LPCencode.o lsf.o packing.o StateConstructW.o StateSearchW.o syntFilter.o -> libilbc.a
+   [CC] codec_resample.c -> codec_resample.o
+   [CC] speex/resample.c -> speex/resample.o
+   [CC] codec_speex.c -> codec_speex.o
+   [CC] codec_ulaw.c -> codec_ulaw.o
+   [LD] codec_a_mu.o -> codec_a_mu.so
+   [LD] codec_adpcm.o -> codec_adpcm.so
+   [LD] codec_alaw.o -> codec_alaw.so
+   [LD] codec_g722.o g722/g722_encode.o g722/g722_decode.o -> codec_g722.so
+   [LD] codec_g726.o -> codec_g726.so
+   [LD] codec_gsm.o gsm/lib/libgsm.a -> codec_gsm.so
+   [LD] codec_ilbc.o ilbc/libilbc.a -> codec_ilbc.so
+   [LD] codec_lpc10.o lpc10/liblpc10.a -> codec_lpc10.so
+   [LD] codec_ulaw.o -> codec_ulaw.so
+   [LD] codec_speex.o -> codec_speex.so
+   [LD] codec_resample.o speex/resample.o -> codec_resample.so
+   [CC] format_g719.c -> format_g719.o
+   [CC] format_g723.c -> format_g723.o
+   [CC] format_g726.c -> format_g726.o
+   [CC] format_g729.c -> format_g729.o
+   [CC] format_gsm.c -> format_gsm.o
+   [CC] format_h263.c -> format_h263.o
+   [CC] format_h264.c -> format_h264.o
+   [CC] format_ilbc.c -> format_ilbc.o
+   [CC] format_ogg_vorbis.c -> format_ogg_vorbis.o
+   [CC] format_ogg_speex.c -> format_ogg_speex.o
+   [CC] format_pcm.c -> format_pcm.o
+   [CC] format_siren14.c -> format_siren14.o
+   [CC] format_siren7.c -> format_siren7.o
+   [CC] format_sln.c -> format_sln.o
+   [CC] format_vox.c -> format_vox.o
+   [CC] format_wav.c -> format_wav.o
+   [CC] format_wav_gsm.c -> format_wav_gsm.o
+   [LD] format_g719.o -> format_g719.so
+   [LD] format_g723.o -> format_g723.so
+   [LD] format_g726.o -> format_g726.so
+   [LD] format_g729.o -> format_g729.so
+   [LD] format_gsm.o -> format_gsm.so
+   [LD] format_h263.o -> format_h263.so
+   [LD] format_h264.o -> format_h264.so
+   [LD] format_ilbc.o -> format_ilbc.so
+   [LD] format_ogg_speex.o -> format_ogg_speex.so
+   [LD] format_ogg_vorbis.o -> format_ogg_vorbis.so
+   [LD] format_pcm.o -> format_pcm.so
+   [LD] format_siren14.o -> format_siren14.so
+   [LD] format_siren7.o -> format_siren7.so
+   [LD] format_sln.o -> format_sln.so
+   [LD] format_vox.o -> format_vox.so
+   [LD] format_wav.o -> format_wav.so
+   [LD] format_wav_gsm.o -> format_wav_gsm.so
+   [CC] cdr_adaptive_odbc.c -> cdr_adaptive_odbc.o
+   [CC] cdr_csv.c -> cdr_csv.o
+   [CC] cdr_custom.c -> cdr_custom.o
+   [CC] cdr_manager.c -> cdr_manager.o
+   [CC] cdr_odbc.c -> cdr_odbc.o
+   [CC] cdr_sqlite3_custom.c -> cdr_sqlite3_custom.o
+   [LD] cdr_custom.o -> cdr_custom.so
+   [LD] cdr_manager.o -> cdr_manager.so
+   [LD] cdr_csv.o -> cdr_csv.so
+   [LD] cdr_odbc.o -> cdr_odbc.so
+   [LD] cdr_sqlite3_custom.o -> cdr_sqlite3_custom.so
+   [LD] cdr_adaptive_odbc.o -> cdr_adaptive_odbc.so
+   [CC] cel_custom.c -> cel_custom.o
+   [CC] cel_manager.c -> cel_manager.o
+   [CC] cel_odbc.c -> cel_odbc.o
+   [CC] cel_sqlite3_custom.c -> cel_sqlite3_custom.o
+   [LD] cel_manager.o -> cel_manager.so
+   [LD] cel_custom.o -> cel_custom.so
+   [LD] cel_sqlite3_custom.o -> cel_sqlite3_custom.so
+   [LD] cel_odbc.o -> cel_odbc.so
+   [CC] bridge_builtin_features.c -> bridge_builtin_features.o
+   [CC] bridge_builtin_interval_features.c -> bridge_builtin_interval_features.o
+   [CC] bridge_holding.c -> bridge_holding.o
+   [CC] bridge_native_rtp.c -> bridge_native_rtp.o
+   [CC] bridge_simple.c -> bridge_simple.o
+   [CC] bridge_softmix.c -> bridge_softmix.o
+   [CC] bridge_softmix/bridge_softmix_binaural.c -> bridge_softmix/bridge_softmix_binaural.o
+   [LD] bridge_builtin_features.o -> bridge_builtin_features.so
+   [LD] bridge_builtin_interval_features.o -> bridge_builtin_interval_features.so
+   [LD] bridge_holding.o -> bridge_holding.so
+   [LD] bridge_simple.o -> bridge_simple.so
+   [LD] bridge_native_rtp.o -> bridge_native_rtp.so
+   [LD] bridge_softmix.o bridge_softmix/bridge_softmix_binaural.o -> bridge_softmix.so
+   [CC] func_aes.c -> func_aes.o
+   [CC] func_base64.c -> func_base64.o
+   [CC] func_blacklist.c -> func_blacklist.o
+   [CC] func_callcompletion.c -> func_callcompletion.o
+   [CC] func_callerid.c -> func_callerid.o
+   [CC] func_cdr.c -> func_cdr.o
+   [CC] func_channel.c -> func_channel.o
+   [CC] func_config.c -> func_config.o
+   [CC] func_curl.c -> func_curl.o
+   [CC] func_cut.c -> func_cut.o
+   [CC] func_db.c -> func_db.o
+   [CC] func_devstate.c -> func_devstate.o
+   [CC] func_dialgroup.c -> func_dialgroup.o
+   [CC] func_dialplan.c -> func_dialplan.o
+   [CC] func_enum.c -> func_enum.o
+   [CC] func_env.c -> func_env.o
+   [CC] func_evalexten.c -> func_evalexten.o
+   [CC] func_export.c -> func_export.o
+   [CC] func_extstate.c -> func_extstate.o
+   [CC] func_frame_drop.c -> func_frame_drop.o
+   [CC] func_frame_trace.c -> func_frame_trace.o
+   [CC] func_global.c -> func_global.o
+   [CC] func_groupcount.c -> func_groupcount.o
+   [CC] func_hangupcause.c -> func_hangupcause.o
+   [CC] func_holdintercept.c -> func_holdintercept.o
+   [CC] func_iconv.c -> func_iconv.o
+   [CC] func_jitterbuffer.c -> func_jitterbuffer.o
+   [CC] func_json.c -> func_json.o
+   [CC] func_lock.c -> func_lock.o
+   [CC] func_logic.c -> func_logic.o
+   [CC] func_math.c -> func_math.o
+   [CC] func_md5.c -> func_md5.o
+   [CC] func_module.c -> func_module.o
+   [CC] func_odbc.c -> func_odbc.o
+   [CC] func_periodic_hook.c -> func_periodic_hook.o
+   [CC] func_pitchshift.c -> func_pitchshift.o
+   [CC] func_pjsip_aor.c -> func_pjsip_aor.o
+   [CC] func_pjsip_contact.c -> func_pjsip_contact.o
+   [CC] func_pjsip_endpoint.c -> func_pjsip_endpoint.o
+   [CC] func_presencestate.c -> func_presencestate.o
+   [CC] func_rand.c -> func_rand.o
+   [CC] func_realtime.c -> func_realtime.o
+   [CC] func_sayfiles.c -> func_sayfiles.o
+   [CC] func_scramble.c -> func_scramble.o
+   [CC] func_sha1.c -> func_sha1.o
+   [CC] func_shell.c -> func_shell.o
+   [CC] func_sorcery.c -> func_sorcery.o
+   [CC] func_speex.c -> func_speex.o
+   [CC] func_sprintf.c -> func_sprintf.o
+   [CC] func_srv.c -> func_srv.o
+   [CC] func_strings.c -> func_strings.o
+   [CC] func_sysinfo.c -> func_sysinfo.o
+   [CC] func_talkdetect.c -> func_talkdetect.o
+   [CC] func_timeout.c -> func_timeout.o
+   [CC] func_uri.c -> func_uri.o
+   [CC] func_uuid.c -> func_uuid.o
+   [CC] func_version.c -> func_version.o
+   [CC] func_vmcount.c -> func_vmcount.o
+   [CC] func_volume.c -> func_volume.o
+   [LD] func_aes.o -> func_aes.so
+   [LD] func_base64.o -> func_base64.so
+   [LD] func_blacklist.o -> func_blacklist.so
+   [LD] func_callcompletion.o -> func_callcompletion.so
+   [LD] func_callerid.o -> func_callerid.so
+   [LD] func_cdr.o -> func_cdr.so
+   [LD] func_channel.o -> func_channel.so
+   [LD] func_config.o -> func_config.so
+   [LD] func_curl.o -> func_curl.so
+   [LD] func_cut.o -> func_cut.so
+   [LD] func_db.o -> func_db.so
+   [LD] func_devstate.o -> func_devstate.so
+   [LD] func_dialgroup.o -> func_dialgroup.so
+   [LD] func_dialplan.o -> func_dialplan.so
+   [LD] func_enum.o -> func_enum.so
+   [LD] func_env.o -> func_env.so
+   [LD] func_evalexten.o -> func_evalexten.so
+   [LD] func_export.o -> func_export.so
+   [LD] func_extstate.o -> func_extstate.so
+   [LD] func_frame_drop.o -> func_frame_drop.so
+   [LD] func_frame_trace.o -> func_frame_trace.so
+   [LD] func_global.o -> func_global.so
+   [LD] func_groupcount.o -> func_groupcount.so
+   [LD] func_hangupcause.o -> func_hangupcause.so
+   [LD] func_holdintercept.o -> func_holdintercept.so
+   [LD] func_iconv.o -> func_iconv.so
+   [LD] func_jitterbuffer.o -> func_jitterbuffer.so
+   [LD] func_json.o -> func_json.so
+   [LD] func_lock.o -> func_lock.so
+   [LD] func_logic.o -> func_logic.so
+   [LD] func_math.o -> func_math.so
+   [LD] func_md5.o -> func_md5.so
+   [LD] func_module.o -> func_module.so
+   [LD] func_odbc.o -> func_odbc.so
+   [LD] func_periodic_hook.o -> func_periodic_hook.so
+   [LD] func_pitchshift.o -> func_pitchshift.so
+   [LD] func_pjsip_aor.o -> func_pjsip_aor.so
+   [LD] func_pjsip_contact.o -> func_pjsip_contact.so
+   [LD] func_pjsip_endpoint.o -> func_pjsip_endpoint.so
+   [LD] func_presencestate.o -> func_presencestate.so
+   [LD] func_rand.o -> func_rand.so
+   [LD] func_realtime.o -> func_realtime.so
+   [LD] func_sayfiles.o -> func_sayfiles.so
+   [LD] func_scramble.o -> func_scramble.so
+   [LD] func_sha1.o -> func_sha1.so
+   [LD] func_shell.o -> func_shell.so
+   [LD] func_sorcery.o -> func_sorcery.so
+   [LD] func_sprintf.o -> func_sprintf.so
+   [LD] func_speex.o -> func_speex.so
+   [LD] func_srv.o -> func_srv.so
+   [LD] func_strings.o -> func_strings.so
+   [LD] func_sysinfo.o -> func_sysinfo.so
+   [LD] func_talkdetect.o -> func_talkdetect.so
+   [LD] func_timeout.o -> func_timeout.so
+   [LD] func_uri.o -> func_uri.so
+   [LD] func_uuid.o -> func_uuid.so
+   [LD] func_version.o -> func_version.so
+   [LD] func_vmcount.o -> func_vmcount.so
+   [LD] func_volume.o -> func_volume.so
+   [CC] abstract_jb.c -> abstract_jb.o
+   [CC] acl.c -> acl.o
+   [CC] adsi.c -> adsi.o
+   [CC] alaw.c -> alaw.o
+   [CC] alertpipe.c -> alertpipe.o
+   [CC] aoc.c -> aoc.o
+   [CC] app.c -> app.o
+   [CC] ast_expr2.c -> ast_expr2.o
+   [CC] ast_expr2f.c -> ast_expr2f.o
+   [CC] asterisk.c -> asterisk.o
+   [CC] astfd.c -> astfd.o
+   [CC] astmm.c -> astmm.o
+   [CC] astobj2.c -> astobj2.o
+   [CC] astobj2_container.c -> astobj2_container.o
+   [CC] astobj2_global.c -> astobj2_global.o
+   [CC] astobj2_hash.c -> astobj2_hash.o
+   [CC] astobj2_rbtree.c -> astobj2_rbtree.o
+   [CC] audiohook.c -> audiohook.o
+   [CC] autochan.c -> autochan.o
+   [CC] autoservice.c -> autoservice.o
+   [CC] backtrace.c -> backtrace.o
+   [CC] bridge.c -> bridge.o
+   [CC] bridge_after.c -> bridge_after.o
+   [CC] bridge_basic.c -> bridge_basic.o
+   [CC] bridge_channel.c -> bridge_channel.o
+   [CC] bridge_roles.c -> bridge_roles.o
+   [CC] bucket.c -> bucket.o
+   [CC] callerid.c -> callerid.o
+   [CC] channel.c -> channel.o
+   [CC] channel_internal_api.c -> channel_internal_api.o
+   [CC] channelstorage.c -> channelstorage.o
+   [CC] channelstorage_ao2_legacy.c -> channelstorage_ao2_legacy.o
+   [CC] chanvars.c -> chanvars.o
+   [CC] cli.c -> cli.o
+   [CC] codec.c -> codec.o
+   [CC] codec_builtin.c -> codec_builtin.o
+   [CC] config_options.c -> config_options.o
+   [CC] conversions.c -> conversions.o
+   [CC] core_local.c -> core_local.o
+   [CC] core_unreal.c -> core_unreal.o
+   [CC] crypt.c -> crypt.o
+   [CC] data_buffer.c -> data_buffer.o
+   [CC] datastore.c -> datastore.o
+   [CC] db.c -> db.o
+   [CC] devicestate.c -> devicestate.o
+   [CC] dial.c -> dial.o
+   [CC] dns.c -> dns.o
+   [CC] dns_core.c -> dns_core.o
+   [CC] dns_naptr.c -> dns_naptr.o
+   [CC] dns_query_set.c -> dns_query_set.o
+   [CC] dns_recurring.c -> dns_recurring.o
+   [CC] dns_srv.c -> dns_srv.o
+   [CC] dns_system_resolver.c -> dns_system_resolver.o
+   [CC] dns_test.c -> dns_test.o
+   [CC] dns_tlsa.c -> dns_tlsa.o
+   [CC] dns_txt.c -> dns_txt.o
+   [CC] endpoints.c -> endpoints.o
+   [CC] event.c -> event.o
+   [CC] features_config.c -> features_config.o
+   [CC] file.c -> file.o
+   [CC] fixedjitterbuf.c -> fixedjitterbuf.o
+   [CC] format.c -> format.o
+   [CC] format_cache.c -> format_cache.o
+   [CC] format_cap.c -> format_cap.o
+   [CC] format_compatibility.c -> format_compatibility.o
+   [CC] frame.c -> frame.o
+   [CC] framehook.c -> framehook.o
+   [CC] fskmodem.c -> fskmodem.o
+   [CC] global_datastores.c -> global_datastores.o
+   [CC] hashtab.c -> hashtab.o
+   [CC] heap.c -> heap.o
+   [CC] image.c -> image.o
+   [CC] io.c -> io.o
+   [CC] iostream.c -> iostream.o
+   [CC] jitterbuf.c -> jitterbuf.o
+   [CC] json.c -> json.o
+   [CC] loader.c -> loader.o
+   [CC] lock.c -> lock.o
+   [CC] logger_category.c -> logger_category.o
+   [CC] manager_bridges.c -> manager_bridges.o
+   [CC] manager_channels.c -> manager_channels.o
+   [CC] manager_endpoints.c -> manager_endpoints.o
+   [CC] manager_mwi.c -> manager_mwi.o
+   [CC] manager_system.c -> manager_system.o
+   [CC] max_forwards.c -> max_forwards.o
+   [CC] md5.c -> md5.o
+   [CC] media_cache.c -> media_cache.o
+   [CC] media_index.c -> media_index.o
+   [CC] message.c -> message.o
+   [CC] mixmonitor.c -> mixmonitor.o
+   [CC] mwi.c -> mwi.o
+   [CC] named_locks.c -> named_locks.o
+   [CC] netsock2.c -> netsock2.o
+   [CC] optional_api.c -> optional_api.o
+   [CC] options.c -> options.o
+   [CC] parking.c -> parking.o
+   [CC] pbx.c -> pbx.o
+   [CC] pbx_app.c -> pbx_app.o
+   [CC] pbx_builtins.c -> pbx_builtins.o
+   [CC] pbx_functions.c -> pbx_functions.o
+   [CC] pbx_hangup_handler.c -> pbx_hangup_handler.o
+   [CC] pbx_ignorepat.c -> pbx_ignorepat.o
+   [CC] pbx_include.c -> pbx_include.o
+   [CC] pbx_sw.c -> pbx_sw.o
+   [CC] pbx_switch.c -> pbx_switch.o
+   [CC] pbx_timing.c -> pbx_timing.o
+   [CC] pbx_variables.c -> pbx_variables.o
+   [CC] pickup.c -> pickup.o
+   [CC] poll.c -> poll.o
+   [CC] presencestate.c -> presencestate.o
+   [CC] privacy.c -> privacy.o
+   [CC] refer.c -> refer.o
+   [CC] rtp_engine.c -> rtp_engine.o
+   [CC] say.c -> say.o
+   [CC] sched.c -> sched.o
+   [CC] sdp_srtp.c -> sdp_srtp.o
+   [CC] security_events.c -> security_events.o
+   [CC] sem.c -> sem.o
+   [CC] serializer.c -> serializer.o
+   [CC] serializer_shutdown_group.c -> serializer_shutdown_group.o
+   [CC] sha1.c -> sha1.o
+   [CC] sip_api.c -> sip_api.o
+   [CC] slinfactory.c -> slinfactory.o
+   [CC] smoother.c -> smoother.o
+   [CC] sorcery.c -> sorcery.o
+   [CC] srv.c -> srv.o
+   [CC] stasis.c -> stasis.o
+   [CC] stasis_bridges.c -> stasis_bridges.o
+   [CC] stasis_cache.c -> stasis_cache.o
+   [CC] stasis_cache_pattern.c -> stasis_cache_pattern.o
+   [CC] stasis_channels.c -> stasis_channels.o
+   [CC] stasis_endpoints.c -> stasis_endpoints.o
+   [CC] stasis_message.c -> stasis_message.o
+   [CC] stasis_message_router.c -> stasis_message_router.o
+   [CC] stasis_state.c -> stasis_state.o
+   [CC] stasis_system.c -> stasis_system.o
+   [CC] stdtime/localtime.c -> stdtime/localtime.o
+   [CC] strcompat.c -> strcompat.o
+   [CC] stream.c -> stream.o
+   [CC] stringfields.c -> stringfields.o
+   [CC] strings.c -> strings.o
+   [CC] stun.c -> stun.o
+   [CC] syslog.c -> syslog.o
+   [CC] taskpool.c -> taskpool.o
+   [CC] taskprocessor.c -> taskprocessor.o
+   [CC] tcptls.c -> tcptls.o
+   [CC] tdd.c -> tdd.o
+   [CC] term.c -> term.o
+   [CC] test.c -> test.o
+   [CC] threadpool.c -> threadpool.o
+   [CC] threadstorage.c -> threadstorage.o
+   [CC] time.c -> time.o
+   [CC] timing.c -> timing.o
+   [CC] translate.c -> translate.o
+   [CC] ulaw.c -> ulaw.o
+   [CC] uri.c -> uri.o
+   [CC] utf8.c -> utf8.o
+   [CC] utils.c -> utils.o
+   [CC] uuid.c -> uuid.o
+   [CC] version.c -> version.o
+   [CC] xml.c -> xml.o
+   [CC] xmldoc.c -> xmldoc.o
+   [CC] ccss.c -> ccss.o
+   [CC] cdr.c -> cdr.o
+   [CC] cel.c -> cel.o
+   [CC] config.c -> config.o
+   [CC] dnsmgr.c -> dnsmgr.o
+   [CC] dsp.c -> dsp.o
+   [CC] enum.c -> enum.o
+   [CC] features.c -> features.o
+   [CC] http.c -> http.o
+   [CC] indications.c -> indications.o
+   [CC] logger.c -> logger.o
+   [CC] manager.c -> manager.o
+   [CC] named_acl.c -> named_acl.o
+   [CC] plc.c -> plc.o
+   [CC] sounds.c -> sounds.o
+   [CC] udptl.c -> udptl.o
+   [CC] libasteriskssl.c -> libasteriskssl.o
+   [CC] libasteriskpj.c -> libasteriskpj.o
+   [GENERATE] libasteriskpj.exports
+   [LD] libasteriskssl.o -> libasteriskssl.so.1
+   [LN] libasteriskssl.so.1 -> libasteriskssl.so
+   [LD] libasteriskpj.o -> libasteriskpj.so.2
+   [LN] libasteriskpj.so.2 -> libasteriskpj.so
+   [LD] abstract_jb.o acl.o adsi.o alaw.o alertpipe.o aoc.o app.o ast_expr2.o ast_expr2f.o asterisk.o astfd.o astmm.o astobj2.o astobj2_container.o astobj2_global.o astobj2_hash.o astobj2_rbtree.o audiohook.o autochan.o autoservice.o backtrace.o bridge.o bridge_after.o bridge_basic.o bridge_channel.o bridge_roles.o bucket.o callerid.o channel.o channel_internal_api.o channelstorage.o channelstorage_ao2_legacy.o chanvars.o cli.o codec.o codec_builtin.o config_options.o conversions.o core_local.o core_unreal.o crypt.o data_buffer.o datastore.o db.o devicestate.o dial.o dns.o dns_core.o dns_naptr.o dns_query_set.o dns_recurring.o dns_srv.o dns_system_resolver.o dns_test.o dns_tlsa.o dns_txt.o endpoints.o event.o features_config.o file.o fixedjitterbuf.o format.o format_cache.o format_cap.o format_compatibility.o frame.o framehook.o fskmodem.o global_datastores.o hashtab.o heap.o image.o io.o iostream.o jitterbuf.o json.o loader.o lock.o logger_category.o manager_bridges.o manager_channels.o manager_endpoints.o manager_mwi.o manager_system.o max_forwards.o md5.o media_cache.o media_index.o message.o mixmonitor.o mwi.o named_locks.o netsock2.o optional_api.o options.o parking.o pbx.o pbx_app.o pbx_builtins.o pbx_functions.o pbx_hangup_handler.o pbx_ignorepat.o pbx_include.o pbx_sw.o pbx_switch.o pbx_timing.o pbx_variables.o pickup.o poll.o presencestate.o privacy.o refer.o rtp_engine.o say.o sched.o sdp_srtp.o security_events.o sem.o serializer.o serializer_shutdown_group.o sha1.o sip_api.o slinfactory.o smoother.o sorcery.o srv.o stasis.o stasis_bridges.o stasis_cache.o stasis_cache_pattern.o stasis_channels.o stasis_endpoints.o stasis_message.o stasis_message_router.o stasis_state.o stasis_system.o stdtime/localtime.o strcompat.o stream.o stringfields.o strings.o stun.o syslog.o taskpool.o taskprocessor.o tcptls.o tdd.o term.o test.o threadpool.o threadstorage.o time.o timing.o translate.o ulaw.o uri.o utf8.o utils.o uuid.o version.o xml.o xmldoc.o ccss.o cdr.o cel.o config.o dnsmgr.o dsp.o enum.o features.o http.o indications.o logger.o manager.o named_acl.o plc.o sounds.o udptl.o -> asterisk
+   [CC] res_adsi.c -> res_adsi.o
+   [CC] res_aeap.c -> res_aeap.o
+   [CC] res_aeap/aeap.c -> res_aeap/aeap.o
+   [CC] res_aeap/general.c -> res_aeap/general.o
+   [CC] res_aeap/message.c -> res_aeap/message.o
+   [CC] res_aeap/message_json.c -> res_aeap/message_json.o
+   [CC] res_aeap/transaction.c -> res_aeap/transaction.o
+   [CC] res_aeap/transport.c -> res_aeap/transport.o
+   [CC] res_aeap/transport_websocket.c -> res_aeap/transport_websocket.o
+   [CC] res_ael_share.c -> res_ael_share.o
+   [CC] ael/ael_lex.c -> ael/ael_lex.o
+   [CC] ael/ael.tab.c -> ael/ael.tab.o
+   [CC] ael/pval.c -> ael/pval.o
+   [CC] res_agi.c -> res_agi.o
+   [CC] res_ari.c -> res_ari.o
+   [CC] ari/cli.c -> ari/cli.o
+   [CC] ari/config.c -> ari/config.o
+   [CC] ari/ari_websockets.c -> ari/ari_websockets.o
+   [CC] ari/ari_websocket_requests.c -> ari/ari_websocket_requests.o
+   [CC] res_ari_applications.c -> res_ari_applications.o
+   [CC] ari/resource_applications.c -> ari/resource_applications.o
+   [CC] res_ari_asterisk.c -> res_ari_asterisk.o
+   [CC] ari/resource_asterisk.c -> ari/resource_asterisk.o
+   [CC] res_ari_bridges.c -> res_ari_bridges.o
+   [CC] ari/resource_bridges.c -> ari/resource_bridges.o
+   [CC] res_ari_channels.c -> res_ari_channels.o
+   [CC] ari/resource_channels.c -> ari/resource_channels.o
+   [CC] res_ari_device_states.c -> res_ari_device_states.o
+   [CC] ari/resource_device_states.c -> ari/resource_device_states.o
+   [CC] res_ari_endpoints.c -> res_ari_endpoints.o
+   [CC] ari/resource_endpoints.c -> ari/resource_endpoints.o
+   [CC] res_ari_events.c -> res_ari_events.o
+   [CC] ari/resource_events.c -> ari/resource_events.o
+   [CC] res_ari_model.c -> res_ari_model.o
+   [CC] ari/ari_model_validators.c -> ari/ari_model_validators.o
+   [CC] res_ari_playbacks.c -> res_ari_playbacks.o
+   [CC] ari/resource_playbacks.c -> ari/resource_playbacks.o
+   [CC] res_ari_recordings.c -> res_ari_recordings.o
+   [CC] ari/resource_recordings.c -> ari/resource_recordings.o
+   [CC] res_ari_sounds.c -> res_ari_sounds.o
+   [CC] ari/resource_sounds.c -> ari/resource_sounds.o
+   [CC] res_audiosocket.c -> res_audiosocket.o
+   [CC] res_calendar.c -> res_calendar.o
+   [CC] res_clialiases.c -> res_clialiases.o
+   [CC] res_clioriginate.c -> res_clioriginate.o
+   [CC] res_config_curl.c -> res_config_curl.o
+   [CC] res_config_odbc.c -> res_config_odbc.o
+   [CC] res_config_sqlite3.c -> res_config_sqlite3.o
+   [CC] res_convert.c -> res_convert.o
+   [CC] res_crypto.c -> res_crypto.o
+   [CC] res_curl.c -> res_curl.o
+   [CC] res_fax.c -> res_fax.o
+   [CC] res_fax_spandsp.c -> res_fax_spandsp.o
+   [CC] res_format_attr_celt.c -> res_format_attr_celt.o
+   [CC] res_format_attr_g729.c -> res_format_attr_g729.o
+   [CC] res_format_attr_h263.c -> res_format_attr_h263.o
+   [CC] res_format_attr_h264.c -> res_format_attr_h264.o
+   [CC] res_format_attr_ilbc.c -> res_format_attr_ilbc.o
+   [CC] res_format_attr_opus.c -> res_format_attr_opus.o
+   [CC] res_format_attr_silk.c -> res_format_attr_silk.o
+   [CC] res_format_attr_siren14.c -> res_format_attr_siren14.o
+   [CC] res_format_attr_siren7.c -> res_format_attr_siren7.o
+   [CC] res_format_attr_vp8.c -> res_format_attr_vp8.o
+   [CC] res_geolocation.c -> res_geolocation.o
+   [CC] res_geolocation/geoloc_civicaddr.c -> res_geolocation/geoloc_civicaddr.o
+   [CC] res_geolocation/geoloc_common.c -> res_geolocation/geoloc_common.o
+   [CC] res_geolocation/geoloc_config.c -> res_geolocation/geoloc_config.o
+   [CC] res_geolocation/geoloc_datastore.c -> res_geolocation/geoloc_datastore.o
+   [CC] res_geolocation/geoloc_dialplan.c -> res_geolocation/geoloc_dialplan.o
+   [CC] res_geolocation/geoloc_eprofile.c -> res_geolocation/geoloc_eprofile.o
+   [CC] res_geolocation/geoloc_gml.c -> res_geolocation/geoloc_gml.o
+   [LD] res_geolocation/pidf_lo_test.xml -> res_geolocation/pidf_lo_test.o
+   [LD] res_geolocation/pidf_to_eprofile.xslt -> res_geolocation/pidf_to_eprofile.o
+   [LD] res_geolocation/eprofile_to_pidf.xslt -> res_geolocation/eprofile_to_pidf.o
+   [CC] res_hep.c -> res_hep.o
+   [CC] res_hep_pjsip.c -> res_hep_pjsip.o
+   [CC] res_hep_rtcp.c -> res_hep_rtcp.o
+   [CC] res_http_media_cache.c -> res_http_media_cache.o
+   [CC] res_http_websocket.c -> res_http_websocket.o
+   [CC] res_limit.c -> res_limit.o
+   [CC] res_manager_devicestate.c -> res_manager_devicestate.o
+   [CC] res_manager_presencestate.c -> res_manager_presencestate.o
+   [CC] res_musiconhold.c -> res_musiconhold.o
+   [CC] res_mutestream.c -> res_mutestream.o
+   [CC] res_mwi_devstate.c -> res_mwi_devstate.o
+   [CC] res_odbc.c -> res_odbc.o
+   [CC] res_odbc_transaction.c -> res_odbc_transaction.o
+   [CC] res_parking.c -> res_parking.o
+   [CC] parking/parking_applications.c -> parking/parking_applications.o
+   [CC] parking/parking_bridge.c -> parking/parking_bridge.o
+   [CC] parking/parking_bridge_features.c -> parking/parking_bridge_features.o
+   [CC] parking/parking_controller.c -> parking/parking_controller.o
+   [CC] parking/parking_devicestate.c -> parking/parking_devicestate.o
+   [CC] parking/parking_manager.c -> parking/parking_manager.o
+   [CC] parking/parking_tests.c -> parking/parking_tests.o
+   [CC] parking/parking_ui.c -> parking/parking_ui.o
+   [CC] res_phoneprov.c -> res_phoneprov.o
+   [CC] res_pjproject.c -> res_pjproject.o
+   [CC] res_pjsip.c -> res_pjsip.o
+   [CC] res_pjsip/config_auth.c -> res_pjsip/config_auth.o
+   [CC] res_pjsip/config_domain_aliases.c -> res_pjsip/config_domain_aliases.o
+   [CC] res_pjsip/config_global.c -> res_pjsip/config_global.o
+   [CC] res_pjsip/config_system.c -> res_pjsip/config_system.o
+   [CC] res_pjsip/config_transport.c -> res_pjsip/config_transport.o
+   [CC] res_pjsip/location.c -> res_pjsip/location.o
+   [CC] res_pjsip/pjsip_cli.c -> res_pjsip/pjsip_cli.o
+   [CC] res_pjsip/pjsip_configuration.c -> res_pjsip/pjsip_configuration.o
+   [CC] res_pjsip/pjsip_distributor.c -> res_pjsip/pjsip_distributor.o
+   [CC] res_pjsip/pjsip_global_headers.c -> res_pjsip/pjsip_global_headers.o
+   [CC] res_pjsip/pjsip_message_filter.c -> res_pjsip/pjsip_message_filter.o
+   [CC] res_pjsip/pjsip_options.c -> res_pjsip/pjsip_options.o
+   [CC] res_pjsip/pjsip_resolver.c -> res_pjsip/pjsip_resolver.o
+   [CC] res_pjsip/pjsip_scheduler.c -> res_pjsip/pjsip_scheduler.o
+   [CC] res_pjsip/pjsip_session.c -> res_pjsip/pjsip_session.o
+   [CC] res_pjsip/pjsip_transport_events.c -> res_pjsip/pjsip_transport_events.o
+   [CC] res_pjsip/pjsip_transport_management.c -> res_pjsip/pjsip_transport_management.o
+   [CC] res_pjsip/presence_xml.c -> res_pjsip/presence_xml.o
+   [CC] res_pjsip/security_agreements.c -> res_pjsip/security_agreements.o
+   [CC] res_pjsip/security_events.c -> res_pjsip/security_events.o
+   [CC] res_pjsip_acl.c -> res_pjsip_acl.o
+   [CC] res_pjsip_aoc.c -> res_pjsip_aoc.o
+   [CC] res_pjsip_authenticator_digest.c -> res_pjsip_authenticator_digest.o
+   [CC] res_pjsip_caller_id.c -> res_pjsip_caller_id.o
+   [CC] res_pjsip_config_wizard.c -> res_pjsip_config_wizard.o
+   [CC] res_pjsip_dialog_info_body_generator.c -> res_pjsip_dialog_info_body_generator.o
+   [CC] res_pjsip_diversion.c -> res_pjsip_diversion.o
+   [CC] res_pjsip_dlg_options.c -> res_pjsip_dlg_options.o
+   [CC] res_pjsip_dtmf_info.c -> res_pjsip_dtmf_info.o
+   [CC] res_pjsip_empty_info.c -> res_pjsip_empty_info.o
+   [CC] res_pjsip_endpoint_identifier_anonymous.c -> res_pjsip_endpoint_identifier_anonymous.o
+   [CC] res_pjsip_endpoint_identifier_ip.c -> res_pjsip_endpoint_identifier_ip.o
+   [CC] res_pjsip_endpoint_identifier_user.c -> res_pjsip_endpoint_identifier_user.o
+   [CC] res_pjsip_exten_state.c -> res_pjsip_exten_state.o
+   [CC] res_pjsip_geolocation.c -> res_pjsip_geolocation.o
+   [CC] res_pjsip_header_funcs.c -> res_pjsip_header_funcs.o
+   [CC] res_pjsip_history.c -> res_pjsip_history.o
+   [CC] res_pjsip_logger.c -> res_pjsip_logger.o
+   [CC] res_pjsip_messaging.c -> res_pjsip_messaging.o
+   [CC] res_pjsip_mwi.c -> res_pjsip_mwi.o
+   [CC] res_pjsip_mwi_body_generator.c -> res_pjsip_mwi_body_generator.o
+   [CC] res_pjsip_nat.c -> res_pjsip_nat.o
+   [CC] res_pjsip_notify.c -> res_pjsip_notify.o
+   [CC] res_pjsip_one_touch_record_info.c -> res_pjsip_one_touch_record_info.o
+   [CC] res_pjsip_outbound_authenticator_digest.c -> res_pjsip_outbound_authenticator_digest.o
+   [CC] res_pjsip_outbound_publish.c -> res_pjsip_outbound_publish.o
+   [CC] res_pjsip_outbound_registration.c -> res_pjsip_outbound_registration.o
+   [CC] res_pjsip_path.c -> res_pjsip_path.o
+   [CC] res_pjsip_phoneprov_provider.c -> res_pjsip_phoneprov_provider.o
+   [CC] res_pjsip_pidf_body_generator.c -> res_pjsip_pidf_body_generator.o
+   [CC] res_pjsip_pidf_digium_body_supplement.c -> res_pjsip_pidf_digium_body_supplement.o
+   [CC] res_pjsip_pidf_eyebeam_body_supplement.c -> res_pjsip_pidf_eyebeam_body_supplement.o
+   [CC] res_pjsip_publish_asterisk.c -> res_pjsip_publish_asterisk.o
+   [CC] res_pjsip_pubsub.c -> res_pjsip_pubsub.o
+   [CC] res_pjsip_refer.c -> res_pjsip_refer.o
+   [CC] res_pjsip_registrar.c -> res_pjsip_registrar.o
+   [CC] res_pjsip_rfc3326.c -> res_pjsip_rfc3326.o
+   [CC] res_pjsip_rfc3329.c -> res_pjsip_rfc3329.o
+   [CC] res_pjsip_sdp_rtp.c -> res_pjsip_sdp_rtp.o
+   [CC] res_pjsip_send_to_voicemail.c -> res_pjsip_send_to_voicemail.o
+   [CC] res_pjsip_session.c -> res_pjsip_session.o
+   [CC] res_pjsip_session/pjsip_session_caps.c -> res_pjsip_session/pjsip_session_caps.o
+   [CC] res_pjsip_session/pjsip_session_reason_header.c -> res_pjsip_session/pjsip_session_reason_header.o
+   [CC] res_pjsip_sips_contact.c -> res_pjsip_sips_contact.o
+   [CC] res_pjsip_t38.c -> res_pjsip_t38.o
+   [CC] res_pjsip_transport_websocket.c -> res_pjsip_transport_websocket.o
+   [CC] res_pjsip_xpidf_body_generator.c -> res_pjsip_xpidf_body_generator.o
+   [CC] res_prometheus.c -> res_prometheus.o
+   [CC] prometheus/bridges.c -> prometheus/bridges.o
+   [CC] prometheus/channels.c -> prometheus/channels.o
+   [CC] prometheus/cli.c -> prometheus/cli.o
+   [CC] prometheus/endpoints.c -> prometheus/endpoints.o
+   [CC] prometheus/pjsip_outbound_registrations.c -> prometheus/pjsip_outbound_registrations.o
+   [CC] res_realtime.c -> res_realtime.o
+   [CC] res_rtp_asterisk.c -> res_rtp_asterisk.o
+   [CC] res_rtp_multicast.c -> res_rtp_multicast.o
+   [CC] res_security_log.c -> res_security_log.o
+   [CC] res_smdi.c -> res_smdi.o
+   [CC] res_sorcery_astdb.c -> res_sorcery_astdb.o
+   [CC] res_sorcery_config.c -> res_sorcery_config.o
+   [CC] res_sorcery_memory.c -> res_sorcery_memory.o
+   [CC] res_sorcery_memory_cache.c -> res_sorcery_memory_cache.o
+   [CC] res_sorcery_realtime.c -> res_sorcery_realtime.o
+   [CC] res_speech.c -> res_speech.o
+   [CC] res_speech_aeap.c -> res_speech_aeap.o
+   [CC] res_stasis.c -> res_stasis.o
+   [CC] stasis/app.c -> stasis/app.o
+   [CC] stasis/command.c -> stasis/command.o
+   [CC] stasis/control.c -> stasis/control.o
+   [CC] stasis/messaging.c -> stasis/messaging.o
+   [CC] stasis/stasis_bridge.c -> stasis/stasis_bridge.o
+   [CC] res_stasis_answer.c -> res_stasis_answer.o
+   [CC] res_stasis_device_state.c -> res_stasis_device_state.o
+   [CC] res_stasis_playback.c -> res_stasis_playback.o
+   [CC] res_stasis_recording.c -> res_stasis_recording.o
+   [CC] stasis_recording/stored.c -> stasis_recording/stored.o
+   [CC] res_stasis_snoop.c -> res_stasis_snoop.o
+   [CC] res_statsd.c -> res_statsd.o
+   [CC] res_stun_monitor.c -> res_stun_monitor.o
+   [CC] res_timing_pthread.c -> res_timing_pthread.o
+   [CC] res_timing_timerfd.c -> res_timing_timerfd.o
+   [CC] res_tonedetect.c -> res_tonedetect.o
+   [CC] res_websocket_client.c -> res_websocket_client.o
+   [LD] res_adsi.o -> res_adsi.so
+   [LD] res_aeap.o res_aeap/aeap.o res_aeap/general.o res_aeap/message.o res_aeap/message_json.o res_aeap/transaction.o res_aeap/transport.o res_aeap/transport_websocket.o -> res_aeap.so
+   [LD] res_ael_share.o ael/ael_lex.o ael/ael.tab.o ael/pval.o -> res_ael_share.so
+   [LD] res_agi.o -> res_agi.so
+   [LD] res_ari.o ari/cli.o ari/config.o ari/ari_websockets.o ari/ari_websocket_requests.o -> res_ari.so
+   [LD] res_ari_applications.o ari/resource_applications.o -> res_ari_applications.so
+   [LD] res_ari_asterisk.o ari/resource_asterisk.o -> res_ari_asterisk.so
+   [LD] res_ari_bridges.o ari/resource_bridges.o -> res_ari_bridges.so
+   [LD] res_ari_channels.o ari/resource_channels.o -> res_ari_channels.so
+   [LD] res_ari_device_states.o ari/resource_device_states.o -> res_ari_device_states.so
+   [LD] res_ari_endpoints.o ari/resource_endpoints.o -> res_ari_endpoints.so
+   [LD] res_ari_events.o ari/resource_events.o -> res_ari_events.so
+   [LD] res_ari_model.o ari/ari_model_validators.o -> res_ari_model.so
+   [LD] res_ari_playbacks.o ari/resource_playbacks.o -> res_ari_playbacks.so
+   [LD] res_ari_recordings.o ari/resource_recordings.o -> res_ari_recordings.so
+   [LD] res_ari_sounds.o ari/resource_sounds.o -> res_ari_sounds.so
+   [LD] res_audiosocket.o -> res_audiosocket.so
+   [LD] res_calendar.o -> res_calendar.so
+   [LD] res_clialiases.o -> res_clialiases.so
+   [LD] res_clioriginate.o -> res_clioriginate.so
+   [LD] res_config_curl.o -> res_config_curl.so
+   [LD] res_config_odbc.o -> res_config_odbc.so
+   [LD] res_config_sqlite3.o -> res_config_sqlite3.so
+   [LD] res_convert.o -> res_convert.so
+   [LD] res_crypto.o -> res_crypto.so
+   [LD] res_curl.o -> res_curl.so
+   [LD] res_fax.o -> res_fax.so
+   [LD] res_fax_spandsp.o -> res_fax_spandsp.so
+   [LD] res_format_attr_celt.o -> res_format_attr_celt.so
+   [LD] res_format_attr_g729.o -> res_format_attr_g729.so
+   [LD] res_format_attr_h263.o -> res_format_attr_h263.so
+   [LD] res_format_attr_h264.o -> res_format_attr_h264.so
+   [LD] res_format_attr_ilbc.o -> res_format_attr_ilbc.so
+   [LD] res_format_attr_opus.o -> res_format_attr_opus.so
+   [LD] res_format_attr_silk.o -> res_format_attr_silk.so
+   [LD] res_format_attr_siren14.o -> res_format_attr_siren14.so
+   [LD] res_format_attr_siren7.o -> res_format_attr_siren7.so
+   [LD] res_format_attr_vp8.o -> res_format_attr_vp8.so
+   [LD] res_geolocation.o res_geolocation/geoloc_civicaddr.o res_geolocation/geoloc_common.o res_geolocation/geoloc_config.o res_geolocation/geoloc_datastore.o res_geolocation/geoloc_dialplan.o res_geolocation/geoloc_eprofile.o res_geolocation/geoloc_gml.o res_geolocation/pidf_lo_test.o res_geolocation/pidf_to_eprofile.o res_geolocation/eprofile_to_pidf.o -> res_geolocation.so
+   [LD] res_hep.o -> res_hep.so
+   [LD] res_hep_pjsip.o -> res_hep_pjsip.so
+   [LD] res_hep_rtcp.o -> res_hep_rtcp.so
+   [LD] res_http_media_cache.o -> res_http_media_cache.so
+   [LD] res_http_websocket.o -> res_http_websocket.so
+   [LD] res_limit.o -> res_limit.so
+   [LD] res_manager_devicestate.o -> res_manager_devicestate.so
+   [LD] res_manager_presencestate.o -> res_manager_presencestate.so
+   [LD] res_musiconhold.o -> res_musiconhold.so
+   [LD] res_mutestream.o -> res_mutestream.so
+   [LD] res_mwi_devstate.o -> res_mwi_devstate.so
+   [LD] res_odbc.o -> res_odbc.so
+   [LD] res_odbc_transaction.o -> res_odbc_transaction.so
+   [LD] res_parking.o parking/parking_applications.o parking/parking_bridge.o parking/parking_bridge_features.o parking/parking_controller.o parking/parking_devicestate.o parking/parking_manager.o parking/parking_tests.o parking/parking_ui.o -> res_parking.so
+   [LD] res_phoneprov.o -> res_phoneprov.so
+   [LD] res_pjproject.o -> res_pjproject.so
+   [LD] res_pjsip.o res_pjsip/config_auth.o res_pjsip/config_domain_aliases.o res_pjsip/config_global.o res_pjsip/config_system.o res_pjsip/config_transport.o res_pjsip/location.o res_pjsip/pjsip_cli.o res_pjsip/pjsip_configuration.o res_pjsip/pjsip_distributor.o res_pjsip/pjsip_global_headers.o res_pjsip/pjsip_message_filter.o res_pjsip/pjsip_options.o res_pjsip/pjsip_resolver.o res_pjsip/pjsip_scheduler.o res_pjsip/pjsip_session.o res_pjsip/pjsip_transport_events.o res_pjsip/pjsip_transport_management.o res_pjsip/presence_xml.o res_pjsip/security_agreements.o res_pjsip/security_events.o -> res_pjsip.so
+   [LD] res_pjsip_acl.o -> res_pjsip_acl.so
+   [LD] res_pjsip_aoc.o -> res_pjsip_aoc.so
+   [LD] res_pjsip_authenticator_digest.o -> res_pjsip_authenticator_digest.so
+   [LD] res_pjsip_caller_id.o -> res_pjsip_caller_id.so
+   [LD] res_pjsip_config_wizard.o -> res_pjsip_config_wizard.so
+   [LD] res_pjsip_dialog_info_body_generator.o -> res_pjsip_dialog_info_body_generator.so
+   [LD] res_pjsip_diversion.o -> res_pjsip_diversion.so
+   [LD] res_pjsip_dlg_options.o -> res_pjsip_dlg_options.so
+   [LD] res_pjsip_dtmf_info.o -> res_pjsip_dtmf_info.so
+   [LD] res_pjsip_empty_info.o -> res_pjsip_empty_info.so
+   [LD] res_pjsip_endpoint_identifier_anonymous.o -> res_pjsip_endpoint_identifier_anonymous.so
+   [LD] res_pjsip_endpoint_identifier_ip.o -> res_pjsip_endpoint_identifier_ip.so
+   [LD] res_pjsip_endpoint_identifier_user.o -> res_pjsip_endpoint_identifier_user.so
+   [LD] res_pjsip_exten_state.o -> res_pjsip_exten_state.so
+   [LD] res_pjsip_geolocation.o -> res_pjsip_geolocation.so
+   [LD] res_pjsip_header_funcs.o -> res_pjsip_header_funcs.so
+   [LD] res_pjsip_history.o -> res_pjsip_history.so
+   [LD] res_pjsip_logger.o -> res_pjsip_logger.so
+   [LD] res_pjsip_messaging.o -> res_pjsip_messaging.so
+   [LD] res_pjsip_mwi.o -> res_pjsip_mwi.so
+   [LD] res_pjsip_mwi_body_generator.o -> res_pjsip_mwi_body_generator.so
+   [LD] res_pjsip_nat.o -> res_pjsip_nat.so
+   [LD] res_pjsip_notify.o -> res_pjsip_notify.so
+   [LD] res_pjsip_one_touch_record_info.o -> res_pjsip_one_touch_record_info.so
+   [LD] res_pjsip_outbound_authenticator_digest.o -> res_pjsip_outbound_authenticator_digest.so
+   [LD] res_pjsip_outbound_publish.o -> res_pjsip_outbound_publish.so
+   [LD] res_pjsip_outbound_registration.o -> res_pjsip_outbound_registration.so
+   [LD] res_pjsip_path.o -> res_pjsip_path.so
+   [LD] res_pjsip_phoneprov_provider.o -> res_pjsip_phoneprov_provider.so
+   [LD] res_pjsip_pidf_body_generator.o -> res_pjsip_pidf_body_generator.so
+   [LD] res_pjsip_pidf_digium_body_supplement.o -> res_pjsip_pidf_digium_body_supplement.so
+   [LD] res_pjsip_pidf_eyebeam_body_supplement.o -> res_pjsip_pidf_eyebeam_body_supplement.so
+   [LD] res_pjsip_publish_asterisk.o -> res_pjsip_publish_asterisk.so
+   [LD] res_pjsip_pubsub.o -> res_pjsip_pubsub.so
+   [LD] res_pjsip_refer.o -> res_pjsip_refer.so
+   [LD] res_pjsip_registrar.o -> res_pjsip_registrar.so
+   [LD] res_pjsip_rfc3326.o -> res_pjsip_rfc3326.so
+   [LD] res_pjsip_rfc3329.o -> res_pjsip_rfc3329.so
+   [LD] res_pjsip_sdp_rtp.o -> res_pjsip_sdp_rtp.so
+   [LD] res_pjsip_send_to_voicemail.o -> res_pjsip_send_to_voicemail.so
+   [LD] res_pjsip_session.o res_pjsip_session/pjsip_session_caps.o res_pjsip_session/pjsip_session_reason_header.o -> res_pjsip_session.so
+   [LD] res_pjsip_sips_contact.o -> res_pjsip_sips_contact.so
+   [LD] res_pjsip_t38.o -> res_pjsip_t38.so
+   [LD] res_pjsip_transport_websocket.o -> res_pjsip_transport_websocket.so
+   [LD] res_pjsip_xpidf_body_generator.o -> res_pjsip_xpidf_body_generator.so
+   [LD] res_prometheus.o prometheus/bridges.o prometheus/channels.o prometheus/cli.o prometheus/endpoints.o prometheus/pjsip_outbound_registrations.o -> res_prometheus.so
+   [LD] res_realtime.o -> res_realtime.so
+   [LD] res_rtp_multicast.o -> res_rtp_multicast.so
+   [LD] res_rtp_asterisk.o -> res_rtp_asterisk.so
+   [LD] res_security_log.o -> res_security_log.so
+   [LD] res_smdi.o -> res_smdi.so
+   [LD] res_sorcery_astdb.o -> res_sorcery_astdb.so
+   [LD] res_sorcery_config.o -> res_sorcery_config.so
+   [LD] res_sorcery_memory.o -> res_sorcery_memory.so
+   [LD] res_sorcery_memory_cache.o -> res_sorcery_memory_cache.so
+   [LD] res_speech.o -> res_speech.so
+   [LD] res_sorcery_realtime.o -> res_sorcery_realtime.so
+   [LD] res_speech_aeap.o -> res_speech_aeap.so
+   [LD] res_stasis.o stasis/app.o stasis/command.o stasis/control.o stasis/messaging.o stasis/stasis_bridge.o -> res_stasis.so
+   [LD] res_stasis_answer.o -> res_stasis_answer.so
+   [LD] res_stasis_device_state.o -> res_stasis_device_state.so
+   [LD] res_stasis_playback.o -> res_stasis_playback.so
+   [LD] res_stasis_recording.o stasis_recording/stored.o -> res_stasis_recording.so
+   [LD] res_stasis_snoop.o -> res_stasis_snoop.so
+   [LD] res_statsd.o -> res_statsd.so
+   [LD] res_stun_monitor.o -> res_stun_monitor.so
+   [LD] res_timing_pthread.o -> res_timing_pthread.so
+   [LD] res_timing_timerfd.o -> res_timing_timerfd.so
+   [LD] res_tonedetect.o -> res_tonedetect.so
+   [LD] res_websocket_client.o -> res_websocket_client.so
+Building Documentation For: channels pbx apps codecs formats cdr cel bridges funcs tests main res addons 
+ +--------- Asterisk Build Complete ---------+
+ + Asterisk has successfully been built, and +
+ + can be installed by running:              +
+ +                                           +
+ +                make install               +
+ +-------------------------------------------+
+
+[4/8] Validating required modules
+PASS  channels/chan_pjsip.so
+PASS  res/res_pjsip.so
+PASS  res/res_http_websocket.so
+PASS  res/res_ari.so
+PASS  apps/app_voicemail.so
+PASS  funcs/func_odbc.so
+PASS  cdr/cdr_adaptive_odbc.so
+PASS  res/res_odbc.so
+
+[5/8] Staging installation
+CC="cc" CXX="g++" LD="" AR="" RANLIB="" CFLAGS="" LDFLAGS="" make -C menuselect CONFIGURE_SILENT="--silent" makeopts
+make[1]: Entering directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/menuselect'
+make[1]: 'makeopts' is up to date.
+make[1]: Leaving directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/menuselect'
+Installing modules from channels...
+Installing modules from pbx...
+Installing modules from apps...
+Installing modules from codecs...
+Installing modules from formats...
+Installing modules from cdr...
+Installing modules from cel...
+Installing modules from bridges...
+Installing modules from funcs...
+Installing modules from tests...
+Installing modules from main...
+Installing modules from res...
+Installing modules from addons...
+/usr/bin/install -c -m 755 contrib/scripts/astversion "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/opt/franzfon-arm64/asterisk/sbin/"
+/usr/bin/install -c -m 755 contrib/scripts/astgenkey "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/opt/franzfon-arm64/asterisk/sbin/"
+/usr/bin/install -c -m 755 contrib/scripts/autosupport "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/opt/franzfon-arm64/asterisk/sbin/"
+./build_tools/install_subst contrib/scripts/safe_asterisk "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/opt/franzfon-arm64/asterisk/sbin/safe_asterisk";
+/usr/bin/install -c -m 644 doc/core-*.xml "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/var/lib/asterisk/documentation"
+/usr/bin/install -c -m 644 doc/appdocsxml.xslt "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/var/lib/asterisk/documentation"
+/usr/bin/install -c -m 644 doc/appdocsxml.dtd "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/var/lib/asterisk/documentation"
+/usr/bin/install -c -m 644 doc/asterisk.8 "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/opt/franzfon-arm64/asterisk/share/man/man8"
+/usr/bin/install -c -m 644 doc/astdb*.8 "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/opt/franzfon-arm64/asterisk/share/man/man8"
+/usr/bin/install -c -m 644 contrib/scripts/astgenkey.8 "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/opt/franzfon-arm64/asterisk/share/man/man8"
+/usr/bin/install -c -m 644 contrib/scripts/autosupport.8 "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/opt/franzfon-arm64/asterisk/share/man/man8"
+/usr/bin/install -c -m 644 contrib/scripts/safe_asterisk.8 "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/opt/franzfon-arm64/asterisk/share/man/man8"
+if [ -f contrib/firmware/iax/iaxy.bin ] ; then \
+	/usr/bin/install -c -m 644 contrib/firmware/iax/iaxy.bin "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/var/lib/asterisk/firmware/iax/iaxy.bin"; \
+fi
+CFLAGS=" -fsigned-char -I/usr/include/libxml2 -pipe -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations   -g3 " build_tools/mkpkgconfig "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/opt/franzfon-arm64/asterisk/lib/pkgconfig";
+find static-http | while read x; do \
+	if test -d $x; then \
+		/usr/bin/install -c -m 755 -d "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/var/lib/asterisk/$x"; \
+	else \
+		/usr/bin/install -c -m 644 $x "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/var/lib/asterisk/$x" ; \
+	fi \
+done
+/usr/bin/install -c -m 644 doc/core-en_US.xml "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/var/lib/asterisk/static-http";
+/usr/bin/install -c -m 644 doc/appdocsxml.xslt "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/var/lib/asterisk/static-http";
+if [ -d doc/tex/asterisk ] ; then \
+	/usr/bin/install -c -d "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/var/lib/asterisk/static-http/docs" ; \
+	for n in doc/tex/asterisk/* ; do \
+		/usr/bin/install -c -m 644 $n "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/var/lib/asterisk/static-http/docs" ; \
+	done \
+fi
+for x in images/*.jpg; do \
+	/usr/bin/install -c -m 644 $x "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/var/lib/asterisk/images" ; \
+done
+make -C sounds install
+make[1]: Entering directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/sounds'
+make[1]: Leaving directory '/var/tmp/franzfon-arm64-e2e-v2-asterisk/source/asterisk-22.7.0/sounds'
+find rest-api -name "*.json" | while read x; do \
+	/usr/bin/install -c -m 644 $x "/var/tmp/franzfon-arm64-e2e-v2-asterisk/stage/var/lib/asterisk/rest-api" ; \
+done
+ +---- Asterisk Installation Complete -------+
+ +                                           +
+ +    YOU MUST READ THE SECURITY DOCUMENT    +
+ +                                           +
+ + Asterisk has successfully been installed. +
+ + If you would like to install the sample   +
+ + configuration files (overwriting any      +
+ + existing config files), run:              +
+ +                                           +
+ + For generic reference documentation:      +
+ +    make samples                           +
+ +                                           +
+ + For a sample basic PBX:                   +
+ +    make basic-pbx                         +
+ +                                           +
+ +                                           +
+ +-----------------  or ---------------------+
+ +                                           +
+ + You can go ahead and install the asterisk +
+ + program documentation now or later run:   +
+ +                                           +
+ +               make progdocs               +
+ +                                           +
+ + **Note** This requires that you have      +
+ + doxygen installed on your local system    +
+ +-------------------------------------------+
+
+[6/8] Publishing managed installation
+
+[7/8] Registering managed shared libraries
+
+[8/8] Final native validation
+Asterisk 22.7.0
+/opt/franzfon-arm64/asterisk/sbin/asterisk: ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=4a55e3568c5f2f7206331dc2ce0ed8597a489089, for GNU/Linux 3.7.0, with debug_info, not stripped
+
+Asterisk ARM64 installation completed.
+Prefix:  /opt/franzfon-arm64/asterisk
+Library: /opt/franzfon-arm64/asterisk/lib
+Service: asterisk.service (disabled and stopped)
+Next: install the sanitized FRANZFON configuration and run the bootstrap validation.
++ file /opt/franzfon-arm64/asterisk/sbin/asterisk
++ grep -E 'ARM aarch64|ARM64'
+/opt/franzfon-arm64/asterisk/sbin/asterisk: ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=4a55e3568c5f2f7206331dc2ce0ed8597a489089, for GNU/Linux 3.7.0, with debug_info, not stripped
++ /opt/franzfon-arm64/asterisk/sbin/asterisk -V
+Asterisk 22.7.0
++ ldconfig -p
++ grep -F libasteriskssl.so.1
+	libasteriskssl.so.1 (libc6,AArch64) => /opt/franzfon-arm64/asterisk/lib/libasteriskssl.so.1
++ systemctl is-enabled asterisk.service
++ true
++ systemctl is-active asterisk.service
++ true

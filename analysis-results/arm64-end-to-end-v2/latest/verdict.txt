@@ -1,0 +1,9 @@
+RUN_MARKER=FRANZFON_ARM64_STAGED_E2E_V2
+GITHUB_SHA=47784affc409664e4e6e9c06bcf50ded1072507c
+PREPARE_JOB=success
+APP_JOB=failure
+ASTERISK_JOB=success
+INTEGRATION_JOB=skipped
+
+VERDICT=FAIL
+Open the first stage-specific verdict or log that is not successful.
