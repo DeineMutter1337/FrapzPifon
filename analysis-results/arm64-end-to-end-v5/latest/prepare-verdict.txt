@@ -1,3 +1,0 @@
-STAGE=prepare
-RC=0
-VERDICT=PASS

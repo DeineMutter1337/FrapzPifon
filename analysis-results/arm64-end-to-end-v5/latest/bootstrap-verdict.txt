@@ -1,2 +1,0 @@
-STAGE=bootstrap
-VERDICT=PASS
