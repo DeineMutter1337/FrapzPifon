@@ -8,4 +8,6 @@ The native ARM64 installation is intentionally split into reversible stages:
 4. `franzfon-arm64-install-asterisk.sh` builds Asterisk 22.7.0 and publishes its required runtime data, including XML documentation.
 5. `franzfon-arm64-bootstrap.sh` creates fresh local configuration and is the only stage that can activate services with `--activate`.
 
+Runtime directories such as `/data`, `/backup`, `/backups` and `/config` are excluded only at the FRANZFON payload root. Nested application data, including the holiday module used by the backend, remains part of the sanitized payload and is validated before publication.
+
 No existing passwords, databases, machine identity or license state are imported. The original application licensing mechanism is preserved and is not bypassed.
