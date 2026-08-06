@@ -1,134 +1,0 @@
-Hit:1 https://packages.microsoft.com/repos/azure-cli noble InRelease
-Hit:2 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease
-Hit:3 http://ports.ubuntu.com/ubuntu-ports noble InRelease
-Hit:4 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease
-Hit:5 http://ports.ubuntu.com/ubuntu-ports noble-backports InRelease
-Hit:6 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease
-Reading package lists...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-mariadb-server is already the newest version (1:10.11.14-0ubuntu0.24.04.1).
-mariadb-client is already the newest version (1:10.11.14-0ubuntu0.24.04.1).
-redis-server is already the newest version (5:7.0.15-1ubuntu0.24.04.4).
-sqlite3 is already the newest version (3.45.1-1ubuntu2.7).
-openssl is already the newest version (3.0.13-0ubuntu3.12).
-curl is already the newest version (8.5.0-2ubuntu10.11).
-file is already the newest version (1:5.45-3build1).
-iproute2 is already the newest version (6.1.0-1ubuntu6.4).
-binutils is already the newest version (2.42-4ubuntu2.10).
-The following additional packages will be installed:
-  odbcinst
-The following NEW packages will be installed:
-  odbc-mariadb odbcinst unixodbc
-0 upgraded, 3 newly installed, 0 to remove and 77 not upgraded.
-Need to get 143 kB of archives.
-After this operation, 603 kB of additional disk space will be used.
-Get:1 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 odbcinst arm64 2.3.12-1ubuntu0.24.04.1 [9632 B]
-Get:2 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 odbc-mariadb arm64 3.1.15-3 [108 kB]
-Get:3 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 unixodbc arm64 2.3.12-1ubuntu0.24.04.1 [26.3 kB]
-Fetched 143 kB in 0s (290 kB/s)
-Selecting previously unselected package odbcinst.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 202450 files and directories currently installed.)
-Preparing to unpack .../odbcinst_2.3.12-1ubuntu0.24.04.1_arm64.deb ...
-Unpacking odbcinst (2.3.12-1ubuntu0.24.04.1) ...
-Selecting previously unselected package odbc-mariadb.
-Preparing to unpack .../odbc-mariadb_3.1.15-3_arm64.deb ...
-Unpacking odbc-mariadb (3.1.15-3) ...
-Selecting previously unselected package unixodbc.
-Preparing to unpack .../unixodbc_2.3.12-1ubuntu0.24.04.1_arm64.deb ...
-Unpacking unixodbc (2.3.12-1ubuntu0.24.04.1) ...
-Setting up odbcinst (2.3.12-1ubuntu0.24.04.1) ...
-Setting up unixodbc (2.3.12-1ubuntu0.24.04.1) ...
-Setting up odbc-mariadb (3.1.15-3) ...
-odbcinst: Driver installed. Usage count increased to 1. 
-    Target directory is /etc
-Processing triggers for man-db (2.12.0-4build2) ...
-Not building database; man-db/auto-update is not 'true'.
-
-Running kernel seems to be up-to-date.
-
-Restarting services...
-
-Service restarts being deferred:
- systemctl restart hosted-compute-agent.service
- systemctl restart systemd-logind.service
- systemctl restart walinuxagent.service
-
-No containers need to be restarted.
-
-User sessions running outdated binaries:
- runner @ user manager service: systemd[1333]
-
-No VM guests are running outdated hypervisor (qemu) binaries on this host.
-
-[1/8] Creating fresh local secrets
-
-[2/8] Initializing MariaDB CDR database
-
-[3/8] Configuring ODBC for Asterisk CDR
-
-[4/8] Writing minimal native Asterisk configuration
-
-[5/8] Validating native binaries and configuration files
-Asterisk 22.7.0
-
-[6/8] Installing final service ordering
-
-[7/8] Recording bootstrap state
-
-[8/8] Final service action
-Synchronizing state of mariadb.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
-Executing: /usr/lib/systemd/systemd-sysv-install enable mariadb
-Synchronizing state of redis-server.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
-Executing: /usr/lib/systemd/systemd-sysv-install enable redis-server
-Created symlink /etc/systemd/system/multi-user.target.wants/asterisk.service → /etc/systemd/system/asterisk.service.
-Created symlink /etc/systemd/system/multi-user.target.wants/franzfon-wizard.service → /etc/systemd/system/franzfon-wizard.service.
-Asterisk 22.7.0 built by root @ runnervma9114 on a aarch64 running Linux on 2026-08-06 11:58:57 UTC
-Module                         Description                              Use Count  Status      Support Level
-res_pjsip.so                   Basic SIP resource                       50         Running              core
-1 modules loaded
-Asterisk 22.7.0 built by root @ runnervma9114 on a aarch64 running Linux on 2026-08-06 11:58:57 UTC
-● asterisk.service - Asterisk PBX
-     Loaded: loaded (/etc/systemd/system/asterisk.service; enabled; preset: enabled)
-     Active: active (running) since Thu 2026-08-06 12:00:44 UTC; 2s ago
-       Docs: man:asterisk(8)
-   Main PID: 55002 (asterisk)
-      Tasks: 55 (limit: 19092)
-     Memory: 46.0M (peak: 46.7M)
-        CPU: 647ms
-     CGroup: /system.slice/asterisk.service
-             └─55002 /opt/franzfon-arm64/asterisk/sbin/asterisk -f -U asterisk -G asterisk
-
-Aug 06 12:00:45 runnervma9114 asterisk[55002]: [2026-08-06 12:00:45] ERROR[55002]: loader.c:2687 load_modules: app_amd declined to load.
-Aug 06 12:00:45 runnervma9114 asterisk[55002]: [2026-08-06 12:00:45] ERROR[55002]: loader.c:2687 load_modules: app_followme declined to load.
-Aug 06 12:00:45 runnervma9114 asterisk[55002]: [2026-08-06 12:00:45] ERROR[55002]: loader.c:2687 load_modules: chan_unistim declined to load.
-Aug 06 12:00:45 runnervma9114 asterisk[55002]: [2026-08-06 12:00:45] ERROR[55002]: loader.c:2687 load_modules: pbx_dundi declined to load.
-Aug 06 12:00:45 runnervma9114 asterisk[55002]: [2026-08-06 12:00:45] ERROR[55002]: loader.c:2687 load_modules: app_festival declined to load.
-Aug 06 12:00:45 runnervma9114 asterisk[55002]: [2026-08-06 12:00:45] ERROR[55002]: loader.c:2687 load_modules: app_alarmreceiver declined to load.
-Aug 06 12:00:45 runnervma9114 asterisk[55002]: [2026-08-06 12:00:45] ERROR[55002]: loader.c:2687 load_modules: pbx_ael declined to load.
-Aug 06 12:00:45 runnervma9114 asterisk[55002]: [2026-08-06 12:00:45] ERROR[55002]: loader.c:2687 load_modules: res_prometheus declined to load.
-Aug 06 12:00:45 runnervma9114 asterisk[55002]: [2026-08-06 12:00:45] ERROR[55002]: loader.c:2687 load_modules: func_odbc declined to load.
-Aug 06 12:00:45 runnervma9114 asterisk[55002]: Asterisk Ready.
-
-● franzfon-wizard.service - FRANZFON Wizard ARM64
-     Loaded: loaded (/etc/systemd/system/franzfon-wizard.service; enabled; preset: enabled)
-     Active: active (running) since Thu 2026-08-06 12:00:43 UTC; 4s ago
-   Main PID: 54900 (node)
-      Tasks: 11 (limit: 19092)
-     Memory: 53.1M (peak: 56.9M)
-        CPU: 714ms
-     CGroup: /system.slice/franzfon-wizard.service
-             └─54900 /usr/local/bin/node src/index.js
-
-Aug 06 12:00:43 runnervma9114 node[54900]: [CDR] MySQL-Verbindung OK
-Aug 06 12:00:43 runnervma9114 node[54900]: [BLF] 1 Extensions geladen
-Aug 06 12:00:43 runnervma9114 node[54900]: [FRANZFON] ensureAdminPjsipEndpoint fehlgeschlagen: ENOENT: no such file or directory, open '/etc/asterisk/extensions_custom.conf'
-Aug 06 12:00:44 runnervma9114 node[54900]: [Update-Check] Bereits aktuell (1.2.0)
-Aug 06 12:00:44 runnervma9114 node[54900]: [BLF] AMI-Verbindung geschlossen
-Aug 06 12:00:44 runnervma9114 node[54900]: [BLF] Reconnect in 5 Sekunden...
-Aug 06 12:00:44 runnervma9114 node[54900]: [Asterisk-Restart][transports] Start
-Aug 06 12:00:44 runnervma9114 node[54900]: [WebSocket] BLF-Service integriert
-Aug 06 12:00:45 runnervma9114 node[54900]: [Asterisk-Unit] Native systemd-Unit fehlt, installiere (LSB-Race-Fix)
-Aug 06 12:00:45 runnervma9114 node[54900]: [Asterisk-Unit] systemctl enable asterisk OK
-FRANZFON ARM64 stack activated successfully.
