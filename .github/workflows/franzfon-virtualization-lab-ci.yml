@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validate:
@@ -29,6 +29,7 @@ jobs:
           sudo apt-get install -y --no-install-recommends shellcheck
 
       - name: Validate shell scripts
+        id: shell
         run: |
           set -euxo pipefail
           bash -n virtualization/qemu/entrypoint.sh
@@ -38,6 +39,7 @@ jobs:
             virtualization/qemu/labctl.sh
 
       - name: Validate PowerShell controller
+        id: powershell
         shell: pwsh
         run: |
           $tokens = $null
@@ -53,16 +55,19 @@ jobs:
           }
 
       - name: Validate Docker Compose
+        id: compose
         run: |
           set -euxo pipefail
           docker compose -f virtualization/docker-compose.yml config >/dev/null
 
       - name: Build QEMU lab image
+        id: image
         run: |
           set -euxo pipefail
           docker build -t franzfon-arm64-lab-ci virtualization/qemu
 
       - name: Verify QEMU tooling and firmware paths
+        id: tooling
         run: |
           set -euxo pipefail
           docker run --rm --entrypoint /bin/bash franzfon-arm64-lab-ci -lc '
@@ -75,6 +80,7 @@ jobs:
           '
 
       - name: Verify official Debian ARM64 image endpoint
+        id: debian
         run: |
           set -euxo pipefail
           curl --fail --location --silent --show-error --head \
@@ -83,3 +89,41 @@ jobs:
           curl --fail --location --silent --show-error --head \
             https://cloud.debian.org/images/cloud/bookworm/latest/SHA512SUMS \
             >/dev/null
+
+      - name: Publish virtualization lab verdict
+        if: always()
+        run: |
+          set -euxo pipefail
+          result_dir='analysis-results/virtualization-lab/latest'
+          rm -rf "$result_dir"
+          mkdir -p "$result_dir"
+          {
+            echo 'RUN_MARKER=FRANZFON_ARM64_VIRTUALIZATION_LAB_V1'
+            echo "GITHUB_SHA=$GITHUB_SHA"
+            echo 'SHELL=${{ steps.shell.outcome }}'
+            echo 'POWERSHELL=${{ steps.powershell.outcome }}'
+            echo 'COMPOSE=${{ steps.compose.outcome }}'
+            echo 'IMAGE_BUILD=${{ steps.image.outcome }}'
+            echo 'QEMU_TOOLING=${{ steps.tooling.outcome }}'
+            echo 'DEBIAN_ENDPOINT=${{ steps.debian.outcome }}'
+            echo
+            if [ '${{ steps.shell.outcome }}' = success ] \
+              && [ '${{ steps.powershell.outcome }}' = success ] \
+              && [ '${{ steps.compose.outcome }}' = success ] \
+              && [ '${{ steps.image.outcome }}' = success ] \
+              && [ '${{ steps.tooling.outcome }}' = success ] \
+              && [ '${{ steps.debian.outcome }}' = success ]; then
+              echo 'VERDICT=PASS'
+            else
+              echo 'VERDICT=FAIL'
+            fi
+          } > "$result_dir/verdict.txt"
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '4189828+github-actions[bot]@users.noreply.github.com'
+          git add "$result_dir/verdict.txt"
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update FRANZFON ARM64 virtualization lab verdict'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
