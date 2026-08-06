@@ -48,28 +48,10 @@ import re
 
 root = pathlib.Path(os.environ["FRANZFON_CONTRACT_ROOT"])
 out = pathlib.Path(os.environ["FRANZFON_CONTRACT_OUT"])
-app_root = root / "opt/franzfon"
-source_root = app_root / "wizard/backend/src"
-
-env_assignment = re.compile(r"^\s*(?:export\s+)?([A-Za-z_][A-Za-z0-9_]*)=")
+source_root = root / "opt/franzfon/wizard/backend/src"
 process_env = re.compile(
     r"process\.env(?:\.([A-Za-z_][A-Za-z0-9_]*)|\[['\"]([A-Za-z_][A-Za-z0-9_]*)['\"]\])"
 )
-
-lines: list[str] = ["=== ENVIRONMENT FILE KEY NAMES ONLY ==="]
-for env_file in sorted(app_root.rglob("*.env")) if app_root.exists() else []:
-    lines.append(f"--- /{env_file.relative_to(root)} ---")
-    keys: set[str] = set()
-    try:
-        for line in env_file.read_text(encoding="utf-8", errors="ignore").splitlines():
-            match = env_assignment.match(line)
-            if match:
-                keys.add(match.group(1))
-    except OSError:
-        pass
-    lines.extend(sorted(keys))
-
-lines.extend(["", "=== PROCESS.ENV REFERENCES IN APPLICATION SOURCE ==="])
 refs: set[str] = set()
 if source_root.exists():
     for path in source_root.rglob("*"):
@@ -81,9 +63,28 @@ if source_root.exists():
             continue
         for first, second in process_env.findall(text):
             refs.add(first or second)
-lines.extend(sorted(refs))
-(out / "environment-contract.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
+(out / "process-env-refs.tmp").write_text("\n".join(sorted(refs)) + "\n", encoding="utf-8")
 PY
+
+{
+  echo '=== ENVIRONMENT FILE KEY NAMES ONLY ==='
+  while IFS= read -r -d '' ENVFILE; do
+    echo "--- ${ENVFILE#$ROOT} ---"
+    sudo awk '
+      /^[[:space:]]*(export[[:space:]]+)?[A-Za-z_][A-Za-z0-9_]*=/ {
+        line=$0
+        sub(/^[[:space:]]*/, "", line)
+        sub(/^export[[:space:]]+/, "", line)
+        sub(/=.*/, "", line)
+        print line
+      }
+    ' "$ENVFILE" | sort -u
+  done < <(sudo find "$ROOT/opt/franzfon" -type f -name '*.env' -print0 2>/dev/null)
+  echo
+  echo '=== PROCESS.ENV REFERENCES IN APPLICATION SOURCE ==='
+  cat "$OUT/process-env-refs.tmp"
+} > "$OUT/environment-contract.txt"
+rm -f "$OUT/process-env-refs.tmp"
 
 DB="$ROOT/opt/franzfon/wizard/backend/data/franzfon.db"
 {
