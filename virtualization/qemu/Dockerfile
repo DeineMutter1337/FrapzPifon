@@ -22,9 +22,12 @@ COPY cloud-init /opt/franzfon-lab/cloud-init
 
 # Windows checkouts may still provide CRLF files despite repository attributes.
 # Normalize every Linux-consumed text file inside the image before execution.
+# FAT volume labels are limited to eleven characters; normalize older scripts
+# that still contain the former twelve-character FRANZFON_EFI label.
 RUN sed -i 's/\r$//' \
       /usr/local/bin/franzfon-vm-entrypoint \
       /usr/local/bin/labctl \
+ && sed -i 's/FRANZFON_EFI/FRANZ_EFI/g' /usr/local/bin/franzfon-vm-entrypoint \
  && find /opt/franzfon-lab/cloud-init -type f -exec sed -i 's/\r$//' {} + \
  && chmod 0755 /usr/local/bin/franzfon-vm-entrypoint /usr/local/bin/labctl
 
