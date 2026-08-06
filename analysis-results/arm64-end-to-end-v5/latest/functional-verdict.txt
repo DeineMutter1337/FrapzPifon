@@ -1,0 +1,2 @@
+STAGE=functional
+VERDICT=PASS

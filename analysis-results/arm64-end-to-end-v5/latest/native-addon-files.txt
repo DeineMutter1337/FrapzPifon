@@ -1,0 +1,1 @@
+/opt/franzfon/wizard/backend/node_modules/better-sqlite3/build/Release/better_sqlite3.node: ELF 64-bit LSB shared object, ARM aarch64, version 1 (GNU/Linux), dynamically linked, BuildID[sha1]=fbc85df9e787ccd2e82a34fb0ff9a644e56b2dc1, not stripped
