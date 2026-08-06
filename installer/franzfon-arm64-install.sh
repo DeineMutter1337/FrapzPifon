@@ -7,6 +7,7 @@ ASTERISK_WORKDIR='/var/tmp/franzfon-arm64-asterisk-build'
 IMAGE_URL=''
 ACTIVATE=0
 SKIP_PREPARE=0
+SKIP_APP=0
 FORCE_ASTERISK=0
 KEEP_PREPARE_WORK=0
 KEEP_ASTERISK_WORK=0
@@ -22,6 +23,8 @@ Options:
                             Default: /var/lib/franzfon-arm64/payload
   --image-url URL           Override the official appliance image URL.
   --skip-prepare            Reuse an existing validated payload directory.
+  --skip-app                Resume after a completed application stage.
+                            Verifies the installed ARM64 app before continuing.
   --force-asterisk          Replace an existing managed Asterisk installation.
   --keep-prepare-work       Keep extracted VM working files for debugging.
   --keep-asterisk-work      Keep Asterisk build files for debugging.
@@ -43,6 +46,7 @@ while [ "$#" -gt 0 ]; do
       [ "$#" -ge 2 ] || { echo 'Missing value for --image-url' >&2; exit 2; }
       IMAGE_URL="$2"; shift 2 ;;
     --skip-prepare) SKIP_PREPARE=1; shift ;;
+    --skip-app) SKIP_APP=1; shift ;;
     --force-asterisk) FORCE_ASTERISK=1; shift ;;
     --keep-prepare-work) KEEP_PREPARE_WORK=1; shift ;;
     --keep-asterisk-work) KEEP_ASTERISK_WORK=1; shift ;;
@@ -99,8 +103,37 @@ else
   }
 fi
 
-printf '\n[Stage 2/5] Installing FRANZFON application natively\n'
-bash "$INSTALL_APP" --payload "$PAYLOAD_DIR"
+if [ "$SKIP_APP" -eq 0 ]; then
+  printf '\n[Stage 2/5] Installing FRANZFON application natively\n'
+  bash "$INSTALL_APP" --payload "$PAYLOAD_DIR"
+else
+  printf '\n[Stage 2/5] Resuming after existing FRANZFON application stage\n'
+  [ -f /etc/franzfon-arm64/install-state ] || {
+    echo 'Cannot resume: installation state file is missing.' >&2
+    exit 1
+  }
+  grep -Fxq 'APPLICATION_INSTALLED=yes' /etc/franzfon-arm64/install-state || {
+    echo 'Cannot resume: application stage is not recorded as installed.' >&2
+    exit 1
+  }
+  grep -Fxq 'APPLICATION_ARCH=arm64' /etc/franzfon-arm64/install-state || {
+    echo 'Cannot resume: application architecture is not recorded as ARM64.' >&2
+    exit 1
+  }
+  [ -f /opt/franzfon/wizard/backend/src/index.js ] || {
+    echo 'Cannot resume: FRANZFON backend entry point is missing.' >&2
+    exit 1
+  }
+  [ "$(/usr/local/bin/node -p 'process.arch' 2>/dev/null || true)" = arm64 ] || {
+    echo 'Cannot resume: native ARM64 Node.js runtime is unavailable.' >&2
+    exit 1
+  }
+  systemctl is-active franzfon-wizard.service >/dev/null 2>&1 && {
+    echo 'Cannot resume safely: franzfon-wizard.service is already running.' >&2
+    exit 1
+  }
+  echo 'Existing disabled ARM64 application stage verified.'
+fi
 
 printf '\n[Stage 3/5] Verifying native Node.js addons\n'
 bash "$NORMALIZE_ADDONS"
