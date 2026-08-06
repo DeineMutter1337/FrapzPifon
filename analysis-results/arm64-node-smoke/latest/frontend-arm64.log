@@ -1,0 +1,197 @@
++ apt-get update
+Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+Get:4 http://deb.debian.org/debian bookworm/main arm64 Packages [8689 kB]
+Get:5 http://deb.debian.org/debian bookworm-updates/main arm64 Packages [6936 B]
+Get:6 http://deb.debian.org/debian-security bookworm-security/main arm64 Packages [323 kB]
+Fetched 9261 kB in 6s (1607 kB/s)
+Reading package lists...
++ apt-get install -y --no-install-recommends python3 make g++ file
+Reading package lists...
+Building dependency tree...
+Reading state information...
+python3 is already the newest version (3.11.2-1+b1).
+python3 set to manually installed.
+make is already the newest version (4.3-4.1).
+g++ is already the newest version (4:12.2.0-3).
+file is already the newest version (1:5.44-3).
+0 upgraded, 0 newly installed, 0 to remove and 80 not upgraded.
++ npm ci
+
+added 313 packages, and audited 314 packages in 50s
+
+158 packages are looking for funding
+  run `npm fund` for details
+
+7 vulnerabilities (1 low, 6 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 12.0.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+npm notice To update run: npm install -g npm@12.0.2
+npm notice
++ npm run build
+
+> franzfon-wizard-frontend@0.1.0 build
+> astro build
+
+▶ Astro collects anonymous usage data.
+  This information helps us improve Astro.
+  Run "astro telemetry disable" to opt-out.
+  https://astro.build/telemetry
+
+07:45:28 [content] Syncing content
+07:45:28 [content] Synced content
+07:45:28 [types] Generated 1.75s
+07:45:28 [build] output: "static"
+07:45:28 [build] mode: "static"
+07:45:28 [build] directory: /work/dist/
+07:45:28 [build] Collecting build info...
+07:45:28 [build] ✓ Completed in 2.91s.
+07:45:29 [build] Building static entrypoints...
+07:46:16 [vite] ✓ built in 46.76s
+07:46:16 [build] ✓ Completed in 47.33s.
+
+ building client (vite) 
+07:46:16 [vite] transforming...
+07:46:24 [vite] ✓ 7 modules transformed.
+07:46:24 [vite] rendering chunks...
+07:46:25 [vite] computing gzip size...
+07:46:25 [vite] dist/_astro/mein-bereich.astro_astro_type_script_index_0_lang.B13KluqK.js    1.72 kB │ gzip:  1.01 kB
+07:46:25 [vite] dist/_astro/calls.astro_astro_type_script_index_0_lang.DtagAeME.js           2.23 kB │ gzip:  1.17 kB
+07:46:25 [vite] dist/_astro/meine-anrufe.astro_astro_type_script_index_0_lang.4vR0nVo2.js    2.24 kB │ gzip:  1.17 kB
+07:46:25 [vite] dist/_astro/dashboard.astro_astro_type_script_index_0_lang.C3xR8Ayd.js      14.10 kB │ gzip:  5.08 kB
+07:46:25 [vite] dist/_astro/chart.DV9vtJN6.js                                              144.80 kB │ gzip: 50.39 kB
+07:46:25 [vite] ✓ built in 8.68s
+
+ generating static routes 
+07:46:25 ▶ src/pages/aufnahmen.astro
+07:46:25   └─ /aufnahmen.html (+153ms) 
+07:46:25 ▶ src/pages/backup.astro
+07:46:25   └─ /backup.html (+36ms) 
+07:46:25 ▶ src/pages/call-flows.astro
+07:46:25   └─ /call-flows.html (+60ms) 
+07:46:26 ▶ src/pages/calls.astro
+07:46:26   └─ /calls.html (+35ms) 
+07:46:26 ▶ src/pages/change-password.astro
+07:46:26   └─ /change-password.html (+19ms) 
+07:46:26 ▶ src/pages/contacts.astro
+07:46:26   └─ /contacts.html (+57ms) 
+07:46:26 ▶ src/pages/dashboard.astro
+07:46:26   └─ /dashboard.html (+24ms) 
+07:46:26 ▶ src/pages/devices.astro
+07:46:26   └─ /devices.html (+44ms) 
+07:46:26 ▶ src/pages/fax.astro
+07:46:26   └─ /fax.html (+41ms) 
+07:46:26 ▶ src/pages/license.astro
+07:46:26   └─ /license.html (+34ms) 
+07:46:26 ▶ src/pages/login.astro
+07:46:26   └─ /login.html (+20ms) 
+07:46:26 ▶ src/pages/mein-bereich.astro
+07:46:26   └─ /mein-bereich.html (+24ms) 
+07:46:26 ▶ src/pages/mein-fax.astro
+07:46:26   └─ /mein-fax.html (+22ms) 
+07:46:26 ▶ src/pages/mein-hilfe.astro
+07:46:26   └─ /mein-hilfe.html (+25ms) 
+07:46:26 ▶ src/pages/mein-profil.astro
+07:46:26   └─ /mein-profil.html (+24ms) 
+07:46:26 ▶ src/pages/mein-telefonbuch.astro
+07:46:26   └─ /mein-telefonbuch.html (+22ms) 
+07:46:26 ▶ src/pages/mein-voicemail.astro
+07:46:26   └─ /mein-voicemail.html (+20ms) 
+07:46:26 ▶ src/pages/meine-anrufe.astro
+07:46:26   └─ /meine-anrufe.html (+22ms) 
+07:46:26 ▶ src/pages/meine-einstellungen.astro
+07:46:26   └─ /meine-einstellungen.html (+15ms) 
+07:46:26 ▶ src/pages/meine-personalakte.astro
+07:46:26   └─ /meine-personalakte.html (+15ms) 
+07:46:26 ▶ src/pages/notifications.astro
+07:46:26   └─ /notifications.html (+23ms) 
+07:46:26 ▶ src/pages/personalakten.astro
+07:46:26   └─ /personalakten.html (+21ms) 
+07:46:27 ▶ src/pages/ring-groups.astro
+07:46:27   └─ /ring-groups.html (+26ms) 
+07:46:27 ▶ src/pages/settings.astro
+07:46:27   └─ /settings.html (+51ms) 
+07:46:27 ▶ src/pages/setup.astro
+07:46:27   └─ /setup.html (+25ms) 
+07:46:27 ▶ src/pages/smtp.astro
+07:46:27   └─ /smtp.html (+13ms) 
+07:46:27 ▶ src/pages/start.astro
+07:46:27   └─ /start.html (+8ms) 
+07:46:27 ▶ src/pages/support.astro
+07:46:27   └─ /support.html (+20ms) 
+07:46:27 ▶ src/pages/users.astro
+07:46:27   └─ /users.html (+27ms) 
+07:46:27 ▶ src/pages/voicemail.astro
+07:46:27   └─ /voicemail.html (+19ms) 
+07:46:27 ✓ Completed in 2.13s.
+
+07:46:27 [build] 30 page(s) built in 61.46s
+07:46:27 [build] Complete!
++ test -d dist
++ find dist -maxdepth 2 -type f
++ head -n 50
+dist/mein-telefonbuch.html
+dist/contacts.html
+dist/mein-hilfe.html
+dist/settings.html
+dist/devices.html
+dist/calls.html
+dist/login.html
+dist/setup.html
+dist/fax-health-state.js
+dist/ff-avatar-cropper.js
+dist/personalakten.html
+dist/index.html
+dist/favicon.svg
+dist/fonts/jetbrains-mono-latin.woff2
+dist/fonts/jetbrains-mono-latin-ext.woff2
+dist/fax.html
+dist/support.html
+dist/styles.css
+dist/mein-profil.html
+dist/meine-anrufe.html
+dist/voicemail.html
+dist/mein-bereich.html
+dist/backup.html
+dist/change-password.html
+dist/start.html
+dist/meine-personalakte.html
+dist/mein-voicemail.html
+dist/aufnahmen.html
+dist/license.html
+dist/meine-einstellungen.html
+dist/_astro/inter-latin-ext-500-normal.BxGbmqWO.woff
+dist/_astro/inter-latin-600-normal.CiBQ2DWP.woff
+dist/_astro/inter-vietnamese-600-normal.Cc8MFFhd.woff2
+dist/_astro/chart.DV9vtJN6.js
+dist/_astro/inter-greek-ext-400-normal.DGGRlc-M.woff2
+dist/_astro/inter-latin-ext-600-normal.CIVaiw4L.woff
+dist/_astro/inter-vietnamese-600-normal.BuLX-rYi.woff
+dist/_astro/setup.CPBM2O-U.css
+dist/_astro/inter-cyrillic-600-normal.CWCymEST.woff2
+dist/_astro/inter-latin-ext-400-normal.C1nco2VV.woff2
+dist/_astro/inter-cyrillic-ext-600-normal.Dfes3d0z.woff2
+dist/_astro/inter-cyrillic-ext-500-normal.BmqWE9Dz.woff
+dist/_astro/inter-cyrillic-500-normal.BasfLYem.woff2
+dist/_astro/aufnahmen.VmUp_JnP.css
+dist/_astro/inter-greek-400-normal.q2sYcFCs.woff
+dist/_astro/mein-bereich.astro_astro_type_script_index_0_lang.B13KluqK.js
+dist/_astro/inter-vietnamese-500-normal.DOriooB6.woff2
+dist/_astro/inter-vietnamese-400-normal.DMkecbls.woff2
+dist/_astro/inter-greek-600-normal.BZpKdvQh.woff
+dist/_astro/inter-greek-600-normal.plRanbMR.woff2
+++ node -p process.arch
++ echo frontend_arch=arm64
+frontend_arch=arm64
++ echo frontend_build=ok
+frontend_build=ok

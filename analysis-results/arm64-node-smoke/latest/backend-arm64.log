@@ -1,0 +1,104 @@
+Unable to find image 'node:20-bookworm' locally
+20-bookworm: Pulling from library/node
+30de66f8fdaf: Pulling fs layer
+0bb7bd28fbdf: Pulling fs layer
+599d07e8492b: Pulling fs layer
+5f77b2a79d55: Pulling fs layer
+444403cccfb4: Pulling fs layer
+8f963a2bbd53: Pulling fs layer
+78dea6468cd9: Pulling fs layer
+6260d7010302: Pulling fs layer
+444403cccfb4: Waiting
+8f963a2bbd53: Waiting
+78dea6468cd9: Waiting
+6260d7010302: Waiting
+5f77b2a79d55: Waiting
+0bb7bd28fbdf: Verifying Checksum
+0bb7bd28fbdf: Download complete
+30de66f8fdaf: Verifying Checksum
+30de66f8fdaf: Download complete
+444403cccfb4: Verifying Checksum
+444403cccfb4: Download complete
+599d07e8492b: Verifying Checksum
+599d07e8492b: Download complete
+78dea6468cd9: Verifying Checksum
+78dea6468cd9: Download complete
+6260d7010302: Verifying Checksum
+6260d7010302: Download complete
+8f963a2bbd53: Verifying Checksum
+8f963a2bbd53: Download complete
+5f77b2a79d55: Verifying Checksum
+5f77b2a79d55: Download complete
+30de66f8fdaf: Pull complete
+0bb7bd28fbdf: Pull complete
+599d07e8492b: Pull complete
+5f77b2a79d55: Pull complete
+444403cccfb4: Pull complete
+8f963a2bbd53: Pull complete
+78dea6468cd9: Pull complete
+6260d7010302: Pull complete
+Digest: sha256:8f693eaa7e0a8e71560c9a82b55fd54c2ae920a2ba5d2cde28bac7d1c01c9ba5
+Status: Downloaded newer image for node:20-bookworm
++ apt-get update
+Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+Get:4 http://deb.debian.org/debian bookworm/main arm64 Packages [8689 kB]
+Get:5 http://deb.debian.org/debian bookworm-updates/main arm64 Packages [6936 B]
+Get:6 http://deb.debian.org/debian-security bookworm-security/main arm64 Packages [323 kB]
+Fetched 9261 kB in 6s (1540 kB/s)
+Reading package lists...
++ apt-get install -y --no-install-recommends python3 make g++ pkg-config file
+Reading package lists...
+Building dependency tree...
+Reading state information...
+python3 is already the newest version (3.11.2-1+b1).
+python3 set to manually installed.
+make is already the newest version (4.3-4.1).
+g++ is already the newest version (4:12.2.0-3).
+pkg-config is already the newest version (1.8.1-1).
+pkg-config set to manually installed.
+file is already the newest version (1:5.44-3).
+0 upgraded, 0 newly installed, 0 to remove and 80 not upgraded.
++ npm ci --omit=dev
+npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+
+added 231 packages, and audited 232 packages in 28s
+
+44 packages are looking for funding
+  run `npm fund` for details
+
+14 vulnerabilities (4 moderate, 10 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 12.0.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+npm notice To update run: npm install -g npm@12.0.2
+npm notice
++ node --check src/index.js
+bash: line 19: warning: here-document at line 7 delimited by end-of-file (wanted `NODE')
++ node -
+[stdin]:11
+    file node_modules/better-sqlite3/build/Release/better_sqlite3.node
+         ^^^^^^^^^^^^
+
+SyntaxError: Unexpected identifier 'node_modules'
+    at makeContextifyScript (node:internal/vm:185:14)
+    at node:internal/process/execution:107:22
+    at [stdin]-wrapper:6:24
+    at runScript (node:internal/process/execution:101:62)
+    at evalScript (node:internal/process/execution:133:3)
+    at node:internal/main/eval_stdin:32:5
+    at Socket.<anonymous> (node:internal/process/execution:234:5)
+    at Socket.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+Node.js v20.20.2

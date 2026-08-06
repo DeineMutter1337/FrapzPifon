@@ -1,0 +1,22 @@
+=== PAYLOAD CONTENT ===
+12K	/home/runner/work/FrapzPifon/FrapzPifon/arm64-smoke/payload/backend/agi
+20K	/home/runner/work/FrapzPifon/FrapzPifon/arm64-smoke/payload/backend/scripts
+240K	/home/runner/work/FrapzPifon/FrapzPifon/arm64-smoke/payload/frontend/public
+540K	/home/runner/work/FrapzPifon/FrapzPifon/arm64-smoke/payload/frontend/dist.bak-pre-astro
+604K	/home/runner/work/FrapzPifon/FrapzPifon/arm64-smoke/payload/backend/test
+1.2M	/home/runner/work/FrapzPifon/FrapzPifon/arm64-smoke/payload/frontend/src
+1.9M	/home/runner/work/FrapzPifon/FrapzPifon/arm64-smoke/payload/backend/src
+2.6M	/home/runner/work/FrapzPifon/FrapzPifon/arm64-smoke/payload/backend
+2.7M	/home/runner/work/FrapzPifon/FrapzPifon/arm64-smoke/payload/frontend/dist
+4.9M	/home/runner/work/FrapzPifon/FrapzPifon/arm64-smoke/payload/frontend
+7.5M	/home/runner/work/FrapzPifon/FrapzPifon/arm64-smoke/payload
+
+=== BACKEND MANIFEST HASHES ===
+9b788dd9cc6bcd71d963cbf1d650e9d868490bc26f339c7dd23c46b509ec56da  /home/runner/work/FrapzPifon/FrapzPifon/arm64-smoke/payload/backend/package.json
+dcb2e9e620a300eed7d90d1b42d511b6914b392e12e1c49eeb4d213cc2de2f29  /home/runner/work/FrapzPifon/FrapzPifon/arm64-smoke/payload/backend/package-lock.json
+
+=== FRONTEND MANIFEST HASHES ===
+f325bba769e4b99dccc2d368ead66b495a7e6b968935b4b1268fdf3eaaa12ee8  /home/runner/work/FrapzPifon/FrapzPifon/arm64-smoke/payload/frontend/package.json
+c72a541bb7f4a73ff29c1ee32bcb9b02016fd6e0a675c23141b0aef47df5c482  /home/runner/work/FrapzPifon/FrapzPifon/arm64-smoke/payload/frontend/package-lock.json
+
+No runtime databases, env files, backups or node_modules were copied.
