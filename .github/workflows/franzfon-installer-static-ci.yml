@@ -12,7 +12,7 @@ on:
       - '.github/workflows/franzfon-installer-static-ci.yml'
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validate:
@@ -27,6 +27,7 @@ jobs:
           sudo apt-get install -y --no-install-recommends shellcheck python3
 
       - name: Bash syntax
+        id: bash_syntax
         run: |
           set -euxo pipefail
           bash -n installer/franzfon-arm64-prepare.sh
@@ -36,6 +37,7 @@ jobs:
           bash -n scripts/configuration_contract_audit.sh
 
       - name: ShellCheck
+        id: shellcheck
         run: |
           set -euxo pipefail
           shellcheck --severity=warning \
@@ -46,11 +48,13 @@ jobs:
             scripts/configuration_contract_audit.sh
 
       - name: Python syntax
+        id: python_syntax
         run: |
           set -euxo pipefail
           python3 -m py_compile scripts/stream_vma_extract.py
 
       - name: Installer safety assertions
+        id: safety
         run: |
           set -euxo pipefail
 
@@ -78,9 +82,45 @@ jobs:
             installer scripts
 
       - name: Help output smoke tests
+        id: help_smoke
         run: |
           set -euxo pipefail
           bash installer/franzfon-arm64-prepare.sh --help
           bash installer/franzfon-arm64-install-app.sh --help
           bash installer/franzfon-arm64-install-asterisk.sh --help
           bash installer/franzfon-arm64-bootstrap.sh --help
+
+      - name: Publish static CI verdict
+        if: always()
+        run: |
+          set -euxo pipefail
+          rm -rf analysis-results/installer-static/latest
+          mkdir -p analysis-results/installer-static/latest
+          {
+            echo 'RUN_MARKER=FRANZFON_ARM64_INSTALLER_STATIC_V1'
+            echo "GITHUB_SHA=$GITHUB_SHA"
+            echo 'BASH_SYNTAX=${{ steps.bash_syntax.outcome }}'
+            echo 'SHELLCHECK=${{ steps.shellcheck.outcome }}'
+            echo 'PYTHON_SYNTAX=${{ steps.python_syntax.outcome }}'
+            echo 'SAFETY_ASSERTIONS=${{ steps.safety.outcome }}'
+            echo 'HELP_SMOKE=${{ steps.help_smoke.outcome }}'
+            echo
+            if [ '${{ steps.bash_syntax.outcome }}' = success ] \
+              && [ '${{ steps.shellcheck.outcome }}' = success ] \
+              && [ '${{ steps.python_syntax.outcome }}' = success ] \
+              && [ '${{ steps.safety.outcome }}' = success ] \
+              && [ '${{ steps.help_smoke.outcome }}' = success ]; then
+              echo 'VERDICT=PASS'
+            else
+              echo 'VERDICT=FAIL'
+            fi
+          } > analysis-results/installer-static/latest/verdict.txt
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add analysis-results/installer-static/latest/verdict.txt
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update FRANZFON ARM64 installer static verdict'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
