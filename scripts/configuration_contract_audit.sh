@@ -37,19 +37,53 @@ esac
 MOUNTED=1
 ROOT="$MNT"
 
-{
-  echo '=== ENVIRONMENT FILE KEY NAMES ONLY ==='
-  while IFS= read -r -d '' ENVFILE; do
-    echo "--- ${ENVFILE#$ROOT} ---"
-    sed -nE 's/^[[:space:]]*(export[[:space:]]+)?([A-Za-z_][A-Za-z0-9_]*)=.*/\2/p' "$ENVFILE" | sort -u
-  done < <(find "$ROOT/opt/franzfon" -type f -name '*.env' -print0 2>/dev/null || true)
-  echo
-  echo '=== PROCESS.ENV REFERENCES IN APPLICATION SOURCE ==='
-  grep -RhoE 'process\.env\.[A-Za-z_][A-Za-z0-9_]*|process\.env\[["'"'][A-Za-z_][A-Za-z0-9_]*["'"']\]' \
-    "$ROOT/opt/franzfon/wizard/backend/src" 2>/dev/null \
-    | sed -E 's/^process\.env\.//; s/^process\.env\[["'"']([^"'"']+)["'"']\]$/\1/' \
-    | sort -u || true
-} > "$OUT/environment-contract.txt"
+export FRANZFON_CONTRACT_ROOT="$ROOT"
+export FRANZFON_CONTRACT_OUT="$OUT"
+python3 - <<'PY'
+from __future__ import annotations
+
+import os
+import pathlib
+import re
+
+root = pathlib.Path(os.environ["FRANZFON_CONTRACT_ROOT"])
+out = pathlib.Path(os.environ["FRANZFON_CONTRACT_OUT"])
+app_root = root / "opt/franzfon"
+source_root = app_root / "wizard/backend/src"
+
+env_assignment = re.compile(r"^\s*(?:export\s+)?([A-Za-z_][A-Za-z0-9_]*)=")
+process_env = re.compile(
+    r"process\.env(?:\.([A-Za-z_][A-Za-z0-9_]*)|\[['\"]([A-Za-z_][A-Za-z0-9_]*)['\"]\])"
+)
+
+lines: list[str] = ["=== ENVIRONMENT FILE KEY NAMES ONLY ==="]
+for env_file in sorted(app_root.rglob("*.env")) if app_root.exists() else []:
+    lines.append(f"--- /{env_file.relative_to(root)} ---")
+    keys: set[str] = set()
+    try:
+        for line in env_file.read_text(encoding="utf-8", errors="ignore").splitlines():
+            match = env_assignment.match(line)
+            if match:
+                keys.add(match.group(1))
+    except OSError:
+        pass
+    lines.extend(sorted(keys))
+
+lines.extend(["", "=== PROCESS.ENV REFERENCES IN APPLICATION SOURCE ==="])
+refs: set[str] = set()
+if source_root.exists():
+    for path in source_root.rglob("*"):
+        if not path.is_file() or path.suffix.lower() not in {".js", ".mjs", ".cjs", ".ts"}:
+            continue
+        try:
+            text = path.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+        for first, second in process_env.findall(text):
+            refs.add(first or second)
+lines.extend(sorted(refs))
+(out / "environment-contract.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
+PY
 
 DB="$ROOT/opt/franzfon/wizard/backend/data/franzfon.db"
 {
@@ -60,8 +94,9 @@ DB="$ROOT/opt/franzfon/wizard/backend/data/franzfon.db"
     echo '=== SQLITE COLUMNS ==='
     while IFS= read -r TABLE; do
       [ -n "$TABLE" ] || continue
+      SAFE_TABLE="${TABLE//\'/\'\'}"
       echo "--- $TABLE ---"
-      sqlite3 -readonly -separator $'\t' "$DB" "PRAGMA table_info('$TABLE');" \
+      sqlite3 -readonly -separator $'\t' "$DB" "PRAGMA table_info('$SAFE_TABLE');" \
         | awk -F'\t' '{print $2 "\t" $3 "\tnotnull=" $4 "\tpk=" $6}'
     done < <(sqlite3 -readonly "$DB" "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' ORDER BY name;")
   else
@@ -91,18 +126,33 @@ DB="$ROOT/opt/franzfon/wizard/backend/data/franzfon.db"
   find "$ROOT/etc/asterisk" -maxdepth 2 -type f -printf '%P\n' 2>/dev/null | sort
   echo
   echo '=== ASTERISK INCLUDE GRAPH ==='
-  grep -RHnE '^[[:space:]]*#(include|tryinclude)[[:space:]]+' "$ROOT/etc/asterisk" 2>/dev/null \
-    | sed "s#$ROOT/etc/asterisk/##" \
-    | sed -E 's#:[0-9]+:.*#\tINCLUDES_CONFIG#' \
-    | sort -u || true
+  while IFS= read -r -d '' CONF; do
+    REL="${CONF#$ROOT/etc/asterisk/}"
+    awk -v source="$REL" '
+      /^[[:space:]]*#(include|tryinclude)[[:space:]]+/ {
+        target=$0
+        sub(/^[[:space:]]*#(include|tryinclude)[[:space:]]+/, "", target)
+        gsub(/["<>]/, "", target)
+        printf "%s\t%s\n", source, target
+      }
+    ' "$CONF"
+  done < <(find "$ROOT/etc/asterisk" -type f -print0 2>/dev/null) | sort -u
 } > "$OUT/asterisk-config-contract.txt"
 
 {
-  echo '=== REQUIRED FILE/DIRECTORY PATHS FROM SERVICE UNITS ==='
-  grep -RhoE '(WorkingDirectory|EnvironmentFile|ExecStart)=([^[:space:]]+)' \
-    "$ROOT/etc/systemd/system"/franzfon*.service \
-    "$ROOT/etc/systemd/system/asterisk.service" 2>/dev/null \
-    | sed -E 's#=.*#=[PATH_OR_COMMAND]#' | sort -u || true
+  echo '=== REQUIRED PATHS AND COMMANDS FROM SERVICE UNITS ==='
+  shopt -s nullglob
+  UNITS=(
+    "$ROOT"/etc/systemd/system/franzfon*.service
+    "$ROOT"/etc/systemd/system/asterisk.service
+  )
+  for UNIT in "${UNITS[@]}"; do
+    [ -f "$UNIT" ] || continue
+    echo "--- ${UNIT#$ROOT} ---"
+    grep -E '^(WorkingDirectory|EnvironmentFile|ExecStart|ExecStartPre|ExecStartPost)=' "$UNIT" \
+      | sed -E 's#(PASSWORD|PASS|TOKEN|SECRET|KEY)=([^[:space:]]+)#\1=[REDACTED]#Ig' || true
+  done
+  shopt -u nullglob
 } > "$OUT/service-contract.txt"
 
 {
