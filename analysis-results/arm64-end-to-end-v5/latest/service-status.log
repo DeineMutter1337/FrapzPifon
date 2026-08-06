@@ -1,0 +1,62 @@
+● mariadb.service - MariaDB 10.11.14 database server
+     Loaded: loaded (/usr/lib/systemd/system/mariadb.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-08-06 10:44:19 UTC; 30s ago
+       Docs: man:mariadbd(8)
+             https://mariadb.com/kb/en/library/systemd/
+    Process: 53691 ExecStartPre=/usr/bin/install -m 755 -o mysql -g root -d /var/run/mysqld (code=exited, status=0/SUCCESS)
+    Process: 53693 ExecStartPre=/bin/sh -c systemctl unset-environment _WSREP_START_POSITION (code=exited, status=0/SUCCESS)
+    Process: 53695 ExecStartPre=/bin/sh -c [ ! -e /usr/bin/galera_recovery ] && VAR= ||   VAR=`/usr/bin/galera_recovery`; [ $? -eq 0 ]   && systemctl set-environment _WSREP_START_POSITION=$VAR || exit 1 (code=exited, status=0/SUCCESS)
+    Process: 53737 ExecStartPost=/bin/sh -c systemctl unset-environment _WSREP_START_POSITION (code=exited, status=0/SUCCESS)
+    Process: 53740 ExecStartPost=/etc/mysql/debian-start (code=exited, status=0/SUCCESS)
+   Main PID: 53726 (mariadbd)
+     Status: "Taking your SQL requests now..."
+      Tasks: 12 (limit: 126011)
+     Memory: 81.0M (peak: 84.5M)
+        CPU: 286ms
+     CGroup: /system.slice/mariadb.service
+             └─53726 /usr/sbin/mariadbd
+
+Aug 06 10:44:19 runnervmscnyy mariadbd[53726]: 2026-08-06 10:44:19 0 [Note] InnoDB: log sequence number 56637; transaction id 20
+Aug 06 10:44:19 runnervmscnyy mariadbd[53726]: 2026-08-06 10:44:19 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+Aug 06 10:44:19 runnervmscnyy mariadbd[53726]: 2026-08-06 10:44:19 0 [Note] Plugin 'FEEDBACK' is disabled.
+Aug 06 10:44:19 runnervmscnyy mariadbd[53726]: 2026-08-06 10:44:19 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+Aug 06 10:44:19 runnervmscnyy mariadbd[53726]: 2026-08-06 10:44:19 0 [Note] Server socket created on IP: '127.0.0.1', port: '3306'.
+Aug 06 10:44:19 runnervmscnyy mariadbd[53726]: 2026-08-06 10:44:19 0 [Note] InnoDB: Buffer pool(s) load completed at 260806 10:44:19
+Aug 06 10:44:19 runnervmscnyy mariadbd[53726]: 2026-08-06 10:44:19 0 [Note] /usr/sbin/mariadbd: ready for connections.
+Aug 06 10:44:19 runnervmscnyy mariadbd[53726]: Version: '10.11.14-MariaDB-0ubuntu0.24.04.1'  socket: '/run/mysqld/mysqld.sock'  port: 3306  Ubuntu 24.04
+Aug 06 10:44:19 runnervmscnyy systemd[1]: Started mariadb.service - MariaDB 10.11.14 database server.
+Aug 06 10:44:19 runnervmscnyy /etc/mysql/debian-start[53756]: Checking for insecure root accounts.
+
+● redis-server.service - Advanced key-value store
+     Loaded: loaded (/usr/lib/systemd/system/redis-server.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-08-06 10:44:19 UTC; 30s ago
+       Docs: http://redis.io/documentation,
+             man:redis-server(1)
+   Main PID: 53682 (redis-server)
+     Status: "Ready to accept connections"
+      Tasks: 5 (limit: 19092)
+     Memory: 3.5M (peak: 4.1M)
+        CPU: 73ms
+     CGroup: /system.slice/redis-server.service
+             └─53682 "/usr/bin/redis-server 127.0.0.1:6379"
+
+Aug 06 10:44:19 runnervmscnyy systemd[1]: Starting redis-server.service - Advanced key-value store...
+Aug 06 10:44:19 runnervmscnyy systemd[1]: Started redis-server.service - Advanced key-value store.
+
+● asterisk.service - Asterisk PBX for FRANZFON ARM64
+     Loaded: loaded (/etc/systemd/system/asterisk.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-08-06 10:44:49 UTC; 473ms ago
+   Main PID: 53900 (asterisk)
+      Tasks: 3 (limit: 19092)
+     Memory: 2.4M (peak: 2.7M)
+        CPU: 9ms
+     CGroup: /system.slice/asterisk.service
+             └─53900 /opt/franzfon-arm64/asterisk/sbin/asterisk -f -U asterisk -G asterisk
+
+Aug 06 10:44:49 runnervmscnyy systemd[1]: asterisk.service: Scheduled restart job, restart counter is at 7.
+Aug 06 10:44:49 runnervmscnyy systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
+Aug 06 10:44:49 runnervmscnyy asterisk[53900]: Stasis initialization failed.  ASTERISK EXITING!
+
+○ franzfon-wizard.service - FRANZFON Wizard ARM64
+     Loaded: loaded (/etc/systemd/system/franzfon-wizard.service; enabled; preset: enabled)
+     Active: inactive (dead)

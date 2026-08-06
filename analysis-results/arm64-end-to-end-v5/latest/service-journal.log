@@ -1,0 +1,121 @@
+Aug 06 10:44:19 runnervmscnyy systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
+Aug 06 10:44:19 runnervmscnyy asterisk[53749]: Stasis initialization failed.  ASTERISK EXITING!
+Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:20 runnervmscnyy asterisk[53749]: PBX UUID: 0b11318e-faf0-4d57-8130-d94042e63f1f
+Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Cannot update type 'declined_message_types' in module 'stasis' because it has no existing documentation! If this module was recently built, run 'xmldoc reload' to refresh documentation, then load the module again
+Aug 06 10:44:20 runnervmscnyy systemd[1]: asterisk.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 10:44:20 runnervmscnyy systemd[1]: asterisk.service: Failed with result 'exit-code'.
+Aug 06 10:44:24 runnervmscnyy systemd[1]: asterisk.service: Scheduled restart job, restart counter is at 1.
+Aug 06 10:44:24 runnervmscnyy systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
+Aug 06 10:44:24 runnervmscnyy asterisk[53807]: Stasis initialization failed.  ASTERISK EXITING!
+Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:25 runnervmscnyy asterisk[53807]: PBX UUID: 0b11318e-faf0-4d57-8130-d94042e63f1f
+Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Cannot update type 'declined_message_types' in module 'stasis' because it has no existing documentation! If this module was recently built, run 'xmldoc reload' to refresh documentation, then load the module again
+Aug 06 10:44:25 runnervmscnyy systemd[1]: asterisk.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 10:44:25 runnervmscnyy systemd[1]: asterisk.service: Failed with result 'exit-code'.
+Aug 06 10:44:28 runnervmscnyy systemd[1]: asterisk.service: Scheduled restart job, restart counter is at 2.
+Aug 06 10:44:28 runnervmscnyy systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
+Aug 06 10:44:28 runnervmscnyy asterisk[53823]: Stasis initialization failed.  ASTERISK EXITING!
+Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:29 runnervmscnyy asterisk[53823]: PBX UUID: 0b11318e-faf0-4d57-8130-d94042e63f1f
+Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Cannot update type 'declined_message_types' in module 'stasis' because it has no existing documentation! If this module was recently built, run 'xmldoc reload' to refresh documentation, then load the module again
+Aug 06 10:44:29 runnervmscnyy systemd[1]: asterisk.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 10:44:29 runnervmscnyy systemd[1]: asterisk.service: Failed with result 'exit-code'.
+Aug 06 10:44:32 runnervmscnyy systemd[1]: asterisk.service: Scheduled restart job, restart counter is at 3.
+Aug 06 10:44:32 runnervmscnyy systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
+Aug 06 10:44:32 runnervmscnyy asterisk[53837]: Stasis initialization failed.  ASTERISK EXITING!
+Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:33 runnervmscnyy asterisk[53837]: PBX UUID: 0b11318e-faf0-4d57-8130-d94042e63f1f
+Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Cannot update type 'declined_message_types' in module 'stasis' because it has no existing documentation! If this module was recently built, run 'xmldoc reload' to refresh documentation, then load the module again
+Aug 06 10:44:33 runnervmscnyy systemd[1]: asterisk.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 10:44:33 runnervmscnyy systemd[1]: asterisk.service: Failed with result 'exit-code'.
+Aug 06 10:44:36 runnervmscnyy systemd[1]: asterisk.service: Scheduled restart job, restart counter is at 4.
+Aug 06 10:44:36 runnervmscnyy systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
+Aug 06 10:44:36 runnervmscnyy asterisk[53851]: Stasis initialization failed.  ASTERISK EXITING!
+Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:37 runnervmscnyy asterisk[53851]: PBX UUID: 0b11318e-faf0-4d57-8130-d94042e63f1f
+Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Cannot update type 'declined_message_types' in module 'stasis' because it has no existing documentation! If this module was recently built, run 'xmldoc reload' to refresh documentation, then load the module again
+Aug 06 10:44:37 runnervmscnyy systemd[1]: asterisk.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 10:44:37 runnervmscnyy systemd[1]: asterisk.service: Failed with result 'exit-code'.
+Aug 06 10:44:41 runnervmscnyy systemd[1]: asterisk.service: Scheduled restart job, restart counter is at 5.
+Aug 06 10:44:41 runnervmscnyy systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
+Aug 06 10:44:41 runnervmscnyy asterisk[53867]: Stasis initialization failed.  ASTERISK EXITING!
+Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:42 runnervmscnyy asterisk[53867]: PBX UUID: 0b11318e-faf0-4d57-8130-d94042e63f1f
+Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Cannot update type 'declined_message_types' in module 'stasis' because it has no existing documentation! If this module was recently built, run 'xmldoc reload' to refresh documentation, then load the module again
+Aug 06 10:44:42 runnervmscnyy systemd[1]: asterisk.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 10:44:42 runnervmscnyy systemd[1]: asterisk.service: Failed with result 'exit-code'.
+Aug 06 10:44:45 runnervmscnyy systemd[1]: asterisk.service: Scheduled restart job, restart counter is at 6.
+Aug 06 10:44:45 runnervmscnyy systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
+Aug 06 10:44:45 runnervmscnyy asterisk[53886]: Stasis initialization failed.  ASTERISK EXITING!
+Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
+Aug 06 10:44:46 runnervmscnyy asterisk[53886]: PBX UUID: 0b11318e-faf0-4d57-8130-d94042e63f1f
+Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Cannot update type 'declined_message_types' in module 'stasis' because it has no existing documentation! If this module was recently built, run 'xmldoc reload' to refresh documentation, then load the module again
+Aug 06 10:44:46 runnervmscnyy systemd[1]: asterisk.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 10:44:46 runnervmscnyy systemd[1]: asterisk.service: Failed with result 'exit-code'.
+Aug 06 10:44:49 runnervmscnyy systemd[1]: asterisk.service: Scheduled restart job, restart counter is at 7.
+Aug 06 10:44:49 runnervmscnyy systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
+Aug 06 10:44:49 runnervmscnyy asterisk[53900]: Stasis initialization failed.  ASTERISK EXITING!
