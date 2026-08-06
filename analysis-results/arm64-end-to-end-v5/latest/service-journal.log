@@ -1,1 +1,316 @@
--- No entries --
+Aug 06 14:57:38 runnervmyv9d9 systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: PBX UUID: ec2489f7-b12e-4d0c-8188-1b49f62e0ee1
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: Could not find option 'minimum_size' with type 'threadpool' in module 'stasis'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: Unable to load config file 'stasis.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: Could not load Stasis configuration; using defaults
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] NOTICE[45468]: loader.c:2568 load_modules: 333 modules will be loaded.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] NOTICE[45468]: res_odbc.c:718 load_odbc_config: Registered ODBC class 'asteriskcdrdb' dsn->[asteriskcdrdb]
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: res_config_sqlite3.c:1275 parse_config: Missing config file 'res_config_sqlite3.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: config_options.c:710 aco_process_config: Unable to load config file 'statsd.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] NOTICE[45468]: res_statsd.c:399 load_module: Could not load statsd config; using defaults
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: ccss.c:4357 initialize_cc_max_requests: Could not find valid ccss.conf file. Using cc_max_requests default
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: ccss.c:4414 initialize_cc_devstate_map: Could not find valid ccss.conf file. Using cc_[state]_devstate defaults
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] NOTICE[45468]: cdr.c:4656 cdr_toggle_runtime_options: CDR simple logging enabled.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: config_options.c:710 aco_process_config: Unable to load config file 'cel.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] NOTICE[45468]: cel.c:1679 load_module: Failed to process CEL configuration; using defaults
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: config_options.c:710 aco_process_config: Unable to load config file 'features.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] NOTICE[45468]: features_config.c:1946 load_config: Could not load features config; using defaults
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: http.c:2564 __ast_http_load: Ignoring unknown option 'websocket_enabled' in http.conf
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: indications.c:1071 load_indications: Can't find indications config file indications.conf.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: config_options.c:710 aco_process_config: Unable to load config file 'acl.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: config_options.c:710 aco_process_config: Unable to load config file 'udptl.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] NOTICE[45468]: udptl.c:1363 __ast_udptl_reload: Could not load udptl config; using defaults
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: res_sorcery_config.c:328 sorcery_config_internal_load: Unable to load config file 'geolocation.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: res_sorcery_config.c:328 sorcery_config_internal_load: Unable to load config file 'geolocation.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: res_sorcery_config.c:328 sorcery_config_internal_load: Unable to load config file 'pjproject.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: res_pjsip_config_wizard.c:1074 object_type_loaded_observer: Unable to load config file 'pjsip_wizard.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: res_pjsip_config_wizard.c:1074 object_type_loaded_observer: Unable to load config file 'pjsip_wizard.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: res_pjsip_config_wizard.c:1074 object_type_loaded_observer: Unable to load config file 'pjsip_wizard.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: res_pjsip_config_wizard.c:1074 object_type_loaded_observer: Unable to load config file 'pjsip_wizard.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: res_stun_monitor.c:335 load_config: Unable to load config res_stun_monitor.conf
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: res_phoneprov.c:1376 load_common: Unable to load config phoneprov.conf
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: res_phoneprov.c:1451 load_module: Unable to load provisioning profiles.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: res_musiconhold.c:2333 load_module: No music on hold classes configured, disabling music on hold.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: res_sorcery_config.c:328 sorcery_config_internal_load: Unable to load config file 'websocket_client.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] NOTICE[45468]: res_smdi.c:981 smdi_load: Unable to load config smdi.conf: SMDI disabled
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] NOTICE[45468]: res_smdi.c:1430 load_module: No SMDI interfaces are available to listen on, not starting SMDI listener.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: res_sorcery_config.c:328 sorcery_config_internal_load: Unable to load config file 'aeap.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: chan_iax2.c:13719 set_config: Unable to load config iax.conf
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] NOTICE[45468]: res_fax.c:4545 set_config: Configuration file 'res_fax.conf' not found, using default options.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: config_options.c:710 aco_process_config: Unable to load config file 'hep.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: res_pjsip_config_wizard.c:1074 object_type_loaded_observer: Unable to load config file 'pjsip_wizard.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: config_options.c:710 aco_process_config: Unable to load config file 'pjsip_notify.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: res_calendar.c:1094 load_config: Unable to load config calendar.conf
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: config_options.c:710 aco_process_config: Unable to load config file 'res_parking.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: config_options.c:710 aco_process_config: Unable to load config file 'confbridge.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: app_confbridge.c:4672 load_module: Unable to load config. Not loading module.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: config_options.c:710 aco_process_config: Unable to load config file 'agents.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: app_agent_pool.c:2716 load_module: Unable to load config. Not loading module.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: cdr_custom.c:98 load_config: Unable to load cdr_custom.conf. Not logging custom CSV CDRs.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: cel_sqlite3_custom.c:161 load_config: Failed to load configuration file. Module not activated.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: cdr_manager.c:215 load_config: Failed to load configuration file. Module not activated.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: cdr_odbc.c:201 odbc_load_module: cdr_odbc: Unable to load config for ODBC CDR's: cdr_odbc.conf
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: cel_custom.c:86 load_config: Unable to load cel_custom.conf. Not logging CEL to custom CSVs.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: cel_manager.c:330 load_config: Failed to load configuration file. CEL manager Module not activated.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: cdr_sqlite3_custom.c:161 load_config: Failed to load configuration file. Module not activated.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: cel_odbc.c:110 load_config: Unable to load cel_odbc.conf.  No ODBC CEL records!
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: config_options.c:710 aco_process_config: Unable to load config file 'res_http_media_cache.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] NOTICE[45468]: res_http_media_cache.c:816 load_module: Could not load res_http_media_cache config; using defaults
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: app_amd.c:518 load_config: Configuration file amd.conf missing.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: app_followme.c:423 reload_followme: No follow me config file (followme.conf), so no follow me
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: chan_unistim.c:6861 reload_config: Unable to load config unistim.conf
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: res_clialiases.c:196 load_config: res_clialiases configuration file 'cli_aliases.conf' not found
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: pbx_dundi.c:4955 set_config: Unable to load config dundi.conf
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: app_festival.c:571 load_module: No such configuration file festival.conf
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: app_minivm.c:2786 load_config: Failed to load configuration file. Module activated with default settings.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] NOTICE[45468]: pbx_ael.c:164 pbx_load_module: File /etc/asterisk/extensions.ael not found; AEL declining load
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: config_options.c:710 aco_process_config: Unable to load config file 'prometheus.conf'
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] NOTICE[45468]: func_odbc.c:1858 load_module: Unable to load config for func_odbc: func_odbc.conf
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] NOTICE[45468]: app_queue.c:9774 reload_queue_rules: No queuerules.conf file found, queues will not follow penalty rules
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: loader.c:2572 load_modules: Some non-required modules failed to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: loader.c:2666 load_modules: Module 'res_adsi' has been loaded but may be removed in a future release.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: loader.c:2666 load_modules: Module 'app_getcpeid' has been loaded but may be removed in a future release.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] WARNING[45468]: loader.c:2666 load_modules: Module 'app_adsiprog' has been loaded but may be removed in a future release.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: res_stun_monitor declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: res_phoneprov declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: Declined modules which depend on res_phoneprov: res_pjsip_phoneprov_provider
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: chan_iax2 declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: res_hep declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: Declined modules which depend on res_hep: res_hep_rtcp, res_hep_pjsip
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: res_pjsip_notify declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: res_calendar declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: res_parking declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: app_confbridge declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: Declined modules which depend on app_confbridge: app_page
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: app_agent_pool declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: cel_sqlite3_custom declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: cdr_manager declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: cdr_odbc declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: cel_manager declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: cdr_sqlite3_custom declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: cdr_csv declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: app_amd declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: app_followme declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: chan_unistim declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: pbx_dundi declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: app_festival declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: app_alarmreceiver declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: pbx_ael declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: res_prometheus declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:39] ERROR[45468]: loader.c:2687 load_modules: func_odbc declined to load.
+Aug 06 14:57:39 runnervmyv9d9 asterisk[45468]: Asterisk Ready.
+Aug 06 14:57:40 runnervmyv9d9 systemd[1]: Starting franzfon-wizard.service - FRANZFON Wizard ARM64...
+Aug 06 14:57:40 runnervmyv9d9 systemd[1]: Started franzfon-wizard.service - FRANZFON Wizard ARM64.
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [Startup] Operation-Log installiert (Kategorien: FritzBox, Push, Push-Relay, License, Update)
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: Warning: connect.session() MemoryStore is not
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: designed for a production environment, as it will leak
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: memory, and will not scale past a single process.
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Forwarding default entry created
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: Default admin user created (franzfon/franz1234) - password change required on first login
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Running migrations...
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Migration: voip_push_tokens.voip_token Spalte hinzugefügt
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Migration: voip_push_tokens.fail_count Spalte hinzugefügt
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Migration: voip_push_tokens.stale Spalte hinzugefügt
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] SMTP settings initialized
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Default business hours created
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Default ring group "Zentrale" created with 1 members
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Added voicemail_settings.transcript_in_email
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Migration: holidays.source Spalte hinzugefügt
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Migration: holidays.region Spalte hinzugefügt
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Default Call-Flow #1 seeded (Standard Eingehend, 3 nodes, 5 edges)
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Migration: contacts.email hinzugefügt
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Migration: contacts.source hinzugefügt
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Migration: contacts.external_id hinzugefügt
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Migration: contacts.updated_at hinzugefügt
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Migration: contacts.anrede hinzugefügt
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Migration: contacts.strasse hinzugefügt
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Migration: contacts.plz hinzugefügt
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Migration: contacts.ort hinzugefügt
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Migration: contacts.notizen hinzugefügt
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Migration: devices.device_type hinzugefügt
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [DB] Migrations completed
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [AMI] AMI nicht konfiguriert — wird automatisch eingerichtet...
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [AMI] Eingerichtet und geladen: user=f01feafc2ee2
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [BLF] Verbinde mit Asterisk AMI...
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [WebSocket] Voicemail-Ordner existiert nicht, erstelle...
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [WebSocket] Überwache: /var/spool/asterisk/voicemail/default/200/INBOX
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [WebSocket] Server gestartet auf /events
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: FranzFon Server running on http://0.0.0.0:3000
+Aug 06 14:57:40 runnervmyv9d9 node[45583]:   - Wizard: http://localhost:3000/
+Aug 06 14:57:40 runnervmyv9d9 node[45583]:   - Login: http://localhost:3000/login
+Aug 06 14:57:40 runnervmyv9d9 node[45583]:   - Dashboard: http://localhost:3000/dashboard (Admin only)
+Aug 06 14:57:40 runnervmyv9d9 node[45583]:   - Telefone: http://localhost:3000/devices (Admin only)
+Aug 06 14:57:40 runnervmyv9d9 node[45583]:   - Provisioning: http://localhost:3000/provision/
+Aug 06 14:57:40 runnervmyv9d9 node[45583]:   - WebSocket Events: ws://localhost:3000/events
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [License-SSE] Kein License-Key konfiguriert, SSE deaktiviert
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [Startup] License-Sync gestartet (Intervall: 6h)
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [Trunk-Monitor] gestartet (Intervall 60s, Start in 90s, 2-Strike-Entprellung)
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [Nextcloud-Kontakte] gestartet (Intervall 5 Minuten, Start in 75 Sekunden)
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [Trunk-Selbsttest] gestartet (Intervall 15 Min, Start in 4 Min, inaktiv bis zum naechsten Trunk-Reconnect (keine internen Nummern persistiert))
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [Push-Relay] Relay nicht gekoppelt — starte Auto-Pairing...
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [Transcription] Automatische Transkription ist deaktiviert (kann in Einstellungen aktiviert werden)
+Aug 06 14:57:40 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:40] WARNING[45602]: db.c:540 ast_db_del2: AstDB key /FFPROBE/armed does not exist
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [Aufnahme-Transkript] Worker gestartet (Intervall 10s)
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [Retention] gestartet (taeglicher Cleanup, Start in 60s)
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [Personalakte-Retention] gestartet (täglicher Fällig-Hinweis, kein Auto-Löschen)
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [License-Sync] Sync fehlgeschlagen: key=***, reason=missing_credentials — Tier beibehalten
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [Push-Relay] Auto-Pairing Versuch 1/5 fehlgeschlagen: license_missing
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [Push-Relay] Permanenter Fehler (license_missing) — periodischer Recheck aktiv
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [Startup] Push-Relay Kopplung ausstehend — Retry läuft im Hintergrund
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [Startup] AI-Gateway nicht gekoppelt (license_missing)
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [FRANZFON] Transport(s) fehlen: WebSocket, UDP, werden eingerichtet...
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [BLF] AMI-Verbindung hergestellt
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [BLF] AMI-Willkommen: Asterisk Call Manager/11.0.0
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [BLF] AMI-Authentifizierung erfolgreich
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [BLF] Lade initialen Extension-Status...
+Aug 06 14:57:40 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:40] WARNING[45605]: db.c:540 ast_db_del2: AstDB key /FFPROBE/callerid does not exist
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [FRANZFON] Starte Asterisk neu...
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [Asterisk-Restart][transports] Stop angefordert
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [FRANZFON] ensureAdminPjsipEndpoint: Endpoint 200 fehlt, lege ihn an...
+Aug 06 14:57:40 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:40] WARNING[45612]: db.c:540 ast_db_del2: AstDB key /FFPROBE/result does not exist
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [CDR] MySQL-Verbindung OK
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [BLF] 1 Extensions geladen
+Aug 06 14:57:40 runnervmyv9d9 systemd[1]: Stopping asterisk.service - Asterisk PBX for FRANZFON ARM64...
+Aug 06 14:57:40 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:40] ERROR[45543]: res_pjsip_config_wizard.c:1074 object_type_loaded_observer: Unable to load config file 'pjsip_wizard.conf'
+Aug 06 14:57:40 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:40] ERROR[45543]: res_pjsip_config_wizard.c:1074 object_type_loaded_observer: Unable to load config file 'pjsip_wizard.conf'
+Aug 06 14:57:40 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:40] ERROR[45543]: res_pjsip_config_wizard.c:1074 object_type_loaded_observer: Unable to load config file 'pjsip_wizard.conf'
+Aug 06 14:57:40 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:40] ERROR[45543]: res_pjsip_config_wizard.c:1074 object_type_loaded_observer: Unable to load config file 'pjsip_wizard.conf'
+Aug 06 14:57:40 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:40] NOTICE[45543]: sorcery.c:1412 sorcery_object_load: Type 'system' is not reloadable, maintaining previous values
+Aug 06 14:57:40 runnervmyv9d9 asterisk[45468]: [2026-08-06 14:57:40] ERROR[45543]: res_pjsip_config_wizard.c:1074 object_type_loaded_observer: Unable to load config file 'pjsip_wizard.conf'
+Aug 06 14:57:40 runnervmyv9d9 node[45583]: [FRANZFON] ensureAdminPjsipEndpoint fehlgeschlagen: ENOENT: no such file or directory, open '/etc/asterisk/extensions_custom.conf'
+Aug 06 14:57:40 runnervmyv9d9 asterisk[45468]: Asterisk cleanly ending (0).
+Aug 06 14:57:40 runnervmyv9d9 asterisk[45468]: Executing last minute cleanups
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45468]: 
+Aug 06 14:57:41 runnervmyv9d9 node[45583]: [BLF] AMI-Verbindung geschlossen
+Aug 06 14:57:41 runnervmyv9d9 node[45583]: [BLF] Reconnect in 5 Sekunden...
+Aug 06 14:57:41 runnervmyv9d9 systemd[1]: asterisk.service: Deactivated successfully.
+Aug 06 14:57:41 runnervmyv9d9 systemd[1]: Stopped asterisk.service - Asterisk PBX for FRANZFON ARM64.
+Aug 06 14:57:41 runnervmyv9d9 node[45583]: [Asterisk-Restart][transports] Start
+Aug 06 14:57:41 runnervmyv9d9 systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
+Aug 06 14:57:41 runnervmyv9d9 node[45583]: [Update-Check] Bereits aktuell (1.2.0)
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: PBX UUID: ec2489f7-b12e-4d0c-8188-1b49f62e0ee1
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: Could not find option 'minimum_size' with type 'threadpool' in module 'stasis'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: Unable to load config file 'stasis.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: Could not load Stasis configuration; using defaults
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] NOTICE[45635]: loader.c:2568 load_modules: 333 modules will be loaded.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] NOTICE[45635]: res_odbc.c:718 load_odbc_config: Registered ODBC class 'asteriskcdrdb' dsn->[asteriskcdrdb]
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: res_config_sqlite3.c:1275 parse_config: Missing config file 'res_config_sqlite3.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: config_options.c:710 aco_process_config: Unable to load config file 'statsd.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] NOTICE[45635]: res_statsd.c:399 load_module: Could not load statsd config; using defaults
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: ccss.c:4357 initialize_cc_max_requests: Could not find valid ccss.conf file. Using cc_max_requests default
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: ccss.c:4414 initialize_cc_devstate_map: Could not find valid ccss.conf file. Using cc_[state]_devstate defaults
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] NOTICE[45635]: cdr.c:4656 cdr_toggle_runtime_options: CDR simple logging enabled.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: config_options.c:710 aco_process_config: Unable to load config file 'cel.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] NOTICE[45635]: cel.c:1679 load_module: Failed to process CEL configuration; using defaults
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: config_options.c:710 aco_process_config: Unable to load config file 'features.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] NOTICE[45635]: features_config.c:1946 load_config: Could not load features config; using defaults
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: http.c:2564 __ast_http_load: Ignoring unknown option 'websocket_enabled' in http.conf
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: indications.c:1071 load_indications: Can't find indications config file indications.conf.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: config_options.c:710 aco_process_config: Unable to load config file 'acl.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: config_options.c:710 aco_process_config: Unable to load config file 'udptl.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] NOTICE[45635]: udptl.c:1363 __ast_udptl_reload: Could not load udptl config; using defaults
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: res_sorcery_config.c:328 sorcery_config_internal_load: Unable to load config file 'geolocation.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: res_sorcery_config.c:328 sorcery_config_internal_load: Unable to load config file 'geolocation.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: res_sorcery_config.c:328 sorcery_config_internal_load: Unable to load config file 'pjproject.conf'
+Aug 06 14:57:41 runnervmyv9d9 node[45583]: [WebSocket] BLF-Service integriert
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: res_pjsip_config_wizard.c:1074 object_type_loaded_observer: Unable to load config file 'pjsip_wizard.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: res_pjsip_config_wizard.c:1074 object_type_loaded_observer: Unable to load config file 'pjsip_wizard.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: res_pjsip_config_wizard.c:1074 object_type_loaded_observer: Unable to load config file 'pjsip_wizard.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: res_pjsip_config_wizard.c:1074 object_type_loaded_observer: Unable to load config file 'pjsip_wizard.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: res_stun_monitor.c:335 load_config: Unable to load config res_stun_monitor.conf
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: res_phoneprov.c:1376 load_common: Unable to load config phoneprov.conf
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: res_phoneprov.c:1451 load_module: Unable to load provisioning profiles.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: res_musiconhold.c:2333 load_module: No music on hold classes configured, disabling music on hold.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: res_sorcery_config.c:328 sorcery_config_internal_load: Unable to load config file 'websocket_client.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] NOTICE[45635]: res_smdi.c:981 smdi_load: Unable to load config smdi.conf: SMDI disabled
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] NOTICE[45635]: res_smdi.c:1430 load_module: No SMDI interfaces are available to listen on, not starting SMDI listener.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: res_sorcery_config.c:328 sorcery_config_internal_load: Unable to load config file 'aeap.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: chan_iax2.c:13719 set_config: Unable to load config iax.conf
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] NOTICE[45635]: res_fax.c:4545 set_config: Configuration file 'res_fax.conf' not found, using default options.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: config_options.c:710 aco_process_config: Unable to load config file 'hep.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: res_pjsip_config_wizard.c:1074 object_type_loaded_observer: Unable to load config file 'pjsip_wizard.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: config_options.c:710 aco_process_config: Unable to load config file 'pjsip_notify.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: res_calendar.c:1094 load_config: Unable to load config calendar.conf
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: config_options.c:710 aco_process_config: Unable to load config file 'res_parking.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: config_options.c:710 aco_process_config: Unable to load config file 'confbridge.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: app_confbridge.c:4672 load_module: Unable to load config. Not loading module.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: config_options.c:710 aco_process_config: Unable to load config file 'agents.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: app_agent_pool.c:2716 load_module: Unable to load config. Not loading module.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: cdr_custom.c:98 load_config: Unable to load cdr_custom.conf. Not logging custom CSV CDRs.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: cel_sqlite3_custom.c:161 load_config: Failed to load configuration file. Module not activated.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: cdr_manager.c:215 load_config: Failed to load configuration file. Module not activated.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: cdr_odbc.c:201 odbc_load_module: cdr_odbc: Unable to load config for ODBC CDR's: cdr_odbc.conf
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: cel_custom.c:86 load_config: Unable to load cel_custom.conf. Not logging CEL to custom CSVs.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: cel_manager.c:330 load_config: Failed to load configuration file. CEL manager Module not activated.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: cdr_sqlite3_custom.c:161 load_config: Failed to load configuration file. Module not activated.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: cel_odbc.c:110 load_config: Unable to load cel_odbc.conf.  No ODBC CEL records!
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: config_options.c:710 aco_process_config: Unable to load config file 'res_http_media_cache.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] NOTICE[45635]: res_http_media_cache.c:816 load_module: Could not load res_http_media_cache config; using defaults
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: app_amd.c:518 load_config: Configuration file amd.conf missing.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: app_followme.c:423 reload_followme: No follow me config file (followme.conf), so no follow me
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: chan_unistim.c:6861 reload_config: Unable to load config unistim.conf
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: res_clialiases.c:196 load_config: res_clialiases configuration file 'cli_aliases.conf' not found
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: pbx_dundi.c:4955 set_config: Unable to load config dundi.conf
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: app_festival.c:571 load_module: No such configuration file festival.conf
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: app_minivm.c:2786 load_config: Failed to load configuration file. Module activated with default settings.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] NOTICE[45635]: pbx_ael.c:164 pbx_load_module: File /etc/asterisk/extensions.ael not found; AEL declining load
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: config_options.c:710 aco_process_config: Unable to load config file 'prometheus.conf'
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] NOTICE[45635]: func_odbc.c:1858 load_module: Unable to load config for func_odbc: func_odbc.conf
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] NOTICE[45635]: app_queue.c:9774 reload_queue_rules: No queuerules.conf file found, queues will not follow penalty rules
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: loader.c:2572 load_modules: Some non-required modules failed to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: loader.c:2666 load_modules: Module 'res_adsi' has been loaded but may be removed in a future release.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: loader.c:2666 load_modules: Module 'app_getcpeid' has been loaded but may be removed in a future release.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] WARNING[45635]: loader.c:2666 load_modules: Module 'app_adsiprog' has been loaded but may be removed in a future release.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: res_stun_monitor declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: res_phoneprov declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: Declined modules which depend on res_phoneprov: res_pjsip_phoneprov_provider
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: chan_iax2 declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: res_hep declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: Declined modules which depend on res_hep: res_hep_rtcp, res_hep_pjsip
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: res_pjsip_notify declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: res_calendar declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: res_parking declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: app_confbridge declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: Declined modules which depend on app_confbridge: app_page
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: app_agent_pool declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: cel_sqlite3_custom declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: cdr_manager declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: cdr_odbc declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: cel_manager declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: cdr_sqlite3_custom declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: cdr_csv declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: app_amd declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: app_followme declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: chan_unistim declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: pbx_dundi declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: app_festival declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: app_alarmreceiver declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: pbx_ael declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: res_prometheus declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: [2026-08-06 14:57:41] ERROR[45635]: loader.c:2687 load_modules: func_odbc declined to load.
+Aug 06 14:57:41 runnervmyv9d9 asterisk[45635]: Asterisk Ready.
+Aug 06 14:57:42 runnervmyv9d9 node[45583]: [Asterisk-Unit] Native systemd-Unit fehlt, installiere (LSB-Race-Fix)
+Aug 06 14:57:42 runnervmyv9d9 node[45583]: [Asterisk-Unit] systemctl enable asterisk OK
+Aug 06 14:57:44 runnervmyv9d9 node[45583]: [Asterisk-Restart][transports] OK — CLI + AMI ready
+Aug 06 14:57:44 runnervmyv9d9 node[45583]: [FRANZFON] Transports eingerichtet!
+Aug 06 14:57:45 runnervmyv9d9 node[45583]: [VoIP-Push] Astdb-Sync: 0 Extensions initialisiert
+Aug 06 14:57:46 runnervmyv9d9 node[45583]: [BLF] Verbinde mit Asterisk AMI...
+Aug 06 14:57:46 runnervmyv9d9 node[45583]: [BLF] AMI-Verbindung hergestellt
+Aug 06 14:57:46 runnervmyv9d9 node[45583]: [BLF] AMI-Willkommen: Asterisk Call Manager/11.0.0
+Aug 06 14:57:46 runnervmyv9d9 node[45583]: [BLF] AMI-Authentifizierung erfolgreich
+Aug 06 14:57:46 runnervmyv9d9 node[45583]: [BLF] Lade initialen Extension-Status...
+Aug 06 14:57:46 runnervmyv9d9 node[45583]: [BLF] 1 Extensions geladen
+Aug 06 14:57:46 runnervmyv9d9 node[45583]: [WebSocket] Event "blf_status_loaded" an 0 Clients gesendet
+Aug 06 14:57:49 runnervmyv9d9 node[45583]: [FRANZFON] Consent-Dialplan geschrieben
+Aug 06 14:57:49 runnervmyv9d9 node[45583]: [FRANZFON] Consent-Dialplan in extensions.conf eingebunden
+Aug 06 14:57:49 runnervmyv9d9 node[45583]: [FRANZFON] Consent-Dialplan geladen + verifiziert
+Aug 06 14:57:49 runnervmyv9d9 node[45583]: [FRANZFON] Sound-Asset installiert: callfilter/cf-abweisung.wav
+Aug 06 14:57:49 runnervmyv9d9 node[45583]: [FRANZFON] Sound-Asset installiert: callfilter/cf-anonym.wav
+Aug 06 14:57:49 runnervmyv9d9 node[45583]: [FRANZFON] Sound-Asset installiert: callfilter/cf-press1.wav
+Aug 06 14:57:49 runnervmyv9d9 node[45583]: [FRANZFON] Sound-Asset installiert: callfilter/cf-voicemail.wav
+Aug 06 14:57:49 runnervmyv9d9 node[45583]: [FRANZFON] Sound-Asset installiert: consent/consent-ansage-cloud.wav
+Aug 06 14:57:49 runnervmyv9d9 node[45583]: [FRANZFON] Sound-Asset installiert: consent/consent-ansage-lokal.wav
+Aug 06 14:57:49 runnervmyv9d9 node[45583]: [FRANZFON] Sound-Asset installiert: consent/consent-zustimmung-cloud.wav
+Aug 06 14:57:49 runnervmyv9d9 node[45583]: [FRANZFON] Sound-Asset installiert: consent/consent-zustimmung-lokal.wav
+Aug 06 14:58:00 runnervmyv9d9 node[45583]: [Dead-Token-Poll] Schedule gestartet (Intervall: 86400s, Endpoint: /dead-tokens)
+Aug 06 14:58:04 runnervmyv9d9 node[45583]: [FRANZFON] Fax-Dialplan-Abgleich übersprungen (Fax nicht eingerichtet)

@@ -1,0 +1,3 @@
+Module                         Description                              Use Count  Status      Support Level
+chan_pjsip.so                  PJSIP Channel Driver                     1          Running              core
+1 modules loaded
