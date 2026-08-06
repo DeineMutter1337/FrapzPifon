@@ -156,7 +156,8 @@ Port=3306
 Socket=/run/mysqld/mysqld.sock
 Option=3
 EOF
-chmod 0600 /etc/odbc.ini
+chown root:asterisk /etc/odbc.ini
+chmod 0640 /etc/odbc.ini
 
 printf '\n[4/8] Writing minimal native Asterisk configuration\n'
 install -d -o root -g asterisk -m 0750 /etc/asterisk
@@ -390,12 +391,12 @@ if [ "$ACTIVATE" -eq 1 ]; then
 
   systemctl start franzfon-wizard.service
   for _ in $(seq 1 45); do
-    if curl --fail --silent --max-time 2 http://127.0.0.1:3000/ >/dev/null 2>&1; then
+    if curl --fail --location --silent --max-time 2 http://127.0.0.1:3000/ >/dev/null 2>&1; then
       break
     fi
     sleep 1
   done
-  curl --fail --silent --show-error --max-time 5 http://127.0.0.1:3000/ >/dev/null
+  curl --fail --location --silent --show-error --max-time 5 http://127.0.0.1:3000/ >/dev/null
   sed -i 's/^STACK_ENABLED=no$/STACK_ENABLED=yes/' "$STATE_DIR/install-state"
   systemctl --no-pager --full status asterisk.service franzfon-wizard.service
   echo 'FRANZFON ARM64 stack activated successfully.'
