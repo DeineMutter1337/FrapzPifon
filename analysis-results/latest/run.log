@@ -4,7 +4,7 @@ Linux runnervmvrwv9 6.17.0-1020-azure #20~24.04.1-Ubuntu SMP Fri Jun 19 20:09:14
 Filesystem     Type      Size  Used Avail Use% Mounted on
 /dev/root      ext4      145G   42G  103G  29% /
 tmpfs          tmpfs     7.9G   84K  7.9G   1% /dev/shm
-tmpfs          tmpfs     3.2G 1016K  3.2G   1% /run
+tmpfs          tmpfs     3.2G 1020K  3.2G   1% /run
 tmpfs          tmpfs     5.0M     0  5.0M   0% /run/lock
 efivarfs       efivarfs  128M   32K  128M   1% /sys/firmware/efi/efivars
 /dev/sda16     ext4      881M   64M  756M   8% /boot
@@ -41,7 +41,7 @@ done: 9040 extents
 Filesystem     Type      Size  Used Avail Use% Mounted on
 /dev/root      ext4      145G   52G   94G  36% /
 tmpfs          tmpfs     7.9G   84K  7.9G   1% /dev/shm
-tmpfs          tmpfs     3.2G 1016K  3.2G   1% /run
+tmpfs          tmpfs     3.2G 1020K  3.2G   1% /run
 tmpfs          tmpfs     5.0M     0  5.0M   0% /run/lock
 efivarfs       efivarfs  128M   32K  128M   1% /sys/firmware/efi/efivars
 /dev/sda16     ext4      881M   64M  756M   8% /boot
@@ -51,12 +51,12 @@ Selected virtual disk: /home/runner/work/FrapzPifon/FrapzPifon/extracted/drive-s
 /home/runner/work/FrapzPifon/FrapzPifon/extracted/drive-scsi0: DOS/MBR boot sector
   File: /home/runner/work/FrapzPifon/FrapzPifon/extracted/drive-scsi0
   Size: 34359738368	Blocks: 19696576   IO Block: 4096   regular file
-Device: 8,1	Inode: 8670364     Links: 1
+Device: 8,1	Inode: 8913048     Links: 1
 Access: (0644/-rw-r--r--)  Uid: ( 1001/  runner)   Gid: ( 1001/  runner)
-Access: 2026-08-06 07:13:21.599870790 +0000
-Modify: 2026-08-06 07:13:21.453871433 +0000
-Change: 2026-08-06 07:13:21.453871433 +0000
- Birth: 2026-08-06 07:12:03.021462228 +0000
+Access: 2026-08-06 07:27:25.587499959 +0000
+Modify: 2026-08-06 07:27:25.555499753 +0000
+Change: 2026-08-06 07:27:25.555499753 +0000
+ Birth: 2026-08-06 07:25:08.998981197 +0000
 
 ===== PARTITION TABLE =====
 === FDISK ===
