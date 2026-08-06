@@ -82,6 +82,68 @@ function Assert-LabContainerRunning {
     }
 }
 
+function Test-SshBanner {
+    param(
+        [string]$HostName = '127.0.0.1',
+        [int]$Port
+    )
+
+    $client = [System.Net.Sockets.TcpClient]::new()
+    try {
+        $connectTask = $client.ConnectAsync($HostName, $Port)
+        if (-not $connectTask.Wait(3000)) {
+            return $false
+        }
+
+        $stream = $client.GetStream()
+        $stream.ReadTimeout = 3000
+        $buffer = New-Object byte[] 255
+        $count = $stream.Read($buffer, 0, $buffer.Length)
+        if ($count -le 0) {
+            return $false
+        }
+
+        $banner = [System.Text.Encoding]::ASCII.GetString($buffer, 0, $count)
+        return $banner.StartsWith('SSH-')
+    }
+    catch {
+        return $false
+    }
+    finally {
+        $client.Dispose()
+    }
+}
+
+function Wait-LabSsh {
+    param([int]$TimeoutSeconds = 900)
+
+    $deadline = (Get-Date).AddSeconds($TimeoutSeconds)
+    $attempt = 0
+    Write-Host "Waiting for Debian SSH on 127.0.0.1:$SshPort ..."
+
+    while ((Get-Date) -lt $deadline) {
+        $containerId = Get-LabContainerId
+        if ([string]::IsNullOrWhiteSpace($containerId)) {
+            throw 'The FRANZFON lab container is not running.'
+        }
+
+        if (Test-SshBanner -Port ([int]$SshPort)) {
+            Write-Host 'Debian SSH is ready.' -ForegroundColor Green
+            return
+        }
+
+        $attempt++
+        if (($attempt % 6) -eq 0) {
+            Write-Host 'ARM64 guest is still booting. This can take several minutes under emulation.'
+        }
+        Start-Sleep -Seconds 5
+    }
+
+    Write-Host 'SSH did not become ready. Last VM log lines:' -ForegroundColor Yellow
+    & docker compose logs --no-color --tail 100 vm
+    throw "SSH was not ready after $TimeoutSeconds seconds."
+}
+
 try {
     & docker version *> $null
     if ($LASTEXITCODE -ne 0) {
@@ -114,6 +176,7 @@ try {
         }
 
         'ssh' {
+            Wait-LabSsh
             & ssh `
                 -o StrictHostKeyChecking=no `
                 -o UserKnownHostsFile=NUL `
@@ -128,6 +191,7 @@ try {
             Invoke-Compose @('up', '-d')
             Assert-LabContainerRunning
             Write-Host "Checkpoint '$Name' created. A fresh overlay is running on top of it."
+            Write-Host "Run '.\lab.ps1 ssh'. It will wait until Debian SSH is ready."
         }
 
         'restore' {
@@ -137,6 +201,7 @@ try {
             Invoke-Compose @('up', '-d')
             Assert-LabContainerRunning
             Write-Host "Checkpoint '$Name' restored."
+            Write-Host "Run '.\lab.ps1 ssh'. It will wait until Debian SSH is ready."
         }
 
         'reset' {
@@ -145,6 +210,7 @@ try {
             Invoke-Compose @('up', '-d')
             Assert-LabContainerRunning
             Write-Host 'VM reset to clean Debian 12 ARM64. Existing checkpoints were kept.'
+            Write-Host "Run '.\lab.ps1 ssh'. It will wait until Debian SSH is ready."
         }
     }
 }
