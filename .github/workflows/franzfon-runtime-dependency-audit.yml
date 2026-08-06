@@ -1,0 +1,92 @@
+name: FRANZFON Runtime Dependency Audit
+run-name: "FRANZFON Runtime Dependency Audit • ${{ github.sha }}"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/franzfon-runtime-dependency-audit.yml'
+      - 'scripts/runtime_dependency_audit.sh'
+      - 'scripts/stream_vma_extract.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: franzfon-runtime-dependency-audit
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v4
+
+      - name: Reclaim runner disk space
+        run: |
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc 2>/dev/null || true
+          df -hT
+
+      - name: Install tools
+        run: |
+          set -euxo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            python3-pip file util-linux e2fsprogs
+          python3 -m pip install --user zstandard
+
+      - name: Audit runtime dependencies
+        id: audit
+        run: |
+          mkdir -p runtime-dependency-report
+          set +e
+          bash scripts/runtime_dependency_audit.sh 2>&1 | tee runtime-dependency-report/run.log
+          RC=${PIPESTATUS[0]}
+          echo "$RC" > runtime-dependency-report/exit-code.txt
+          echo "rc=$RC" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: franzfon-runtime-dependency-audit
+          path: runtime-dependency-report/
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 9
+
+      - name: Publish sanitized report
+        if: always()
+        run: |
+          set -euxo pipefail
+          rm -rf analysis-results/runtime-dependencies/latest
+          mkdir -p analysis-results/runtime-dependencies/latest
+          find runtime-dependency-report -maxdepth 1 -type f \( -name '*.txt' -o -name '*.log' \) \
+            -exec cp {} analysis-results/runtime-dependencies/latest/ \;
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add analysis-results/runtime-dependencies/latest
+
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update FRANZFON runtime dependency audit'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo 'No runtime dependency changes to commit.'
+          fi
+
+      - name: Mark failure after publishing report
+        if: always()
+        run: |
+          RC='${{ steps.audit.outputs.rc }}'
+          if [ "$RC" != 0 ]; then
+            echo 'Runtime dependency audit failed. Logs were published.' >&2
+            exit 1
+          fi
+          echo 'Runtime dependency audit passed.'
