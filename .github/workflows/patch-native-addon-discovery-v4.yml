@@ -1,0 +1,84 @@
+name: Patch Native Addon Discovery v4
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/patch-native-addon-discovery-v4.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Patch bootstrap by exact line
+        run: |
+          set -euxo pipefail
+          awk '
+          $0 == "assert_aarch64_elf \"$APP_ROOT/wizard/backend/node_modules/better-sqlite3/build/Release/better_sqlite3.node\"" {
+            print "NATIVE_ADDON_COUNT=0"
+            print "while IFS= read -r -d '\'' '\'' native_addon; do"
+            print "  assert_aarch64_elf \"$native_addon\""
+            print "  NATIVE_ADDON_COUNT=$((NATIVE_ADDON_COUNT + 1))"
+            print "done < <(find -L \"$APP_ROOT/wizard/backend/node_modules\" -type f -name '\''*.node'\'' -print0)"
+            print "[ \"$NATIVE_ADDON_COUNT\" -gt 0 ] || {"
+            print "  echo '\''No native Node.js addon was found after npm installation.'\'' >&2"
+            print "  exit 1"
+            print "}"
+            found=1
+            next
+          }
+          { print }
+          END { if (!found) exit 42 }
+          ' installer/franzfon-arm64-bootstrap.sh > /tmp/bootstrap.new
+          mv /tmp/bootstrap.new installer/franzfon-arm64-bootstrap.sh
+          chmod +x installer/franzfon-arm64-bootstrap.sh
+
+      - name: Patch E2E app assertion by marker range
+        run: |
+          set -euxo pipefail
+          awk '
+          index($0, "          ADDON=/opt/franzfon/wizard/backend/node_modules/better-sqlite3/") {
+            print "          : > report/native-node-addons-elf.txt"
+            print "          NATIVE_ADDON_COUNT=0"
+            print "          while IFS= read -r -d '\'' '\'' native_addon; do"
+            print "            {"
+            print "              echo \"FILE=$native_addon\""
+            print "              readelf -h \"$native_addon\""
+            print "              echo"
+            print "            } >> report/native-node-addons-elf.txt"
+            print "            readelf -h \"$native_addon\" | awk '\''$1 == \"Machine:\" {print $2}'\'' | grep -Fx AArch64"
+            print "            NATIVE_ADDON_COUNT=$((NATIVE_ADDON_COUNT + 1))"
+            print "          done < <(find -L /opt/franzfon/wizard/backend/node_modules -type f -name '\''*.node'\'' -print0)"
+            print "          test \"$NATIVE_ADDON_COUNT\" -gt 0"
+            print "          echo \"NATIVE_ADDON_COUNT=$NATIVE_ADDON_COUNT\" | tee report/native-node-addon-count.txt"
+            skipping=1
+            found=1
+            next
+          }
+          skipping && index($0, "grep -Fx AArch64") { skipping=0; next }
+          skipping { next }
+          { print }
+          END { if (!found || skipping) exit 43 }
+          ' .github/workflows/franzfon-arm64-end-to-end-v3.yml > /tmp/e2e.new
+          mv /tmp/e2e.new .github/workflows/franzfon-arm64-end-to-end-v3.yml
+
+          bash -n installer/franzfon-arm64-bootstrap.sh
+          grep -F 'native-node-addons-elf.txt' .github/workflows/franzfon-arm64-end-to-end-v3.yml
+
+      - name: Commit simple patch
+        run: |
+          set -euxo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add installer/franzfon-arm64-bootstrap.sh .github/workflows/franzfon-arm64-end-to-end-v3.yml
+          git commit -m 'Find native Node addons independently of package layout'
+          git pull --rebase origin main
+          git push origin HEAD:main
