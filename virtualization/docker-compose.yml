@@ -10,9 +10,9 @@ services:
     volumes:
       - ./state:/state
     ports:
-      - "127.0.0.1:2222:2222/tcp"
-      - "127.0.0.1:3000:3000/tcp"
-      - "127.0.0.1:5060:5060/udp"
-      - "127.0.0.1:8088:8088/tcp"
-      - "127.0.0.1:10000-10020:10000-10020/udp"
+      - "127.0.0.1:${FRANZFON_LAB_SSH_PORT:-2222}:2222/tcp"
+      - "127.0.0.1:${FRANZFON_LAB_WEB_PORT:-13000}:3000/tcp"
+      - "127.0.0.1:${FRANZFON_LAB_SIP_PORT:-15060}:5060/udp"
+      - "127.0.0.1:${FRANZFON_LAB_WS_PORT:-18088}:8088/tcp"
+      - "127.0.0.1:${FRANZFON_LAB_RTP_START:-20000}-${FRANZFON_LAB_RTP_END:-20020}:10000-10020/udp"
     stop_grace_period: 60s
