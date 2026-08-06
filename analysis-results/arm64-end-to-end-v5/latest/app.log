@@ -513,11 +513,11 @@ templates/systemd/sangoma-pnpd.service: OK
 Get:1 https://packages.microsoft.com/repos/azure-cli noble InRelease [3564 B]
 Get:2 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
 Get:3 https://packages.microsoft.com/repos/azure-cli noble/main arm64 Packages [2380 B]
-Get:4 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [306 kB]
-Get:5 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [643 B]
-Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [266 kB]
-Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.2 kB]
-Hit:8 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Get:4 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [266 kB]
+Get:5 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.2 kB]
+Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [643 B]
+Hit:7 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [306 kB]
 Get:9 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease [126 kB]
 Get:10 http://ports.ubuntu.com/ubuntu-ports noble-backports InRelease [126 kB]
 Get:11 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease [126 kB]
@@ -544,7 +544,7 @@ Get:31 http://ports.ubuntu.com/ubuntu-ports noble-security/restricted arm64 Pack
 Get:32 http://ports.ubuntu.com/ubuntu-ports noble-security/restricted Translation-en [302 kB]
 Get:33 http://ports.ubuntu.com/ubuntu-ports noble-security/multiverse arm64 Packages [68.7 kB]
 Get:34 http://ports.ubuntu.com/ubuntu-ports noble-security/multiverse Translation-en [10.6 kB]
-Fetched 12.8 MB in 7s (1968 kB/s)
+Fetched 12.8 MB in 5s (2499 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -742,7 +742,7 @@ Get:111 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libwavpack1 arm64 
 Get:112 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 libsox-fmt-base arm64 14.4.2+git20190427-4build4 [34.8 kB]
 Get:113 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 sox arm64 14.4.2+git20190427-4build4 [101 kB]
 Preconfiguring packages ...
-Fetched 81.5 MB in 20s (4133 kB/s)
+Fetched 81.5 MB in 24s (3368 kB/s)
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 199737 files and directories currently installed.)
 Removing mysql-client (8.0.46-0ubuntu0.24.04.3) ...
 Removing mysql-server (8.0.46-0ubuntu0.24.04.3) ...
@@ -1265,15 +1265,15 @@ Service restarts being deferred:
 No containers need to be restarted.
 
 User sessions running outdated binaries:
- runner @ user manager service: systemd[1071]
+ runner @ user manager service: systemd[1173]
 
 No VM guests are running outdated hypervisor (qemu) binaries on this host.
 
 [3/7] Installing verified Node.js 20.20.2 ARM64
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 24.1M  100 24.1M    0     0  86.0M      0 --:--:-- --:--:-- --:--:-- 86.0M
-/var/tmp/franzfon-node.PaXFuR/node-v20.20.2-linux-arm64.tar.xz: OK
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 24.1M  100 24.1M    0     0   112M      0 --:--:-- --:--:-- --:--:--  112M
+/var/tmp/franzfon-node.LUqqr4/node-v20.20.2-linux-arm64.tar.xz: OK
 v20.20.2
 10.8.2
 
