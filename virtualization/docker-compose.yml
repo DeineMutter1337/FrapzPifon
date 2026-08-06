@@ -1,0 +1,19 @@
+services:
+  vm:
+    build:
+      context: ./qemu
+    container_name: franzfon-arm64-lab
+    environment:
+      VM_CPUS: "4"
+      VM_MEMORY_MB: "4096"
+      VM_DISK_SIZE: "32G"
+    volumes:
+      - ./state:/state
+    ports:
+      - "127.0.0.1:2222:2222/tcp"
+      - "127.0.0.1:3000:3000/tcp"
+      - "127.0.0.1:5060:5060/udp"
+      - "127.0.0.1:8088:8088/tcp"
+      - "127.0.0.1:10000-10020:10000-10020/udp"
+    stop_grace_period: 60s
+    restart: unless-stopped
