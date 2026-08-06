@@ -85,6 +85,12 @@ jobs:
             make -j"$(nproc)"
             make DESTDIR="$STAGE_ROOT" install
 
+            STAGED_BINARY="$STAGE_ROOT/usr/sbin/asterisk"
+            STAGED_SSL_LIBRARY="$(find "$STAGE_ROOT" -type f -name 'libasteriskssl.so.1' -print -quit)"
+            test -x "$STAGED_BINARY"
+            test -n "$STAGED_SSL_LIBRARY"
+            STAGED_LIBRARY_DIR="$(dirname "$STAGED_SSL_LIBRARY")"
+
             REQUIRED_MODULES=(
               channels/chan_pjsip.so
               res/res_pjsip.so
@@ -107,7 +113,7 @@ jobs:
               file main/asterisk
               echo
               echo '=== VERSION ==='
-              ./main/asterisk -V
+              LD_LIBRARY_PATH="$STAGED_LIBRARY_DIR" "$STAGED_BINARY" -V
               echo
               echo '=== REQUIRED FRANZFON CORE MODULES ==='
               for module in "${REQUIRED_MODULES[@]}"; do
@@ -121,8 +127,8 @@ jobs:
               done
               echo
               echo '=== STAGED INSTALLATION ==='
-              test -x "$STAGE_ROOT/usr/sbin/asterisk"
-              file "$STAGE_ROOT/usr/sbin/asterisk"
+              file "$STAGED_BINARY"
+              printf 'LIBRARY_DIR=%s\n' "$STAGED_LIBRARY_DIR"
               find "$STAGE_ROOT/usr/lib" -type f -name '*.so' | wc -l
               echo
               echo '=== INTENTIONALLY OMITTED FROM V1 ==='
