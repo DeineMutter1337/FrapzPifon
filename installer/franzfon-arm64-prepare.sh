@@ -5,6 +5,7 @@ IMAGE_URL_DEFAULT='https://franzfon.de/updates/proxmox/vzdump-qemu-900-2026_08_0
 IMAGE_URL="$IMAGE_URL_DEFAULT"
 OUTPUT_DIR=''
 WORK_DIR=''
+CACHE_DIR='/var/cache/franzfon-arm64'
 KEEP_WORK=0
 
 usage() {
@@ -15,6 +16,7 @@ Usage:
 Options:
   --output PATH      Required output directory for the architecture-independent payload.
   --workdir PATH     Temporary working directory. Default: /var/tmp/franzfon-arm64-prepare.
+  --cache-dir PATH   Persistent resumable download cache. Default: /var/cache/franzfon-arm64.
   --image-url URL    Official VMA.ZST source URL.
   --keep-work        Keep extracted sparse disk for debugging.
   -h, --help         Show this help.
@@ -24,6 +26,8 @@ payload from the official appliance and refuses to copy x86 binaries,
 node_modules, databases, environment files, private keys or machine identity.
 Application code implementing the original license mechanism is preserved;
 license state itself is excluded with the runtime databases and environment files.
+The official compressed image is cached persistently and interrupted downloads
+are resumed on the next run.
 EOF
 }
 
@@ -35,6 +39,9 @@ while [ "$#" -gt 0 ]; do
     --workdir)
       [ "$#" -ge 2 ] || { echo 'Missing value for --workdir' >&2; exit 2; }
       WORK_DIR="$2"; shift 2 ;;
+    --cache-dir)
+      [ "$#" -ge 2 ] || { echo 'Missing value for --cache-dir' >&2; exit 2; }
+      CACHE_DIR="$2"; shift 2 ;;
     --image-url)
       [ "$#" -ge 2 ] || { echo 'Missing value for --image-url' >&2; exit 2; }
       IMAGE_URL="$2"; shift 2 ;;
@@ -74,10 +81,18 @@ WORK_DIR="${WORK_DIR:-/var/tmp/franzfon-arm64-prepare}"
 WORK_PARENT="$(dirname "$WORK_DIR")"
 OUTPUT_DIR="$(realpath -m "$OUTPUT_DIR")"
 WORK_DIR="$(realpath -m "$WORK_DIR")"
+CACHE_DIR="$(realpath -m "$CACHE_DIR")"
 
 case "$OUTPUT_DIR/" in
   "$WORK_DIR/"*)
     echo '--output must not be inside --workdir because temporary files are removed.' >&2
+    exit 1
+    ;;
+esac
+
+case "$CACHE_DIR/" in
+  "$WORK_DIR/"*)
+    echo '--cache-dir must not be inside --workdir because temporary files are removed.' >&2
     exit 1
     ;;
 esac
@@ -106,9 +121,10 @@ trap cleanup EXIT
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get install -y --no-install-recommends \
-  ca-certificates python3 python3-zstandard file util-linux e2fsprogs rsync coreutils
+  ca-certificates curl python3 python3-zstandard file util-linux e2fsprogs rsync coreutils
 
-mkdir -p "$WORK_PARENT"
+mkdir -p "$WORK_PARENT" "$CACHE_DIR"
+chmod 0700 "$CACHE_DIR"
 AVAILABLE_KB="$(df -Pk "$WORK_PARENT" | awk 'NR==2 {print $4}')"
 REQUIRED_KB=$((12 * 1024 * 1024))
 if [ "${AVAILABLE_KB:-0}" -lt "$REQUIRED_KB" ]; then
@@ -120,8 +136,67 @@ rm -rf "$WORK_DIR"
 mkdir -p "$EXTRACTED" "$MOUNT_DIR" "$STAGE_DIR/payload" "$STAGE_DIR/templates/systemd"
 chmod 0700 "$WORK_DIR" "$STAGE_DIR"
 
-printf '\n[1/6] Streaming and validating official VMA image\n'
-python3 "$EXTRACTOR" "$IMAGE_URL" "$EXTRACTED"
+IMAGE_PATH="${IMAGE_URL%%\?*}"
+IMAGE_BASENAME="$(basename "$IMAGE_PATH")"
+case "$IMAGE_BASENAME" in
+  *.vma.zst) ;;
+  *) IMAGE_BASENAME='franzfon-official.vma.zst' ;;
+esac
+IMAGE_KEY="$(printf '%s' "$IMAGE_URL" | sha256sum | cut -c1-16)"
+ARCHIVE="$CACHE_DIR/${IMAGE_KEY}-${IMAGE_BASENAME}"
+ARCHIVE_PART="$ARCHIVE.part"
+SOURCE_ARCHIVE="$ARCHIVE"
+NEW_DOWNLOAD=0
+
+printf '\n[1/6] Downloading/resuming and validating official VMA image\n'
+if [ -s "$ARCHIVE" ]; then
+  echo "Reusing cached archive: $ARCHIVE"
+else
+  if [ -s "$ARCHIVE_PART" ]; then
+    echo "Resuming cached partial archive: $ARCHIVE_PART"
+    du -h "$ARCHIVE_PART" | awk '{print "Already downloaded: " $1}'
+  else
+    echo "Downloading official archive to persistent cache: $ARCHIVE_PART"
+  fi
+
+  if ! curl \
+      --fail \
+      --location \
+      --continue-at - \
+      --retry 20 \
+      --retry-all-errors \
+      --retry-delay 5 \
+      --connect-timeout 30 \
+      --speed-limit 1024 \
+      --speed-time 120 \
+      --output "$ARCHIVE_PART" \
+      "$IMAGE_URL"; then
+    echo >&2
+    echo "Download interrupted. Partial data was kept for the next run:" >&2
+    echo "  $ARCHIVE_PART" >&2
+    exit 1
+  fi
+
+  SOURCE_ARCHIVE="$ARCHIVE_PART"
+  NEW_DOWNLOAD=1
+fi
+
+if ! python3 "$EXTRACTOR" "$SOURCE_ARCHIVE" "$EXTRACTED"; then
+  echo 'VMA validation or extraction failed.' >&2
+  if [ "$NEW_DOWNLOAD" -eq 1 ]; then
+    echo 'Removing the completed but invalid cached download.' >&2
+    rm -f "$ARCHIVE_PART"
+  else
+    echo 'Removing the invalid cached archive.' >&2
+    rm -f "$ARCHIVE"
+  fi
+  exit 1
+fi
+
+if [ "$NEW_DOWNLOAD" -eq 1 ]; then
+  mv "$ARCHIVE_PART" "$ARCHIVE"
+  echo "Validated archive cached at: $ARCHIVE"
+fi
 
 RAW="$(find "$EXTRACTED" -maxdepth 1 -type f -size +16M -printf '%s\t%p\n' \
   | sort -nr | head -n1 | cut -f2-)"
