@@ -60,7 +60,6 @@ jobs:
           grep -F -- "--exclude='*.db'" installer/franzfon-arm64-prepare.sh
           grep -F -- "--exclude='*.env'" installer/franzfon-arm64-prepare.sh
 
-          grep -F -- "$ASTERISK_SHA256" /dev/null 2>/dev/null || true
           grep -F -- '5b0e5d276aeb014bf8a08a94d1055a9e97b9dce3375846eea70da5221bf9efe7' \
             installer/franzfon-arm64-install-asterisk.sh
           grep -F -- 'Required module missing:' installer/franzfon-arm64-install-asterisk.sh
