@@ -1,0 +1,5 @@
+NAME      PATH         TYPE        SIZE FSTYPE FSVER LABEL UUID                                 RO MOUNTPOINTS
+loop0     /dev/loop0   loop 34359738368                                                          1 
+├─loop0p1 /dev/loop0p1 part 33334231040 ext4   1.0         8782b316-fa18-4de3-9d57-56ab3e1acc10  1 
+├─loop0p2 /dev/loop0p2 part        1024                                                          1 
+└─loop0p5 /dev/loop0p5 part  1022361600 swap   1           41294e36-34c9-4f44-a6c0-ee1f5ecf59dc  1 

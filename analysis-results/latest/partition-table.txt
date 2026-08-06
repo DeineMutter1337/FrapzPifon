@@ -1,0 +1,25 @@
+=== FDISK ===
+Disk /home/runner/work/FrapzPifon/FrapzPifon/extracted/drive-scsi0: 32 GiB, 34359738368 bytes, 67108864 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xc4150cfe
+
+Device                                                          Boot    Start      End  Sectors  Size Id Type
+/home/runner/work/FrapzPifon/FrapzPifon/extracted/drive-scsi0p1 *        2048 65107967 65105920   31G 83 Linux
+/home/runner/work/FrapzPifon/FrapzPifon/extracted/drive-scsi0p2      65110014 67106815  1996802  975M  5 Extended
+/home/runner/work/FrapzPifon/FrapzPifon/extracted/drive-scsi0p5      65110016 67106815  1996800  975M 82 Linux swap / Solaris
+
+=== PARTED ===
+Model:  (file)
+Disk /home/runner/work/FrapzPifon/FrapzPifon/extracted/drive-scsi0: 34359738368B
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags: 
+
+Number  Start         End           Size          Type      File system     Flags
+ 1      1048576B      33335279615B  33334231040B  primary   ext4            boot
+ 2      33336327168B  34358689791B  1022362624B   extended
+ 5      33336328192B  34358689791B  1022361600B   logical   linux-swap(v1)  swap
+

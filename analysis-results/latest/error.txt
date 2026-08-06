@@ -1,1 +1,0 @@
-ERROR: Could not mount a Linux root filesystem with libguestfs

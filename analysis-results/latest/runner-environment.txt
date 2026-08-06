@@ -1,6 +1,6 @@
 Linux runnervmvrwv9 6.17.0-1020-azure #20~24.04.1-Ubuntu SMP Fri Jun 19 20:09:14 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
 Filesystem     Type      Size  Used Avail Use% Mounted on
-/dev/root      ext4      145G   42G  103G  30% /
+/dev/root      ext4      145G   42G  103G  29% /
 tmpfs          tmpfs     7.9G   84K  7.9G   1% /dev/shm
 tmpfs          tmpfs     3.2G 1016K  3.2G   1% /run
 tmpfs          tmpfs     5.0M     0  5.0M   0% /run/lock
@@ -9,5 +9,7 @@ efivarfs       efivarfs  128M   32K  128M   1% /sys/firmware/efi/efivars
 /dev/sda15     vfat      105M  6.2M   99M   6% /boot/efi
 tmpfs          tmpfs     1.6G   12K  1.6G   1% /run/user/1001
 Python 3.12.3
-guestfish 1.52.0
-virt-filesystems 1.52.0
+losetup from util-linux 2.39.3
+  LVM version:     2.03.16(2) (2022-05-18)
+  Library version: 1.02.185 (2022-05-18)
+  Configuration:   ./configure --build=x86_64-linux-gnu --prefix=/usr --includedir=${prefix}/include --mandir=${prefix}/share/man --infodir=${prefix}/share/info --sysconfdir=/etc --localstatedir=/var --disable-option-checking --disable-silent-rules --libdir=${prefix}/lib/x86_64-linux-gnu --runstatedir=/run --disable-maintainer-mode --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --with-usrlibdir=/usr/lib/x86_64-linux-gnu --with-optimisation=-O2 --with-cache=internal --with-device-uid=0 --with-device-gid=6 --with-device-mode=0660 --with-default-pid-dir=/run --with-default-run-dir=/run/lvm --with-default-locking-dir=/run/lock/lvm --with-thin=internal --with-thin-check=/usr/sbin/thin_check --with-thin-dump=/usr/sbin/thin_dump --with-thin-repair=/usr/sbin/thin_repair --enable-applib --enable-blkid_wiping --enable-cmdlib --enable-dmeventd --enable-editline --enable-lvmlockd-dlm --enable-lvmlockd-sanlock --enable-lvmpolld --enable-notify-dbus --enable-pkgconfig --enable-udev_rules --enable-udev_sync --disable-readline
