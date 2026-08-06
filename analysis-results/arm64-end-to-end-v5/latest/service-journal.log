@@ -1,121 +1,600 @@
-Aug 06 10:44:19 runnervmscnyy systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
-Aug 06 10:44:19 runnervmscnyy asterisk[53749]: Stasis initialization failed.  ASTERISK EXITING!
-Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:20 runnervmscnyy asterisk[53749]: PBX UUID: 0b11318e-faf0-4d57-8130-d94042e63f1f
-Aug 06 10:44:20 runnervmscnyy asterisk[53749]: Cannot update type 'declined_message_types' in module 'stasis' because it has no existing documentation! If this module was recently built, run 'xmldoc reload' to refresh documentation, then load the module again
-Aug 06 10:44:20 runnervmscnyy systemd[1]: asterisk.service: Main process exited, code=exited, status=1/FAILURE
-Aug 06 10:44:20 runnervmscnyy systemd[1]: asterisk.service: Failed with result 'exit-code'.
-Aug 06 10:44:24 runnervmscnyy systemd[1]: asterisk.service: Scheduled restart job, restart counter is at 1.
-Aug 06 10:44:24 runnervmscnyy systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
-Aug 06 10:44:24 runnervmscnyy asterisk[53807]: Stasis initialization failed.  ASTERISK EXITING!
-Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:25 runnervmscnyy asterisk[53807]: PBX UUID: 0b11318e-faf0-4d57-8130-d94042e63f1f
-Aug 06 10:44:25 runnervmscnyy asterisk[53807]: Cannot update type 'declined_message_types' in module 'stasis' because it has no existing documentation! If this module was recently built, run 'xmldoc reload' to refresh documentation, then load the module again
-Aug 06 10:44:25 runnervmscnyy systemd[1]: asterisk.service: Main process exited, code=exited, status=1/FAILURE
-Aug 06 10:44:25 runnervmscnyy systemd[1]: asterisk.service: Failed with result 'exit-code'.
-Aug 06 10:44:28 runnervmscnyy systemd[1]: asterisk.service: Scheduled restart job, restart counter is at 2.
-Aug 06 10:44:28 runnervmscnyy systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
-Aug 06 10:44:28 runnervmscnyy asterisk[53823]: Stasis initialization failed.  ASTERISK EXITING!
-Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:29 runnervmscnyy asterisk[53823]: PBX UUID: 0b11318e-faf0-4d57-8130-d94042e63f1f
-Aug 06 10:44:29 runnervmscnyy asterisk[53823]: Cannot update type 'declined_message_types' in module 'stasis' because it has no existing documentation! If this module was recently built, run 'xmldoc reload' to refresh documentation, then load the module again
-Aug 06 10:44:29 runnervmscnyy systemd[1]: asterisk.service: Main process exited, code=exited, status=1/FAILURE
-Aug 06 10:44:29 runnervmscnyy systemd[1]: asterisk.service: Failed with result 'exit-code'.
-Aug 06 10:44:32 runnervmscnyy systemd[1]: asterisk.service: Scheduled restart job, restart counter is at 3.
-Aug 06 10:44:32 runnervmscnyy systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
-Aug 06 10:44:32 runnervmscnyy asterisk[53837]: Stasis initialization failed.  ASTERISK EXITING!
-Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:33 runnervmscnyy asterisk[53837]: PBX UUID: 0b11318e-faf0-4d57-8130-d94042e63f1f
-Aug 06 10:44:33 runnervmscnyy asterisk[53837]: Cannot update type 'declined_message_types' in module 'stasis' because it has no existing documentation! If this module was recently built, run 'xmldoc reload' to refresh documentation, then load the module again
-Aug 06 10:44:33 runnervmscnyy systemd[1]: asterisk.service: Main process exited, code=exited, status=1/FAILURE
-Aug 06 10:44:33 runnervmscnyy systemd[1]: asterisk.service: Failed with result 'exit-code'.
-Aug 06 10:44:36 runnervmscnyy systemd[1]: asterisk.service: Scheduled restart job, restart counter is at 4.
-Aug 06 10:44:36 runnervmscnyy systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
-Aug 06 10:44:36 runnervmscnyy asterisk[53851]: Stasis initialization failed.  ASTERISK EXITING!
-Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:37 runnervmscnyy asterisk[53851]: PBX UUID: 0b11318e-faf0-4d57-8130-d94042e63f1f
-Aug 06 10:44:37 runnervmscnyy asterisk[53851]: Cannot update type 'declined_message_types' in module 'stasis' because it has no existing documentation! If this module was recently built, run 'xmldoc reload' to refresh documentation, then load the module again
-Aug 06 10:44:37 runnervmscnyy systemd[1]: asterisk.service: Main process exited, code=exited, status=1/FAILURE
-Aug 06 10:44:37 runnervmscnyy systemd[1]: asterisk.service: Failed with result 'exit-code'.
-Aug 06 10:44:41 runnervmscnyy systemd[1]: asterisk.service: Scheduled restart job, restart counter is at 5.
-Aug 06 10:44:41 runnervmscnyy systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
-Aug 06 10:44:41 runnervmscnyy asterisk[53867]: Stasis initialization failed.  ASTERISK EXITING!
-Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:42 runnervmscnyy asterisk[53867]: PBX UUID: 0b11318e-faf0-4d57-8130-d94042e63f1f
-Aug 06 10:44:42 runnervmscnyy asterisk[53867]: Cannot update type 'declined_message_types' in module 'stasis' because it has no existing documentation! If this module was recently built, run 'xmldoc reload' to refresh documentation, then load the module again
-Aug 06 10:44:42 runnervmscnyy systemd[1]: asterisk.service: Main process exited, code=exited, status=1/FAILURE
-Aug 06 10:44:42 runnervmscnyy systemd[1]: asterisk.service: Failed with result 'exit-code'.
-Aug 06 10:44:45 runnervmscnyy systemd[1]: asterisk.service: Scheduled restart job, restart counter is at 6.
-Aug 06 10:44:45 runnervmscnyy systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
-Aug 06 10:44:45 runnervmscnyy asterisk[53886]: Stasis initialization failed.  ASTERISK EXITING!
-Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBGet in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBGetTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBPut in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBDel in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Couldn't find manager DBDelTree in XML documentation If this module was recently built, run 'xmldoc reload' to refresh documentation
-Aug 06 10:44:46 runnervmscnyy asterisk[53886]: PBX UUID: 0b11318e-faf0-4d57-8130-d94042e63f1f
-Aug 06 10:44:46 runnervmscnyy asterisk[53886]: Cannot update type 'declined_message_types' in module 'stasis' because it has no existing documentation! If this module was recently built, run 'xmldoc reload' to refresh documentation, then load the module again
-Aug 06 10:44:46 runnervmscnyy systemd[1]: asterisk.service: Main process exited, code=exited, status=1/FAILURE
-Aug 06 10:44:46 runnervmscnyy systemd[1]: asterisk.service: Failed with result 'exit-code'.
-Aug 06 10:44:49 runnervmscnyy systemd[1]: asterisk.service: Scheduled restart job, restart counter is at 7.
-Aug 06 10:44:49 runnervmscnyy systemd[1]: Started asterisk.service - Asterisk PBX for FRANZFON ARM64.
-Aug 06 10:44:49 runnervmscnyy asterisk[53900]: Stasis initialization failed.  ASTERISK EXITING!
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] WARNING[54382]: res_musiconhold.c:2333 load_module: No music on hold classes configured, disabling music on hold.
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] ERROR[54382]: res_sorcery_config.c:328 sorcery_config_internal_load: Unable to load config file 'websocket_client.conf'
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] NOTICE[54382]: res_smdi.c:981 smdi_load: Unable to load config smdi.conf: SMDI disabled
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] NOTICE[54382]: res_smdi.c:1430 load_module: No SMDI interfaces are available to listen on, not starting SMDI listener.
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] ERROR[54382]: res_sorcery_config.c:328 sorcery_config_internal_load: Unable to load config file 'aeap.conf'
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] ERROR[54382]: chan_iax2.c:13719 set_config: Unable to load config iax.conf
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] NOTICE[54382]: res_fax.c:4545 set_config: Configuration file 'res_fax.conf' not found, using default options.
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] ERROR[54382]: config_options.c:710 aco_process_config: Unable to load config file 'hep.conf'
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] ERROR[54382]: res_pjsip_config_wizard.c:1074 object_type_loaded_observer: Unable to load config file 'pjsip_wizard.conf'
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] ERROR[54382]: config_options.c:710 aco_process_config: Unable to load config file 'pjsip_notify.conf'
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] ERROR[54382]: res_calendar.c:1094 load_config: Unable to load config calendar.conf
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] ERROR[54382]: config_options.c:710 aco_process_config: Unable to load config file 'res_parking.conf'
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] ERROR[54382]: config_options.c:710 aco_process_config: Unable to load config file 'confbridge.conf'
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] ERROR[54382]: app_confbridge.c:4672 load_module: Unable to load config. Not loading module.
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] ERROR[54382]: config_options.c:710 aco_process_config: Unable to load config file 'agents.conf'
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] ERROR[54382]: app_agent_pool.c:2716 load_module: Unable to load config. Not loading module.
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] ERROR[54382]: cdr_custom.c:98 load_config: Unable to load cdr_custom.conf. Not logging custom CSV CDRs.
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] WARNING[54382]: cel_sqlite3_custom.c:161 load_config: Failed to load configuration file. Module not activated.
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] WARNING[54382]: cdr_manager.c:215 load_config: Failed to load configuration file. Module not activated.
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] WARNING[54382]: cdr_odbc.c:201 odbc_load_module: cdr_odbc: Unable to load config for ODBC CDR's: cdr_odbc.conf
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] ERROR[54382]: cel_custom.c:86 load_config: Unable to load cel_custom.conf. Not logging CEL to custom CSVs.
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] WARNING[54382]: cel_manager.c:330 load_config: Failed to load configuration file. CEL manager Module not activated.
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] WARNING[54382]: cdr_sqlite3_custom.c:161 load_config: Failed to load configuration file. Module not activated.
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] WARNING[54382]: cel_odbc.c:110 load_config: Unable to load cel_odbc.conf.  No ODBC CEL records!
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] ERROR[54382]: config_options.c:710 aco_process_config: Unable to load config file 'res_http_media_cache.conf'
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] NOTICE[54382]: res_http_media_cache.c:816 load_module: Could not load res_http_media_cache config; using defaults
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] ERROR[54382]: app_amd.c:518 load_config: Configuration file amd.conf missing.
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] WARNING[54382]: app_followme.c:423 reload_followme: No follow me config file (followme.conf), so no follow me
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] ERROR[54382]: chan_unistim.c:6861 reload_config: Unable to load config unistim.conf
+Aug 06 11:12:06 runnervma9114 asterisk[54382]: [2026-08-06 11:12:06] ERROR[54382]: res_clialiases.c:196 load_config: res_clialiases configuration file 'cli_aliases.conf' not found
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: pbx_dundi.c:4955 set_config: Unable to load config dundi.conf
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] WARNING[54382]: app_festival.c:571 load_module: No such configuration file festival.conf
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] WARNING[54382]: app_minivm.c:2786 load_config: Failed to load configuration file. Module activated with default settings.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] NOTICE[54382]: pbx_ael.c:164 pbx_load_module: File /etc/asterisk/extensions.ael not found; AEL declining load
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: config_options.c:710 aco_process_config: Unable to load config file 'prometheus.conf'
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] NOTICE[54382]: func_odbc.c:1858 load_module: Unable to load config for func_odbc: func_odbc.conf
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] NOTICE[54382]: app_queue.c:9774 reload_queue_rules: No queuerules.conf file found, queues will not follow penalty rules
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] WARNING[54382]: loader.c:2572 load_modules: Some non-required modules failed to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] WARNING[54382]: loader.c:2666 load_modules: Module 'res_adsi' has been loaded but may be removed in a future release.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] WARNING[54382]: loader.c:2666 load_modules: Module 'app_getcpeid' has been loaded but may be removed in a future release.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] WARNING[54382]: loader.c:2666 load_modules: Module 'app_adsiprog' has been loaded but may be removed in a future release.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: res_stun_monitor declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: res_phoneprov declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: Declined modules which depend on res_phoneprov: res_pjsip_phoneprov_provider
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: chan_iax2 declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: res_hep declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: Declined modules which depend on res_hep: res_hep_rtcp, res_hep_pjsip
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: res_pjsip_notify declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: res_calendar declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: res_parking declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: app_confbridge declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: Declined modules which depend on app_confbridge: app_page
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: app_agent_pool declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: cel_sqlite3_custom declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: cdr_manager declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: cdr_odbc declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: cel_manager declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: cdr_sqlite3_custom declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: cdr_csv declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: app_amd declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: app_followme declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: chan_unistim declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: pbx_dundi declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: app_festival declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: app_alarmreceiver declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: pbx_ael declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: res_prometheus declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: [2026-08-06 11:12:07] ERROR[54382]: loader.c:2687 load_modules: func_odbc declined to load.
+Aug 06 11:12:07 runnervma9114 asterisk[54382]: Asterisk Ready.
+Aug 06 11:12:07 runnervma9114 systemd[1]: Starting franzfon-wizard.service - FRANZFON Wizard ARM64...
+Aug 06 11:12:07 runnervma9114 systemd[1]: Started franzfon-wizard.service - FRANZFON Wizard ARM64.
+Aug 06 11:12:07 runnervma9114 node[54499]: [Startup] Operation-Log installiert (Kategorien: FritzBox, Push, Push-Relay, License, Update)
+Aug 06 11:12:07 runnervma9114 node[54499]: Warning: connect.session() MemoryStore is not
+Aug 06 11:12:07 runnervma9114 node[54499]: designed for a production environment, as it will leak
+Aug 06 11:12:07 runnervma9114 node[54499]: memory, and will not scale past a single process.
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Forwarding default entry created
+Aug 06 11:12:07 runnervma9114 node[54499]: Default admin user created (franzfon/franz1234) - password change required on first login
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Running migrations...
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Migration: voip_push_tokens.voip_token Spalte hinzugefügt
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Migration: voip_push_tokens.fail_count Spalte hinzugefügt
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Migration: voip_push_tokens.stale Spalte hinzugefügt
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] SMTP settings initialized
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Default business hours created
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Default ring group "Zentrale" created with 1 members
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Added voicemail_settings.transcript_in_email
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Migration: holidays.source Spalte hinzugefügt
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Migration: holidays.region Spalte hinzugefügt
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Default Call-Flow #1 seeded (Standard Eingehend, 3 nodes, 5 edges)
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Migration: contacts.email hinzugefügt
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Migration: contacts.source hinzugefügt
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Migration: contacts.external_id hinzugefügt
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Migration: contacts.updated_at hinzugefügt
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Migration: contacts.anrede hinzugefügt
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Migration: contacts.strasse hinzugefügt
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Migration: contacts.plz hinzugefügt
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Migration: contacts.ort hinzugefügt
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Migration: contacts.notizen hinzugefügt
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Migration: devices.device_type hinzugefügt
+Aug 06 11:12:07 runnervma9114 node[54499]: [DB] Migrations completed
+Aug 06 11:12:07 runnervma9114 node[54499]: [AMI] AMI nicht konfiguriert — wird automatisch eingerichtet...
+Aug 06 11:12:07 runnervma9114 node[54499]: /bin/sh: 1: asterisk: not found
+Aug 06 11:12:07 runnervma9114 node[54499]: [AMI] manager reload fehlgeschlagen, Asterisk evtl. noch nicht gestartet: Command failed: asterisk -rx "manager reload"
+Aug 06 11:12:07 runnervma9114 node[54499]: /bin/sh: 1: asterisk: not found
+Aug 06 11:12:07 runnervma9114 node[54499]: [BLF] Verbinde mit Asterisk AMI...
+Aug 06 11:12:08 runnervma9114 node[54499]: node:internal/modules/cjs/loader:1210
+Aug 06 11:12:08 runnervma9114 node[54499]:   throw err;
+Aug 06 11:12:08 runnervma9114 node[54499]:   ^
+Aug 06 11:12:08 runnervma9114 node[54499]: Error: Cannot find module '../data/german-holidays'
+Aug 06 11:12:08 runnervma9114 node[54499]: Require stack:
+Aug 06 11:12:08 runnervma9114 node[54499]: - /opt/franzfon/wizard/backend/src/services/holidays.js
+Aug 06 11:12:08 runnervma9114 node[54499]: - /opt/franzfon/wizard/backend/src/routes/holidays.js
+Aug 06 11:12:08 runnervma9114 node[54499]: - /opt/franzfon/wizard/backend/src/index.js
+Aug 06 11:12:08 runnervma9114 node[54499]:     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+Aug 06 11:12:08 runnervma9114 node[54499]:     at Module._load (node:internal/modules/cjs/loader:1038:27)
+Aug 06 11:12:08 runnervma9114 node[54499]:     at Module.require (node:internal/modules/cjs/loader:1289:19)
+Aug 06 11:12:08 runnervma9114 node[54499]:     at require (node:internal/modules/helpers:182:18)
+Aug 06 11:12:08 runnervma9114 node[54499]:     at Object.<anonymous> (/opt/franzfon/wizard/backend/src/services/holidays.js:17:24)
+Aug 06 11:12:08 runnervma9114 node[54499]:     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+Aug 06 11:12:08 runnervma9114 node[54499]:     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+Aug 06 11:12:08 runnervma9114 node[54499]:     at Module.load (node:internal/modules/cjs/loader:1266:32)
+Aug 06 11:12:08 runnervma9114 node[54499]:     at Module._load (node:internal/modules/cjs/loader:1091:12)
+Aug 06 11:12:08 runnervma9114 node[54499]:     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+Aug 06 11:12:08 runnervma9114 node[54499]:   code: 'MODULE_NOT_FOUND',
+Aug 06 11:12:08 runnervma9114 node[54499]:   requireStack: [
+Aug 06 11:12:08 runnervma9114 node[54499]:     '/opt/franzfon/wizard/backend/src/services/holidays.js',
+Aug 06 11:12:08 runnervma9114 node[54499]:     '/opt/franzfon/wizard/backend/src/routes/holidays.js',
+Aug 06 11:12:08 runnervma9114 node[54499]:     '/opt/franzfon/wizard/backend/src/index.js'
+Aug 06 11:12:08 runnervma9114 node[54499]:   ]
+Aug 06 11:12:08 runnervma9114 node[54499]: }
+Aug 06 11:12:08 runnervma9114 node[54499]: Node.js v20.20.2
+Aug 06 11:12:08 runnervma9114 systemd[1]: franzfon-wizard.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 11:12:08 runnervma9114 systemd[1]: franzfon-wizard.service: Failed with result 'exit-code'.
+Aug 06 11:12:11 runnervma9114 systemd[1]: franzfon-wizard.service: Scheduled restart job, restart counter is at 1.
+Aug 06 11:12:11 runnervma9114 systemd[1]: Starting franzfon-wizard.service - FRANZFON Wizard ARM64...
+Aug 06 11:12:11 runnervma9114 systemd[1]: Started franzfon-wizard.service - FRANZFON Wizard ARM64.
+Aug 06 11:12:11 runnervma9114 node[54527]: [Startup] Operation-Log installiert (Kategorien: FritzBox, Push, Push-Relay, License, Update)
+Aug 06 11:12:11 runnervma9114 node[54527]: Warning: connect.session() MemoryStore is not
+Aug 06 11:12:11 runnervma9114 node[54527]: designed for a production environment, as it will leak
+Aug 06 11:12:11 runnervma9114 node[54527]: memory, and will not scale past a single process.
+Aug 06 11:12:11 runnervma9114 node[54527]: [DB] Running migrations...
+Aug 06 11:12:11 runnervma9114 node[54527]: [DB] Migrations completed
+Aug 06 11:12:11 runnervma9114 node[54527]: [AMI] Credentials geladen: user=21bd756a8810
+Aug 06 11:12:11 runnervma9114 node[54527]: [BLF] Verbinde mit Asterisk AMI...
+Aug 06 11:12:11 runnervma9114 node[54527]: node:internal/modules/cjs/loader:1210
+Aug 06 11:12:11 runnervma9114 node[54527]:   throw err;
+Aug 06 11:12:11 runnervma9114 node[54527]:   ^
+Aug 06 11:12:11 runnervma9114 node[54527]: Error: Cannot find module '../data/german-holidays'
+Aug 06 11:12:11 runnervma9114 node[54527]: Require stack:
+Aug 06 11:12:11 runnervma9114 node[54527]: - /opt/franzfon/wizard/backend/src/services/holidays.js
+Aug 06 11:12:11 runnervma9114 node[54527]: - /opt/franzfon/wizard/backend/src/routes/holidays.js
+Aug 06 11:12:11 runnervma9114 node[54527]: - /opt/franzfon/wizard/backend/src/index.js
+Aug 06 11:12:11 runnervma9114 node[54527]:     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+Aug 06 11:12:11 runnervma9114 node[54527]:     at Module._load (node:internal/modules/cjs/loader:1038:27)
+Aug 06 11:12:11 runnervma9114 node[54527]:     at Module.require (node:internal/modules/cjs/loader:1289:19)
+Aug 06 11:12:11 runnervma9114 node[54527]:     at require (node:internal/modules/helpers:182:18)
+Aug 06 11:12:11 runnervma9114 node[54527]:     at Object.<anonymous> (/opt/franzfon/wizard/backend/src/services/holidays.js:17:24)
+Aug 06 11:12:11 runnervma9114 node[54527]:     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+Aug 06 11:12:11 runnervma9114 node[54527]:     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+Aug 06 11:12:11 runnervma9114 node[54527]:     at Module.load (node:internal/modules/cjs/loader:1266:32)
+Aug 06 11:12:11 runnervma9114 node[54527]:     at Module._load (node:internal/modules/cjs/loader:1091:12)
+Aug 06 11:12:11 runnervma9114 node[54527]:     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+Aug 06 11:12:11 runnervma9114 node[54527]:   code: 'MODULE_NOT_FOUND',
+Aug 06 11:12:11 runnervma9114 node[54527]:   requireStack: [
+Aug 06 11:12:11 runnervma9114 node[54527]:     '/opt/franzfon/wizard/backend/src/services/holidays.js',
+Aug 06 11:12:11 runnervma9114 node[54527]:     '/opt/franzfon/wizard/backend/src/routes/holidays.js',
+Aug 06 11:12:11 runnervma9114 node[54527]:     '/opt/franzfon/wizard/backend/src/index.js'
+Aug 06 11:12:11 runnervma9114 node[54527]:   ]
+Aug 06 11:12:11 runnervma9114 node[54527]: }
+Aug 06 11:12:11 runnervma9114 node[54527]: Node.js v20.20.2
+Aug 06 11:12:11 runnervma9114 systemd[1]: franzfon-wizard.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 11:12:11 runnervma9114 systemd[1]: franzfon-wizard.service: Failed with result 'exit-code'.
+Aug 06 11:12:14 runnervma9114 systemd[1]: franzfon-wizard.service: Scheduled restart job, restart counter is at 2.
+Aug 06 11:12:14 runnervma9114 systemd[1]: Starting franzfon-wizard.service - FRANZFON Wizard ARM64...
+Aug 06 11:12:14 runnervma9114 systemd[1]: Started franzfon-wizard.service - FRANZFON Wizard ARM64.
+Aug 06 11:12:14 runnervma9114 node[54554]: [Startup] Operation-Log installiert (Kategorien: FritzBox, Push, Push-Relay, License, Update)
+Aug 06 11:12:14 runnervma9114 node[54554]: Warning: connect.session() MemoryStore is not
+Aug 06 11:12:14 runnervma9114 node[54554]: designed for a production environment, as it will leak
+Aug 06 11:12:14 runnervma9114 node[54554]: memory, and will not scale past a single process.
+Aug 06 11:12:14 runnervma9114 node[54554]: [DB] Running migrations...
+Aug 06 11:12:14 runnervma9114 node[54554]: [DB] Migrations completed
+Aug 06 11:12:15 runnervma9114 node[54554]: [AMI] Credentials geladen: user=21bd756a8810
+Aug 06 11:12:15 runnervma9114 node[54554]: [BLF] Verbinde mit Asterisk AMI...
+Aug 06 11:12:15 runnervma9114 node[54554]: node:internal/modules/cjs/loader:1210
+Aug 06 11:12:15 runnervma9114 node[54554]:   throw err;
+Aug 06 11:12:15 runnervma9114 node[54554]:   ^
+Aug 06 11:12:15 runnervma9114 node[54554]: Error: Cannot find module '../data/german-holidays'
+Aug 06 11:12:15 runnervma9114 node[54554]: Require stack:
+Aug 06 11:12:15 runnervma9114 node[54554]: - /opt/franzfon/wizard/backend/src/services/holidays.js
+Aug 06 11:12:15 runnervma9114 node[54554]: - /opt/franzfon/wizard/backend/src/routes/holidays.js
+Aug 06 11:12:15 runnervma9114 node[54554]: - /opt/franzfon/wizard/backend/src/index.js
+Aug 06 11:12:15 runnervma9114 node[54554]:     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+Aug 06 11:12:15 runnervma9114 node[54554]:     at Module._load (node:internal/modules/cjs/loader:1038:27)
+Aug 06 11:12:15 runnervma9114 node[54554]:     at Module.require (node:internal/modules/cjs/loader:1289:19)
+Aug 06 11:12:15 runnervma9114 node[54554]:     at require (node:internal/modules/helpers:182:18)
+Aug 06 11:12:15 runnervma9114 node[54554]:     at Object.<anonymous> (/opt/franzfon/wizard/backend/src/services/holidays.js:17:24)
+Aug 06 11:12:15 runnervma9114 node[54554]:     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+Aug 06 11:12:15 runnervma9114 node[54554]:     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+Aug 06 11:12:15 runnervma9114 node[54554]:     at Module.load (node:internal/modules/cjs/loader:1266:32)
+Aug 06 11:12:15 runnervma9114 node[54554]:     at Module._load (node:internal/modules/cjs/loader:1091:12)
+Aug 06 11:12:15 runnervma9114 node[54554]:     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+Aug 06 11:12:15 runnervma9114 node[54554]:   code: 'MODULE_NOT_FOUND',
+Aug 06 11:12:15 runnervma9114 node[54554]:   requireStack: [
+Aug 06 11:12:15 runnervma9114 node[54554]:     '/opt/franzfon/wizard/backend/src/services/holidays.js',
+Aug 06 11:12:15 runnervma9114 node[54554]:     '/opt/franzfon/wizard/backend/src/routes/holidays.js',
+Aug 06 11:12:15 runnervma9114 node[54554]:     '/opt/franzfon/wizard/backend/src/index.js'
+Aug 06 11:12:15 runnervma9114 node[54554]:   ]
+Aug 06 11:12:15 runnervma9114 node[54554]: }
+Aug 06 11:12:15 runnervma9114 node[54554]: Node.js v20.20.2
+Aug 06 11:12:15 runnervma9114 systemd[1]: franzfon-wizard.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 11:12:15 runnervma9114 systemd[1]: franzfon-wizard.service: Failed with result 'exit-code'.
+Aug 06 11:12:18 runnervma9114 systemd[1]: franzfon-wizard.service: Scheduled restart job, restart counter is at 3.
+Aug 06 11:12:18 runnervma9114 systemd[1]: Starting franzfon-wizard.service - FRANZFON Wizard ARM64...
+Aug 06 11:12:18 runnervma9114 systemd[1]: Started franzfon-wizard.service - FRANZFON Wizard ARM64.
+Aug 06 11:12:18 runnervma9114 node[54579]: [Startup] Operation-Log installiert (Kategorien: FritzBox, Push, Push-Relay, License, Update)
+Aug 06 11:12:18 runnervma9114 node[54579]: Warning: connect.session() MemoryStore is not
+Aug 06 11:12:18 runnervma9114 node[54579]: designed for a production environment, as it will leak
+Aug 06 11:12:18 runnervma9114 node[54579]: memory, and will not scale past a single process.
+Aug 06 11:12:18 runnervma9114 node[54579]: [DB] Running migrations...
+Aug 06 11:12:18 runnervma9114 node[54579]: [DB] Migrations completed
+Aug 06 11:12:18 runnervma9114 node[54579]: [AMI] Credentials geladen: user=21bd756a8810
+Aug 06 11:12:18 runnervma9114 node[54579]: [BLF] Verbinde mit Asterisk AMI...
+Aug 06 11:12:18 runnervma9114 node[54579]: node:internal/modules/cjs/loader:1210
+Aug 06 11:12:18 runnervma9114 node[54579]:   throw err;
+Aug 06 11:12:18 runnervma9114 node[54579]:   ^
+Aug 06 11:12:18 runnervma9114 node[54579]: Error: Cannot find module '../data/german-holidays'
+Aug 06 11:12:18 runnervma9114 node[54579]: Require stack:
+Aug 06 11:12:18 runnervma9114 node[54579]: - /opt/franzfon/wizard/backend/src/services/holidays.js
+Aug 06 11:12:18 runnervma9114 node[54579]: - /opt/franzfon/wizard/backend/src/routes/holidays.js
+Aug 06 11:12:18 runnervma9114 node[54579]: - /opt/franzfon/wizard/backend/src/index.js
+Aug 06 11:12:18 runnervma9114 node[54579]:     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+Aug 06 11:12:18 runnervma9114 node[54579]:     at Module._load (node:internal/modules/cjs/loader:1038:27)
+Aug 06 11:12:18 runnervma9114 node[54579]:     at Module.require (node:internal/modules/cjs/loader:1289:19)
+Aug 06 11:12:18 runnervma9114 node[54579]:     at require (node:internal/modules/helpers:182:18)
+Aug 06 11:12:18 runnervma9114 node[54579]:     at Object.<anonymous> (/opt/franzfon/wizard/backend/src/services/holidays.js:17:24)
+Aug 06 11:12:18 runnervma9114 node[54579]:     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+Aug 06 11:12:18 runnervma9114 node[54579]:     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+Aug 06 11:12:18 runnervma9114 node[54579]:     at Module.load (node:internal/modules/cjs/loader:1266:32)
+Aug 06 11:12:18 runnervma9114 node[54579]:     at Module._load (node:internal/modules/cjs/loader:1091:12)
+Aug 06 11:12:18 runnervma9114 node[54579]:     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+Aug 06 11:12:18 runnervma9114 node[54579]:   code: 'MODULE_NOT_FOUND',
+Aug 06 11:12:18 runnervma9114 node[54579]:   requireStack: [
+Aug 06 11:12:18 runnervma9114 node[54579]:     '/opt/franzfon/wizard/backend/src/services/holidays.js',
+Aug 06 11:12:18 runnervma9114 node[54579]:     '/opt/franzfon/wizard/backend/src/routes/holidays.js',
+Aug 06 11:12:18 runnervma9114 node[54579]:     '/opt/franzfon/wizard/backend/src/index.js'
+Aug 06 11:12:18 runnervma9114 node[54579]:   ]
+Aug 06 11:12:18 runnervma9114 node[54579]: }
+Aug 06 11:12:18 runnervma9114 node[54579]: Node.js v20.20.2
+Aug 06 11:12:18 runnervma9114 systemd[1]: franzfon-wizard.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 11:12:18 runnervma9114 systemd[1]: franzfon-wizard.service: Failed with result 'exit-code'.
+Aug 06 11:12:21 runnervma9114 systemd[1]: franzfon-wizard.service: Scheduled restart job, restart counter is at 4.
+Aug 06 11:12:21 runnervma9114 systemd[1]: Starting franzfon-wizard.service - FRANZFON Wizard ARM64...
+Aug 06 11:12:21 runnervma9114 systemd[1]: Started franzfon-wizard.service - FRANZFON Wizard ARM64.
+Aug 06 11:12:21 runnervma9114 node[54605]: [Startup] Operation-Log installiert (Kategorien: FritzBox, Push, Push-Relay, License, Update)
+Aug 06 11:12:21 runnervma9114 node[54605]: Warning: connect.session() MemoryStore is not
+Aug 06 11:12:21 runnervma9114 node[54605]: designed for a production environment, as it will leak
+Aug 06 11:12:21 runnervma9114 node[54605]: memory, and will not scale past a single process.
+Aug 06 11:12:21 runnervma9114 node[54605]: [DB] Running migrations...
+Aug 06 11:12:21 runnervma9114 node[54605]: [DB] Migrations completed
+Aug 06 11:12:22 runnervma9114 node[54605]: [AMI] Credentials geladen: user=21bd756a8810
+Aug 06 11:12:22 runnervma9114 node[54605]: [BLF] Verbinde mit Asterisk AMI...
+Aug 06 11:12:22 runnervma9114 node[54605]: node:internal/modules/cjs/loader:1210
+Aug 06 11:12:22 runnervma9114 node[54605]:   throw err;
+Aug 06 11:12:22 runnervma9114 node[54605]:   ^
+Aug 06 11:12:22 runnervma9114 node[54605]: Error: Cannot find module '../data/german-holidays'
+Aug 06 11:12:22 runnervma9114 node[54605]: Require stack:
+Aug 06 11:12:22 runnervma9114 node[54605]: - /opt/franzfon/wizard/backend/src/services/holidays.js
+Aug 06 11:12:22 runnervma9114 node[54605]: - /opt/franzfon/wizard/backend/src/routes/holidays.js
+Aug 06 11:12:22 runnervma9114 node[54605]: - /opt/franzfon/wizard/backend/src/index.js
+Aug 06 11:12:22 runnervma9114 node[54605]:     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+Aug 06 11:12:22 runnervma9114 node[54605]:     at Module._load (node:internal/modules/cjs/loader:1038:27)
+Aug 06 11:12:22 runnervma9114 node[54605]:     at Module.require (node:internal/modules/cjs/loader:1289:19)
+Aug 06 11:12:22 runnervma9114 node[54605]:     at require (node:internal/modules/helpers:182:18)
+Aug 06 11:12:22 runnervma9114 node[54605]:     at Object.<anonymous> (/opt/franzfon/wizard/backend/src/services/holidays.js:17:24)
+Aug 06 11:12:22 runnervma9114 node[54605]:     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+Aug 06 11:12:22 runnervma9114 node[54605]:     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+Aug 06 11:12:22 runnervma9114 node[54605]:     at Module.load (node:internal/modules/cjs/loader:1266:32)
+Aug 06 11:12:22 runnervma9114 node[54605]:     at Module._load (node:internal/modules/cjs/loader:1091:12)
+Aug 06 11:12:22 runnervma9114 node[54605]:     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+Aug 06 11:12:22 runnervma9114 node[54605]:   code: 'MODULE_NOT_FOUND',
+Aug 06 11:12:22 runnervma9114 node[54605]:   requireStack: [
+Aug 06 11:12:22 runnervma9114 node[54605]:     '/opt/franzfon/wizard/backend/src/services/holidays.js',
+Aug 06 11:12:22 runnervma9114 node[54605]:     '/opt/franzfon/wizard/backend/src/routes/holidays.js',
+Aug 06 11:12:22 runnervma9114 node[54605]:     '/opt/franzfon/wizard/backend/src/index.js'
+Aug 06 11:12:22 runnervma9114 node[54605]:   ]
+Aug 06 11:12:22 runnervma9114 node[54605]: }
+Aug 06 11:12:22 runnervma9114 node[54605]: Node.js v20.20.2
+Aug 06 11:12:22 runnervma9114 systemd[1]: franzfon-wizard.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 11:12:22 runnervma9114 systemd[1]: franzfon-wizard.service: Failed with result 'exit-code'.
+Aug 06 11:12:25 runnervma9114 systemd[1]: franzfon-wizard.service: Scheduled restart job, restart counter is at 5.
+Aug 06 11:12:25 runnervma9114 systemd[1]: Starting franzfon-wizard.service - FRANZFON Wizard ARM64...
+Aug 06 11:12:25 runnervma9114 systemd[1]: Started franzfon-wizard.service - FRANZFON Wizard ARM64.
+Aug 06 11:12:25 runnervma9114 node[54629]: [Startup] Operation-Log installiert (Kategorien: FritzBox, Push, Push-Relay, License, Update)
+Aug 06 11:12:25 runnervma9114 node[54629]: Warning: connect.session() MemoryStore is not
+Aug 06 11:12:25 runnervma9114 node[54629]: designed for a production environment, as it will leak
+Aug 06 11:12:25 runnervma9114 node[54629]: memory, and will not scale past a single process.
+Aug 06 11:12:25 runnervma9114 node[54629]: [DB] Running migrations...
+Aug 06 11:12:25 runnervma9114 node[54629]: [DB] Migrations completed
+Aug 06 11:12:25 runnervma9114 node[54629]: [AMI] Credentials geladen: user=21bd756a8810
+Aug 06 11:12:25 runnervma9114 node[54629]: [BLF] Verbinde mit Asterisk AMI...
+Aug 06 11:12:25 runnervma9114 node[54629]: node:internal/modules/cjs/loader:1210
+Aug 06 11:12:25 runnervma9114 node[54629]:   throw err;
+Aug 06 11:12:25 runnervma9114 node[54629]:   ^
+Aug 06 11:12:25 runnervma9114 node[54629]: Error: Cannot find module '../data/german-holidays'
+Aug 06 11:12:25 runnervma9114 node[54629]: Require stack:
+Aug 06 11:12:25 runnervma9114 node[54629]: - /opt/franzfon/wizard/backend/src/services/holidays.js
+Aug 06 11:12:25 runnervma9114 node[54629]: - /opt/franzfon/wizard/backend/src/routes/holidays.js
+Aug 06 11:12:25 runnervma9114 node[54629]: - /opt/franzfon/wizard/backend/src/index.js
+Aug 06 11:12:25 runnervma9114 node[54629]:     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+Aug 06 11:12:25 runnervma9114 node[54629]:     at Module._load (node:internal/modules/cjs/loader:1038:27)
+Aug 06 11:12:25 runnervma9114 node[54629]:     at Module.require (node:internal/modules/cjs/loader:1289:19)
+Aug 06 11:12:25 runnervma9114 node[54629]:     at require (node:internal/modules/helpers:182:18)
+Aug 06 11:12:25 runnervma9114 node[54629]:     at Object.<anonymous> (/opt/franzfon/wizard/backend/src/services/holidays.js:17:24)
+Aug 06 11:12:25 runnervma9114 node[54629]:     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+Aug 06 11:12:25 runnervma9114 node[54629]:     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+Aug 06 11:12:25 runnervma9114 node[54629]:     at Module.load (node:internal/modules/cjs/loader:1266:32)
+Aug 06 11:12:25 runnervma9114 node[54629]:     at Module._load (node:internal/modules/cjs/loader:1091:12)
+Aug 06 11:12:25 runnervma9114 node[54629]:     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+Aug 06 11:12:25 runnervma9114 node[54629]:   code: 'MODULE_NOT_FOUND',
+Aug 06 11:12:25 runnervma9114 node[54629]:   requireStack: [
+Aug 06 11:12:25 runnervma9114 node[54629]:     '/opt/franzfon/wizard/backend/src/services/holidays.js',
+Aug 06 11:12:25 runnervma9114 node[54629]:     '/opt/franzfon/wizard/backend/src/routes/holidays.js',
+Aug 06 11:12:25 runnervma9114 node[54629]:     '/opt/franzfon/wizard/backend/src/index.js'
+Aug 06 11:12:25 runnervma9114 node[54629]:   ]
+Aug 06 11:12:25 runnervma9114 node[54629]: }
+Aug 06 11:12:25 runnervma9114 node[54629]: Node.js v20.20.2
+Aug 06 11:12:25 runnervma9114 systemd[1]: franzfon-wizard.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 11:12:25 runnervma9114 systemd[1]: franzfon-wizard.service: Failed with result 'exit-code'.
+Aug 06 11:12:28 runnervma9114 systemd[1]: franzfon-wizard.service: Scheduled restart job, restart counter is at 6.
+Aug 06 11:12:28 runnervma9114 systemd[1]: Starting franzfon-wizard.service - FRANZFON Wizard ARM64...
+Aug 06 11:12:28 runnervma9114 systemd[1]: Started franzfon-wizard.service - FRANZFON Wizard ARM64.
+Aug 06 11:12:28 runnervma9114 node[54657]: [Startup] Operation-Log installiert (Kategorien: FritzBox, Push, Push-Relay, License, Update)
+Aug 06 11:12:28 runnervma9114 node[54657]: Warning: connect.session() MemoryStore is not
+Aug 06 11:12:28 runnervma9114 node[54657]: designed for a production environment, as it will leak
+Aug 06 11:12:28 runnervma9114 node[54657]: memory, and will not scale past a single process.
+Aug 06 11:12:28 runnervma9114 node[54657]: [DB] Running migrations...
+Aug 06 11:12:28 runnervma9114 node[54657]: [DB] Migrations completed
+Aug 06 11:12:29 runnervma9114 node[54657]: [AMI] Credentials geladen: user=21bd756a8810
+Aug 06 11:12:29 runnervma9114 node[54657]: [BLF] Verbinde mit Asterisk AMI...
+Aug 06 11:12:29 runnervma9114 node[54657]: node:internal/modules/cjs/loader:1210
+Aug 06 11:12:29 runnervma9114 node[54657]:   throw err;
+Aug 06 11:12:29 runnervma9114 node[54657]:   ^
+Aug 06 11:12:29 runnervma9114 node[54657]: Error: Cannot find module '../data/german-holidays'
+Aug 06 11:12:29 runnervma9114 node[54657]: Require stack:
+Aug 06 11:12:29 runnervma9114 node[54657]: - /opt/franzfon/wizard/backend/src/services/holidays.js
+Aug 06 11:12:29 runnervma9114 node[54657]: - /opt/franzfon/wizard/backend/src/routes/holidays.js
+Aug 06 11:12:29 runnervma9114 node[54657]: - /opt/franzfon/wizard/backend/src/index.js
+Aug 06 11:12:29 runnervma9114 node[54657]:     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+Aug 06 11:12:29 runnervma9114 node[54657]:     at Module._load (node:internal/modules/cjs/loader:1038:27)
+Aug 06 11:12:29 runnervma9114 node[54657]:     at Module.require (node:internal/modules/cjs/loader:1289:19)
+Aug 06 11:12:29 runnervma9114 node[54657]:     at require (node:internal/modules/helpers:182:18)
+Aug 06 11:12:29 runnervma9114 node[54657]:     at Object.<anonymous> (/opt/franzfon/wizard/backend/src/services/holidays.js:17:24)
+Aug 06 11:12:29 runnervma9114 node[54657]:     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+Aug 06 11:12:29 runnervma9114 node[54657]:     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+Aug 06 11:12:29 runnervma9114 node[54657]:     at Module.load (node:internal/modules/cjs/loader:1266:32)
+Aug 06 11:12:29 runnervma9114 node[54657]:     at Module._load (node:internal/modules/cjs/loader:1091:12)
+Aug 06 11:12:29 runnervma9114 node[54657]:     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+Aug 06 11:12:29 runnervma9114 node[54657]:   code: 'MODULE_NOT_FOUND',
+Aug 06 11:12:29 runnervma9114 node[54657]:   requireStack: [
+Aug 06 11:12:29 runnervma9114 node[54657]:     '/opt/franzfon/wizard/backend/src/services/holidays.js',
+Aug 06 11:12:29 runnervma9114 node[54657]:     '/opt/franzfon/wizard/backend/src/routes/holidays.js',
+Aug 06 11:12:29 runnervma9114 node[54657]:     '/opt/franzfon/wizard/backend/src/index.js'
+Aug 06 11:12:29 runnervma9114 node[54657]:   ]
+Aug 06 11:12:29 runnervma9114 node[54657]: }
+Aug 06 11:12:29 runnervma9114 node[54657]: Node.js v20.20.2
+Aug 06 11:12:29 runnervma9114 systemd[1]: franzfon-wizard.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 11:12:29 runnervma9114 systemd[1]: franzfon-wizard.service: Failed with result 'exit-code'.
+Aug 06 11:12:32 runnervma9114 systemd[1]: franzfon-wizard.service: Scheduled restart job, restart counter is at 7.
+Aug 06 11:12:32 runnervma9114 systemd[1]: Starting franzfon-wizard.service - FRANZFON Wizard ARM64...
+Aug 06 11:12:32 runnervma9114 systemd[1]: Started franzfon-wizard.service - FRANZFON Wizard ARM64.
+Aug 06 11:12:32 runnervma9114 node[54681]: [Startup] Operation-Log installiert (Kategorien: FritzBox, Push, Push-Relay, License, Update)
+Aug 06 11:12:32 runnervma9114 node[54681]: Warning: connect.session() MemoryStore is not
+Aug 06 11:12:32 runnervma9114 node[54681]: designed for a production environment, as it will leak
+Aug 06 11:12:32 runnervma9114 node[54681]: memory, and will not scale past a single process.
+Aug 06 11:12:32 runnervma9114 node[54681]: [DB] Running migrations...
+Aug 06 11:12:32 runnervma9114 node[54681]: [DB] Migrations completed
+Aug 06 11:12:32 runnervma9114 node[54681]: [AMI] Credentials geladen: user=21bd756a8810
+Aug 06 11:12:32 runnervma9114 node[54681]: [BLF] Verbinde mit Asterisk AMI...
+Aug 06 11:12:32 runnervma9114 node[54681]: node:internal/modules/cjs/loader:1210
+Aug 06 11:12:32 runnervma9114 node[54681]:   throw err;
+Aug 06 11:12:32 runnervma9114 node[54681]:   ^
+Aug 06 11:12:32 runnervma9114 node[54681]: Error: Cannot find module '../data/german-holidays'
+Aug 06 11:12:32 runnervma9114 node[54681]: Require stack:
+Aug 06 11:12:32 runnervma9114 node[54681]: - /opt/franzfon/wizard/backend/src/services/holidays.js
+Aug 06 11:12:32 runnervma9114 node[54681]: - /opt/franzfon/wizard/backend/src/routes/holidays.js
+Aug 06 11:12:32 runnervma9114 node[54681]: - /opt/franzfon/wizard/backend/src/index.js
+Aug 06 11:12:32 runnervma9114 node[54681]:     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+Aug 06 11:12:32 runnervma9114 node[54681]:     at Module._load (node:internal/modules/cjs/loader:1038:27)
+Aug 06 11:12:32 runnervma9114 node[54681]:     at Module.require (node:internal/modules/cjs/loader:1289:19)
+Aug 06 11:12:32 runnervma9114 node[54681]:     at require (node:internal/modules/helpers:182:18)
+Aug 06 11:12:32 runnervma9114 node[54681]:     at Object.<anonymous> (/opt/franzfon/wizard/backend/src/services/holidays.js:17:24)
+Aug 06 11:12:32 runnervma9114 node[54681]:     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+Aug 06 11:12:32 runnervma9114 node[54681]:     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+Aug 06 11:12:32 runnervma9114 node[54681]:     at Module.load (node:internal/modules/cjs/loader:1266:32)
+Aug 06 11:12:32 runnervma9114 node[54681]:     at Module._load (node:internal/modules/cjs/loader:1091:12)
+Aug 06 11:12:32 runnervma9114 node[54681]:     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+Aug 06 11:12:32 runnervma9114 node[54681]:   code: 'MODULE_NOT_FOUND',
+Aug 06 11:12:32 runnervma9114 node[54681]:   requireStack: [
+Aug 06 11:12:32 runnervma9114 node[54681]:     '/opt/franzfon/wizard/backend/src/services/holidays.js',
+Aug 06 11:12:32 runnervma9114 node[54681]:     '/opt/franzfon/wizard/backend/src/routes/holidays.js',
+Aug 06 11:12:32 runnervma9114 node[54681]:     '/opt/franzfon/wizard/backend/src/index.js'
+Aug 06 11:12:32 runnervma9114 node[54681]:   ]
+Aug 06 11:12:32 runnervma9114 node[54681]: }
+Aug 06 11:12:32 runnervma9114 node[54681]: Node.js v20.20.2
+Aug 06 11:12:32 runnervma9114 systemd[1]: franzfon-wizard.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 11:12:32 runnervma9114 systemd[1]: franzfon-wizard.service: Failed with result 'exit-code'.
+Aug 06 11:12:35 runnervma9114 systemd[1]: franzfon-wizard.service: Scheduled restart job, restart counter is at 8.
+Aug 06 11:12:35 runnervma9114 systemd[1]: Starting franzfon-wizard.service - FRANZFON Wizard ARM64...
+Aug 06 11:12:35 runnervma9114 systemd[1]: Started franzfon-wizard.service - FRANZFON Wizard ARM64.
+Aug 06 11:12:35 runnervma9114 node[54705]: [Startup] Operation-Log installiert (Kategorien: FritzBox, Push, Push-Relay, License, Update)
+Aug 06 11:12:35 runnervma9114 node[54705]: Warning: connect.session() MemoryStore is not
+Aug 06 11:12:35 runnervma9114 node[54705]: designed for a production environment, as it will leak
+Aug 06 11:12:35 runnervma9114 node[54705]: memory, and will not scale past a single process.
+Aug 06 11:12:35 runnervma9114 node[54705]: [DB] Running migrations...
+Aug 06 11:12:35 runnervma9114 node[54705]: [DB] Migrations completed
+Aug 06 11:12:36 runnervma9114 node[54705]: [AMI] Credentials geladen: user=21bd756a8810
+Aug 06 11:12:36 runnervma9114 node[54705]: [BLF] Verbinde mit Asterisk AMI...
+Aug 06 11:12:36 runnervma9114 node[54705]: node:internal/modules/cjs/loader:1210
+Aug 06 11:12:36 runnervma9114 node[54705]:   throw err;
+Aug 06 11:12:36 runnervma9114 node[54705]:   ^
+Aug 06 11:12:36 runnervma9114 node[54705]: Error: Cannot find module '../data/german-holidays'
+Aug 06 11:12:36 runnervma9114 node[54705]: Require stack:
+Aug 06 11:12:36 runnervma9114 node[54705]: - /opt/franzfon/wizard/backend/src/services/holidays.js
+Aug 06 11:12:36 runnervma9114 node[54705]: - /opt/franzfon/wizard/backend/src/routes/holidays.js
+Aug 06 11:12:36 runnervma9114 node[54705]: - /opt/franzfon/wizard/backend/src/index.js
+Aug 06 11:12:36 runnervma9114 node[54705]:     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+Aug 06 11:12:36 runnervma9114 node[54705]:     at Module._load (node:internal/modules/cjs/loader:1038:27)
+Aug 06 11:12:36 runnervma9114 node[54705]:     at Module.require (node:internal/modules/cjs/loader:1289:19)
+Aug 06 11:12:36 runnervma9114 node[54705]:     at require (node:internal/modules/helpers:182:18)
+Aug 06 11:12:36 runnervma9114 node[54705]:     at Object.<anonymous> (/opt/franzfon/wizard/backend/src/services/holidays.js:17:24)
+Aug 06 11:12:36 runnervma9114 node[54705]:     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+Aug 06 11:12:36 runnervma9114 node[54705]:     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+Aug 06 11:12:36 runnervma9114 node[54705]:     at Module.load (node:internal/modules/cjs/loader:1266:32)
+Aug 06 11:12:36 runnervma9114 node[54705]:     at Module._load (node:internal/modules/cjs/loader:1091:12)
+Aug 06 11:12:36 runnervma9114 node[54705]:     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+Aug 06 11:12:36 runnervma9114 node[54705]:   code: 'MODULE_NOT_FOUND',
+Aug 06 11:12:36 runnervma9114 node[54705]:   requireStack: [
+Aug 06 11:12:36 runnervma9114 node[54705]:     '/opt/franzfon/wizard/backend/src/services/holidays.js',
+Aug 06 11:12:36 runnervma9114 node[54705]:     '/opt/franzfon/wizard/backend/src/routes/holidays.js',
+Aug 06 11:12:36 runnervma9114 node[54705]:     '/opt/franzfon/wizard/backend/src/index.js'
+Aug 06 11:12:36 runnervma9114 node[54705]:   ]
+Aug 06 11:12:36 runnervma9114 node[54705]: }
+Aug 06 11:12:36 runnervma9114 node[54705]: Node.js v20.20.2
+Aug 06 11:12:36 runnervma9114 systemd[1]: franzfon-wizard.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 11:12:36 runnervma9114 systemd[1]: franzfon-wizard.service: Failed with result 'exit-code'.
+Aug 06 11:12:39 runnervma9114 systemd[1]: franzfon-wizard.service: Scheduled restart job, restart counter is at 9.
+Aug 06 11:12:39 runnervma9114 systemd[1]: Starting franzfon-wizard.service - FRANZFON Wizard ARM64...
+Aug 06 11:12:39 runnervma9114 systemd[1]: Started franzfon-wizard.service - FRANZFON Wizard ARM64.
+Aug 06 11:12:39 runnervma9114 node[54732]: [Startup] Operation-Log installiert (Kategorien: FritzBox, Push, Push-Relay, License, Update)
+Aug 06 11:12:39 runnervma9114 node[54732]: Warning: connect.session() MemoryStore is not
+Aug 06 11:12:39 runnervma9114 node[54732]: designed for a production environment, as it will leak
+Aug 06 11:12:39 runnervma9114 node[54732]: memory, and will not scale past a single process.
+Aug 06 11:12:39 runnervma9114 node[54732]: [DB] Running migrations...
+Aug 06 11:12:39 runnervma9114 node[54732]: [DB] Migrations completed
+Aug 06 11:12:39 runnervma9114 node[54732]: [AMI] Credentials geladen: user=21bd756a8810
+Aug 06 11:12:39 runnervma9114 node[54732]: [BLF] Verbinde mit Asterisk AMI...
+Aug 06 11:12:39 runnervma9114 node[54732]: node:internal/modules/cjs/loader:1210
+Aug 06 11:12:39 runnervma9114 node[54732]:   throw err;
+Aug 06 11:12:39 runnervma9114 node[54732]:   ^
+Aug 06 11:12:39 runnervma9114 node[54732]: Error: Cannot find module '../data/german-holidays'
+Aug 06 11:12:39 runnervma9114 node[54732]: Require stack:
+Aug 06 11:12:39 runnervma9114 node[54732]: - /opt/franzfon/wizard/backend/src/services/holidays.js
+Aug 06 11:12:39 runnervma9114 node[54732]: - /opt/franzfon/wizard/backend/src/routes/holidays.js
+Aug 06 11:12:39 runnervma9114 node[54732]: - /opt/franzfon/wizard/backend/src/index.js
+Aug 06 11:12:39 runnervma9114 node[54732]:     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+Aug 06 11:12:39 runnervma9114 node[54732]:     at Module._load (node:internal/modules/cjs/loader:1038:27)
+Aug 06 11:12:39 runnervma9114 node[54732]:     at Module.require (node:internal/modules/cjs/loader:1289:19)
+Aug 06 11:12:39 runnervma9114 node[54732]:     at require (node:internal/modules/helpers:182:18)
+Aug 06 11:12:39 runnervma9114 node[54732]:     at Object.<anonymous> (/opt/franzfon/wizard/backend/src/services/holidays.js:17:24)
+Aug 06 11:12:39 runnervma9114 node[54732]:     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+Aug 06 11:12:39 runnervma9114 node[54732]:     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+Aug 06 11:12:39 runnervma9114 node[54732]:     at Module.load (node:internal/modules/cjs/loader:1266:32)
+Aug 06 11:12:39 runnervma9114 node[54732]:     at Module._load (node:internal/modules/cjs/loader:1091:12)
+Aug 06 11:12:39 runnervma9114 node[54732]:     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+Aug 06 11:12:39 runnervma9114 node[54732]:   code: 'MODULE_NOT_FOUND',
+Aug 06 11:12:39 runnervma9114 node[54732]:   requireStack: [
+Aug 06 11:12:39 runnervma9114 node[54732]:     '/opt/franzfon/wizard/backend/src/services/holidays.js',
+Aug 06 11:12:39 runnervma9114 node[54732]:     '/opt/franzfon/wizard/backend/src/routes/holidays.js',
+Aug 06 11:12:39 runnervma9114 node[54732]:     '/opt/franzfon/wizard/backend/src/index.js'
+Aug 06 11:12:39 runnervma9114 node[54732]:   ]
+Aug 06 11:12:39 runnervma9114 node[54732]: }
+Aug 06 11:12:39 runnervma9114 node[54732]: Node.js v20.20.2
+Aug 06 11:12:39 runnervma9114 systemd[1]: franzfon-wizard.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 11:12:39 runnervma9114 systemd[1]: franzfon-wizard.service: Failed with result 'exit-code'.
+Aug 06 11:12:42 runnervma9114 systemd[1]: franzfon-wizard.service: Scheduled restart job, restart counter is at 10.
+Aug 06 11:12:42 runnervma9114 systemd[1]: Starting franzfon-wizard.service - FRANZFON Wizard ARM64...
+Aug 06 11:12:42 runnervma9114 systemd[1]: Started franzfon-wizard.service - FRANZFON Wizard ARM64.
+Aug 06 11:12:42 runnervma9114 node[54762]: [Startup] Operation-Log installiert (Kategorien: FritzBox, Push, Push-Relay, License, Update)
+Aug 06 11:12:42 runnervma9114 node[54762]: Warning: connect.session() MemoryStore is not
+Aug 06 11:12:42 runnervma9114 node[54762]: designed for a production environment, as it will leak
+Aug 06 11:12:42 runnervma9114 node[54762]: memory, and will not scale past a single process.
+Aug 06 11:12:42 runnervma9114 node[54762]: [DB] Running migrations...
+Aug 06 11:12:42 runnervma9114 node[54762]: [DB] Migrations completed
+Aug 06 11:12:43 runnervma9114 node[54762]: [AMI] Credentials geladen: user=21bd756a8810
+Aug 06 11:12:43 runnervma9114 node[54762]: [BLF] Verbinde mit Asterisk AMI...
+Aug 06 11:12:43 runnervma9114 node[54762]: node:internal/modules/cjs/loader:1210
+Aug 06 11:12:43 runnervma9114 node[54762]:   throw err;
+Aug 06 11:12:43 runnervma9114 node[54762]:   ^
+Aug 06 11:12:43 runnervma9114 node[54762]: Error: Cannot find module '../data/german-holidays'
+Aug 06 11:12:43 runnervma9114 node[54762]: Require stack:
+Aug 06 11:12:43 runnervma9114 node[54762]: - /opt/franzfon/wizard/backend/src/services/holidays.js
+Aug 06 11:12:43 runnervma9114 node[54762]: - /opt/franzfon/wizard/backend/src/routes/holidays.js
+Aug 06 11:12:43 runnervma9114 node[54762]: - /opt/franzfon/wizard/backend/src/index.js
+Aug 06 11:12:43 runnervma9114 node[54762]:     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+Aug 06 11:12:43 runnervma9114 node[54762]:     at Module._load (node:internal/modules/cjs/loader:1038:27)
+Aug 06 11:12:43 runnervma9114 node[54762]:     at Module.require (node:internal/modules/cjs/loader:1289:19)
+Aug 06 11:12:43 runnervma9114 node[54762]:     at require (node:internal/modules/helpers:182:18)
+Aug 06 11:12:43 runnervma9114 node[54762]:     at Object.<anonymous> (/opt/franzfon/wizard/backend/src/services/holidays.js:17:24)
+Aug 06 11:12:43 runnervma9114 node[54762]:     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+Aug 06 11:12:43 runnervma9114 node[54762]:     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+Aug 06 11:12:43 runnervma9114 node[54762]:     at Module.load (node:internal/modules/cjs/loader:1266:32)
+Aug 06 11:12:43 runnervma9114 node[54762]:     at Module._load (node:internal/modules/cjs/loader:1091:12)
+Aug 06 11:12:43 runnervma9114 node[54762]:     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+Aug 06 11:12:43 runnervma9114 node[54762]:   code: 'MODULE_NOT_FOUND',
+Aug 06 11:12:43 runnervma9114 node[54762]:   requireStack: [
+Aug 06 11:12:43 runnervma9114 node[54762]:     '/opt/franzfon/wizard/backend/src/services/holidays.js',
+Aug 06 11:12:43 runnervma9114 node[54762]:     '/opt/franzfon/wizard/backend/src/routes/holidays.js',
+Aug 06 11:12:43 runnervma9114 node[54762]:     '/opt/franzfon/wizard/backend/src/index.js'
+Aug 06 11:12:43 runnervma9114 node[54762]:   ]
+Aug 06 11:12:43 runnervma9114 node[54762]: }
+Aug 06 11:12:43 runnervma9114 node[54762]: Node.js v20.20.2
+Aug 06 11:12:43 runnervma9114 systemd[1]: franzfon-wizard.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 11:12:43 runnervma9114 systemd[1]: franzfon-wizard.service: Failed with result 'exit-code'.
+Aug 06 11:12:46 runnervma9114 systemd[1]: franzfon-wizard.service: Scheduled restart job, restart counter is at 11.
+Aug 06 11:12:46 runnervma9114 systemd[1]: Starting franzfon-wizard.service - FRANZFON Wizard ARM64...
+Aug 06 11:12:46 runnervma9114 systemd[1]: Started franzfon-wizard.service - FRANZFON Wizard ARM64.
+Aug 06 11:12:46 runnervma9114 node[54804]: [Startup] Operation-Log installiert (Kategorien: FritzBox, Push, Push-Relay, License, Update)
+Aug 06 11:12:46 runnervma9114 node[54804]: Warning: connect.session() MemoryStore is not
+Aug 06 11:12:46 runnervma9114 node[54804]: designed for a production environment, as it will leak
+Aug 06 11:12:46 runnervma9114 node[54804]: memory, and will not scale past a single process.
+Aug 06 11:12:46 runnervma9114 node[54804]: [DB] Running migrations...
+Aug 06 11:12:46 runnervma9114 node[54804]: [DB] Migrations completed
+Aug 06 11:12:46 runnervma9114 node[54804]: [AMI] Credentials geladen: user=21bd756a8810
+Aug 06 11:12:46 runnervma9114 node[54804]: [BLF] Verbinde mit Asterisk AMI...
+Aug 06 11:12:46 runnervma9114 node[54804]: node:internal/modules/cjs/loader:1210
+Aug 06 11:12:46 runnervma9114 node[54804]:   throw err;
+Aug 06 11:12:46 runnervma9114 node[54804]:   ^
+Aug 06 11:12:46 runnervma9114 node[54804]: Error: Cannot find module '../data/german-holidays'
+Aug 06 11:12:46 runnervma9114 node[54804]: Require stack:
+Aug 06 11:12:46 runnervma9114 node[54804]: - /opt/franzfon/wizard/backend/src/services/holidays.js
+Aug 06 11:12:46 runnervma9114 node[54804]: - /opt/franzfon/wizard/backend/src/routes/holidays.js
+Aug 06 11:12:46 runnervma9114 node[54804]: - /opt/franzfon/wizard/backend/src/index.js
+Aug 06 11:12:46 runnervma9114 node[54804]:     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+Aug 06 11:12:46 runnervma9114 node[54804]:     at Module._load (node:internal/modules/cjs/loader:1038:27)
+Aug 06 11:12:46 runnervma9114 node[54804]:     at Module.require (node:internal/modules/cjs/loader:1289:19)
+Aug 06 11:12:46 runnervma9114 node[54804]:     at require (node:internal/modules/helpers:182:18)
+Aug 06 11:12:46 runnervma9114 node[54804]:     at Object.<anonymous> (/opt/franzfon/wizard/backend/src/services/holidays.js:17:24)
+Aug 06 11:12:46 runnervma9114 node[54804]:     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+Aug 06 11:12:46 runnervma9114 node[54804]:     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+Aug 06 11:12:46 runnervma9114 node[54804]:     at Module.load (node:internal/modules/cjs/loader:1266:32)
+Aug 06 11:12:46 runnervma9114 node[54804]:     at Module._load (node:internal/modules/cjs/loader:1091:12)
+Aug 06 11:12:46 runnervma9114 node[54804]:     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+Aug 06 11:12:46 runnervma9114 node[54804]:   code: 'MODULE_NOT_FOUND',
+Aug 06 11:12:46 runnervma9114 node[54804]:   requireStack: [
+Aug 06 11:12:46 runnervma9114 node[54804]:     '/opt/franzfon/wizard/backend/src/services/holidays.js',
+Aug 06 11:12:46 runnervma9114 node[54804]:     '/opt/franzfon/wizard/backend/src/routes/holidays.js',
+Aug 06 11:12:46 runnervma9114 node[54804]:     '/opt/franzfon/wizard/backend/src/index.js'
+Aug 06 11:12:46 runnervma9114 node[54804]:   ]
+Aug 06 11:12:46 runnervma9114 node[54804]: }
+Aug 06 11:12:46 runnervma9114 node[54804]: Node.js v20.20.2
+Aug 06 11:12:46 runnervma9114 systemd[1]: franzfon-wizard.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 11:12:46 runnervma9114 systemd[1]: franzfon-wizard.service: Failed with result 'exit-code'.
+Aug 06 11:12:49 runnervma9114 systemd[1]: franzfon-wizard.service: Scheduled restart job, restart counter is at 12.
+Aug 06 11:12:49 runnervma9114 systemd[1]: Starting franzfon-wizard.service - FRANZFON Wizard ARM64...
+Aug 06 11:12:49 runnervma9114 systemd[1]: Started franzfon-wizard.service - FRANZFON Wizard ARM64.
+Aug 06 11:12:49 runnervma9114 node[54835]: [Startup] Operation-Log installiert (Kategorien: FritzBox, Push, Push-Relay, License, Update)
+Aug 06 11:12:49 runnervma9114 node[54835]: Warning: connect.session() MemoryStore is not
+Aug 06 11:12:49 runnervma9114 node[54835]: designed for a production environment, as it will leak
+Aug 06 11:12:49 runnervma9114 node[54835]: memory, and will not scale past a single process.
+Aug 06 11:12:49 runnervma9114 node[54835]: [DB] Running migrations...
+Aug 06 11:12:49 runnervma9114 node[54835]: [DB] Migrations completed
+Aug 06 11:12:50 runnervma9114 node[54835]: [AMI] Credentials geladen: user=21bd756a8810
+Aug 06 11:12:50 runnervma9114 node[54835]: [BLF] Verbinde mit Asterisk AMI...
+Aug 06 11:12:50 runnervma9114 node[54835]: node:internal/modules/cjs/loader:1210
+Aug 06 11:12:50 runnervma9114 node[54835]:   throw err;
+Aug 06 11:12:50 runnervma9114 node[54835]:   ^
+Aug 06 11:12:50 runnervma9114 node[54835]: Error: Cannot find module '../data/german-holidays'
+Aug 06 11:12:50 runnervma9114 node[54835]: Require stack:
+Aug 06 11:12:50 runnervma9114 node[54835]: - /opt/franzfon/wizard/backend/src/services/holidays.js
+Aug 06 11:12:50 runnervma9114 node[54835]: - /opt/franzfon/wizard/backend/src/routes/holidays.js
+Aug 06 11:12:50 runnervma9114 node[54835]: - /opt/franzfon/wizard/backend/src/index.js
+Aug 06 11:12:50 runnervma9114 node[54835]:     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+Aug 06 11:12:50 runnervma9114 node[54835]:     at Module._load (node:internal/modules/cjs/loader:1038:27)
+Aug 06 11:12:50 runnervma9114 node[54835]:     at Module.require (node:internal/modules/cjs/loader:1289:19)
+Aug 06 11:12:50 runnervma9114 node[54835]:     at require (node:internal/modules/helpers:182:18)
+Aug 06 11:12:50 runnervma9114 node[54835]:     at Object.<anonymous> (/opt/franzfon/wizard/backend/src/services/holidays.js:17:24)
+Aug 06 11:12:50 runnervma9114 node[54835]:     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+Aug 06 11:12:50 runnervma9114 node[54835]:     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+Aug 06 11:12:50 runnervma9114 node[54835]:     at Module.load (node:internal/modules/cjs/loader:1266:32)
+Aug 06 11:12:50 runnervma9114 node[54835]:     at Module._load (node:internal/modules/cjs/loader:1091:12)
+Aug 06 11:12:50 runnervma9114 node[54835]:     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+Aug 06 11:12:50 runnervma9114 node[54835]:   code: 'MODULE_NOT_FOUND',
+Aug 06 11:12:50 runnervma9114 node[54835]:   requireStack: [
+Aug 06 11:12:50 runnervma9114 node[54835]:     '/opt/franzfon/wizard/backend/src/services/holidays.js',
+Aug 06 11:12:50 runnervma9114 node[54835]:     '/opt/franzfon/wizard/backend/src/routes/holidays.js',
+Aug 06 11:12:50 runnervma9114 node[54835]:     '/opt/franzfon/wizard/backend/src/index.js'
+Aug 06 11:12:50 runnervma9114 node[54835]:   ]
+Aug 06 11:12:50 runnervma9114 node[54835]: }
+Aug 06 11:12:50 runnervma9114 node[54835]: Node.js v20.20.2
+Aug 06 11:12:50 runnervma9114 systemd[1]: franzfon-wizard.service: Main process exited, code=exited, status=1/FAILURE
+Aug 06 11:12:50 runnervma9114 systemd[1]: franzfon-wizard.service: Failed with result 'exit-code'.

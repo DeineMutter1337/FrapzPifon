@@ -21,15 +21,15 @@ The following additional packages will be installed:
   odbcinst
 The following NEW packages will be installed:
   odbc-mariadb odbcinst unixodbc
-0 upgraded, 3 newly installed, 0 to remove and 10 not upgraded.
+0 upgraded, 3 newly installed, 0 to remove and 77 not upgraded.
 Need to get 143 kB of archives.
 After this operation, 603 kB of additional disk space will be used.
 Get:1 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 odbcinst arm64 2.3.12-1ubuntu0.24.04.1 [9632 B]
 Get:2 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 odbc-mariadb arm64 3.1.15-3 [108 kB]
 Get:3 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 unixodbc arm64 2.3.12-1ubuntu0.24.04.1 [26.3 kB]
-Fetched 143 kB in 1s (230 kB/s)
+Fetched 143 kB in 1s (180 kB/s)
 Selecting previously unselected package odbcinst.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 202639 files and directories currently installed.)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 202450 files and directories currently installed.)
 Preparing to unpack .../odbcinst_2.3.12-1ubuntu0.24.04.1_arm64.deb ...
 Unpacking odbcinst (2.3.12-1ubuntu0.24.04.1) ...
 Selecting previously unselected package odbc-mariadb.
@@ -48,11 +48,17 @@ Not building database; man-db/auto-update is not 'true'.
 
 Running kernel seems to be up-to-date.
 
-No services need to be restarted.
+Restarting services...
+
+Service restarts being deferred:
+ systemctl restart hosted-compute-agent.service
+ systemctl restart systemd-logind.service
+ systemctl restart walinuxagent.service
 
 No containers need to be restarted.
 
-No user sessions are running outdated binaries.
+User sessions running outdated binaries:
+ runner @ user manager service: systemd[1287]
 
 No VM guests are running outdated hypervisor (qemu) binaries on this host.
 
@@ -78,4 +84,8 @@ Synchronizing state of redis-server.service with SysV service script with /usr/l
 Executing: /usr/lib/systemd/systemd-sysv-install enable redis-server
 Created symlink /etc/systemd/system/multi-user.target.wants/asterisk.service → /etc/systemd/system/asterisk.service.
 Created symlink /etc/systemd/system/multi-user.target.wants/franzfon-wizard.service → /etc/systemd/system/franzfon-wizard.service.
-Unable to connect to remote asterisk (does /var/run/asterisk/asterisk.ctl exist?)
+Asterisk 22.7.0 built by root @ runnervma9114 on a aarch64 running Linux on 2026-08-06 11:10:18 UTC
+Module                         Description                              Use Count  Status      Support Level
+res_pjsip.so                   Basic SIP resource                       50         Running              core
+1 modules loaded
+curl: (7) Failed to connect to 127.0.0.1 port 3000 after 0 ms: Couldn't connect to server
