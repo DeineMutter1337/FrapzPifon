@@ -1,5 +1,5 @@
 RUN_MARKER=NATIVE_ARM64_V3
-GITHUB_SHA=6c66de1ff758dce5e3829d77e95132b9073b122e
-ASTERISK_ARM64_BUILD_RC=127
-VERDICT=FAIL
-See build.log for the exact dependency, compiler or required-module failure.
+GITHUB_SHA=f056291f7c17017a6a65e5c6d0c3950eaa26b985
+ASTERISK_ARM64_BUILD_RC=0
+VERDICT=PASS
+Asterisk 22.7.0 compiled and staged on a native ARM64 runner with all required FRANZFON modules.

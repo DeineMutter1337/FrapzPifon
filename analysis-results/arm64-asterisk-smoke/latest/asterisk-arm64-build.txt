@@ -1,9 +1,30 @@
 RUN_MARKER=NATIVE_ARM64_V3
 SOURCE_SHA256=5b0e5d276aeb014bf8a08a94d1055a9e97b9dce3375846eea70da5221bf9efe7
-GITHUB_SHA=6c66de1ff758dce5e3829d77e95132b9073b122e
+GITHUB_SHA=f056291f7c17017a6a65e5c6d0c3950eaa26b985
 
 === ARCHITECTURE ===
 aarch64
-main/asterisk: ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=3394fd9ce181e9e05eaa23a593a53915fb299d1b, for GNU/Linux 3.7.0, with debug_info, not stripped
+main/asterisk: ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=ab5428b27b7c0b7693320d8edac644c07210910c, for GNU/Linux 3.7.0, with debug_info, not stripped
 
 === VERSION ===
+Asterisk 22.7.0
+
+=== REQUIRED FRANZFON CORE MODULES ===
+PASS	channels/chan_pjsip.so	ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=bb99ebbc8fa33f1515973c1d7245c5fdb33a5905, with debug_info, not stripped
+PASS	res/res_pjsip.so	ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d7c174853eda1d907d110d28359894dc89c61784, with debug_info, not stripped
+PASS	res/res_http_websocket.so	ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=a272f6647299fed64521f461cb544853430ada89, with debug_info, not stripped
+PASS	res/res_ari.so	ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=6c6199d8e51162283956b033246b773e32ddfcf4, with debug_info, not stripped
+PASS	apps/app_voicemail.so	ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=f5a3f4f5d40e0d7b7208b06c7804c8fe249f1195, with debug_info, not stripped
+PASS	funcs/func_odbc.so	ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=5fc1ef6bd48c21f9ac5ff749d92f20ffd5325bcd, with debug_info, not stripped
+PASS	cdr/cdr_adaptive_odbc.so	ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=d402aa77cbd91014cf7ee8055fa27d55bf5d21de, with debug_info, not stripped
+PASS	res/res_odbc.so	ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=53ce3e8b48802a8ccbf169001a5cddc213c64320, with debug_info, not stripped
+
+=== STAGED INSTALLATION ===
+/home/runner/work/_temp/asterisk-native-v3-stage/usr/sbin/asterisk: ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=ab5428b27b7c0b7693320d8edac644c07210910c, for GNU/Linux 3.7.0, with debug_info, not stripped
+LIBRARY_DIR=/home/runner/work/_temp/asterisk-native-v3-stage/usr/lib
+317
+
+=== INTENTIONALLY OMITTED FROM V1 ===
+DAHDI hardware stack
+G.729 proprietary codec
+Digium phone module
