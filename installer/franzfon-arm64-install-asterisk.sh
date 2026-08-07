@@ -235,6 +235,9 @@ RUNTIME_CORE_XML="$(find /var/lib/asterisk/documentation -maxdepth 1 -type f -na
 }
 
 cat > /etc/systemd/system/asterisk.service <<EOF
+# FRANZFON-NATIVE-UNIT-v1
+# Managed by the FRANZFON ARM64 port. Keep the marker above so the original
+# FRANZFON first-boot migration does not replace this native ARM64 unit.
 [Unit]
 Description=Asterisk PBX for FRANZFON ARM64
 After=network-online.target mariadb.service
