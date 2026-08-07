@@ -5,6 +5,9 @@ APP_ROOT='/opt/franzfon'
 ASTERISK_PREFIX='/opt/franzfon-arm64/asterisk'
 STATE_FILE='/etc/franzfon-arm64/install-state'
 HTTP_URL='http://127.0.0.1:3000/'
+ASTERISK_UNIT='/etc/systemd/system/asterisk.service'
+ASTERISK_UNIT_SIG='# FRANZFON-NATIVE-UNIT-v1'
+ASTERISK_LEGACY_BIN='/usr/sbin/asterisk'
 FAILURES=0
 PASSES=0
 
@@ -73,6 +76,31 @@ if [ -x "$ASTERISK" ]; then
 else
   fail 'Asterisk binary exists'
 fi
+
+if [ -f "$ASTERISK_UNIT" ]; then
+  check_output 'Asterisk systemd unit carries FRANZFON native marker' \
+    "$ASTERISK_UNIT_SIG" head -n 5 "$ASTERISK_UNIT"
+  check_output 'Asterisk systemd unit uses managed ARM64 binary' \
+    "$ASTERISK" cat "$ASTERISK_UNIT"
+  if grep -Fq "$ASTERISK_LEGACY_BIN" "$ASTERISK_UNIT"; then
+    fail 'Asterisk systemd unit does not reference legacy /usr/sbin/asterisk'
+  else
+    pass 'Asterisk systemd unit does not reference legacy /usr/sbin/asterisk'
+  fi
+else
+  fail 'Asterisk native systemd unit exists'
+fi
+
+for source in \
+  "$APP_ROOT/wizard/backend/src/services/pbx.js" \
+  "$APP_ROOT/scripts/apply-update.sh"; do
+  [ -f "$source" ] || continue
+  if grep -Fq "$ASTERISK_LEGACY_BIN" "$source"; then
+    fail "FRANZFON Asterisk template still references legacy path: $source"
+  else
+    pass "FRANZFON Asterisk template is ARM64-adapted: $source"
+  fi
+done
 
 NATIVE_ADDONS=0
 NATIVE_ADDON_FAILURES=0
