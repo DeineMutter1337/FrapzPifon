@@ -1,7 +1,7 @@
 RUN_MARKER=FRANZFON_ARM64_UNIFIED_INSTALLER_V1
-GITHUB_SHA=d578fa51bc67a3658aac39d1168641d79d3198b9
-INSTALL_RC=0
-FUNCTIONAL_RC=0
+GITHUB_SHA=331826cddb4a92d70a40a1722a5e2f9a9b261c7c
+INSTALL_RC=1
+FUNCTIONAL_RC=1
 
-VERDICT=PASS
-The public one-command installer produced a fully running native ARM64 stack.
+VERDICT=FAIL
+Read install.log or functional.log for the first failure.
