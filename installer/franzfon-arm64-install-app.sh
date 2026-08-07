@@ -5,6 +5,8 @@ NODE_VERSION='20.20.2'
 NODE_ARCHIVE="node-v${NODE_VERSION}-linux-arm64.tar.xz"
 NODE_SHA256='73093db209e4e9e09dd7d15a47aeaab1b74833830df03efa5f942a1122c5fa71'
 NODE_BASE_URL="https://nodejs.org/download/release/v${NODE_VERSION}"
+ASTERISK_MANAGED_BIN='/opt/franzfon-arm64/asterisk/sbin/asterisk'
+ASTERISK_LEGACY_BIN='/usr/sbin/asterisk'
 
 PAYLOAD_DIR=''
 
@@ -109,6 +111,21 @@ mkdir -p \
   "$INSTALL_ROOT/wizard/backend/data" \
   "$INSTALL_ROOT/wizard/backend/backups"
 chmod 0750 "$INSTALL_ROOT/config" "$INSTALL_ROOT/wizard/backend/data" "$INSTALL_ROOT/wizard/backend/backups"
+
+# The original FRANZFON x86 image owns /usr/sbin/asterisk. The ARM64 port keeps
+# its verified native build under /opt/franzfon-arm64/asterisk. Adapt the two
+# upstream migration/update templates which can otherwise recreate a systemd
+# unit pointing back at the absent Debian/x86 path.
+for ASTERISK_PATH_SOURCE in \
+  "$INSTALL_ROOT/wizard/backend/src/services/pbx.js" \
+  "$INSTALL_ROOT/scripts/apply-update.sh"; do
+  [ -f "$ASTERISK_PATH_SOURCE" ] || continue
+  sed -i "s#${ASTERISK_LEGACY_BIN}#${ASTERISK_MANAGED_BIN}#g" "$ASTERISK_PATH_SOURCE"
+  if grep -Fq "$ASTERISK_LEGACY_BIN" "$ASTERISK_PATH_SOURCE"; then
+    echo "Failed to adapt legacy Asterisk path in: $ASTERISK_PATH_SOURCE" >&2
+    exit 1
+  fi
+done
 
 if [ -f "$PAYLOAD_DIR/payload/usr/local/bin/pnp_server" ]; then
   install -D -m 0755 "$PAYLOAD_DIR/payload/usr/local/bin/pnp_server" /usr/local/bin/pnp_server
